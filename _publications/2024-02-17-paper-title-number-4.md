@@ -1,7 +1,7 @@
 ---
 title: "Retinal–Lipidomics Associations as Cardiovascular Biomarkers"
-collection: publications
-permalink: /publication/micad-2025/
+permalink: /publications/
+author_profile: true
 ---
 
 <div style="display:flex; gap:16px; align-items:flex-start; margin-bottom:18px;">
