@@ -1,0 +1,87 @@
+/* ===== Publications page: subtle science-style background ===== */
+.page__content {
+  background: radial-gradient(circle at 15% 20%, rgba(0, 140, 255, 0.10), transparent 45%),
+              radial-gradient(circle at 85% 30%, rgba(0, 255, 170, 0.08), transparent 45%),
+              radial-gradient(circle at 40% 85%, rgba(180, 0, 255, 0.06), transparent 55%);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+/* Card layout */
+.pub-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 22px;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.pub-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.12);
+}
+
+/* ===== Flip image effect ===== */
+.pub-img-wrap {
+  width: 140px;
+  height: 140px;
+  perspective: 900px;
+  flex: 0 0 140px;
+}
+
+.pub-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 14px;
+  object-fit: cover;
+  transform-style: preserve-3d;
+  transition: transform 600ms cubic-bezier(.2,.8,.2,1), filter 300ms ease;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  filter: saturate(1.05);
+}
+
+/* Flip + slight rotation on hover */
+.pub-card:hover .pub-img {
+  transform: rotateY(14deg) rotateX(6deg) scale(1.03);
+  filter: saturate(1.18) contrast(1.03);
+}
+
+/* ===== Optional gentle floating motion (very subtle) ===== */
+@keyframes floaty {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-3px); }
+  100% { transform: translateY(0px); }
+}
+
+.pub-img.floaty {
+  animation: floaty 5s ease-in-out infinite;
+}
+
+/* Buttons / links styling */
+.pub-links a {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0, 120, 255, 0.10);
+  border: 1px solid rgba(0, 120, 255, 0.18);
+  text-decoration: none !important;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.pub-links a:hover {
+  transform: translateY(-1px);
+  background: rgba(0, 120, 255, 0.16);
+}
+
+/* Small typography polish */
+.pub-title { font-size: 1.05rem; line-height: 1.25; }
+.pub-meta  { margin-top: 2px; opacity: 0.9; }
+.pub-sum   { margin-top: 10px; margin-bottom: 0; }
