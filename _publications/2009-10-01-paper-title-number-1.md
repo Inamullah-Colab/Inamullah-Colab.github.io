@@ -1,14 +1,18 @@
 ---
-title: "Paper Title Number 1"
+title: "Data Diversity in CNN-Based Ensemble Model for Diabetic Retinopathy"
 collection: publications
-category: manuscripts
-permalink: /publication/2009-10-01-paper-title-number-1
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2009-10-01
-venue: 'Journal 1'
-slidesurl: 'https://academicpages.github.io/files/slides1.pdf'
-paperurl: 'https://academicpages.github.io/files/paper1.pdf'
-bibtexurl: 'https://academicpages.github.io/files/bibtex1.bib'
-citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+permalink: /publication/biomimetics-2023/
 ---
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+
+<div style="display:flex; gap:16px; align-items:flex-start; margin-bottom:18px;">
+  <img src="/images/biomimetics-2023.png" alt="Biomimetics 2023" style="width:140px; border-radius:10px;">
+  <div>
+    <strong>Data Diversity in Convolutional Neural Network Based Ensemble Model for Diabetic Retinopathy</strong><br>
+    <em>Biomimetics (MDPI)</em>, 2023<br>
+    <a href="https://www.mdpi.com/2313-7673/8/2/187">Paper</a>
+    <p style="margin-top:8px;">
+      This work investigates how architectural and data diversity within CNN-based ensemble models improves robustness when dealing with imbalanced and limited medical imaging datasets. Using diabetic retinopathy as a case study, the proposed ensemble framework demonstrates substantial gains in accuracy, sensitivity, and specificity over conventional approaches.
+    </p>
+  </div>
+</div>
+
