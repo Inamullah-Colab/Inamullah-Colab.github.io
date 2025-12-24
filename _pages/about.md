@@ -7,7 +7,15 @@ redirect_from:
   - /about.html
 ---
 
-I am Inamullah, a PhD student at the [School of Electronics and Computer Science](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science) at the [University of Southampton](https://www.southampton.ac.uk/), researching the retinal vasculature to explore fine-grained features within intricate human structures and investigate connections with physiological, anatomical, and embryological aspects of other organ systems. This work requires deeper insight across multiple biomedical data modalities—clinical records, imaging, omics, and related biological data—supporting emerging fields such as **oculomics**.
+I am **Inamullah**, a PhD student in Computer Science at the [School of Electronics and Computer Science](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science), [University of Southampton](https://www.southampton.ac.uk/). My research aims to understand how the **retinal microvasculature reflects systemic biological processes**, and how signals observed in the eye relate to complex interactions across genetics, molecular profiles, and clinical phenotypes.
+
+The retina provides a unique, non-invasive window into human physiology. Beyond its local structure, the retinal vasculature encodes information linked to cardiovascular regulation, metabolic function, neurovascular integrity, and developmental biology. My work seeks to characterise these relationships by analysing fine-grained retinal features—such as vessel calibre, tortuosity, density, and fractal patterns- and studying how they connect to **clinical variables, multi-omics profiles (including lipidomics), and genetic data**.
+
+A central focus of my research is not only identifying associations, but **understanding the mechanisms and pathways that give rise to them**. To this end, I develop and apply **mathematical and statistical frameworks** that are capable of capturing latent structure, mediation effects, and confounding influences commonly found in high-dimensional biomedical data. These include correlation-based and causal modelling approaches, multivariate regression, network analysis, and interpretable machine learning methods designed to disentangle direct, indirect, and shared biological effects.
+
+By integrating retinal imaging with genetic variation, molecular traits, and clinical measurements, my research explores how information flows across biological scales, from genotype and molecular regulation to vascular morphology and observable clinical risk. This enables the investigation of **pathway-level interactions, regulatory networks, and mediated relationships**, rather than treating each data modality in isolation.
+
+This work aligns closely with the emerging field of **oculomics**, which studies ocular biomarkers derived from advanced imaging as indicators of systemic health and disease. My broader interests include multimodal data integration, explainable and trustworthy AI for healthcare, and the development of robust computational methods that support biological interpretability, translational insight, and precision medicine.
 
 
 A data-driven personal website
