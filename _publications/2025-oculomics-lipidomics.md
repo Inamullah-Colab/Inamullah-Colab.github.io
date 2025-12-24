@@ -1,7 +1,7 @@
 ---
 title: "Integrated Oculomics and Lipidomics for Cardiovascular Health"
-collection: publications
-permalink: /publication/oculomics-lipidomics-2025/
+permalink: /publications/
+author_profile: true
 ---
 
 <div style="display:flex; gap:16px; align-items:flex-start; margin-bottom:18px;">
