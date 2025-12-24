@@ -1,5 +1,4 @@
 ---
-title: "Publications"
 permalink: /publications/
 layout: single
 author_profile: true
@@ -12,7 +11,7 @@ author_profile: true
   margin-bottom:1.2em;
   letter-spacing:0.5px;
 ">
-  Publications
+  #Publications
 </h1>
 
 <p style="text-align:center; max-width:900px; margin:0 auto 2em auto; opacity:0.9;">
@@ -67,7 +66,7 @@ author_profile: true
 
 <div class="pub-card">
   <div class="pub-img-wrap">
-    <img class="pub-img floaty" src="/images/oculomics-survey-2025.png" alt="Oculomics Survey 2025">
+    <img class="pub-img floaty" src="/images/jpmhd-2025.png" alt="Oculomics Survey 2025">
   </div>
   <div>
     <div class="pub-title">
@@ -109,7 +108,7 @@ author_profile: true
 
 <div class="pub-card">
   <div class="pub-img-wrap">
-    <img class="pub-img floaty" src="/images/nature-review-2025.png" alt="Scientific Reports submission">
+    <img class="pub-img floaty" src="/images/scirep-2025.png" alt="Scientific Reports submission">
   </div>
   <div>
     <div class="pub-title">
