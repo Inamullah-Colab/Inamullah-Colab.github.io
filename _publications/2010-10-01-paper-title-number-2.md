@@ -1,7 +1,7 @@
 ---
 title: "Diversity-Aware CNN Ensembles for Imbalanced Medical Data"
 collection: publications
-permalink: /publication/imu-2024/
+permalink: /publications/imu-2024/
 ---
 
 <div style="display:flex; gap:16px; align-items:flex-start; margin-bottom:18px;">
