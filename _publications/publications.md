@@ -3,23 +3,34 @@ title: "Publications"
 permalink: /publications/
 layout: single
 author_profile: true
+header:
+  overlay_color: "#000000"
+  overlay_filter: "0.0"
+---
+<link rel="stylesheet" href="/assets/css/custom-publications.css">
+
 ---
 
 ## Journal and Conference Publications
 
-<div style="display:flex; gap:16px; align-items:flex-start; margin-bottom:22px;">
-  <img src="/images/biomimetics-2023.png" alt="Biomimetics 2023" style="width:140px; border-radius:10px;">
+<div class="pub-card">
+  <div class="pub-img-wrap">
+    <img class="pub-img floaty" src="/images/biomimetics-2023.png" alt="Biomimetics 2023">
+  </div>
   <div>
-    <strong>Data Diversity in Convolutional Neural Network Based Ensemble Model for Diabetic Retinopathy</strong><br>
-    <em>Biomimetics (MDPI)</em>, 2023<br>
-    <a href="https://www.mdpi.com/2313-7673/8/2/187">Journal Paper</a>
-    <p style="margin-top:8px;">
-      This study examines how architectural and data diversity within CNN-based ensemble models improves performance when medical imaging datasets are imbalanced and limited. Using diabetic retinopathy as a case study, the proposed approach achieves strong gains in accuracy, sensitivity, and specificity, demonstrating improved robustness in clinically realistic settings.
+    <div class="pub-title"><strong>Data Diversity in Convolutional Neural Network Based Ensemble Model for Diabetic Retinopathy</strong></div>
+    <div class="pub-meta"><em>Biomimetics (MDPI)</em>, 2023</div>
+    <div class="pub-links" style="margin-top:8px;">
+      <a href="https://www.mdpi.com/2313-7673/8/2/187">Journal Paper</a>
+    </div>
+    <p class="pub-sum">
+      This study examines how architectural and data diversity within CNN-based ensemble models improves performance when medical imaging datasets are imbalanced and limited...
     </p>
   </div>
 </div>
 
 <hr>
+
 
 <div style="display:flex; gap:16px; align-items:flex-start; margin-bottom:22px;">
   <img src="/images/imu-2024.png" alt="Informatics in Medicine Unlocked 2024" style="width:140px; border-radius:10px;">
