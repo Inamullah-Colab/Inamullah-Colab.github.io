@@ -11,15 +11,15 @@ main:
   - title: "Publications"
     url: /publications/
 
-  - title: "Talks"
-    url: /talks/    
-
   - title: "Teaching"
     url: /teaching/    
     
   - title: "Research"
     url: /portfolio/
-        
+  
+  - title: "Mathematical & Scientific Foundations"
+    url: /talks/    
+
   - title: "Blog Posts"
     url: /year-archive/
     
