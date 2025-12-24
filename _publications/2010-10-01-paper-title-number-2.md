@@ -1,14 +1,17 @@
 ---
-title: "Paper Title Number 2"
+title: "Diversity-Aware CNN Ensembles for Imbalanced Medical Data"
 collection: publications
-category: manuscripts
-permalink: /publication/2010-10-01-paper-title-number-2
-excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
-date: 2010-10-01
-venue: 'Journal 1'
-slidesurl: 'https://academicpages.github.io/files/slides2.pdf'
-paperurl: 'https://academicpages.github.io/files/paper2.pdf'
-citation: 'Your Name, You. (2010). &quot;Paper Title Number 2.&quot; <i>Journal 1</i>. 1(2).'
+permalink: /publication/imu-2024/
 ---
 
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+<div style="display:flex; gap:16px; align-items:flex-start; margin-bottom:18px;">
+  <img src="/images/imu-2024.png" alt="Informatics in Medicine Unlocked 2024" style="width:140px; border-radius:10px;">
+  <div>
+    <strong>Deciphering the Impact of Diversity in CNN-Based Ensembles on Overcoming Data Imbalance and Scarcity in Medical Datasets</strong><br>
+    <em>Informatics in Medicine Unlocked (Elsevier)</em>, 2024<br>
+    <a href="https://www.sciencedirect.com/science/article/pii/S2352914824001138">Paper</a>
+    <p style="margin-top:8px;">
+      This study provides a systematic analysis of how diversity mechanisms in CNN ensembles address both data imbalance and data scarcity in medical imaging. Through extensive experiments on retinal datasets, the work highlights ensemble design strategies that lead to more stable and generalisable performance in clinical scenarios.
+    </p>
+  </div>
+</div>
