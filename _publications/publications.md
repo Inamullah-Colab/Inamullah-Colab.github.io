@@ -3,85 +3,126 @@ title: "Publications"
 permalink: /publications/
 layout: single
 author_profile: true
-header:
-  overlay_color: "#000000"
-  overlay_filter: "0.0"
 ---
 <link rel="stylesheet" href="/assets/css/custom-publications.css">
 
----
+<h1 style="
+  text-align:center;
+  margin-top:0.5em;
+  margin-bottom:1.2em;
+  letter-spacing:0.5px;
+">
+  Publications
+</h1>
 
-## Journal and Conference Publications
+<p style="text-align:center; max-width:900px; margin:0 auto 2em auto; opacity:0.9;">
+  Peer-reviewed journal articles and conference contributions at the intersection of
+  retinal imaging, artificial intelligence, oculomics, and systemic health.
+</p>
+
+
 
 <div class="pub-card">
   <div class="pub-img-wrap">
     <img class="pub-img floaty" src="/images/biomimetics-2023.png" alt="Biomimetics 2023">
   </div>
   <div>
-    <div class="pub-title"><strong>Data Diversity in Convolutional Neural Network Based Ensemble Model for Diabetic Retinopathy</strong></div>
+    <div class="pub-title">
+      <strong>Data Diversity in Convolutional Neural Network Based Ensemble Model for Diabetic Retinopathy</strong>
+    </div>
     <div class="pub-meta"><em>Biomimetics (MDPI)</em>, 2023</div>
     <div class="pub-links" style="margin-top:8px;">
-      <a href="https://www.mdpi.com/2313-7673/8/2/187">Journal Paper</a>
+      <a href="https://www.mdpi.com/2313-7673/8/2/187">Journal</a>
     </div>
     <p class="pub-sum">
-      This study examines how architectural and data diversity within CNN-based ensemble models improves performance when medical imaging datasets are imbalanced and limited...
+      This work demonstrates how architectural and data-level diversity in CNN-based ensemble models
+      improves robustness when medical imaging datasets are imbalanced or limited, using diabetic
+      retinopathy as a case study.
     </p>
   </div>
 </div>
 
 <hr>
 
-
-<div style="display:flex; gap:16px; align-items:flex-start; margin-bottom:22px;">
-  <img src="/images/imu-2024.png" alt="Informatics in Medicine Unlocked 2024" style="width:140px; border-radius:10px;">
+<div class="pub-card">
+  <div class="pub-img-wrap">
+    <img class="pub-img floaty" src="/images/imu-2024.png" alt="Informatics in Medicine Unlocked 2024">
+  </div>
   <div>
-    <strong>Deciphering the Impact of Diversity in CNN-Based Ensembles on Overcoming Data Imbalance and Scarcity in Medical Datasets</strong><br>
-    <em>Informatics in Medicine Unlocked (Elsevier)</em>, 2024<br>
-    <a href="https://www.sciencedirect.com/science/article/pii/S2352914824001138">Journal Paper</a>
-    <p style="margin-top:8px;">
-      This work provides a systematic investigation into how diversity-driven ensemble learning strategies mitigate data imbalance and scarcity in medical imaging. Through extensive experimentation on retinal datasets, the study highlights design principles that enable stable and generalisable model performance.
+    <div class="pub-title">
+      <strong>Deciphering the Impact of Diversity in CNN-Based Ensembles on Overcoming Data Imbalance and Scarcity</strong>
+    </div>
+    <div class="pub-meta"><em>Informatics in Medicine Unlocked (Elsevier)</em>, 2024</div>
+    <div class="pub-links" style="margin-top:8px;">
+      <a href="https://www.sciencedirect.com/science/article/pii/S2352914824001138">Journal</a>
+    </div>
+    <p class="pub-sum">
+      This study systematically analyses how ensemble diversity mitigates data scarcity in medical
+      imaging, offering insights into model generalisation under real-world clinical constraints.
     </p>
   </div>
 </div>
 
 <hr>
 
-<div style="display:flex; gap:16px; align-items:flex-start; margin-bottom:22px;">
-  <img src="/images/jpmhd-2025.png" alt="Oculomics Survey 2025" style="width:140px; border-radius:10px;">
+<div class="pub-card">
+  <div class="pub-img-wrap">
+    <img class="pub-img floaty" src="/images/oculomics-survey-2025.png" alt="Oculomics Survey 2025">
+  </div>
   <div>
-    <strong>The Eye as a Window to Systemic Health: A Survey of Retinal Imaging from Classical Techniques to Oculomics</strong><br>
-    <em>The Journal of Precision Medicine: Health and Disease</em>, 2025<br>
-    <a href="https://www.sciencedirect.com/science/article/pii/S305063282500023X">Journal Paper</a>
-    <p style="margin-top:8px;">
-      This survey traces the evolution of retinal imaging from classical ophthalmic methods to modern AI-driven oculomics. It synthesises evidence demonstrating how retinal microvascular features act as non-invasive biomarkers of systemic health, while outlining key challenges and future research opportunities.
+    <div class="pub-title">
+      <strong>The Eye as a Window to Systemic Health: A Survey of Retinal Imaging from Classical Techniques to Oculomics</strong>
+    </div>
+    <div class="pub-meta"><em>The Journal of Precision Medicine: Health and Disease</em>, 2025</div>
+    <div class="pub-links" style="margin-top:8px;">
+      <a href="https://www.sciencedirect.com/science/article/pii/S305063282500023X">Journal</a>
+    </div>
+    <p class="pub-sum">
+      A comprehensive survey tracing the evolution of retinal imaging toward oculomics, highlighting
+      how retinal biomarkers can reveal systemic, cardiovascular, and metabolic health.
     </p>
   </div>
 </div>
 
 <hr>
 
-<div style="display:flex; gap:16px; align-items:flex-start; margin-bottom:22px;">
-  <img src="/images/micad-2025.png" alt="MICAD 2025" style="width:140px; border-radius:10px;">
+<div class="pub-card">
+  <div class="pub-img-wrap">
+    <img class="pub-img floaty" src="/images/micad-2025.png" alt="MICAD 2025">
+  </div>
   <div>
-    <strong>Retinal Lipidomics Associations as Candidate Biomarkers for Cardiovascular Health</strong><br>
-    <em>MICAD Proceedings</em>, 2025 — <strong>Oral Presentation</strong><br>
-    <a href="https://arxiv.org/abs/2508.03538">arXiv</a>
-    <p style="margin-top:8px;">
-      Presented orally at MICAD 2025, this conference paper investigates associations between retinal microvascular features and lipidomic profiles. The findings support the potential of retinal imaging as a non-invasive proxy for underlying metabolic and cardiovascular processes.
+    <div class="pub-title">
+      <strong>Retinal Lipidomics Associations as Candidate Biomarkers for Cardiovascular Health</strong>
+    </div>
+    <div class="pub-meta"><em>MICAD Proceedings</em>, 2025 — Oral Presentation</div>
+    <div class="pub-links" style="margin-top:8px;">
+      <a href="https://arxiv.org/abs/2508.03538">arXiv</a>
+    </div>
+    <p class="pub-sum">
+      This conference paper explores associations between retinal microvascular traits and lipidomic
+      profiles, identifying candidate non-invasive biomarkers for cardiovascular risk.
     </p>
   </div>
 </div>
 
 <hr>
 
-<div style="display:flex; gap:16px; align-items:flex-start; margin-bottom:22px;">
-  <img src="/images/scirep-2025.png" alt="Scientific Reports 2025" style="width:140px; border-radius:10px;">
+<div class="pub-card">
+  <div class="pub-img-wrap">
+    <img class="pub-img floaty" src="/images/nature-review-2025.png" alt="Scientific Reports submission">
+  </div>
   <div>
-    <strong>Integrated Oculomics and Lipidomics Reveal Microvascular Metabolic Signatures Associated with Cardiovascular Health in a Healthy Cohort</strong><br>
-    <em>Under Review — Scientific Reports</em>, 2025<br>
-    <a href="https://arxiv.org/abs/2507.12663">arXiv</a>
-    <p style="margin-top:8px;">
-      This study integrates retinal imaging with lipidomics to uncover microvascular–metabolic signatures linked to cardiovascular health in a healthy population. By combining statistical analysis with interpretable modelling, the work highlights pathway-level interactions across biological scales.
+    <div class="pub-title">
+      <strong>Integrated Oculomics and Lipidomics Reveal Microvascular Metabolic Signatures Associated with Cardiovascular Health</strong>
+    </div>
+    <div class="pub-meta"><em>Under Review — Scientific Reports (Nature Portfolio)</em></div>
+    <div class="pub-links" style="margin-top:8px;">
+      <a href="https://arxiv.org/abs/2507.12663">arXiv</a>
+    </div>
+    <p class="pub-sum">
+      This study integrates retinal imaging with lipidomic profiles in a healthy cohort, revealing
+      microvascular-metabolic signatures linked to cardiovascular health and systemic regulation.
     </p>
   </div>
 </div>
+
