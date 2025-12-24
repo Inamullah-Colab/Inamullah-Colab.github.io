@@ -1,5 +1,4 @@
 ---
-permalink: /publications/
 layout: single
 author_profile: true
 ---
@@ -11,14 +10,12 @@ author_profile: true
   margin-bottom:1.2em;
   letter-spacing:0.5px;
 ">
-  #Publications
 </h1>
 
 <p style="text-align:center; max-width:900px; margin:0 auto 2em auto; opacity:0.9;">
   Peer-reviewed journal articles and conference contributions at the intersection of
-  retinal imaging, artificial intelligence, oculomics, and systemic health.
+  retinal imaging, artificial intelligence, oculomics, and systemic health are listed below. 
 </p>
-
 
 
 <div class="pub-card">
