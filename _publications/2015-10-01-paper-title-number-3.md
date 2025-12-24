@@ -1,14 +1,17 @@
 ---
-title: "Paper Title Number 3"
+title: "The Eye as a Window to Systemic Health: An Oculomics Survey"
 collection: publications
-category: manuscripts
-permalink: /publication/2015-10-01-paper-title-number-3
-excerpt: 'This paper is about the number 3. The number 4 is left for future work.'
-date: 2015-10-01
-venue: 'Journal 1'
-slidesurl: 'https://academicpages.github.io/files/slides3.pdf'
-paperurl: 'https://academicpages.github.io/files/paper3.pdf'
-citation: 'Your Name, You. (2015). &quot;Paper Title Number 3.&quot; <i>Journal 1</i>. 1(3).'
+permalink: /publication/oculomics-survey-2025/
 ---
 
-The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
+<div style="display:flex; gap:16px; align-items:flex-start; margin-bottom:18px;">
+  <img src="/images/oculomics-2025.png" alt="Oculomics Survey 2025" style="width:140px; border-radius:10px;">
+  <div>
+    <strong>The Eye as a Window to Systemic Health: A Survey of Retinal Imaging from Classical Techniques to Oculomics</strong><br>
+    <em>The Journal of Precision Medicine: Health and Disease</em>, 2025<br>
+    <a href="https://www.sciencedirect.com/science/article/pii/S305063282500023X">Paper</a>
+    <p style="margin-top:8px;">
+      This survey reviews the evolution of retinal imaging from classical ophthalmic techniques to modern AI-driven oculomics. It synthesises evidence showing how retinal microvascular features can act as non-invasive biomarkers of systemic health, while outlining open challenges and future research directions.
+    </p>
+  </div>
+</div>
