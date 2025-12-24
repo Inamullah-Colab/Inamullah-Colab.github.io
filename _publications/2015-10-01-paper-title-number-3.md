@@ -1,7 +1,7 @@
 ---
 title: "The Eye as a Window to Systemic Health: An Oculomics Survey"
-collection: publications
-permalink: /publication/oculomics-survey-2025/
+permalink: /publications/
+author_profile: true
 ---
 
 <div style="display:flex; gap:16px; align-items:flex-start; margin-bottom:18px;">
