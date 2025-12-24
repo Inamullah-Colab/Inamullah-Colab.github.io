@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am Inamullah, a PhD student at the https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science University of Southampton, researching the retinal vasculature to explore the fine-grained features present within the intricate human structures and to investigate the connectivity with physiological, anatomical, and embryological aspects of other human parts. Doing so requires a deeper insight to examine various biological data, such as clinical, imaging, omics, and other biological data, which give rise to the new, emerging fields coined Ocoulomics.  
+I am Inamullah, a PhD student at the [https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science)(https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science) in the (https://www.southampton.ac.uk/study/undergraduate?utm_value=&msclkid=935b613827011c982ce40873811efca2&utm_source=bing&utm_medium=cpc&utm_campaign=Corporate_UG_Brand_2022&utm_term=university%20of%20southampton&utm_content=University%20of%20Southampton), researching the retinal vasculature to explore the fine-grained features present within the intricate human structures and to investigate the connectivity with physiological, anatomical, and embryological aspects of other human parts. Doing so requires a deeper insight to examine various biological data, such as clinical, imaging, omics, and other biological data, which give rise to the new, emerging fields coined Ocoulomics.  
 
 A data-driven personal website
 ======
