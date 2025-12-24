@@ -23,7 +23,7 @@ This work aligns closely with the emerging field of **oculomics**, which leverag
 
 My academic path has evolved through a combination of interdisciplinary training, professional experience, and personal motivation, ultimately converging on medically oriented computational research.
 
-Before beginning my doctoral studies, I completed a **Master’s degree in medical imaging**, where I gained hands-on experience in image analysis, computational modelling, and data-driven approaches applied to biomedical problems. This stage of my training played a formative role in connecting my technical background to healthcare-focused research questions.
+Before beginning my doctoral studies, I completed a **Master’s degree in Computer Science**, with a major focus on **artificial intelligence for medical imaging**. During this programme, I developed practical experience in image analysis, computational modelling, and data-driven methods applied to biomedical problems. This stage of my training played a formative role in connecting my technical background to healthcare-focused research questions.
 
 Prior to this, I earned a **Bachelor’s degree with a combined emphasis on physics, mathematics, and computer science**, providing a strong foundation in analytical reasoning, mathematical formulation, and algorithmic thinking. Earlier still, I completed a **three-year diploma in civil engineering** and subsequently accumulated **over two years of professional experience** in this field. This early exposure to engineering practice fostered a pragmatic mindset, systems-level thinking, and an appreciation for real-world constraints, qualities that continue to influence my research approach.
 
@@ -39,23 +39,6 @@ My current PhD work represents the synthesis of these experiences. By combining 
 
 **Artificial Intelligence**, **Machine Learning**, **Interpretable Models**, **Causal and Mediation Analysis**, **Graphical and Network Models**, **Bayesian Methods**, **Mathematical Modelling**, **Medical Imaging**, **Retinal Microvasculature**, **Oculomics**, **Multi-Omics Integration**, **Genetic Variation**, **Clinical Phenotyping**, **Systemic Disease**, **Biomarker Discovery**, **Precision Medicine**
 
-
-
-Early Career Before Joining Phd
-======
-My academic and professional journey has been shaped by a combination of diverse training, lived experience, and a long-standing motivation to contribute meaningfully to healthcare-related research.
-
-Before beginning my doctoral studies, I completed a master’s degree in medical imaging, where I developed practical experience in image analysis, computational modeling, and data-driven methods applied to biomedical problems. This work marked a pivotal point in my academic development, as it allowed me to bridge my technical background with my long-standing interest in medical and healthcare applications.
-
-Prior to my master’s studies, I earned a bachelor’s degree with a combined focus on physics, mathematics, and computer science. This interdisciplinary training provided a strong theoretical foundation in analytical thinking, mathematical modelling, and computational problem-solving—skills that continue to underpin my current research approach. Even earlier, I completed a three-year diploma in civil engineering, followed by over two years of professional experience in this field. This early professional exposure instilled in me a strong sense of practical reasoning, structural thinking, and responsibility in real-world settings.
-
-Beyond formal education, my motivation to work in medically relevant research is deeply personal. I come from **Bajaur Agency**, a remote tribal region in Pakistan near the Pakistan–Afghanistan border, where access to basic healthcare services, medical facilities, and medication has historically been extremely limited. Growing up in an environment where medical needs were often unmet shaped my awareness of health inequalities from an early age and fostered a strong desire to contribute—directly or indirectly—to improving health outcomes for underserved populations.
-
-Although unstable circumstances prevented me from pursuing a traditional medical career, this motivation has remained central to my academic direction. Over time, I came to recognise that **computational science, engineering, and data-driven methods** offer powerful alternative pathways to contribute to medicine and healthcare. This realisation led me to progressively integrate my background in physics, mathematics, computer science, engineering, and medical imaging into a coherent research trajectory.
-
-My current PhD research represents the convergence of these experiences. By integrating retinal imaging, clinical data, lipidomics, and genetic information, and by developing mathematical, statistical, and interpretable machine learning methods to model latent, mediated, and confounded biological relationships, my work aims to uncover mechanistic insights into systemic health through non-invasive biomarkers. This approach allows me to engage with medically meaningful problems while contributing methodological rigor and interpretability, an intersection that aligns closely with my long-term interests and values.
-
-Overall, my research path reflects both intellectual curiosity and personal motivation. It brings together diverse technical foundations and a sustained commitment to healthcare-oriented impact, positioning my work at the intersection of **AI, biomedical data science, and translational medical research**.
 
 
 Research Keywords
