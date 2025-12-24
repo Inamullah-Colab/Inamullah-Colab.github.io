@@ -36,7 +36,7 @@ author_profile: true
 <hr>
 
 <div style="display:flex; gap:16px; align-items:flex-start; margin-bottom:22px;">
-  <img src="/images/oculomics-2025.png" alt="Oculomics Survey 2025" style="width:140px; border-radius:10px;">
+  <img src="/images/jpmhd-2025.png" alt="Oculomics Survey 2025" style="width:140px; border-radius:10px;">
   <div>
     <strong>The Eye as a Window to Systemic Health: A Survey of Retinal Imaging from Classical Techniques to Oculomics</strong><br>
     <em>The Journal of Precision Medicine: Health and Disease</em>, 2025<br>
