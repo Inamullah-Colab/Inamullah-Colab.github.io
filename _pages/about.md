@@ -39,8 +39,3 @@ My current PhD work represents the synthesis of these experiences. By combining 
 
 **Artificial Intelligence**, **Machine Learning**, **Interpretable Models**, **Causal and Mediation Analysis**, **Graphical and Network Models**, **Bayesian Methods**, **Mathematical Modelling**, **Medical Imaging**, **Retinal Microvasculature**, **Oculomics**, **Multi-Omics Integration**, **Genetic Variation**, **Clinical Phenotyping**, **Systemic Disease**, **Biomarker Discovery**, **Precision Medicine**
 
-
-
-Research Keywords
-------
-Artificial Intelligence, Machine learning, Deep learning, Graphical models, Bayesian Non-parametrics, Mathematical Modeling, Medical Imaging, Retinal Vasculature, Oculomics, Genomics, Systemic Diseases, Biomarkers, Phenotypes, Genotypes, Precision medicine
