@@ -1,7 +1,7 @@
 ---
 title: "Data Diversity in CNN-Based Ensemble Model for Diabetic Retinopathy"
 collection: publications
-permalink: /publications/biomimetics-2023/
+author_profile: true
 ---
 
 <div style="display:flex; gap:16px; align-items:flex-start; margin-bottom:18px;">
