@@ -34,9 +34,8 @@ author_profile: true
       <a href="https://www.mdpi.com/2313-7673/8/2/187">Journal</a>
     </div>
     <p class="pub-sum">
-      This work demonstrates how architectural and data-level diversity in CNN-based ensemble models
-      improves robustness when medical imaging datasets are imbalanced or limited, using diabetic
-      retinopathy as a case study.
+      This study systematically analyses how ensemble diversity mitigates data scarcity in medical
+      imaging, offering insights into model generalisation under real-world clinical constraints.
     </p>
   </div>
 </div>
@@ -56,8 +55,9 @@ author_profile: true
       <a href="https://www.sciencedirect.com/science/article/pii/S2352914824001138">Journal</a>
     </div>
     <p class="pub-sum">
-      This study systematically analyses how ensemble diversity mitigates data scarcity in medical
-      imaging, offering insights into model generalisation under real-world clinical constraints.
+      This work demonstrates how architectural and data-level diversity in CNN-based ensemble models
+      improves robustness when medical imaging datasets are imbalanced or limited, using diabetic
+      Retinopathy as a case study.
     </p>
   </div>
 </div>
