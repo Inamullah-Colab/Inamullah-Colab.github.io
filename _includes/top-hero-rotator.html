@@ -1,0 +1,142 @@
+<style>
+  .top-hero-rotator{
+    width:100%;
+    height:210px;
+    overflow:hidden;
+    background:#071018;
+    position:relative;
+  }
+  .top-hero-rotator .slide{
+    position:absolute; inset:0;
+    opacity:0;
+    transform:scale(1.02);
+    transition:opacity 900ms ease, transform 1200ms ease;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .top-hero-rotator .slide.active{ opacity:1; transform:scale(1); }
+  .top-hero-rotator img,
+  .top-hero-rotator video{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+    display:block;
+  }
+  .top-hero-rotator .overlay{
+    position:absolute; inset:0;
+    background:linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,.10), rgba(0,0,0,.35));
+    pointer-events:none;
+  }
+  .top-hero-rotator .caption{
+    position:absolute; left:18px; bottom:14px; right:18px;
+    color:#fff; font-weight:700; font-size:18px;
+    text-shadow:0 2px 18px rgba(0,0,0,.55);
+    z-index:3;
+  }
+  .top-hero-rotator .dots{
+    position:absolute; right:14px; bottom:14px;
+    display:flex; gap:8px; z-index:3;
+  }
+  .top-hero-rotator .dot{
+    width:9px; height:9px; border-radius:999px;
+    background:rgba(255,255,255,.45);
+    border:1px solid rgba(255,255,255,.25);
+    cursor:pointer;
+  }
+  .top-hero-rotator .dot.active{ background:rgba(255,255,255,.95); }
+
+  @media (max-width:768px){
+    .top-hero-rotator{ height:150px; }
+    .top-hero-rotator img, .top-hero-rotator video{ height:150px; }
+    .top-hero-rotator .caption{ font-size:14px; }
+  }
+</style>
+
+<div class="top-hero-rotator" id="topHeroRotator">
+  <div class="slide active" data-type="image">
+    <img src="{{ '/images/jpmhd-2025.png' | relative_url }}" alt="Slide 1">
+  </div>
+
+  <div class="slide" data-type="image">
+    <img src="{{ '/images/Systemic_Health.png' | relative_url }}" alt="Slide 2">
+  </div>
+
+  <div class="slide" data-type="image">
+    <img src="{{ '/images/Retinal_imaging_modalities.png' | relative_url }}" alt="Slide 3">
+  </div>
+
+  <div class="slide" data-type="video" data-duration="5000">
+    <video muted playsinline preload="metadata">
+      <source src="{{ '/files/Motion_video.mp4' | relative_url }}" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="overlay"></div>
+  <div class="caption">Retinal imaging • multi-omics • clinical phenotypes • interpretable AI</div>
+  <div class="dots" id="topHeroDots"></div>
+</div>
+
+<script>
+(function () {
+  const rotator = document.getElementById("topHeroRotator");
+  if (!rotator) return;
+
+  const slides = Array.from(rotator.querySelectorAll(".slide"));
+  const dotsWrap = document.getElementById("topHeroDots");
+
+  let idx = 0;
+  let timer = null;
+
+  function buildDots() {
+    if (!dotsWrap) return;
+    dotsWrap.innerHTML = "";
+    slides.forEach((_, i) => {
+      const d = document.createElement("div");
+      d.className = "dot" + (i === 0 ? " active" : "");
+      d.addEventListener("click", () => goTo(i));
+      dotsWrap.appendChild(d);
+    });
+  }
+
+  function setDot(i) {
+    if (!dotsWrap) return;
+    Array.from(dotsWrap.children).forEach((d, k) => d.classList.toggle("active", k === i));
+  }
+
+  function stopAllVideos() {
+    slides.forEach(s => {
+      const v = s.querySelector("video");
+      if (v) { v.pause(); v.currentTime = 0; }
+    });
+  }
+
+  function durationFor(slide) {
+    const t = slide.getAttribute("data-type");
+    if (t === "video") {
+      const d = parseInt(slide.getAttribute("data-duration") || "6000", 10);
+      return Number.isFinite(d) ? d : 6000;
+    }
+    return 4000;
+  }
+
+  function goTo(newIdx) {
+    clearTimeout(timer);
+    stopAllVideos();
+
+    slides[idx].classList.remove("active");
+    idx = (newIdx + slides.length) % slides.length;
+    slides[idx].classList.add("active");
+    setDot(idx);
+
+    const active = slides[idx];
+    if (active.getAttribute("data-type") === "video") {
+      const v = active.querySelector("video");
+      if (v) v.play().catch(() => {});
+    }
+
+    timer = setTimeout(() => goTo(idx + 1), durationFor(active));
+  }
+
+  buildDots();
+  timer = setTimeout(() => goTo(1), durationFor(slides[0]));
+})();
+</script>
