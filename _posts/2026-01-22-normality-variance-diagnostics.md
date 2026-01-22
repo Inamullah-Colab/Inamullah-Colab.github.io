@@ -18,9 +18,15 @@ Below is a ready-to-publish write-up that explains why these checks matter, how 
 
 ## Code (how to reproduce the diagnostics)
 
-The script used to compute the test summaries and plots is included here:
+The script used to compute the test summaries and plots is included here (path in the site repo):
 
-`/assets/normality-report/normality_tests.py`
+`assets/normality-report/normality_tests.py`
+
+To run it locally:
+
+```bash
+python assets/normality-report/normality_tests.py
+```
 
 ## 1) Why check normality and variance before causal discovery?
 
