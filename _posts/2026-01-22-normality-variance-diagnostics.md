@@ -24,7 +24,7 @@ The script used to compute the test summaries and plots is included here:
 
 ## 1) Why check normality and variance before causal discovery?
 
-Causal discovery is not one algorithm, it is a family of methods with different assumptions. In practice, performance and identifiability depend on:
+Causal discovery is not one algorithm, it is a family of methods with different assumptions. In practice, performance and identifiability depend on these assumptions (Spirtes et al., 2000) [1]:
 
 - Linearity vs. nonlinearity
 - Gaussian vs. non-Gaussian noise
@@ -54,10 +54,10 @@ The benchmark uses synthetic datasets with different dimensionalities. The numbe
 
 A normality test checks whether a variable looks like it came from a Gaussian distribution. Each test emphasizes different departures:
 
-- Shapiro-Wilk: strong for small samples and common in practice.
-- D'Agostino K2: combines skewness and kurtosis, good for moderate/large n.
-- Jarque-Bera: another skew/kurtosis omnibus test.
-- Anderson-Darling: more sensitive in the tails.
+- Shapiro-Wilk: strong for small samples and common in practice [2].
+- D'Agostino K2: combines skewness and kurtosis, good for moderate/large n [3].
+- Jarque-Bera: another skew/kurtosis omnibus test [4].
+- Anderson-Darling: more sensitive in the tails [5].
 
 Important: with many variables, some tests will fail even if the data is mostly normal. That is why I read p-values together with skew/kurtosis and the plots.
 
@@ -90,50 +90,50 @@ Important: with many variables, some tests will fail even if the data is mostly 
 
 ### HighDim-S_data (200 vars): clean Gaussian-like
 Pass rates are near 0.95 across tests and skew/kurtosis are close to zero. This is the linear-Gaussian comfort zone.
-Suggested methods: PC or NOTEARS.
+Suggested methods: PC or NOTEARS, which are typically strong in linear-Gaussian regimes [1,6].
 
 ![HighDim-S p-values](/assets/normality-report/pvalues_HighDim-S_data.png)
 ![HighDim-S QQ + hist](/assets/normality-report/qq_hist_HighDim-S_data.png)
 
 ### HighDim-D_data (200 vars): extreme tails
 Pass rates are low (about 0.41 to 0.46) and skew/kurtosis are extremely large. This is strongly non-Gaussian.
-Suggested methods: LiNGAM; GraNDAG if you expect nonlinear mechanisms.
+Suggested methods: LiNGAM; GraNDAG if you expect nonlinear mechanisms [7,8].
 
 ![HighDim-D p-values](/assets/normality-report/pvalues_HighDim-D_data.png)
 ![HighDim-D QQ + hist](/assets/normality-report/qq_hist_HighDim-D_data.png)
 
 ### LowDim datasets (20 vars): mostly Gaussian
 All LowDim variants have high pass rates and low skew/kurtosis. Minor tails show up in LowDim-D, but nothing severe.
-Suggested methods: PC or NOTEARS. LiNGAM is not required here.
+Suggested methods: PC or NOTEARS. LiNGAM is not required here [1,6].
 
 ![LowDim-D p-values](/assets/normality-report/pvalues_LowDim-D_data.png)
 ![LowDim-D QQ + hist](/assets/normality-report/qq_hist_LowDim-D_data.png)
 
 ### MidDim-D_data (100 vars): heavy tails
 Pass rates drop to around 0.78 to 0.82 and skew/kurtosis are elevated. This is non-Gaussian.
-Suggested methods: LiNGAM; GraNDAG if you suspect nonlinear structure.
+Suggested methods: LiNGAM; GraNDAG if you suspect nonlinear structure [7,8].
 
 ![MidDim-D p-values](/assets/normality-report/pvalues_MidDim-D_data.png)
 ![MidDim-D QQ + hist](/assets/normality-report/qq_hist_MidDim-D_data.png)
 
 ### MidDim-S_data (100 vars): mixed behavior
 Pass rates are reasonably high, but kurtosis is elevated. This suggests some heavy-tailed variables even when many pass normality.
-Suggested methods: PC/NOTEARS can work, but LiNGAM may gain from the non-Gaussian subset.
+Suggested methods: PC/NOTEARS can work, but LiNGAM may gain from the non-Gaussian subset [1,6,7].
 
 ![MidDim-S p-values](/assets/normality-report/pvalues_MidDim-S_data.png)
 ![MidDim-S QQ + hist](/assets/normality-report/qq_hist_MidDim-S_data.png)
 
 ## 7) Practical guidance for method choice
 
-Regime A: near Gaussian (high pass-rate, low skew/kurt)
+Regime A: near Gaussian (high pass-rate, low skew/kurt) [1,6]
 - Recommended: PC, NOTEARS
 - Optional: GraNDAG if you expect nonlinear relations
 
-Regime B: clearly non-Gaussian (tails or skew)
+Regime B: clearly non-Gaussian (tails or skew) [7]
 - Recommended: LiNGAM
 - Also viable: PC/NOTEARS with robust preprocessing
 
-Regime C: mixed or nonlinear
+Regime C: mixed or nonlinear [8]
 - Recommended: GraNDAG
 - Compare against: PC/NOTEARS as baselines
 
@@ -141,7 +141,7 @@ Regime C: mixed or nonlinear
 
 In high dimensions we run one test per variable. Some rejections are expected by chance. Also, with large n, tests become very sensitive and can reject for tiny deviations. That is why the plots and skew/kurtosis matter as much as the p-values.
 
-If this were a formal hypothesis testing exercise, I would treat it as a multiple testing problem. Here, the goal is to characterize the data regime, not to "prove" normality.
+If this were a formal hypothesis testing exercise, I would treat it as a multiple testing problem. Here, the goal is to characterize the data regime, not to "prove" normality (Benjamini and Hochberg, 1995) [9].
 
 ## 9) Limitations and next steps
 
@@ -151,11 +151,12 @@ If this were a formal hypothesis testing exercise, I would treat it as a multipl
 
 ## References
 
-- Shapiro, S. S., & Wilk, M. B. (1965). An analysis of variance test for normality (complete samples). Biometrika.
-- D'Agostino, R. (1973). Tests for departure from normality: empirical results for the distributions of b2 and sqrt(b1). Biometrika.
-- Jarque, C. M., & Bera, A. K. (1980). Efficient tests for normality, homoscedasticity and serial independence of regression residuals. Economics Letters.
-- Anderson, T. W., & Darling, D. A. (1954). A test of goodness of fit. Journal of the American Statistical Association.
-- Spirtes, P., Glymour, C., & Scheines, R. (2000). Causation, Prediction, and Search (2nd ed.). MIT Press.
-- Zheng, X., Aragam, B., Ravikumar, P., & Xing, E. (2018). DAGs with NO TEARS: Continuous Optimization for Structure Learning. NeurIPS.
-- Shimizu, S., Hoyer, P. O., Hyvarinen, A., & Kerminen, A. (2006). A Linear Non-Gaussian Acyclic Model for Causal Discovery. JMLR.
-- Lachapelle, S., Brouillard, P., Deleu, T., & Lacoste-Julien, S. (2019). Gradient-Based Neural DAG Learning. ICLR.
+- [1] Spirtes, P., Glymour, C., & Scheines, R. (2000). Causation, Prediction, and Search (2nd ed.). MIT Press.
+- [2] Shapiro, S. S., & Wilk, M. B. (1965). An analysis of variance test for normality (complete samples). Biometrika.
+- [3] D'Agostino, R. (1973). Tests for departure from normality: empirical results for the distributions of b2 and sqrt(b1). Biometrika.
+- [4] Jarque, C. M., & Bera, A. K. (1980). Efficient tests for normality, homoscedasticity and serial independence of regression residuals. Economics Letters.
+- [5] Anderson, T. W., & Darling, D. A. (1954). A test of goodness of fit. Journal of the American Statistical Association.
+- [6] Zheng, X., Aragam, B., Ravikumar, P., & Xing, E. (2018). DAGs with NO TEARS: Continuous Optimization for Structure Learning. NeurIPS.
+- [7] Shimizu, S., Hoyer, P. O., Hyvarinen, A., & Kerminen, A. (2006). A Linear Non-Gaussian Acyclic Model for Causal Discovery. JMLR.
+- [8] Lachapelle, S., Brouillard, P., Deleu, T., & Lacoste-Julien, S. (2019). Gradient-Based Neural DAG Learning. ICLR.
+- [9] Benjamini, Y., & Hochberg, Y. (1995). Controlling the false discovery rate: a practical and powerful approach to multiple testing. JRSS-B.
