@@ -1,6 +1,8 @@
 ---
 title: "Normality and Variance Diagnostics for Causal Discovery"
-date: 2026-01-22
+date: 2026-01-22 20:45:00 +0000
+last_modified_at: 2026-01-22 20:45:00 +0000
+published: true
 permalink: /posts/2026/01/normality-variance-diagnostics/
 tags:
   - causal discovery
