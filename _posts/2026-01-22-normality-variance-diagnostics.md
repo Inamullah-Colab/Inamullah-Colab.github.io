@@ -16,6 +16,12 @@ tags:
 
 Below is a ready-to-publish write-up that explains why these checks matter, how the tests behave, and what our synthetic results suggest for method choice.
 
+## Code (how to reproduce the diagnostics)
+
+The script used to compute the test summaries and plots is included here:
+
+`/assets/normality-report/normality_tests.py`
+
 ## 1) Why check normality and variance before causal discovery?
 
 Causal discovery is not one algorithm, it is a family of methods with different assumptions. In practice, performance and identifiability depend on:
