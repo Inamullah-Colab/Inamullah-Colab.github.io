@@ -16,6 +16,23 @@ tags:
 
 This post explains why we check normality and variance before running causal discovery, shows the plots, and gives dataset-level guidance based on the results.
 
+## Synthetic datasets at a glance
+
+These are synthetic datasets generated to represent different dimensionalities. The number of variables is shown below:
+
+| Dataset         | Variables |
+|----------------|-----------|
+| LowDim-D_data  | 20        |
+| LowDim-L_data  | 20        |
+| LowDim-N_data  | 20        |
+| LowDim-P_data  | 20        |
+| MidDim-C_data  | 50        |
+| MidDim-D_data  | 100       |
+| MidDim-P_data  | 100       |
+| MidDim-S_data  | 100       |
+| HighDim-D_data | 200       |
+| HighDim-S_data | 200       |
+
 ## Why we do this
 
 Many causal discovery methods assume something about the data distribution:
@@ -25,6 +42,17 @@ Many causal discovery methods assume something about the data distribution:
 - GraNDAG is more flexible for nonlinear patterns but heavier to train.
 
 So before modeling, we first check how Gaussian each dataset looks. This helps select the most suitable algorithm.
+
+## What a normality test is (and which ones we use)
+
+A normality test checks whether a variable's distribution is close to a Gaussian (normal) distribution. Each test focuses on a different aspect:
+
+- **Shapiro-Wilk**: strong for small samples; often used when n <= 5,000.
+- **D'Agostino K2**: uses skewness and kurtosis to detect departures from normality; better for larger samples.
+- **Jarque-Bera**: also based on skewness and kurtosis; quick and common.
+- **Anderson-Darling**: more sensitive to tail behavior than standard tests.
+
+We evaluate many columns (one test per variable). With many variables, some failures are expected even if the data is mostly normal.
 
 ## Overview plots
 
@@ -60,6 +88,13 @@ How to read this table:
 - Large mean absolute skew or kurtosis means stronger non-Gaussian behavior.
 
 ## Dataset notes and recommended algorithms
+
+### How to read the graphs
+
+- **Pass-rate plot**: higher is more Gaussian-like across columns.
+- **Skew vs kurtosis scatter**: points near (0, 0) indicate normality; large values imply heavy tails or skew.
+- **P-value histograms**: if many values are close to 0, the dataset is likely non-Gaussian.
+- **QQ plots**: straight line means Gaussian; curvature means skew or heavy tails.
 
 ### HighDim-D_data
 - Very low pass rates and extreme skew/kurtosis.
