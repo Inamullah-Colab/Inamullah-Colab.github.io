@@ -14,7 +14,7 @@ tags:
   - GraNDAG
 ---
 
-Below is a ready-to-publish write-up that explains why these checks matter, how the tests behave, and what our synthetic results suggest for method choice.
+This write-up explains why these checks matter, how the tests behave, and what our synthetic results suggest for method choice.
 
 ## Code (how to reproduce the diagnostics)
 
