@@ -41,20 +41,20 @@ That is why I run a lightweight diagnostic suite before modeling. It keeps the c
 
 ## 2) Synthetic datasets at a glance
 
-The benchmark uses synthetic datasets with different dimensionalities. The number of variables per dataset is:
+The benchmark uses synthetic datasets with different dimensionalities. Each dataset has **6,000 rows** and the following number of columns:
 
-| Dataset         | Variables |
-|----------------|-----------|
-| LowDim-D_data  | 20        |
-| LowDim-L_data  | 20        |
-| LowDim-N_data  | 20        |
-| LowDim-P_data  | 20        |
-| MidDim-C_data  | 50        |
-| MidDim-D_data  | 100       |
-| MidDim-P_data  | 100       |
-| MidDim-S_data  | 100       |
-| HighDim-D_data | 200       |
-| HighDim-S_data | 200       |
+| Dataset         | Shape (rows x columns) |
+|----------------|------------------------|
+| LowDim-D_data  | 6000 x 20              |
+| LowDim-L_data  | 6000 x 20              |
+| LowDim-N_data  | 6000 x 20              |
+| LowDim-P_data  | 6000 x 20              |
+| MidDim-C_data  | 6000 x 50              |
+| MidDim-D_data  | 6000 x 100             |
+| MidDim-P_data  | 6000 x 100             |
+| MidDim-S_data  | 6000 x 100             |
+| HighDim-D_data | 6000 x 200             |
+| HighDim-S_data | 6000 x 200             |
 
 ## 3) What normality tests actually test
 
