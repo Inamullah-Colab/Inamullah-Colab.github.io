@@ -14,11 +14,22 @@ tags:
   - GraNDAG
 ---
 
-This post explains why we check normality and variance before running causal discovery, shows the plots, and gives dataset-level guidance based on the results.
+Below is a ready-to-publish write-up that explains why these checks matter, how the tests behave, and what our synthetic results suggest for method choice.
 
-## Synthetic datasets at a glance
+## 1) Why check normality and variance before causal discovery?
 
-These are synthetic datasets generated to represent different dimensionalities. The number of variables is shown below:
+Causal discovery is not one algorithm, it is a family of methods with different assumptions. In practice, performance and identifiability depend on:
+
+- Linearity vs. nonlinearity
+- Gaussian vs. non-Gaussian noise
+- Tail heaviness and outliers
+- Scale and variance stability across variables
+
+That is why I run a lightweight diagnostic suite before modeling. It keeps the comparison fair and helps avoid the common trap where one method "wins" just because the data matches its assumptions.
+
+## 2) Synthetic datasets at a glance
+
+The benchmark uses synthetic datasets with different dimensionalities. The number of variables per dataset is:
 
 | Dataset         | Variables |
 |----------------|-----------|
@@ -33,42 +44,28 @@ These are synthetic datasets generated to represent different dimensionalities. 
 | HighDim-D_data | 200       |
 | HighDim-S_data | 200       |
 
-## Why we do this
+## 3) What normality tests actually test
 
-Many causal discovery methods assume something about the data distribution:
+A normality test checks whether a variable looks like it came from a Gaussian distribution. Each test emphasizes different departures:
 
-- PC and NOTEARS (linear-Gaussian) usually work best when variables are close to Gaussian.
-- LiNGAM depends on non-Gaussian noise to recover causal directions.
-- GraNDAG is more flexible for nonlinear patterns but heavier to train.
+- Shapiro-Wilk: strong for small samples and common in practice.
+- D'Agostino K2: combines skewness and kurtosis, good for moderate/large n.
+- Jarque-Bera: another skew/kurtosis omnibus test.
+- Anderson-Darling: more sensitive in the tails.
 
-So before modeling, we first check how Gaussian each dataset looks. This helps select the most suitable algorithm.
+Important: with many variables, some tests will fail even if the data is mostly normal. That is why I read p-values together with skew/kurtosis and the plots.
 
-## What a normality test is (and which ones we use)
+## 4) Overview plots (quick reading guide)
 
-A normality test checks whether a variable's distribution is close to a Gaussian (normal) distribution. Each test focuses on a different aspect:
-
-- **Shapiro-Wilk**: strong for small samples; often used when n <= 5,000.
-- **D'Agostino K2**: uses skewness and kurtosis to detect departures from normality; better for larger samples.
-- **Jarque-Bera**: also based on skewness and kurtosis; quick and common.
-- **Anderson-Darling**: more sensitive to tail behavior than standard tests.
-
-We evaluate many columns (one test per variable). With many variables, some failures are expected even if the data is mostly normal.
-
-## Overview plots
-
-### Pass-rate overview
-
-This shows the fraction of columns that pass each normality test (p >= 0.05).
+- Pass-rate plot: higher means more Gaussian-like across columns.
+- Skew vs kurtosis: points near (0, 0) are closer to normality.
+- P-value histograms: a pile-up near 0 suggests non-Gaussianity.
+- QQ plots: straight line means Gaussian; curvature means skew or heavy tails.
 
 ![Pass rates by dataset](/assets/normality-report/pass_rate_by_dataset.png)
-
-### Skew vs kurtosis
-
-Points near (0, 0) are close to Gaussian. Large deviations indicate skew or heavy tails.
-
 ![Skew vs kurtosis scatter](/assets/normality-report/skew_kurtosis_scatter.png)
 
-## Dataset summary table
+## 5) Dataset summary table (from the diagnostics)
 
 | Dataset         | n_cols | Shapiro pass | K2 pass | JB pass | AD pass | mean |skew| | mean |kurt| |
 |----------------|--------|--------------|---------|---------|---------|-----------|-----------|
@@ -83,91 +80,76 @@ Points near (0, 0) are close to Gaussian. Large deviations indicate skew or heav
 | MidDim-P_data  | 100    | 0.970        | 0.970   | 0.970   | 0.980   | 0.024     | 0.048     |
 | MidDim-S_data  | 100    | 0.920        | 0.940   | 0.940   | 0.920   | 0.582     | 27.523    |
 
-How to read this table:
-- Pass rate near 1.0 means many columns look Gaussian.
-- Large mean absolute skew or kurtosis means stronger non-Gaussian behavior.
+## 6) What the results suggest (dataset by dataset)
 
-## Dataset notes and recommended algorithms
-
-### How to read the graphs
-
-- **Pass-rate plot**: higher is more Gaussian-like across columns.
-- **Skew vs kurtosis scatter**: points near (0, 0) indicate normality; large values imply heavy tails or skew.
-- **P-value histograms**: if many values are close to 0, the dataset is likely non-Gaussian.
-- **QQ plots**: straight line means Gaussian; curvature means skew or heavy tails.
-
-### HighDim-D_data
-- Very low pass rates and extreme skew/kurtosis.
-- Suggestion: LiNGAM or GraNDAG if you expect nonlinear relationships.
-
-![HighDim-D p-values](/assets/normality-report/pvalues_HighDim-D_data.png)
-![HighDim-D QQ + hist](/assets/normality-report/qq_hist_HighDim-D_data.png)
-
-### HighDim-S_data
-- Very Gaussian-like.
-- Suggestion: PC or NOTEARS.
+### HighDim-S_data (200 vars): clean Gaussian-like
+Pass rates are near 0.95 across tests and skew/kurtosis are close to zero. This is the linear-Gaussian comfort zone.
+Suggested methods: PC or NOTEARS.
 
 ![HighDim-S p-values](/assets/normality-report/pvalues_HighDim-S_data.png)
 ![HighDim-S QQ + hist](/assets/normality-report/qq_hist_HighDim-S_data.png)
 
-### LowDim-D_data
-- Mostly Gaussian with mild tails.
-- Suggestion: PC or NOTEARS.
+### HighDim-D_data (200 vars): extreme tails
+Pass rates are low (about 0.41 to 0.46) and skew/kurtosis are extremely large. This is strongly non-Gaussian.
+Suggested methods: LiNGAM; GraNDAG if you expect nonlinear mechanisms.
+
+![HighDim-D p-values](/assets/normality-report/pvalues_HighDim-D_data.png)
+![HighDim-D QQ + hist](/assets/normality-report/qq_hist_HighDim-D_data.png)
+
+### LowDim datasets (20 vars): mostly Gaussian
+All LowDim variants have high pass rates and low skew/kurtosis. Minor tails show up in LowDim-D, but nothing severe.
+Suggested methods: PC or NOTEARS. LiNGAM is not required here.
 
 ![LowDim-D p-values](/assets/normality-report/pvalues_LowDim-D_data.png)
 ![LowDim-D QQ + hist](/assets/normality-report/qq_hist_LowDim-D_data.png)
 
-### LowDim-L_data
-- Very Gaussian-like.
-- Suggestion: PC or NOTEARS.
-
-![LowDim-L p-values](/assets/normality-report/pvalues_LowDim-L_data.png)
-![LowDim-L QQ + hist](/assets/normality-report/qq_hist_LowDim-L_data.png)
-
-### LowDim-N_data
-- Gaussian-like.
-- Suggestion: PC or NOTEARS.
-
-![LowDim-N p-values](/assets/normality-report/pvalues_LowDim-N_data.png)
-![LowDim-N QQ + hist](/assets/normality-report/qq_hist_LowDim-N_data.png)
-
-### LowDim-P_data
-- Gaussian-like.
-- Suggestion: PC or NOTEARS.
-
-![LowDim-P p-values](/assets/normality-report/pvalues_LowDim-P_data.png)
-![LowDim-P QQ + hist](/assets/normality-report/qq_hist_LowDim-P_data.png)
-
-### MidDim-C_data
-- Gaussian-like.
-- Suggestion: PC or NOTEARS.
-
-![MidDim-C p-values](/assets/normality-report/pvalues_MidDim-C_data.png)
-![MidDim-C QQ + hist](/assets/normality-report/qq_hist_MidDim-C_data.png)
-
-### MidDim-D_data
-- Non-Gaussian with heavy tails.
-- Suggestion: LiNGAM; GraNDAG if nonlinear.
+### MidDim-D_data (100 vars): heavy tails
+Pass rates drop to around 0.78 to 0.82 and skew/kurtosis are elevated. This is non-Gaussian.
+Suggested methods: LiNGAM; GraNDAG if you suspect nonlinear structure.
 
 ![MidDim-D p-values](/assets/normality-report/pvalues_MidDim-D_data.png)
 ![MidDim-D QQ + hist](/assets/normality-report/qq_hist_MidDim-D_data.png)
 
-### MidDim-P_data
-- Very Gaussian-like.
-- Suggestion: PC or NOTEARS.
-
-![MidDim-P p-values](/assets/normality-report/pvalues_MidDim-P_data.png)
-![MidDim-P QQ + hist](/assets/normality-report/qq_hist_MidDim-P_data.png)
-
-### MidDim-S_data
-- Mixed behavior: good pass rates but elevated skew/kurtosis.
-- Suggestion: PC/NOTEARS may work, but LiNGAM can help if non-Gaussian noise is present.
+### MidDim-S_data (100 vars): mixed behavior
+Pass rates are reasonably high, but kurtosis is elevated. This suggests some heavy-tailed variables even when many pass normality.
+Suggested methods: PC/NOTEARS can work, but LiNGAM may gain from the non-Gaussian subset.
 
 ![MidDim-S p-values](/assets/normality-report/pvalues_MidDim-S_data.png)
 ![MidDim-S QQ + hist](/assets/normality-report/qq_hist_MidDim-S_data.png)
 
-## Limitations
+## 7) Practical guidance for method choice
+
+Regime A: near Gaussian (high pass-rate, low skew/kurt)
+- Recommended: PC, NOTEARS
+- Optional: GraNDAG if you expect nonlinear relations
+
+Regime B: clearly non-Gaussian (tails or skew)
+- Recommended: LiNGAM
+- Also viable: PC/NOTEARS with robust preprocessing
+
+Regime C: mixed or nonlinear
+- Recommended: GraNDAG
+- Compare against: PC/NOTEARS as baselines
+
+## 8) Why I do not over-trust p-values
+
+In high dimensions we run one test per variable. Some rejections are expected by chance. Also, with large n, tests become very sensitive and can reject for tiny deviations. That is why the plots and skew/kurtosis matter as much as the p-values.
+
+If this were a formal hypothesis testing exercise, I would treat it as a multiple testing problem. Here, the goal is to characterize the data regime, not to "prove" normality.
+
+## 9) Limitations and next steps
 
 - These are univariate tests; multivariate normality can still fail.
-- With many columns, some false positives are expected.
-- Use these checks alongside domain knowledge and downstream validation.
+- Heteroscedasticity, nonlinearity, and hidden confounding still matter even if marginals look normal.
+- Next step: add a multivariate normality check and a lightweight nonlinear dependence screen.
+
+## References
+
+- Shapiro, S. S., & Wilk, M. B. (1965). An analysis of variance test for normality (complete samples). Biometrika.
+- D'Agostino, R. (1973). Tests for departure from normality: empirical results for the distributions of b2 and sqrt(b1). Biometrika.
+- Jarque, C. M., & Bera, A. K. (1980). Efficient tests for normality, homoscedasticity and serial independence of regression residuals. Economics Letters.
+- Anderson, T. W., & Darling, D. A. (1954). A test of goodness of fit. Journal of the American Statistical Association.
+- Spirtes, P., Glymour, C., & Scheines, R. (2000). Causation, Prediction, and Search (2nd ed.). MIT Press.
+- Zheng, X., Aragam, B., Ravikumar, P., & Xing, E. (2018). DAGs with NO TEARS: Continuous Optimization for Structure Learning. NeurIPS.
+- Shimizu, S., Hoyer, P. O., Hyvarinen, A., & Kerminen, A. (2006). A Linear Non-Gaussian Acyclic Model for Causal Discovery. JMLR.
+- Lachapelle, S., Brouillard, P., Deleu, T., & Lacoste-Julien, S. (2019). Gradient-Based Neural DAG Learning. ICLR.
