@@ -26,10 +26,6 @@ They are the **core language** of computation.
 
 ---
 
-## The new (clean + colorful) trigonometry sheet
-
-I made a modern, clearer version of the old sheet—focused on the **essential** ideas and standard angles.
-
 <p align="center">
   <img src="/assets/img/fundamental-trigonometry-formula-sheet.png" width="700" />
 </p>
@@ -42,9 +38,11 @@ I made a modern, clearer version of the old sheet—focused on the **essential**
 
 For a right triangle with angle \(\theta\):
 
-- \(\sin\theta = \dfrac{\text{Opposite}}{\text{Hypotenuse}}\)
-- \(\cos\theta = \dfrac{\text{Adjacent}}{\text{Hypotenuse}}\)
-- \(\tan\theta = \dfrac{\text{Opposite}}{\text{Adjacent}}\)
+\[
+\sin\theta = \frac{\text{Opposite}}{\text{Hypotenuse}},\quad
+\cos\theta = \frac{\text{Adjacent}}{\text{Hypotenuse}},\quad
+\tan\theta = \frac{\text{Opposite}}{\text{Adjacent}}
+\]
 
 **Computational meaning:**  
 These are ratios—**normalised measurements**—so they stay stable even if the triangle is scaled up/down.
@@ -107,16 +105,22 @@ Many real-world signals can be represented using sine/cosine components (Fourier
 ## A4) Short list of trig identities you actually use
 
 ### Reciprocal identities
-- \(\sec\theta = 1/\cos\theta\)
-- \(\csc\theta = 1/\sin\theta\)
-- \(\cot\theta = 1/\tan\theta\)
+\[
+\sec\theta = \frac{1}{\cos\theta},\quad
+\csc\theta = \frac{1}{\sin\theta},\quad
+\cot\theta = \frac{1}{\tan\theta}
+\]
 
 ### Quotient identity
-- \(\tan\theta = \sin\theta / \cos\theta\)
+\[
+\tan\theta = \frac{\sin\theta}{\cos\theta}
+\]
 
 ### Pythagorean identities
-- \(\sin^2\theta + \cos^2\theta = 1\)
-- \(1 + \tan^2\theta = \sec^2\theta\)
+\[
+\sin^2\theta + \cos^2\theta = 1,\quad
+1 + \tan^2\theta = \sec^2\theta
+\]
 
 ---
 
