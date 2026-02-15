@@ -35,6 +35,30 @@
 }
 
 /* ==========================================================================
+   DYNAMIC PAGE BACKGROUNDS (all pages)
+   ========================================================================== */
+
+body.view-home {
+  background: linear-gradient(180deg, #eef8ff 0%, #f8fffc 100%) !important;
+}
+
+body.view-cv {
+  background: linear-gradient(180deg, #eef4fb 0%, #f8fbff 100%) !important;
+}
+
+body.view-blog-archive {
+  background: linear-gradient(180deg, #f3efff 0%, #f7fcff 100%) !important;
+}
+
+body.view-post {
+  background: linear-gradient(180deg, #eef2ff 0%, #f6fbff 100%) !important;
+}
+
+body.view-page {
+  background: linear-gradient(180deg, #f1f5f9 0%, #f8fafc 100%) !important;
+}
+
+/* ==========================================================================
    BLOG POST POLISH
    ========================================================================== */
 
