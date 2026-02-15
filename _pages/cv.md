@@ -51,7 +51,7 @@ SSC (Science), Grade: 74%
 **University of Southampton, United Kingdom**  
 *Sep 2024 - Present*
 - PhD Researcher / Research Assistant: retinal imaging, lipidomics, and clinical data integration for cardiovascular biomarkers.
-- Teaching support: `COMP1314`, `COMP1202`, `AICE1003`, `COMP1312`, `ELEC1312`.
+- Teaching support: `COMP1314` (Data Management), `COMP1202` (Programming I - Java), `AICE1003` (High-Level Programming - Python), `COMP1312` (Programming I - Python/C), `ELEC1312` (C Programming Laboratories).
 - Instructor / Helper, Southampton Research Software Group training (Sustainable AI CDT).
 
 **Kohat University of Science and Technology, Pakistan**  
