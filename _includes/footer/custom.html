@@ -2,57 +2,9 @@
 
 <a href="/sitemap/">Sitemap</a>
 
-<style>
-  .site-visit-stats {
-    position: fixed;
-    right: 16px;
-    bottom: 16px;
-    width: min(360px, calc(100vw - 24px));
-    margin: 0;
-    padding: 10px 12px;
-    border: 1px solid #dbeafe;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #f0f9ff, #f0fdf4);
-    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.2);
-    backdrop-filter: blur(3px);
-    z-index: 9999;
-    animation: statsFloat 4.6s ease-in-out infinite;
-  }
-
-  .site-visit-stats__title {
-    font-weight: 700;
-    margin-bottom: 6px;
-    color: #0f172a;
-    letter-spacing: 0.2px;
-  }
-
-  .site-visit-stats__bar {
-    margin-top: 6px;
-    margin-bottom: 4px;
-    height: 6px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, #0ea5e9 0%, #22c55e 55%, #f59e0b 80%, #8b5cf6 100%);
-  }
-
-  @keyframes statsFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
-  }
-
-  @media (max-width: 640px) {
-    .site-visit-stats {
-      left: 12px;
-      right: 12px;
-      bottom: 12px;
-      width: auto;
-      animation-duration: 5.2s;
-    }
-  }
-</style>
-
-<div class="site-visit-stats">
-  <div class="site-visit-stats__title">Site Visitor Stats</div>
-  <div class="site-visit-stats__bar"></div>
+<div class="site-visit-stats" style="margin-top:12px; padding:10px 12px; border:1px solid #dbeafe; border-radius:10px; background:linear-gradient(135deg,#f0f9ff,#f0fdf4);">
+  <div style="font-weight:700; margin-bottom:6px; color:#0f172a;">Site Visitor Stats</div>
+  <div style="margin-top:6px; margin-bottom:4px; height:6px; border-radius:999px; background:linear-gradient(90deg,#0ea5e9 0%,#22c55e 55%,#f59e0b 80%,#8b5cf6 100%);"></div>
   <a href="https://info.flagcounter.com/qYV1" target="_blank" rel="noopener noreferrer">
     <img src="https://s01.flagcounter.com/count2/qYV1/bg_F8FAFC/txt_0F172A/border_CBD5E1/columns_8/maxflags_32/viewers_Visitors/labels_1/pageviews_0/flags_0/percent_0/" alt="Flag Counter" style="margin-top:6px; max-width:100%; height:auto; border-radius:6px;">
   </a>
