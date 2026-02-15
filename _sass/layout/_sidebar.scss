@@ -162,6 +162,32 @@ body.view-home .sidebar.sticky {
   top: auto !important;
 }
 
+/* Give profile links more room so long labels are fully visible */
+.sidebar .author__urls {
+  width: 100%;
+}
+
+.sidebar .author__urls li {
+  white-space: normal;
+}
+
+.sidebar .author__urls a {
+  white-space: normal;
+  word-break: break-word;
+}
+
+@include breakpoint($large) {
+  .sidebar {
+    min-width: 265px;
+  }
+
+  .page {
+    @include span(9.5 of 12 last);
+    @include prefix(0.5 of 12);
+    @include suffix(2 of 12);
+  }
+}
+
 .sidebar__right {
   margin-bottom: 1em;
 

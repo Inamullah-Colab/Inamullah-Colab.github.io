@@ -12,7 +12,7 @@ layout: compress
   </head>
 
   {% assign page_view_class = "view-page" %}
-  {% if page.url == "/" or page.url == "/about/" %}
+  {% if page.url == "/" or page.url == "/index.html" or page.url == "/about/" or page.url == "/about.html" %}
     {% assign page_view_class = "view-home" %}
   {% elsif page.url == "/cv/" %}
     {% assign page_view_class = "view-cv" %}
