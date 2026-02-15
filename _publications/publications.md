@@ -20,7 +20,7 @@ author_profile: true
   retinal imaging, artificial intelligence, oculomics, and systemic health are listed below. 
 </p>
 
-<div class="pub-stats-wrap">
+<div class="pub-stats-wrap" data-total-cites="37">
   <div class="pub-stat-card">
     <div class="pub-stat-label">Total citations</div>
     <div class="pub-stat-value" id="pub-total-citations">0</div>
@@ -148,6 +148,7 @@ author_profile: true
 
 <script>
   (function () {
+    var statsWrap = document.querySelector('.pub-stats-wrap');
     var cards = document.querySelectorAll('.pub-card[data-cites]');
     var total = 0;
     cards.forEach(function (card) {
@@ -162,7 +163,8 @@ author_profile: true
     var countEl = document.getElementById('pub-paper-count');
     var dateEl = document.getElementById('pub-cite-updated');
 
-    if (totalEl) totalEl.textContent = total.toLocaleString();
+    var manualTotal = statsWrap ? parseInt(statsWrap.getAttribute('data-total-cites') || '', 10) : NaN;
+    if (totalEl) totalEl.textContent = (isNaN(manualTotal) ? total : manualTotal).toLocaleString();
     if (countEl) countEl.textContent = cards.length.toString();
     if (dateEl) {
       var d = new Date();
