@@ -17,7 +17,7 @@ author_profile: true
 
 ## Research Interests
 
-Artificial Intelligence, Machine Learning, Deep Learning, Computer Vision, Medical Imaging, Oculomics, Bioinformatics, Genomics, Precision Medicine, Interpretable and Causal ML.
+Artificial Intelligence, Machine Learning, Deep Learning, Computer Vision, Medical Imaging, Oculomics, Bioinformatics, Genomics, Precision Medicine, Interpretable and Causal ML, Mathematical and Statistical Modelling.
 
 ## Education
 
@@ -52,7 +52,7 @@ SSC (Science), Grade: 74%
 *Sep 2024 - Present*
 - PhD Researcher / Research Assistant: retinal imaging, lipidomics, and clinical data integration for cardiovascular biomarkers.
 - Teaching support: `COMP1314`, `COMP1202`, `AICE1003`, `COMP1312`, `ELEC1312`.
-- Helper, Southampton Research Software Group training (Sustainable AI CDT).
+- Instructor / Helper, Southampton Research Software Group training (Sustainable AI CDT).
 
 **Kohat University of Science and Technology, Pakistan**  
 *Jan 2021 - Jan 2022*
@@ -80,6 +80,20 @@ Project Manager (tendering, planning, estimation, billing, client correspondence
    **The Eye as a Window to Systemic Health: A Survey of Retinal Imaging from Classical Techniques to Oculomics.**  
    *Journal of Precision Medicine and Health Disease* (2025): 100023.  
    <https://www.sciencedirect.com/science/article/pii/S305063282500023X>
+
+4. Inamullah, et al.  
+   **Integrated Oculomics and Lipidomics Reveal Microvascular Metabolic Signatures Associated with Cardiovascular Health.**  
+   *Under Review - Scientific Reports (Nature Portfolio).*  
+   arXiv: <https://arxiv.org/abs/2507.12663>  
+   Citations: 0  
+   This study integrates retinal imaging with lipidomic profiles in a healthy cohort, revealing microvascular-metabolic signatures linked to cardiovascular health and systemic regulation.
+
+5. Inamullah, et al.  
+   **Retinal Lipidomics Associations as Candidate Biomarkers for Cardiovascular Health.**  
+   *MICAD Proceedings, 2025 - Oral Presentation.*  
+   arXiv: <https://arxiv.org/abs/2508.03538>  
+   Citations: 0  
+   This conference paper explores associations between retinal microvascular traits and lipidomic profiles, identifying candidate non-invasive biomarkers for cardiovascular risk.
 
 ## Conferences and Seminars
 
@@ -111,12 +125,6 @@ Project Manager (tendering, planning, estimation, billing, client correspondence
 
 - Team leadership roles in construction projects (2012-2022)
 - Volunteer, Act of Kindness (Islamabad, 2017-2024)
-
-## English Proficiency
-
-IELTS (Academic) 6.0 (CEFR B2)  
-Listening 5.5 | Reading 5.5 | Writing 6.0 | Speaking 6.5  
-Test date: 19 Aug 2023
 
 ## References
 
