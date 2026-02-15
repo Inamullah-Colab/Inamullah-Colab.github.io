@@ -102,10 +102,11 @@ Project Manager (tendering, planning, estimation, billing, client correspondence
 
 ## Technical Skills
 
-- **Programming:** Python, C, Java, SQL, MATLAB/Simulink, LaTeX, PHP/MySQL (basic)
-- **ML/AI:** PyTorch, TensorFlow, scikit-learn, OpenCV
-- **Scientific stack:** NumPy, Pandas, SciPy, Matplotlib
-- **Other tools:** Microsoft Office, AutoCAD (2D/3D)
+- **Programming Languages:** Python, Java, C, SQL, MATLAB, LaTeX, Bash
+- **AI/ML and Data Science:** PyTorch, TensorFlow, scikit-learn, OpenCV, NumPy, Pandas, SciPy, Matplotlib, SPSS
+- **LLM and Applied AI Workflows:** Prompt Engineering, LLM-assisted research workflows, AI-aided scientific writing and coding support
+- **Systems and Development Tools:** Linux, Git, GitHub, Jupyter, VS Code
+- **Productivity and Engineering Tools:** Microsoft Office, AutoCAD (2D/3D), TRE-based data workflow practices
 
 ## Courses and Certifications
 
