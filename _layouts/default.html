@@ -11,7 +11,18 @@ layout: compress
     {% include head/custom.html %}
   </head>
 
-  <body>
+  {% assign page_view_class = "view-page" %}
+  {% if page.url == "/" or page.url == "/about/" %}
+    {% assign page_view_class = "view-home" %}
+  {% elsif page.url == "/cv/" %}
+    {% assign page_view_class = "view-cv" %}
+  {% elsif page.url == "/year-archive/" %}
+    {% assign page_view_class = "view-blog-archive" %}
+  {% elsif page.layout == "post" or page.collection == "posts" %}
+    {% assign page_view_class = "view-post" %}
+  {% endif %}
+
+  <body class="{{ page_view_class }}">
 
     {% include browser-upgrade.html %}
     {% include masthead.html %}
