@@ -52,17 +52,14 @@ SSC (Science), Grade: 74%
 *Sep 2024 - Present*
 - PhD Researcher / Research Assistant: retinal imaging, lipidomics, and clinical data integration for cardiovascular biomarkers.
 - Teaching support:
-  - `COMP1314` - Data Management
-  - `COMP1202` - Programming I (Java)
-  - `AICE1003` - High-Level Programming (Python)
-  - `AICE1005` - Algorithms and Analysis
-  - `AICE1006` - Data Analytics
-  - `AICE1008` - Mathematics for Artificial Intelligence and Computer Engineering (II)
-  - `COMP1312` - Programming I (Python/C)
-  - `ELEC1300` - ELEC Part One Laboratory Programme
-  - `ELEC1312` - C Programming Laboratories
-  - `ELEC6213` - Image Processing
-- Instructor / Helper, Southampton Research Software Group training (Sustainable AI CDT).
+  - **COMP:** `COMP1314` - Data Management, `COMP1202` - Programming I (Java)
+  - **COMP:** `COMP1312` - Programming I (Python/C)
+  - **AICE:** `AICE1003` - High-Level Programming (Python), `AICE1005` - Algorithms and Analysis
+  - **AICE:** `AICE1006` - Data Analytics, `AICE1008` - Mathematics for Artificial Intelligence and Computer Engineering (II)
+  - **ELEC:** `ELEC1300` - Part One Laboratory Programme, `ELEC1312` - C Programming Laboratories
+  - **ELEC:** `ELEC6213` - Image Processing
+- Instructor / Helper, Southampton Research Software Group training (SUSAI).
+- Invigilator duties: examination invigilation, student identity/compliance checks, timing control, script collection, and exam-room protocol support.
 
 **Kohat University of Science and Technology, Pakistan**  
 *Jan 2021 - Jan 2022*
