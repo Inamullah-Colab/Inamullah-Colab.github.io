@@ -107,7 +107,7 @@ Project Manager (tendering, planning, estimation, billing, client correspondence
 
 ## Technical Skills
 
-- **Programming Languages:** Python, Java, C, SQL, MATLAB, LaTeX, Bash
+- **Programming Languages:** Python, R (RStudio), Java, C, SQL, MATLAB, LaTeX, Bash
 - **AI/ML and Data Science:** PyTorch, TensorFlow, scikit-learn, OpenCV, NumPy, Pandas, SciPy, Matplotlib, SPSS
 - **LLM and Applied AI Workflows:** Prompt Engineering, LLM-assisted research workflows, AI-aided scientific writing and coding support
 - **Systems and Development Tools:** Linux, Git, GitHub, Jupyter, VS Code
