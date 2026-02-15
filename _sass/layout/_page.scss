@@ -86,6 +86,14 @@ body.view-page {
   }
 }
 
+/* About page: remove empty hero spacer so content starts beside sidebar */
+body.view-home .hero-rotator {
+  display: none !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 /* ==========================================================================
    BLOG POST POLISH
    ========================================================================== */
