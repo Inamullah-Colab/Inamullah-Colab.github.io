@@ -8,184 +8,197 @@ description: "A detailed, reproducible guide to run the official AutoMorph pipel
 permalink: /automorph-local-and-hpc/
 ---
 
-> **Executive summary**
-> - AutoMorph converts fundus photos into quantitative retinal phenotypes through a four-stage pipeline (M0-M3).
-> - The same repository supports both local runs and HPC/SSH runs.
-> - For reproducibility at scale, keep data outside code with `AUTOMORPH_DATA`, run `run.sh` once per job, and calibrate `resolution_information.csv` for micron-scale metrics.
-> - This guide keeps only authoritative sources: official project page, repository (`LOCAL.md`, `run.sh`), TVST 2022 paper, and medRxiv preprint.
+<style>
+.automorph-page {
+  --bg1: #f0f9ff;
+  --bg2: #f7fee7;
+  --ink: #0f172a;
+  --muted: #334155;
+  --primary: #0ea5e9;
+  --secondary: #22c55e;
+  --card: #ffffff;
+  --ring: rgba(14, 165, 233, 0.18);
+  color: var(--ink);
+  font-family: "Segoe UI", "Trebuchet MS", Helvetica, Arial, sans-serif;
+}
 
----
+.automorph-hero {
+  background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 100%);
+  color: #ffffff;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 12px 30px rgba(2, 132, 199, 0.22);
+  margin: 12px 0 22px 0;
+}
 
-## 1) Definitions first: what this pipeline is for
+.automorph-hero h1 {
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+}
 
-- **Oculomics**: using retinal features as biomarkers for systemic biology and disease risk.
-- **AutoMorph**: an end-to-end deep-learning pipeline for color fundus images, producing standardized image quality outputs, segmentation masks, and tabular vascular features.
-- **Why this matters for research**: manual vascular annotation does not scale well across cohorts. AutoMorph enables consistent, automated phenotyping suitable for downstream statistical and machine learning analyses.
+.automorph-hero p {
+  margin: 8px 0 0 0;
+  opacity: 0.98;
+}
 
-AutoMorph resources:
-- Project page: <https://rmaphoh.github.io/projects/automorph.html>
-- Repository: <https://github.com/rmaphoh/AutoMorph>
+.automorph-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 16px 0 22px 0;
+}
 
----
+.automorph-chip {
+  background: #ecfeff;
+  border: 1px solid #bae6fd;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 0.93rem;
+  color: #075985;
+}
 
-## 2) Pipeline anatomy (M0-M3)
+.automorph-section {
+  background: linear-gradient(180deg, var(--card), #f8fafc);
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 18px;
+  margin: 14px 0;
+  box-shadow: 0 3px 14px rgba(15, 23, 42, 0.06);
+}
 
-AutoMorph executes four modules in sequence:
+.automorph-section h2 {
+  margin-top: 0;
+  border-left: 5px solid var(--primary);
+  padding-left: 10px;
+}
 
-- **M0: Pre-processing**
-  - Standardizes inputs before model inference.
-  - Reduces variation from raw camera exports.
+.automorph-callout {
+  border-left: 5px solid var(--secondary);
+  background: #f0fdf4;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin: 10px 0;
+  color: #14532d;
+}
 
-- **M1: Image quality grading**
-  - Selects gradable images for downstream segmentation and feature extraction.
-  - Outputs quality predictions and a `Good_quality` subset.
+.automorph-page ul {
+  margin-top: 8px;
+}
 
-- **M2: Segmentation**
-  - Produces three core segmentation outputs:
-    - vessel binary map
-    - artery/vein map
-    - optic disc/cup map
+.automorph-page pre {
+  background: #0b1020;
+  color: #dbeafe;
+  border-radius: 12px;
+  padding: 12px;
+  overflow-x: auto;
+  border: 1px solid #1e293b;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.12);
+}
 
-- **M3: Feature extraction**
-  - Generates regional vascular features for:
-    - disc-centred region
-    - macular-centred Zone B
-    - macular-centred Zone C
-    - whole image
-  - Outputs CSV files suitable for analysis pipelines.
+.automorph-page code {
+  font-family: Consolas, "Courier New", monospace;
+}
 
-Peer-reviewed performance and validation details are in TVST 2022.
+.automorph-kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin: 12px 0 0 0;
+}
 
----
+.automorph-kpi {
+  background: #ffffff;
+  border: 1px solid #d1fae5;
+  border-radius: 10px;
+  padding: 10px;
+}
 
-## 3) Local vs HPC/SSH: one codebase, different compute mode
+.automorph-kpi b {
+  display: block;
+  font-size: 1.05rem;
+  color: #065f46;
+}
 
-Use the same GitHub repository in both modes.
+.automorph-refs a {
+  word-break: break-word;
+}
+</style>
 
-- **Local mode** is best for setup validation, debugging, and smaller image batches.
-- **HPC/SSH mode** is best for large datasets, long jobs, and reproducibility under shared infrastructure.
+<div class="automorph-page">
+  <section class="automorph-hero">
+    <h1>AutoMorph from Local Repo to HPC/SSH</h1>
+    <p>One reproducible, publication-ready workflow for running the official M0-M3 pipeline at small or large scale.</p>
+  </section>
 
-The module order is identical in both modes because both rely on the same orchestrator:
-- `run.sh`: <https://github.com/rmaphoh/AutoMorph/blob/main/run.sh>
+  <div class="automorph-grid">
+    <div class="automorph-chip"><b>Local path:</b> quick setup, debugging, smaller batches</div>
+    <div class="automorph-chip"><b>HPC path:</b> scalable runs, cleaner data separation, long jobs</div>
+    <div class="automorph-chip"><b>Calibration:</b> use <code>resolution_information.csv</code> for micron units</div>
+    <div class="automorph-chip"><b>Orchestration:</b> <code>run.sh</code> executes M0 to M3 in fixed order</div>
+  </div>
 
----
+  <section class="automorph-section">
+    <h2>1) What AutoMorph does</h2>
+    <p><b>AutoMorph</b> is an open pipeline for color fundus photographs that generates quantitative retinal phenotypes.</p>
+    <ul>
+      <li><b>M0</b>: preprocessing</li>
+      <li><b>M1</b>: image quality grading</li>
+      <li><b>M2</b>: vessel, artery-vein, and disc-cup segmentation</li>
+      <li><b>M3</b>: feature extraction for disc-centred, macular Zone B/C, and whole-image regions</li>
+    </ul>
+    <div class="automorph-kpis">
+      <div class="automorph-kpi"><b>M0</b>Input standardization</div>
+      <div class="automorph-kpi"><b>M1</b>Gradable subset</div>
+      <div class="automorph-kpi"><b>M2</b>Segmentation masks</div>
+      <div class="automorph-kpi"><b>M3</b>CSV phenotypes</div>
+    </div>
+  </section>
 
-## 4) Local setup (aligned with official `LOCAL.md`)
-
-Canonical instructions:
-- `LOCAL.md`: <https://github.com/rmaphoh/AutoMorph/blob/main/LOCAL.md>
-
-### 4.1 Create environment
-
-```bash
-conda update conda
+  <section class="automorph-section">
+    <h2>2) Local setup (official pattern)</h2>
+    <p>Use the maintainer guide: <a href="https://github.com/rmaphoh/AutoMorph/blob/main/LOCAL.md">LOCAL.md</a>.</p>
+    <pre><code class="language-bash">conda update conda
 conda create -n automorph python=3.11 -y
 conda activate automorph
-```
-
-### 4.2 Clone repository
-
-```bash
 git clone https://github.com/rmaphoh/AutoMorph.git
 cd AutoMorph
-```
 
-### 4.3 Install PyTorch stack (example used in official local guidance)
-
-```bash
 conda install pytorch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 pytorch-cuda=12.1 -c pytorch -c nvidia -y
-```
-
-### 4.4 Install remaining requirements
-
-```bash
 pip install --ignore-installed certifi
 pip install -r requirement.txt
-pip install efficientnet_pytorch==0.7.1 --no-deps
-```
+pip install efficientnet_pytorch==0.7.1 --no-deps</code></pre>
+    <p>Place images in <code>images/</code>, provide <code>resolution_information.csv</code>, then run:</p>
+    <pre><code class="language-bash">sh run.sh</code></pre>
+  </section>
 
-### 4.5 Prepare data and run
-
-- Put fundus images in `images/`.
-- Ensure `resolution_information.csv` is present (see Section 6).
-- Run the full pipeline:
-
-```bash
-sh run.sh
-```
-
----
-
-## 5) HPC/SSH setup (recommended for large-scale runs)
-
-### 5.1 Environment and repository
-
-```bash
-git clone https://github.com/rmaphoh/AutoMorph.git
+  <section class="automorph-section">
+    <h2>3) HPC/SSH setup (recommended for scale)</h2>
+    <pre><code class="language-bash">git clone https://github.com/rmaphoh/AutoMorph.git
 cd AutoMorph
 conda create -n automorph python=3.11 -y
 conda activate automorph
-pip install -r requirement.txt
-```
+pip install -r requirement.txt</code></pre>
 
-Install PyTorch packages compatible with your cluster GPU/CUDA policy.
+    <p>Keep data outside the repository:</p>
+    <pre><code class="language-bash">mkdir -p $HOME/retina_all/images
+export AUTOMORPH_DATA=$HOME/retina_all</code></pre>
 
-### 5.2 Keep code and data separate
+    <p>Generate spacing file for micron calibration:</p>
+    <pre><code class="language-bash">python generate_resolution.py 0.008</code></pre>
 
-```bash
-mkdir -p $HOME/retina_all/images
-export AUTOMORPH_DATA=$HOME/retina_all
-```
+    <p>Run detached over SSH:</p>
+    <pre><code class="language-bash">nohup bash run.sh &gt; "$AUTOMORPH_DATA/automorph_run_$(date +%F_%H%M).log" 2&gt;&amp;1 &amp; disown
+tail -f "$AUTOMORPH_DATA"/automorph_run_*.log</code></pre>
 
-Place input images under:
+    <div class="automorph-callout">
+      <b>Important:</b> <code>run.sh</code> cleans <code>Results/</code> at start. Run one job per data root at a time.
+    </div>
+  </section>
 
-```bash
-$AUTOMORPH_DATA/images
-```
-
-Why this is important:
-- avoids writing heavy outputs into the code tree
-- simplifies permissions and quota handling
-- improves run-to-run reproducibility
-
-### 5.3 Generate or provide pixel resolution file
-
-```bash
-python generate_resolution.py 0.008
-```
-
-This creates `resolution_information.csv` for width/calibre calibration in physical units.
-
-### 5.4 Run detached over SSH
-
-```bash
-nohup bash run.sh > "$AUTOMORPH_DATA/automorph_run_$(date +%F_%H%M).log" 2>&1 & disown
-tail -f "$AUTOMORPH_DATA"/automorph_run_*.log
-```
-
-Operational note:
-- `run.sh` cleans `Results/` at job start by design.
-- Do not launch multiple `run.sh` jobs against the same data root at the same time.
-
----
-
-## 6) Resolution calibration: why micron units matter
-
-Many vascular metrics are only biologically comparable when pixel spacing is known.
-
-- File contract: `resolution_information.csv`
-- Helper script: `generate_resolution.py`
-
-If per-image metadata are unavailable, a documented constant (for your camera/device context) can be used temporarily. For publication-quality analyses, prefer device-specific spacing whenever available.
-
----
-
-## 7) Output map and verification checklist
-
-### 7.1 Expected output tree (HPC mode)
-
-```text
-$AUTOMORPH_DATA/
+  <section class="automorph-section">
+    <h2>4) Expected outputs and verification</h2>
+    <pre><code class="language-text">$AUTOMORPH_DATA/
 ├── images/
 ├── resolution_information.csv
 └── Results/
@@ -201,65 +214,41 @@ $AUTOMORPH_DATA/
         ├── Macular_centred/
         │   ├── Macular_Zone_B_Measurement.csv
         │   └── Macular_Zone_C_Measurement.csv
-        └── Whole_image/*.csv
-```
+        └── Whole_image/*.csv</code></pre>
 
-### 7.2 Practical checks
-
-```bash
-# how many images passed quality grading?
-ls -1 "$AUTOMORPH_DATA/Results/M1/Good_quality" | wc -l
-
-# were M2 masks generated?
+    <pre><code class="language-bash">ls -1 "$AUTOMORPH_DATA/Results/M1/Good_quality" | wc -l
 find "$AUTOMORPH_DATA/Results/M2" -maxdepth 2 -type f | head -n 20
+find "$AUTOMORPH_DATA/Results/M3" -maxdepth 2 -type f -name '*.csv' | sort</code></pre>
+  </section>
 
-# are M3 feature tables present?
-find "$AUTOMORPH_DATA/Results/M3" -maxdepth 2 -type f -name '*.csv' | sort
-```
+  <section class="automorph-section">
+    <h2>5) Reproducibility checklist</h2>
+    <ul>
+      <li>AutoMorph commit hash and run date</li>
+      <li>Python, PyTorch, CUDA versions</li>
+      <li>GPU model and driver details</li>
+      <li><code>AUTOMORPH_DATA</code> path used at runtime</li>
+      <li>Resolution source used in <code>resolution_information.csv</code></li>
+      <li>Total input images and M1 gradable count</li>
+    </ul>
+  </section>
 
-### 7.3 Provenance checklist for reproducibility
+  <section class="automorph-section">
+    <h2>6) Copy-ready methods text</h2>
+    <div class="automorph-callout">
+      We used AutoMorph to extract retinal vascular phenotypes from color fundus images. The official <code>run.sh</code> orchestrator was executed from M0 to M3 (preprocessing, quality grading, vessel/artery-vein/disc-cup segmentation, and feature extraction for disc-centred, macular Zone B, macular Zone C, and whole-image regions). Pixel resolution was provided through <code>resolution_information.csv</code>, generated with <code>generate_resolution.py</code> when per-image metadata were unavailable.
+    </div>
+  </section>
 
-Record these fields with each run:
-- AutoMorph commit hash and run date
-- Python, PyTorch, CUDA versions
-- GPU model and driver info
-- `AUTOMORPH_DATA` path
-- pixel spacing strategy (`resolution_information.csv` source)
-- total input image count and M1 gradable count
-
----
-
-## 8) Common failure modes and fixes
-
-- **Issue: `Results/` unexpectedly overwritten**
-  - Cause: another `run.sh` started while a job was active.
-  - Fix: one orchestrated run per data root; stage-specific reruns should be planned explicitly.
-
-- **Issue: only a tiny dataset processed**
-  - Cause: `AUTOMORPH_DATA` not exported in current shell/session.
-  - Fix: export and verify path (`echo $AUTOMORPH_DATA`) before running.
-
-- **Issue: implausible calibre/width values**
-  - Cause: missing/incorrect spacing in `resolution_information.csv`.
-  - Fix: regenerate or replace spacing values with correct device-specific information.
-
-- **Issue: package/GPU mismatch**
-  - Cause: PyTorch/CUDA incompatibility.
-  - Fix: align installed packages with cluster CUDA and verify import/runtime before full run.
-
----
-
-## 9) Publication-ready methods text
-
-> We used AutoMorph to extract retinal vascular phenotypes from color fundus photographs. The official pipeline orchestrator (`run.sh`) was executed from M0 to M3, including preprocessing, quality grading, vessel/artery-vein/disc-cup segmentation, and feature extraction for disc-centred, macular Zone B, macular Zone C, and whole-image regions. Pixel resolution was provided through `resolution_information.csv` (generated with `generate_resolution.py` when per-image metadata were unavailable), enabling width and calibre interpretation in physical units.
-
----
-
-## 10) Authoritative references
-
-- AutoMorph project page: <https://rmaphoh.github.io/projects/automorph.html>
-- AutoMorph GitHub repository: <https://github.com/rmaphoh/AutoMorph>
-- Local setup guide (`LOCAL.md`): <https://github.com/rmaphoh/AutoMorph/blob/main/LOCAL.md>
-- Pipeline runner (`run.sh`): <https://github.com/rmaphoh/AutoMorph/blob/main/run.sh>
-- TVST 2022 paper (peer-reviewed): <https://tvst.arvojournals.org/article.aspx?articleid=2783477>
-- medRxiv preprint: <https://www.medrxiv.org/content/10.1101/2022.05.26.22274795v1>
+  <section class="automorph-section automorph-refs">
+    <h2>7) Authoritative references</h2>
+    <ul>
+      <li>AutoMorph project page: <a href="https://rmaphoh.github.io/projects/automorph.html">https://rmaphoh.github.io/projects/automorph.html</a></li>
+      <li>AutoMorph GitHub repository: <a href="https://github.com/rmaphoh/AutoMorph">https://github.com/rmaphoh/AutoMorph</a></li>
+      <li>Local setup guide (<code>LOCAL.md</code>): <a href="https://github.com/rmaphoh/AutoMorph/blob/main/LOCAL.md">https://github.com/rmaphoh/AutoMorph/blob/main/LOCAL.md</a></li>
+      <li>Pipeline runner (<code>run.sh</code>): <a href="https://github.com/rmaphoh/AutoMorph/blob/main/run.sh">https://github.com/rmaphoh/AutoMorph/blob/main/run.sh</a></li>
+      <li>TVST 2022 paper: <a href="https://tvst.arvojournals.org/article.aspx?articleid=2783477">https://tvst.arvojournals.org/article.aspx?articleid=2783477</a></li>
+      <li>medRxiv preprint: <a href="https://www.medrxiv.org/content/10.1101/2022.05.26.22274795v1">https://www.medrxiv.org/content/10.1101/2022.05.26.22274795v1</a></li>
+    </ul>
+  </section>
+</div>
