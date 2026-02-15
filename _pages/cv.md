@@ -55,8 +55,12 @@ SSC (Science), Grade: 74%
   - `COMP1314` - Data Management
   - `COMP1202` - Programming I (Java)
   - `AICE1003` - High-Level Programming (Python)
+  - `AICE1005`
+  - `AICE1008`
   - `COMP1312` - Programming I (Python/C)
+  - `ELEC1300`
   - `ELEC1312` - C Programming Laboratories
+  - `ELEC6213`
 - Instructor / Helper, Southampton Research Software Group training (Sustainable AI CDT).
 
 **Kohat University of Science and Technology, Pakistan**  
