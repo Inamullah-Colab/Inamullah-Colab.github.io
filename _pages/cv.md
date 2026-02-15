@@ -56,6 +56,7 @@ SSC (Science), Grade: 74%
   - `COMP1202` - Programming I (Java)
   - `AICE1003` - High-Level Programming (Python)
   - `AICE1005` - Algorithms and Analysis
+  - `AICE1006` - Data Analytics
   - `AICE1008` - Mathematics for Artificial Intelligence and Computer Engineering (II)
   - `COMP1312` - Programming I (Python/C)
   - `ELEC1300` - ELEC Part One Laboratory Programme
