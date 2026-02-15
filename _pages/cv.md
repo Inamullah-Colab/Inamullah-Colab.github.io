@@ -4,266 +4,122 @@ permalink: /cv/
 author_profile: true
 ---
 
-# INAMULLAH
+<div class="cv-academic-header">
+  <h1>Inamullah Khan</h1>
+  <p>PhD Student, Computer Science (AI for Healthcare) | University of Southampton</p>
+  <div class="cv-contact-grid">
+    <span>Southampton, UK</span>
+    <span><a href="mailto:inamullahk756@gmail.com">inamullahk756@gmail.com</a></span>
+    <span>+44 07301917166</span>
+    <span><a href="https://www.linkedin.com/in/inam-ullah-khan-a30532150/">LinkedIn</a></span>
+  </div>
+</div>
 
-Flat 1, Ground Floor, 59 Lilac Road, Southampton, SO16 3DA, United Kingdom  
-Email: [inamullahk756@gmail.com](mailto:inamullahk756@gmail.com)  
-Phone: +44 07301917166  
-LinkedIn: <https://www.linkedin.com/in/inam-ullah-khan-a30532150/>
+## Research Interests
 
----
+Artificial Intelligence, Machine Learning, Deep Learning, Computer Vision, Medical Imaging, Oculomics, Bioinformatics, Genomics, Precision Medicine, Interpretable and Causal ML.
 
-## RESEARCH INTERESTS
+## Education
 
-Artificial Intelligence, Machine Learning, Deep Learning, Computer Vision, Medical Imaging Analysis, Bio-informatics, Oculomics, Genomics & Precision Medicine.
+**University of Southampton, United Kingdom**  
+*Sep 2024 - Present*  
+PhD in Computer Science (Artificial Intelligence)
 
----
+**Kohat University of Science and Technology, Pakistan**  
+*Oct 2018 - Jan 2022*  
+MSc Computer Science (Artificial Intelligence), GPA: 3.24/4.00  
+Thesis: *Analyzing the Role of Diversity in Convolutional Neural Networks Based Homogeneous Ensemble Model for Imbalanced Data Classification.*
 
-## EDUCATION
+**Virtual University, Pakistan**  
+*Mar 2016 - Oct 2018*  
+Master in Computer Science, GPA: 3.29/4.00
 
-**University of Southampton**, Southampton, United Kingdom  
-*September 2024 – Present*  
-PhD in Computer Science  
-Major: Artificial Intelligence  
-Currently Enrolled  
+**University of Sargodha, Pakistan**  
+*Sep 2013 - Mar 2016*  
+BSc (Physics, Mathematics, Computer Science)
 
----
+**KRL Institute of Technology, Pakistan**  
+*Aug 2007 - Jul 2010*  
+DAE (Civil), Grade: 76%
 
-**Kohat University of Science and Technology**, Kohat, Pakistan  
-*October 2018 – January 2022*  
-Master of Science in Computer Science  
-Major: Artificial Intelligence  
-Cumulative GPA: 3.24 / 4.00  
+**Muslim Public High School Khar, Pakistan**  
+*Mar 2002 - Aug 2007*  
+SSC (Science), Grade: 74%
 
-**Thesis Title:**  
-Analyzing the Role of Diversity in Convolutional Neural Networks Based Homogenous Ensemble model for Imbalance Data Classification.
+## Academic Experience
 
-**Thesis Description:**  
-I blended the Eight CNN’s model from scratch for imbalance and inadequate medical imaging data. They outperformed the performance measures from existing studies like multi-class classification accuracy, precision, sensitivity, and specificity, having 93.00%, 93.00%, 98.00%, and 99.00%, respectively.
+**University of Southampton, United Kingdom**  
+*Sep 2024 - Present*
+- PhD Researcher / Research Assistant: retinal imaging, lipidomics, and clinical data integration for cardiovascular biomarkers.
+- Teaching support: `COMP1314`, `COMP1202`, `AICE1003`, `COMP1312`, `ELEC1312`.
+- Helper, Southampton Research Software Group training (Sustainable AI CDT).
 
----
+**Kohat University of Science and Technology, Pakistan**  
+*Jan 2021 - Jan 2022*
+- Research Assistant: data curation, model training, and manuscript drafting.
 
-**Virtual University**, Lahore, Pakistan  
-*March 2016 – October 2018*  
-Master in Computer Science (16 years of Schooling)  
-Major: Computer Science  
-Cumulative GPA: 3.29 / 4.00  
+## Industry Experience
 
----
+**Shan Construction Company, Islamabad, Pakistan**  
+*Dec 2017 - Feb 2022*  
+Project Manager (tendering, planning, estimation, billing, client correspondence)
 
-**University of Sargodha**, Sargodha, Pakistan  
-*September 2013 – March 2016*  
-Bachelor of Science (14 years of Schooling)  
-Major: Physics, Mathematics & Computer Science  
-Lower 2nd class pass  
+## Publications
 
----
+1. Inamullah, S. Hassan, N. A. Alrajeh, E. A. Mohammed, S. Khan.  
+   **Data Diversity in Convolutional Neural Network Based Ensemble Model for Diabetic Retinopathy.**  
+   *Biomimetics* 8(2), 2023: 187.  
+   <https://www.mdpi.com/2313-7673/8/2/187/html>
 
-**KRL Institute of Technology**, Kahuta, Pakistan  
-*August 2007 – July 2010*  
-Intermediate / DAE (Civil)  
-Major: Pre-Engineering  
-Cumulative Grade: 76%
+2. Inamullah, S. Hassan, S. B. Belhaouari, I. Amin.  
+   **Deciphering the impact of diversity in CNN-based ensembles on overcoming data imbalance and scarcity in medical datasets: A case study on diabetic retinopathy.**  
+   *Informatics in Medicine Unlocked* 49 (2024): 101557.  
+   <https://www.sciencedirect.com/science/article/pii/S2352914824001138>
 
----
+3. Inamullah, I. Razzak, S. Jameel.  
+   **The Eye as a Window to Systemic Health: A Survey of Retinal Imaging from Classical Techniques to Oculomics.**  
+   *Journal of Precision Medicine and Health Disease* (2025): 100023.  
+   <https://www.sciencedirect.com/science/article/pii/S305063282500023X>
 
-**Muslim Public High School Khar**, Bajaur, Pakistan  
-*March 2002 – August 2007*  
-Matriculation / S.S.C  
-Major: Science  
-Cumulative Grade: 74%
+## Conferences and Seminars
 
----
+- First Multi-Disciplinary Student Research Workshop, KUST (Mar 2021) - Presented MSc research.
+- Poster presentation: Role of soft sensors in cement and nuclear industry using deep learning (Aug 2021).
+- Final year project presentation: Learning Alphabet Android Application for Kids (Jul 2018).
 
-## MOOCs COURSES
+## Technical Skills
 
-- Programming Essentials in C — Cisco Academy  
-- Introduction to IoT, Networking, and Cybersecurity — Cisco Networking Academy  
-- WORDPRESS — Virtual University and MOST Pakistan  
-- FREELANCING — Virtual University and MOST Pakistan  
-- AutoCAD course (6 months) — Skill Development Council, Pakistan  
-- Fundamentals of Machine Learning for Healthcare — Matthew Lungren & Serena Yeung, Coursera  
-- Artificial Intelligence for IT and NON-IT Professionals — Virtual University and Commonwealth Learning  
-- Machine Learning — Andrew Ng, Coursera *(Enrolled)*  
-- Bioinformatics: Introduction and Methods — Coursera *(Enrolled)*  
+- **Programming:** Python, C, Java, SQL, MATLAB/Simulink, LaTeX, PHP/MySQL (basic)
+- **ML/AI:** PyTorch, TensorFlow, scikit-learn, OpenCV
+- **Scientific stack:** NumPy, Pandas, SciPy, Matplotlib
+- **Other tools:** Microsoft Office, AutoCAD (2D/3D)
 
----
+## Courses and Certifications
 
-## WORK EXPERIENCE
+- Programming Essentials in C (Cisco)
+- Introduction to IoT, Networking, and Cybersecurity (Cisco)
+- Fundamentals of Machine Learning for Healthcare (Coursera)
+- Machine Learning (Coursera, Andrew Ng)
+- Bioinformatics: Introduction and Methods (Coursera)
 
-**University of Southampton**, Southampton, United Kingdom  
+## Awards and Funding
 
-**Helper:** Southampton Research Software Group's training  
-*September 2025 – Present*  
-- Sustainable AI CDT  
+- President's Initiative on Provision of Education Scholarship (Pakistan, 2007-2010)
+- PhD Research Studentship, Faculty of Engineering and Physical Sciences, University of Southampton
 
----
+## Leadership and Volunteering
 
-**University of Southampton**, Southampton, United Kingdom  
+- Team leadership roles in construction projects (2012-2022)
+- Volunteer, Act of Kindness (Islamabad, 2017-2024)
 
-**Teaching:** Demonstrating the following modules  
-*September 2024 – Present*  
-- COMP1314: Data Management  
-- COMP1202: Programming I (Java)  
-- AICE1003: High-Level Programming (Python)  
-- COMP1312: Programming I (Python & C)  
-- C Programming Laboratories (ELEC1312)  
+## English Proficiency
 
----
+IELTS (Academic) 6.0 (CEFR B2)  
+Listening 5.5 | Reading 5.5 | Writing 6.0 | Speaking 6.5  
+Test date: 19 Aug 2023
 
-**University of Southampton**, Southampton, United Kingdom  
+## References
 
-**Research Assistant / PhD Researcher**  
-*September 2024 – Present*  
-- Conducting interdisciplinary AI research on retinal imaging, lipidomics, and clinical data for cardiovascular biomarkers  
-- Managing data curation, preprocessing, and model development within the Trusted Research Environment (TRE)  
-- Applying statistical and machine learning techniques for multi-modal data integration and analysis  
-- Drafting manuscripts and contributing to conference and journal publications  
-- Collaborating with cross-disciplinary teams within Engineering and Medicine faculties  
-
----
-
-**Kohat University of Science and Technology**, Kohat, Pakistan  
-
-**Research Assistant**  
-*January 2021 – January 2022*  
-- Interdisciplinary research collaboration  
-- Data curation and training model  
-- Drafting and article writing  
-
----
-
-**Shan Construction Company**, Islamabad, Pakistan  
-
-**Project Manager**  
-*December 2017 – February 2022*  
-- Maintaining tendering documents  
-- Pre- and post-planning of construction activities  
-- Estimating, billing, and correspondence with clients  
-
----
-
-## CONFERENCES AND SEMINARS
-
-**First Multi-Disciplinary Student Research Workshop**,  
-KUST, Kohat, Pakistan  
-*09 March 2021*  
-Presented MS Research Project  
-
----
-
-**Poster Presentation:**  
-Role of soft sensors in the cement and nuclear industry using deep learning algorithms  
-*09 August 2021*  
-Actively Participating  
-
----
-
-**Final Year Project:**  
-Learning Alphabet Android Application for Kids  
-*05 July 2018*  
-Presented Final Year Project  
-
----
-
-## PUBLICATIONS
-
-**Biomimetics (MDPI)**  
-Published  
-- Inamullah, Saima Hassan, Nabil A. Alrajeh, Emad A. Mohammed, and Shafiullah Khan.  
-  **Data Diversity in Convolutional Neural Network Based Ensemble Model for Diabetic Retinopathy.**  
-  *Biomimetics* 8(2), 2023: 187.  
-  <https://www.mdpi.com/2313-7673/8/2/187/html>
-
----
-
-**Informatics in Medicine Unlocked (ScienceDirect)**  
-Published  
-- Inamullah, Saima Hassan, Samir Brahim Belhaouari, and Ibrar Amin.  
-  **Deciphering the impact of diversity in CNN-based ensembles on overcoming data imbalance and scarcity in medical datasets: A case study on diabetic retinopathy.**  
-  *Informatics in Medicine Unlocked*, Volume 49, 2024, 101557.  
-  <https://www.sciencedirect.com/science/article/pii/S2352914824001138>
-
----
-
-**The Journal of Precision Medicine: Health and Disease**  
-Published  
-- Inamullah Inamullah, Imran Razzak, Shoaib Jameel.  
-  **The Eye as a Window to Systemic Health: A Survey of Retinal Imaging from Classical Techniques to Oculomics.**  
-  Available online 26 September 2025, 100023.  
-  <https://www.sciencedirect.com/science/article/pii/S305063282500023X>
-
----
-
-## DIGI SKILLS
-
-- **Microsoft Office:** Word, Excel, PowerPoint, Access  
-- **Programming & Tools:** Python, C, SQL, Java, LaTeX, MATLAB/Simulink, PHP/MySQL (basic), AutoCAD (2D & 3D)  
-- **Frameworks & Libraries:** OpenCV, Scikit-learn, NumPy, Pandas, SciPy, Matplotlib, TensorFlow, PyTorch, cuDNN  
-
----
-
-## HONOURS AND AWARDS
-
-**President’s Initiative on Provision of Education** — Kahuta, Pakistan  
-Scholarship funded by the Government of Pakistan  
-*August 2007 – July 2010*  
-
----
-
-**PhD Research Studentship**  
-Faculty of Engineering and Physical Sciences  
-School of Electronics and Computer Science  
-University of Southampton, UK  
-
----
-
-## MANAGEMENT AND LEADERSHIP SKILLS
-
-**Team Leader in Construction Projects**, Islamabad, Pakistan  
-*October 2012 – February 2022*  
-- Site In-charge — National Construction Limited (NCL)  
-- Construction Manager — Allied Corporation  
-- Project Manager — Shan Construction Company  
-
----
-
-## VOLUNTEERING
-
-**Volunteer**, Act of Kindness (Non-Profit Organisation)  
-Islamabad, Pakistan  
-*April 2017 – July 2024*  
-
----
-
-## ENGLISH TEST
-
-**IELTS (Academic): 6.0** — CEFR Level B2  
-Listening: 5.5 | Reading: 5.5 | Speaking: 6.5 | Writing: 6.0  
-Test Date: 19 August 2023  
-
----
-
-## REFERENCES
-
-**Dr. Shoaib Jameel**  
-Associate Professor  
-School of Electronics and Computer Science  
-University of Southampton, UK  
-Email: M.S.Jameel@southampton.ac.uk  
-
----
-
-**Dr. Ernesto Elias Vidal Rosas**  
-Lecturer  
-School of Electronics and Computer Science  
-University of Southampton, UK  
-Email: E.E.Vidal-Rosas@soton.ac.uk  
-
----
-
-**Dr. Saima Hassan**  
-Assistant Professor  
-Institute of Computing  
-Kohat University of Science and Technology, Pakistan  
-Email: saimahassan@kust.edu.pk
+- Dr. Shoaib Jameel, Associate Professor, University of Southampton - `M.S.Jameel@soton.ac.uk`
+- Dr. Ernesto Elias Vidal Rosas, Lecturer, University of Southampton - `E.E.Vidal-Rosas@soton.ac.uk`
+- Dr. Saima Hassan, Assistant Professor, KUST - `saimahassan@kust.edu.pk`

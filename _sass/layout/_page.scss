@@ -266,6 +266,36 @@ body.view-page {
   .page__content ul {
     margin-top: 0.3rem;
   }
+
+  .cv-academic-header {
+    margin-bottom: 1rem;
+    padding: 0.95rem 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(14, 116, 144, 0.22);
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.10), rgba(34, 197, 94, 0.08));
+  }
+
+  .cv-academic-header h1 {
+    margin: 0 0 0.2rem 0;
+    font-size: 1.7rem;
+    letter-spacing: 0.4px;
+  }
+
+  .cv-academic-header p {
+    margin: 0 0 0.55rem 0;
+    font-size: 1rem;
+  }
+
+  .cv-contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.35rem 0.9rem;
+    font-size: 0.94rem;
+  }
+
+  .page__content > h2 + p {
+    margin-top: 0.3rem;
+  }
 }
 
 .page__title {
