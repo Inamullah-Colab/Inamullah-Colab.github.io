@@ -130,6 +130,6 @@ Project Manager (tendering, planning, estimation, billing, client correspondence
 
 ## References
 
-- Dr. Shoaib Jameel, Associate Professor, University of Southampton - `M.S.Jameel@soton.ac.uk`
-- Dr. Ernesto Elias Vidal Rosas, Lecturer, University of Southampton - `E.E.Vidal-Rosas@soton.ac.uk`
-- Dr. Saima Hassan, Assistant Professor, KUST - `saimahassan@kust.edu.pk`
+- Dr. Shoaib Jameel, Associate Professor, University of Southampton - `M.S.Jameel@soton.ac.uk` - <https://bashthebuilder.github.io/>
+- Dr. Ernesto Elias Vidal Rosas, Lecturer, University of Southampton - `E.E.Vidal-Rosas@soton.ac.uk` - <https://www.southampton.ac.uk/people/62tttx/doctor-ernesto-elias-vidal-rosas#about>
+- Dr. Saima Hassan, Assistant Professor, KUST - `saimahassan@kust.edu.pk` - <https://www.linkedin.com/in/drsaima-hassan/?originalSubdomain=pk>
