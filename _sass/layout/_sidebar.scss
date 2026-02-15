@@ -69,26 +69,28 @@
   padding: 1rem 0.95rem;
   border: 1px solid rgba(148, 163, 184, 0.25);
   box-shadow: 0 10px 22px rgba(15, 23, 42, 0.16);
+  position: relative;
+  overflow: hidden;
 }
 
 body.view-home .sidebar {
-  background: linear-gradient(160deg, #0b3a53 0%, #1d4d6b 45%, #0f766e 100%);
+  background: linear-gradient(160deg, #0b3a53 0%, #1d4d6b 45%, #0f766e 100%) !important;
 }
 
 body.view-cv .sidebar {
-  background: linear-gradient(160deg, #1f2937 0%, #0f172a 48%, #155e75 100%);
+  background: linear-gradient(160deg, #1f2937 0%, #0f172a 48%, #155e75 100%) !important;
 }
 
 body.view-blog-archive .sidebar {
-  background: linear-gradient(160deg, #3f2a56 0%, #1e3a8a 48%, #065f46 100%);
+  background: linear-gradient(160deg, #3f2a56 0%, #1e3a8a 48%, #065f46 100%) !important;
 }
 
 body.view-post .sidebar {
-  background: linear-gradient(160deg, #2d325a 0%, #1e1b4b 48%, #0c4a6e 100%);
+  background: linear-gradient(160deg, #2d325a 0%, #1e1b4b 48%, #0c4a6e 100%) !important;
 }
 
 body.view-page .sidebar {
-  background: linear-gradient(160deg, #374151 0%, #1f2937 50%, #0f766e 100%);
+  background: linear-gradient(160deg, #374151 0%, #1f2937 50%, #0f766e 100%) !important;
 }
 
 body.view-home .sidebar,
@@ -113,6 +115,39 @@ body.view-blog-archive .author__avatar img,
 body.view-post .author__avatar img,
 body.view-page .author__avatar img {
   border-color: rgba(255, 255, 255, 0.45);
+}
+
+body.view-home .sidebar::before,
+body.view-cv .sidebar::before,
+body.view-blog-archive .sidebar::before,
+body.view-post .sidebar::before,
+body.view-page .sidebar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7px;
+}
+
+body.view-home .sidebar::before {
+  background: linear-gradient(90deg, #38bdf8, #34d399);
+}
+
+body.view-cv .sidebar::before {
+  background: linear-gradient(90deg, #06b6d4, #60a5fa);
+}
+
+body.view-blog-archive .sidebar::before {
+  background: linear-gradient(90deg, #a855f7, #22c55e);
+}
+
+body.view-post .sidebar::before {
+  background: linear-gradient(90deg, #6366f1, #0ea5e9);
+}
+
+body.view-page .sidebar::before {
+  background: linear-gradient(90deg, #64748b, #14b8a6);
 }
 
 .sidebar__right {
