@@ -442,3 +442,9 @@
     }
   }
 }
+
+/* Force-hide theme toggle icon if any cached/legacy markup still renders it */
+#theme-toggle,
+#theme-icon {
+  display: none !important;
+}

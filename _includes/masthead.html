@@ -9,12 +9,12 @@
         <button><span class="navicon"></span></button>
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg persist"><a href="{{ base_path }}/">{{ site.title }}</a></li>
-          {% assign is_about_page = false %}
-          {% if page.url == "/" or page.url == "/index.html" or page.url == "/about/" or page.url == "/about.html" %}
-            {% assign is_about_page = true %}
+          {% assign is_reduced_nav_page = false %}
+          {% if page.url == "/" or page.url == "/index.html" or page.url == "/about/" or page.url == "/about.html" or page.url == "/cv/" or page.url == "/year-archive/" or page.layout == "post" or page.collection == "posts" %}
+            {% assign is_reduced_nav_page = true %}
           {% endif %}
           {% for link in site.data.navigation.main %}
-            {% if is_about_page and (link.title == "Teaching" or link.title == "Research" or link.title == "Mathematical & Scientific Foundations") %}
+            {% if is_reduced_nav_page and (link.title == "Teaching" or link.title == "Research" or link.title == "Mathematical & Scientific Foundations") %}
               {% continue %}
             {% endif %}
             {% if link.url contains 'http' %}
