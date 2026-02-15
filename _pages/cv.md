@@ -93,15 +93,9 @@ Project Manager (tendering, planning, estimation, billing, client correspondence
    Citations: 0  
    This study integrates retinal imaging with lipidomic profiles in a healthy cohort, revealing microvascular-metabolic signatures linked to cardiovascular health and systemic regulation.
 
-5. Inamullah, et al.  
-   **Retinal Lipidomics Associations as Candidate Biomarkers for Cardiovascular Health.**  
-   *MICAD Proceedings, 2025 - Oral Presentation.*  
-   arXiv: <https://arxiv.org/abs/2508.03538>  
-   Citations: 0  
-   This conference paper explores associations between retinal microvascular traits and lipidomic profiles, identifying candidate non-invasive biomarkers for cardiovascular risk.
-
 ## Conferences and Seminars
 
+- **Retinal Lipidomics Associations as Candidate Biomarkers for Cardiovascular Health** - *MICAD Proceedings, 2025 (Oral Presentation)*. arXiv: <https://arxiv.org/abs/2508.03538>
 - First Multi-Disciplinary Student Research Workshop, KUST (Mar 2021) - Presented MSc research.
 - Poster presentation: Role of soft sensors in cement and nuclear industry using deep learning (Aug 2021).
 - Final year project presentation: Learning Alphabet Android Application for Kids (Jul 2018).
