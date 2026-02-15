@@ -150,16 +150,20 @@ body.view-page .sidebar::before {
   background: linear-gradient(90deg, #64748b, #14b8a6);
 }
 
-/* About page: keep sidebar in normal document flow (not fixed/sticky) */
-body.view-home .sidebar {
-  position: static !important;
-  height: auto !important;
-  overflow: visible !important;
-}
-
-body.view-home .sidebar.sticky {
-  position: static !important;
-  top: auto !important;
+/* Keep left profile sidebar visible while scrolling, without breaking layout */
+@media screen and (min-width: $sidebar-screen-min-width) {
+  body.view-home .sidebar,
+  body.view-cv .sidebar,
+  body.view-blog-archive .sidebar,
+  body.view-post .sidebar,
+  body.view-page .sidebar {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: calc(#{$masthead-height} + 0.55rem) !important;
+    height: calc(100vh - #{$masthead-height} - 0.85rem) !important;
+    overflow-y: auto !important;
+    padding-top: 0.75rem !important;
+  }
 }
 
 /* Give profile links more room so long labels are fully visible */
