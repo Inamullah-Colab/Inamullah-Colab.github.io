@@ -180,18 +180,6 @@ body.view-page .sidebar::before {
   word-break: break-word;
 }
 
-@include breakpoint($large) {
-  .sidebar {
-    min-width: 265px;
-  }
-
-  .page {
-    @include span(9.5 of 12 last);
-    @include prefix(0.5 of 12);
-    @include suffix(2 of 12);
-  }
-}
-
 .sidebar__right {
   margin-bottom: 1em;
 
