@@ -85,3 +85,41 @@
 .pub-title { font-size: 1.05rem; line-height: 1.25; }
 .pub-meta  { margin-top: 2px; opacity: 0.9; }
 .pub-sum   { margin-top: 10px; margin-bottom: 0; }
+
+/* Citation stats */
+.pub-stats-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 0 auto 18px auto;
+  max-width: 980px;
+}
+
+.pub-stat-card {
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: linear-gradient(140deg, rgba(14, 165, 233, 0.12), rgba(34, 197, 94, 0.10));
+  border: 1px solid rgba(14, 116, 144, 0.22);
+  box-shadow: 0 8px 18px rgba(2, 132, 199, 0.10);
+}
+
+.pub-stat-label {
+  font-size: 0.88rem;
+  opacity: 0.86;
+}
+
+.pub-stat-value {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.pub-cite-chip {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(5, 150, 105, 0.25);
+}

@@ -20,8 +20,24 @@ author_profile: true
   retinal imaging, artificial intelligence, oculomics, and systemic health are listed below. 
 </p>
 
+<div class="pub-stats-wrap">
+  <div class="pub-stat-card">
+    <div class="pub-stat-label">Total citations</div>
+    <div class="pub-stat-value" id="pub-total-citations">0</div>
+  </div>
+  <div class="pub-stat-card">
+    <div class="pub-stat-label">Papers tracked</div>
+    <div class="pub-stat-value" id="pub-paper-count">0</div>
+  </div>
+  <div class="pub-stat-card">
+    <div class="pub-stat-label">Citation snapshot</div>
+    <div class="pub-stat-value" id="pub-cite-updated">Today</div>
+  </div>
+</div>
 
-<div class="pub-card">
+<!-- Set each paper citation count in data-cites -->
+
+<div class="pub-card" data-cites="0">
   <div class="pub-img-wrap">
     <img class="pub-img floaty" src="/images/biomimetics-2023.png" alt="Biomimetics 2023">
   </div>
@@ -33,6 +49,7 @@ author_profile: true
     <div class="pub-links" style="margin-top:8px;">
       <a href="https://www.mdpi.com/2313-7673/8/2/187">Journal</a>
     </div>
+    <div class="pub-cite-chip">Citations: <strong>0</strong></div>
     <p class="pub-sum">
       This study systematically analyses how ensemble diversity mitigates data scarcity in medical
       imaging, offering insights into model generalisation under real-world clinical constraints.
@@ -42,7 +59,7 @@ author_profile: true
 
 <hr>
 
-<div class="pub-card">
+<div class="pub-card" data-cites="0">
   <div class="pub-img-wrap">
     <img class="pub-img floaty" src="/images/imu-2024.png" alt="Informatics in Medicine Unlocked 2024">
   </div>
@@ -54,6 +71,7 @@ author_profile: true
     <div class="pub-links" style="margin-top:8px;">
       <a href="https://www.sciencedirect.com/science/article/pii/S2352914824001138">Journal</a>
     </div>
+    <div class="pub-cite-chip">Citations: <strong>0</strong></div>
     <p class="pub-sum">
       This work demonstrates how architectural and data-level diversity in CNN-based ensemble models
       improves robustness when medical imaging datasets are imbalanced or limited, using diabetic
@@ -64,7 +82,7 @@ author_profile: true
 
 <hr>
 
-<div class="pub-card">
+<div class="pub-card" data-cites="0">
   <div class="pub-img-wrap">
     <img class="pub-img floaty" src="/images/jpmhd-2025.png" alt="Oculomics Survey 2025">
   </div>
@@ -76,6 +94,7 @@ author_profile: true
     <div class="pub-links" style="margin-top:8px;">
       <a href="https://www.sciencedirect.com/science/article/pii/S305063282500023X">Journal</a>
     </div>
+    <div class="pub-cite-chip">Citations: <strong>0</strong></div>
     <p class="pub-sum">
       A comprehensive survey tracing the evolution of retinal imaging toward oculomics, highlighting
       how retinal biomarkers can reveal systemic, cardiovascular, and metabolic health.
@@ -85,7 +104,7 @@ author_profile: true
 
 <hr>
 
-<div class="pub-card">
+<div class="pub-card" data-cites="0">
   <div class="pub-img-wrap">
     <img class="pub-img floaty" src="/images/micad-2025.png" alt="MICAD 2025">
   </div>
@@ -97,6 +116,7 @@ author_profile: true
     <div class="pub-links" style="margin-top:8px;">
       <a href="https://arxiv.org/abs/2508.03538">arXiv</a>
     </div>
+    <div class="pub-cite-chip">Citations: <strong>0</strong></div>
     <p class="pub-sum">
       This conference paper explores associations between retinal microvascular traits and lipidomic
       profiles, identifying candidate non-invasive biomarkers for cardiovascular risk.
@@ -106,7 +126,7 @@ author_profile: true
 
 <hr>
 
-<div class="pub-card">
+<div class="pub-card" data-cites="0">
   <div class="pub-img-wrap">
     <img class="pub-img floaty" src="/images/scirep-2025.png" alt="Scientific Reports submission">
   </div>
@@ -118,10 +138,36 @@ author_profile: true
     <div class="pub-links" style="margin-top:8px;">
       <a href="https://arxiv.org/abs/2507.12663">arXiv</a>
     </div>
+    <div class="pub-cite-chip">Citations: <strong>0</strong></div>
     <p class="pub-sum">
       This study integrates retinal imaging with lipidomic profiles in a healthy cohort, revealing
       microvascular-metabolic signatures linked to cardiovascular health and systemic regulation.
     </p>
   </div>
 </div>
+
+<script>
+  (function () {
+    var cards = document.querySelectorAll('.pub-card[data-cites]');
+    var total = 0;
+    cards.forEach(function (card) {
+      var cites = parseInt(card.getAttribute('data-cites') || '0', 10);
+      if (isNaN(cites)) cites = 0;
+      total += cites;
+      var strong = card.querySelector('.pub-cite-chip strong');
+      if (strong) strong.textContent = cites.toLocaleString();
+    });
+
+    var totalEl = document.getElementById('pub-total-citations');
+    var countEl = document.getElementById('pub-paper-count');
+    var dateEl = document.getElementById('pub-cite-updated');
+
+    if (totalEl) totalEl.textContent = total.toLocaleString();
+    if (countEl) countEl.textContent = cards.length.toString();
+    if (dateEl) {
+      var d = new Date();
+      dateEl.textContent = d.toLocaleDateString();
+    }
+  })();
+</script>
 
