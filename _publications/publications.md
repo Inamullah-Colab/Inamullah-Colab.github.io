@@ -20,7 +20,7 @@ author_profile: true
   retinal imaging, artificial intelligence, oculomics, and systemic health are listed below. 
 </p>
 
-<div class="pub-stats-wrap" data-total-cites="37">
+<div class="pub-stats-wrap" data-total-cites="{{ site.data.citations.total | default: 37 }}">
   <div class="pub-stat-card">
     <div class="pub-stat-label">Total citations</div>
     <div class="pub-stat-value" id="pub-total-citations">0</div>
@@ -37,7 +37,7 @@ author_profile: true
 
 <!-- Set each paper citation count in data-cites -->
 
-<div class="pub-card" data-cites="0">
+<div class="pub-card" data-cites="{{ site.data.citations.papers.biomimetics_2023.count | default: 0 }}">
   <div class="pub-img-wrap">
     <img class="pub-img floaty" src="/images/biomimetics-2023.png" alt="Biomimetics 2023">
   </div>
@@ -59,7 +59,7 @@ author_profile: true
 
 <hr>
 
-<div class="pub-card" data-cites="0">
+<div class="pub-card" data-cites="{{ site.data.citations.papers.imu_2024.count | default: 0 }}">
   <div class="pub-img-wrap">
     <img class="pub-img floaty" src="/images/imu-2024.png" alt="Informatics in Medicine Unlocked 2024">
   </div>
@@ -82,7 +82,7 @@ author_profile: true
 
 <hr>
 
-<div class="pub-card" data-cites="0">
+<div class="pub-card" data-cites="{{ site.data.citations.papers.jpmhd_2025.count | default: 0 }}">
   <div class="pub-img-wrap">
     <img class="pub-img floaty" src="/images/jpmhd-2025.png" alt="Oculomics Survey 2025">
   </div>
@@ -104,7 +104,7 @@ author_profile: true
 
 <hr>
 
-<div class="pub-card" data-cites="0">
+<div class="pub-card" data-cites="{{ site.data.citations.papers.micad_2025.count | default: 0 }}">
   <div class="pub-img-wrap">
     <img class="pub-img floaty" src="/images/micad-2025.png" alt="MICAD 2025">
   </div>
@@ -126,7 +126,7 @@ author_profile: true
 
 <hr>
 
-<div class="pub-card" data-cites="0">
+<div class="pub-card" data-cites="{{ site.data.citations.papers.scirep_preprint_2025.count | default: 0 }}">
   <div class="pub-img-wrap">
     <img class="pub-img floaty" src="/images/scirep-2025.png" alt="Scientific Reports submission">
   </div>
