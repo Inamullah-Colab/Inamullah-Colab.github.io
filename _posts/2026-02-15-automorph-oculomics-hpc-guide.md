@@ -100,6 +100,11 @@ permalink: /automorph-local-and-hpc/
   font-family: Consolas, "Courier New", monospace;
 }
 
+.automorph-page pre code {
+  color: #f8fafc !important;
+  opacity: 1;
+}
+
 .automorph-kpis {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
