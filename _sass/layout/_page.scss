@@ -86,8 +86,8 @@ body.view-page {
   }
 }
 
-/* About page: remove empty hero spacer so content starts beside sidebar */
-body.view-home .hero-rotator {
+/* Remove empty hero spacer globally so content starts correctly on all pages */
+.hero-rotator {
   display: none !important;
   height: 0 !important;
   margin: 0 !important;
