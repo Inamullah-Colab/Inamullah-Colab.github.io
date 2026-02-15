@@ -1,28 +1,28 @@
-last_updated_utc: ""
-total: 37
+last_updated_utc: '2026-02-15 17:10:30Z'
+total: 30
 papers:
   biomimetics_2023:
     source: doi
-    id: "10.3390/biomimetics8020187"
-    count: 0
+    id: 10.3390/biomimetics8020187
+    count: 24
     include_in_total: true
   imu_2024:
     source: doi
-    id: "10.1016/j.imu.2024.101557"
-    count: 0
+    id: 10.1016/j.imu.2024.101557
+    count: 6
     include_in_total: true
   jpmhd_2025:
     source: doi
-    id: "10.1016/j.jpmhd.2025.100023"
+    id: 10.1016/j.jpmhd.2025.100023
     count: 0
     include_in_total: true
   micad_2025:
     source: arxiv
-    id: "2508.03538"
+    id: '2508.03538'
     count: 0
     include_in_total: true
   scirep_preprint_2025:
     source: arxiv
-    id: "2507.12663"
+    id: '2507.12663'
     count: 0
     include_in_total: true
