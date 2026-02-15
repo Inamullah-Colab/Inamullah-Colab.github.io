@@ -150,30 +150,16 @@ body.view-page .sidebar::before {
   background: linear-gradient(90deg, #64748b, #14b8a6);
 }
 
-/* Keep the profile card visible while scrolling on smaller screens too */
-@media screen and (max-width: $sidebar-screen-min-width) {
-  .sidebar.sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    top: calc(#{$masthead-height} + 0.6rem);
-    z-index: 25;
-  }
+/* About page: keep sidebar in normal document flow (not fixed/sticky) */
+body.view-home .sidebar {
+  position: static !important;
+  height: auto !important;
+  overflow: visible !important;
 }
 
-/* Subtle motion so the card feels alive while staying readable */
-.sidebar.sticky {
-  animation: sidebarFloat 6.2s ease-in-out infinite;
-}
-
-@keyframes sidebarFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .sidebar.sticky {
-    animation: none;
-  }
+body.view-home .sidebar.sticky {
+  position: static !important;
+  top: auto !important;
 }
 
 .sidebar__right {
