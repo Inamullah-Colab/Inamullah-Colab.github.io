@@ -10,6 +10,9 @@
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg persist"><a href="{{ base_path }}/">{{ site.title }}</a></li>
           {% for link in site.data.navigation.main %}
+            {% if link.title == "Teaching" or link.title == "Research" or link.title == "Mathematical & Scientific Foundations" %}
+              {% continue %}
+            {% endif %}
             {% if link.url contains 'http' %}
               {% assign domain = '' %}
             {% else %}
