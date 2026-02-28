@@ -333,7 +333,8 @@
   .greedy-nav .hidden-links {
     right: 0.5rem;
     left: auto;
-    width: min(92vw, 320px);
+    width: 92vw;
+    max-width: 320px;
     max-height: 70vh;
     overflow-y: auto;
   }

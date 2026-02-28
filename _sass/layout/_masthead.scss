@@ -52,7 +52,8 @@
   }
 
   .masthead__inner-wrap {
-    padding-top: max(0.5em, env(safe-area-inset-top));
+    padding-top: 0.5em;
+    padding-top: calc(0.5em + env(safe-area-inset-top));
   }
 }
 
