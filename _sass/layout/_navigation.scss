@@ -319,6 +319,26 @@
   }
 }
 
+/* Small screens: ensure nav fits width and dropdown is usable */
+@media screen and (max-width: 768px) {
+  .greedy-nav {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .greedy-nav a {
+    margin: 0 0.65rem;
+  }
+
+  .greedy-nav .hidden-links {
+    right: 0.5rem;
+    left: auto;
+    width: min(92vw, 320px);
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+}
+
 
 /*
    Navigation list

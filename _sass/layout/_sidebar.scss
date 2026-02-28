@@ -60,6 +60,31 @@
   }
 }
 
+/* Mobile/tablet: stack naturally and avoid fixed/sticky clipping */
+@media screen and (max-width: 1199px) {
+  .sidebar {
+    position: static !important;
+    top: auto !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin: 0 0 1rem 0 !important;
+    padding-top: 0.8rem !important;
+    max-width: 100% !important;
+  }
+
+  .sidebar .author__content {
+    padding-right: 0;
+  }
+
+  .sidebar .author__urls {
+    position: static;
+    right: auto;
+    left: auto;
+    max-width: 100%;
+  }
+}
+
 /* ==========================================================================
    DYNAMIC SIDEBAR THEMES BY PAGE TYPE
    ========================================================================== */
@@ -163,6 +188,19 @@ body.view-page .sidebar::before {
     height: calc(100vh - #{$masthead-height} - 0.85rem) !important;
     overflow-y: auto !important;
     padding-top: 0.75rem !important;
+  }
+}
+
+/* Tablet widths: keep reading width comfortable and avoid sticky overlap */
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+  body.view-home .sidebar,
+  body.view-cv .sidebar,
+  body.view-blog-archive .sidebar,
+  body.view-post .sidebar,
+  body.view-page .sidebar {
+    position: static !important;
+    height: auto !important;
+    overflow: visible !important;
   }
 }
 

@@ -44,6 +44,18 @@
   }
 }
 
+/* Mobile/tablet: use sticky header for better viewport behavior */
+@media screen and (max-width: 1199px) {
+  .masthead {
+    position: sticky;
+    top: 0;
+  }
+
+  .masthead__inner-wrap {
+    padding-top: max(0.5em, env(safe-area-inset-top));
+  }
+}
+
 .masthead__menu {
 
   ul {

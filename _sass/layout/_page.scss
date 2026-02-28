@@ -16,6 +16,25 @@
   }
 }
 
+/* 2K/4K monitors: expand structure moderately but keep text readable */
+@media screen and (min-width: 1600px) {
+  #main {
+    max-width: 1500px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .page .page__inner-wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  body.view-home #main {
+    grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+    column-gap: 1.7rem;
+  }
+}
+
 .page {
   @include breakpoint($large) {
     @include span(10 of 12 last);
@@ -31,6 +50,19 @@
     .page__share {
       @include full();
     }
+  }
+}
+
+/* Keep content fluid on phones/tablets */
+@media screen and (max-width: 1199px) {
+  body.view-home #main {
+    display: block !important;
+  }
+
+  body.view-home #main .page {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
   }
 }
 
@@ -368,6 +400,26 @@ body.view-page {
   blockquote + .small {
     margin-top: -1.5em;
     padding-left: 1.25rem;
+  }
+
+  /* Prevent horizontal overflow on small screens */
+  img,
+  video,
+  iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  pre,
+  code {
+    overflow-wrap: anywhere;
+  }
+
+  table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
