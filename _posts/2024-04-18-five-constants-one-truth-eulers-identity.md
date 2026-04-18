@@ -1,6 +1,6 @@
 ---
 title: "Five Constants, One Truth: \(e^{i\pi} + 1 = 0\)"
-date: 2026-04-18
+date: 2024-04-18
 permalink: /five-constants-one-truth/
 tags: [mathematics, euler, identity, constants]
 excerpt: "Exploring the profound mathematical relationship that connects five fundamental constants through Euler's Identity"
