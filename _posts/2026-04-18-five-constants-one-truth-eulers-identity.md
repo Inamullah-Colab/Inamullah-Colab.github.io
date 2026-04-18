@@ -75,7 +75,63 @@ This equation says that a point moving around the unit circle can be split into 
 
 That means the same circular motion on the unit circle becomes a pair of oscillating waves when we look at its coordinates.
 
-<img src="/images/euler-identity-unit-circle-wave.svg?v=2" alt="Unit circle with real and imaginary waves" style="max-width: 100%; height: auto; display: block; margin: 20px auto;">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380" role="img" aria-label="Unit circle with real and imaginary waves" style="max-width: 100%; margin: 20px auto; display: block;">
+  <defs>
+    <style>
+      .bg { fill: #f8fafc; }
+      .axis { stroke: #64748b; stroke-width: 2; }
+      .circle { fill: none; stroke: #0f172a; stroke-width: 3; }
+      .wave-real { fill: none; stroke: #2563eb; stroke-width: 2.5; }
+      .wave-imag { fill: none; stroke: #9333ea; stroke-width: 2.5; stroke-dasharray: 8 6; }
+      .dot-move { fill: #ef4444; }
+      .dot-center { fill: #0f172a; }
+      .label { fill: #0f172a; font-family: 'Segoe UI', Arial, sans-serif; font-size: 16px; font-weight: 600; }
+      .note { fill: #475569; font-family: 'Segoe UI', Arial, sans-serif; font-size: 13px; }
+      .legend-blue { fill: #2563eb; }
+      .legend-purple { fill: #9333ea; }
+    </style>
+  </defs>
+  <rect width="700" height="380" class="bg" rx="20"/>
+  <g transform="translate(100, 100)">
+    <line x1="-5" y1="0" x2="130" y2="0" class="axis" stroke-width="1.8"/>
+    <line x1="65" y1="-70" x2="65" y2="80" class="axis" stroke-width="1.8"/>
+    <circle cx="65" cy="0" r="60" class="circle"/>
+    <circle cx="65" cy="0" r="3" class="dot-center"/>
+    <circle cx="122" cy="0" r="5" class="dot-move">
+      <animateMotion dur="6s" repeatCount="indefinite" rotate="auto">
+        <mpath xlink:href="#circlePathSmall" />
+      </animateMotion>
+    </circle>
+    <path id="circlePathSmall" d="M125,0 A60,60 0 1,0 5,0 A60,60 0 1,0 125,0" fill="none"/>
+    <line x1="65" y1="0" x2="122" y2="0" stroke="#0ea5e9" stroke-width="2">
+      <animateMotion dur="6s" repeatCount="indefinite" rotate="auto">
+        <mpath xlink:href="#circlePathSmall" />
+      </animateMotion>
+    </line>
+    <text x="128" y="-8" class="note">real axis</text>
+    <text x="68" y="-74" class="note">imag axis</text>
+    <text x="65" y="100" text-anchor="middle" class="label" font-size="14">unit circle: e^(iθ)</text>
+  </g>
+  <g transform="translate(300, 80)">
+    <rect x="0" y="0" width="350" height="240" fill="#ffffff" rx="12" stroke="#cbd5e1" stroke-width="1.5"/>
+    <line x1="0" y1="120" x2="350" y2="120" class="axis" stroke-width="1.8"/>
+    <line x1="15" y1="0" x2="15" y2="240" class="axis" stroke-width="1.8"/>
+    <path class="wave-real" d="M20 120 Q 40 85 60 120 T 100 120 T 140 120 T 180 120 T 220 120 T 260 120 T 300 120 T 340 120"/>
+    <path class="wave-imag" d="M20 120 Q 40 155 60 120 T 100 120 T 140 120 T 180 120 T 220 120 T 260 120 T 300 120 T 340 120"/>
+    <circle cx="20" cy="120" r="4" class="legend-blue"/>
+    <circle cx="60" cy="120" r="4" class="legend-purple"/>
+    <text x="17" y="115" class="note" text-anchor="end">θ</text>
+    <text x="170" y="30" class="label" text-anchor="middle">Real: cos(θ)</text>
+    <text x="170" y="50" class="label" text-anchor="middle">Imaginary: sin(θ)</text>
+    <text x="120" y="260" class="note" text-anchor="middle">same motion, two views</text>
+  </g>
+  <g transform="translate(100, 320)">
+    <circle cx="0" cy="0" r="3" class="legend-blue"/>
+    <text x="8" y="5" class="note">Real (cosine) — solid</text>
+    <circle cx="200" cy="0" r="3" class="legend-purple"/>
+    <text x="208" y="5" class="note">Imaginary (sine) — dashed</text>
+  </g>
+</svg>
 
 In other words:
 
