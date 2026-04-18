@@ -1,7 +1,7 @@
 ---
 title: "Five Constants, One Truth: \(e^{i\pi} + 1 = 0\)"
 date: 2024-04-18
-permalink: /five-constants-one-truth/
+permalink: /2024/04/18/five-constants-one-truth/
 tags: [mathematics, euler, identity, constants]
 excerpt: "Exploring the profound mathematical relationship that connects five fundamental constants through Euler's Identity"
 ---
@@ -274,5 +274,6 @@ In many ways, understanding Euler's Identity is understanding the very language 
 ---
 
 *The beauty of Euler's Identity lies not just in its mathematical correctness, but in its revelation that seemingly disparate mathematical concepts are deeply, fundamentally connected.*
-   
+  
+ 
  
