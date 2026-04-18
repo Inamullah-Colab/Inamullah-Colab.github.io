@@ -1,5 +1,5 @@
-last_updated_utc: '2026-02-23 07:07:05Z'
-total: 33
+last_updated_utc: '2026-04-13 08:06:55Z'
+total: 35
 papers:
   biomimetics_2023:
     source: doi
@@ -9,12 +9,12 @@ papers:
   imu_2024:
     source: doi
     id: 10.1016/j.imu.2024.101557
-    count: 7
+    count: 8
     include_in_total: true
   jpmhd_2025:
     source: doi
     id: 10.1016/j.premed.2025.100023
-    count: 2
+    count: 3
     include_in_total: true
   micad_2025:
     source: arxiv
