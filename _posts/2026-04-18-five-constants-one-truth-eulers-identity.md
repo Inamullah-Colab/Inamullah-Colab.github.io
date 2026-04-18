@@ -75,7 +75,7 @@ This equation says that a point moving around the unit circle can be split into 
 
 That means the same circular motion on the unit circle becomes a pair of oscillating waves when we look at its coordinates.
 
-![Unit circle with real and imaginary waves](/images/euler-identity-unit-circle-wave-v2.svg)
+![Unit circle with real and imaginary waves](/images/euler-identity-unit-circle-wave.svg)
 
 In other words:
 
