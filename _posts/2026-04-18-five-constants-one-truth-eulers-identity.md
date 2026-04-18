@@ -1,12 +1,12 @@
 ---
-title: "Five Constants, One Truth: Euler's Identity"
+title: "Five Constants, One Truth: \(e^{i\pi} + 1 = 0\)"
 date: 2026-04-18
 permalink: /five-constants-one-truth/
 tags: [mathematics, euler, identity, constants]
 excerpt: "Exploring the profound mathematical relationship that connects five fundamental constants through Euler's Identity"
 ---
 
-# Five Constants, One Truth: Euler's Identity
+# Five Constants, One Truth: \(e^{i\pi} + 1 = 0\)
 
 ## The Most Beautiful Equation in Mathematics
 
@@ -195,8 +195,17 @@ Euler's Identity is fundamental to describing periodic and oscillating phenomena
 ### Statistics and Data Science
 
 Though less obvious, Euler's Identity underlies modern data analysis:
-- **Fourier Analysis**: When analyzing time series data (stock prices, weather patterns, sensor readings), the Discrete Fourier Transform uses \(e^{-2\pi i k n / N}\) to identify periodic patterns—directly from Euler's framework
-- **Probability Distributions**: The characteristic function of any probability distribution is defined as \(\mathbb{E}[e^{itX}]\), a complex exponential form. This connects random variables to Fourier analysis
+- **Fourier Analysis**: When analyzing time series data (stock prices, weather patterns, sensor readings), the Discrete Fourier Transform uses:
+
+  $$e^{-2\pi i k n / N}$$
+
+  to identify periodic patterns—directly from Euler's framework
+
+- **Probability Distributions**: The characteristic function of any probability distribution is defined as:
+
+  $$\mathbb{E}[e^{itX}]$$
+
+  a complex exponential form connecting random variables to Fourier analysis
 - **Hypothesis Testing**: When analyzing circular data (angles, phases, time-of-day effects), circular statistics uses \(e^{i\theta}\) to properly handle the periodic nature
 - **Regression Analysis**: Principal Component Analysis (PCA) and other dimension reduction techniques use eigendecomposition. Complex eigenvalues in these methods relate back to Euler's relationships
 - **Bayesian Statistics**: Modern Bayesian inference algorithms often work in complex-valued spaces where Euler's Identity provides the mathematical foundation
@@ -206,11 +215,18 @@ Though less obvious, Euler's Identity underlies modern data analysis:
 Euler's Identity is surprisingly central to modern AI and computing:
 
 **Neural Networks and Activation Functions:**
-- Many modern activation functions (sine, cosine-based attention mechanisms) derive from $e^{i\theta}$
-- The Fourier Features neural network approach explicitly uses \(\sin(e^{i\theta} x)\) and \(\cos(e^{i\theta} x)\) patterns to approximate functions efficiently
+- Many modern activation functions (sine, cosine-based attention mechanisms) derive from \(e^{i\theta}\)
+- The Fourier Features neural network approach explicitly uses:
+
+  $$\sin(e^{i\theta} x) \quad \text{and} \quad \cos(e^{i\theta} x)$$
+
+  patterns to approximate functions efficiently
 
 **Fourier Neural Networks:**
-- These networks replace traditional convolutional layers with Fourier transforms: \(\hat{f}(k) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i k x} \, dx\)
+- These networks replace traditional convolutional layers with Fourier transforms:
+
+  $$\hat{f}(k) = \int_{-\infty}^{\infty} f(x) e^{-2\pi i k x} \, dx$$
+
 - They can learn periodic patterns much more efficiently than standard neural networks
 
 **Signal Processing in Deep Learning:**
@@ -219,7 +235,10 @@ Euler's Identity is surprisingly central to modern AI and computing:
 - **Computer Vision**: Certain vision models use harmonic embeddings based on \(e^{i\theta}\) to capture rotational symmetries
 
 **Quantum Computing:**
-- Quantum gates are represented as unitary matrices: \(U = e^{i\theta}\) operations
+- Quantum gates are represented as unitary matrices:
+
+  $$U = e^{i\theta}$$
+
 - Quantum algorithms like Shor's (factoring) and Grover's (search) fundamentally rely on manipulating amplitudes using \(e^{i\theta}\) rotations in complex vector spaces
 - When quantum computers eventually outcompute classical computers, it will be through the power of \(e^{i\theta}\) superposition and interference
 
