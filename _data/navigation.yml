@@ -8,6 +8,18 @@
 #      Markdown formatted page while the second is generated using JSON.
 
 main:
+  - title: "Inamullah Khan"
+    url: /
+
+  - title: "Publications"
+    url: /publications/
+
+  - title: "Blog Posts"
+    url: /year-archive/
+  
+  - title: "CV"
+    url: /cv/
+
   - title: "Services"
     url: /services/
 
@@ -16,18 +28,9 @@ main:
 
   - title: "Privacy"
     url: /privacy/
-
-  - title: "Publications"
-    url: /publications/
-
-  - title: "Blog Posts"
-    url: /year-archive/
-    
-  - title: "CV"
-    url: /cv/
-    
+  
   # - title: "CV"
   #   url: /cv-json/
-    
+  
   #- title: "Guide"
   #  url: /markdown/
