@@ -10,8 +10,8 @@
     .road-mid { fill: none; stroke: #f5f6fa; stroke-width: 3; stroke-dasharray: 12 10; }
     .node { fill: #1f4e79; }
     .car { fill: #c0392b; stroke: #7f1d1d; stroke-width: 1.5; }
-    .wheel { fill: none; stroke: #2d3436; stroke-width: 3; transform-origin: 560px 130px; animation: wheelTurn 2s linear infinite; }
-    .pointer { fill: #2d3436; transform-origin: 560px 130px; animation: wheelTurn 2s linear infinite; }
+    .wheel { fill: none; stroke: #2d3436; stroke-width: 3; transform-origin: 550px 132px; animation: wheelTurn 2s linear infinite; }
+    .pointer { fill: #2d3436; transform-origin: 550px 132px; animation: wheelTurn 2s linear infinite; }
     .carWrap { offset-path: path('M 130 220 A 190 190 0 0 1 510 220'); offset-rotate: auto; animation: drive 8s ease-in-out infinite; }
     .energy { fill: #f39c12; opacity: 0.85; animation: pulse 1s ease-in-out infinite; }
     @keyframes drive {
@@ -38,7 +38,7 @@
   <circle class="node" cx="510" cy="220" r="8" />
   <text class="label" x="113" y="246">+1</text>
   <text class="label" x="494" y="246">-1</text>
-  <text class="label" x="302" y="74">π turn</text>
+  <text class="label" x="294" y="74">pi turn</text>
 
   <g class="carWrap">
     <g>
@@ -54,12 +54,12 @@
   <text class="soft" x="70" y="130">continuous power and growth</text>
   <line x1="145" y1="134" x2="190" y2="170" stroke="#f39c12" stroke-width="2" />
 
-  <circle class="wheel" cx="560" cy="130" r="34" />
-  <line class="wheel" x1="560" y1="98" x2="560" y2="162" />
-  <line class="wheel" x1="528" y1="130" x2="592" y2="130" />
-  <polygon class="pointer" points="560,130 592,124 592,136" />
-  <text class="label" x="612" y="124">i = steering wheel</text>
-  <text class="soft" x="612" y="144">rotation in the complex plane</text>
+  <circle class="wheel" cx="550" cy="132" r="34" />
+  <line class="wheel" x1="550" y1="100" x2="550" y2="164" />
+  <line class="wheel" x1="518" y1="132" x2="582" y2="132" />
+  <polygon class="pointer" points="550,132 582,126 582,138" />
+  <text class="label" x="596" y="120">i = steering wheel</text>
+  <text class="soft" x="596" y="140">rotation in the complex plane</text>
 
-  <text class="soft" x="214" y="270">Start at +1, turn by π radians, arrive at -1.</text>
+  <text class="soft" x="206" y="270">Start at +1, turn by pi radians, arrive at -1.</text>
 </svg>

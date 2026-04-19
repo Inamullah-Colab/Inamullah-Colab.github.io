@@ -72,11 +72,11 @@ $$e^{i\pi} = -1$$
 
 This single equation encapsulates:
 
-- Exponential growth represented by $e$
-- Complex rotation represented by $i$
-- The perfect angle represented by $\pi$, which equals exactly half a circle
-- Perfect opposition through $-1$
-- Complete harmony through $e^{i\pi} + 1 = 0$
+- Exponential growth represented by `e`
+- Complex rotation represented by `i`
+- The perfect angle represented by `pi`, which equals exactly half a circle
+- Perfect opposition through `-1`
+- Complete harmony through `e^(i pi) + 1 = 0`
 
 The beauty is not just mathematical elegance. It is a revelation that these seemingly disparate concepts are deeply interconnected. They are not separate truths. They are facets of a single underlying reality.
 
@@ -84,12 +84,12 @@ The beauty is not just mathematical elegance. It is a revelation that these seem
 
 Think of Euler's identity like a car journey:
 
-- $e$ is the engine. It provides the continuous power and growth.
-- $i$ is the steering wheel. It controls the direction, allowing rotation in the complex plane.
-- $\pi$ is the perfect turn, exactly half a circle or 180 degrees.
-- The result $-1$ means you arrive exactly opposite your starting point
+- `e` is the engine. It provides the continuous power and growth.
+- `i` is the steering wheel. It controls the direction, allowing rotation in the complex plane.
+- `pi` is the perfect turn, exactly half a circle or 180 degrees.
+- The result `-1` means you arrive exactly opposite your starting point
 
-The equation $e^{i\pi} + 1 = 0$ is like saying: if you drive with the engine running while turning the steering wheel exactly halfway around, then add your starting position to your ending position, you get perfect balance, zero.
+The equation `e^(i pi) + 1 = 0` is like saying: if you drive with the engine running while turning the steering wheel exactly halfway around, then add your starting position to your ending position, you get perfect balance, zero.
 
 <div class="euler-figure">
   <img src="/images/euler-engine-steering-animated.svg" alt="Animated engine and steering wheel analogy for Euler's identity">
@@ -97,26 +97,26 @@ The equation $e^{i\pi} + 1 = 0$ is like saying: if you drive with the engine run
 
 ## The Engineering and Physics Interpretation
 
-Imagine standing at point $1$ on the real number line and applying the transformation $e^{i\pi}$:
+Imagine standing at point `+1` on the real number line and applying the transformation `e^(i pi)`:
 
-- The exponent $i\pi$ instructs the exponential to perform a complex rotation of $\pi$ radians in the complex plane
-- Starting from position $+1$, a $\pi$ radian rotation brings you exactly to $-1$
-- The exponential function maintains the magnitude at exactly $1$
+- The exponent `i pi` instructs the exponential to perform a complex rotation of `pi` radians in the complex plane
+- Starting from position `+1`, a `pi` radian rotation brings you exactly to `-1`
+- The exponential function maintains the magnitude at exactly `1`
 - The result is a perfect 180-degree reversal without any change in length
 
-So the transformation gives $e^{i\pi} = -1$, and therefore:
+So the transformation gives `e^(i pi) = -1`, and therefore:
 
 $$e^{i\pi} + 1 = 0$$
 
-In physics, this describes how oscillating systems behave. Waves naturally follow the pattern $e^{i\omega t}$, combining an exponential envelope, oscillation frequency, and phase relationships. This is how alternating current circuits operate, how radio waves propagate, and how quantum wavefunctions evolve through time.
+In physics, this describes how oscillating systems behave. Waves naturally follow the pattern `e^(i omega t)`, combining an exponential envelope, oscillation frequency, and phase relationships. This is how alternating current circuits operate, how radio waves propagate, and how quantum wavefunctions evolve through time.
 
 Euler's identity is fundamental to describing periodic and oscillating phenomena:
 
-- Quantum mechanics uses complex exponentials of the form $e^{i\theta}$ to describe probability waves and superposition
-- Wave physics describes sound, light, and water waves using $e^{i\omega t}$
-- Control systems use $e^{i\theta}$ to design stable feedback loops
+- Quantum mechanics uses complex exponentials of the form `e^(i theta)` to describe probability waves and superposition
+- Wave physics describes sound, light, and water waves using `e^(i omega t)`
+- Control systems use `e^(i theta)` to design stable feedback loops
 - Electromagnetism is elegantly expressed using complex-number methods
-- Signal processing relies on Fourier transforms, which decompose signals into $e^{i\omega t}$ components
+- Signal processing relies on Fourier transforms, which decompose signals into `e^(i omega t)` components
 
 ## Why This Matters: Applications Across Science and Technology
 
@@ -126,7 +126,7 @@ These ideas are not decorative. They are the working language of waves, fields, 
 
 ### Statistics and Data Science
 
-Though less obvious, Euler's identity also underlies modern data analysis:
+Though less obvious, Euler's identity also underlies modern data analysis.
 
 <div class="euler-formula-card">
 Fourier analysis of time-series data uses the kernel
@@ -167,7 +167,7 @@ Euler's identity is surprisingly central to modern AI and computing:
 - Computer vision models sometimes encode rotational structure using harmonic features
 - Quantum computing represents operations with unitary matrices involving complex exponentials
 - Equivariant and symmetry-aware neural networks use the same mathematical foundations
-- Optimization in some complex-valued learning systems uses $z = e^{i\theta}$ style parameterizations
+- Optimization in some complex-valued learning systems uses `z = e^(i theta)` style parameterizations
 
 ### Real-World AI Applications
 
