@@ -66,3 +66,15 @@
 .euler-formula-card p:last-child {
   margin-bottom: 0;
 }
+
+.greedy-nav .visible-links a {
+  box-sizing: border-box;
+}
+
+.greedy-nav .visible-links li {
+  position: relative;
+}
+
+.greedy-nav .hidden-links {
+  z-index: 200;
+}
