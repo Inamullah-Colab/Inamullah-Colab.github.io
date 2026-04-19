@@ -2,7 +2,7 @@
 title: "Five Constants, One Truth: Euler's Identity"
 layout: post
 date: 2024-04-18 12:00:00 +0000
-last_modified_at: 2026-04-19 13:30:00 +0000
+last_modified_at: 2026-04-19 14:05:00 +0000
 published: true
 permalink: /posts/2024/04/five-constants-one-truth/
 tags:
@@ -33,9 +33,11 @@ This elegant equation unites five of the most important constants in all of math
 - `e` as the growth constant
 - `i` as the imaginary unit
 
-Let's visualize this relationship.
+Let's visualize this relationship with a smaller moving diagram.
 
-![Euler identity diagram with the unit circle and real and imaginary waves](/images/euler-identity-diagram.png)
+<div class="euler-figure">
+  <img src="/images/euler-waves-animated.svg" alt="Animated Euler diagram showing the unit circle together with the real cosine wave and the imaginary sine wave">
+</div>
 
 Euler's identity elegantly connects five fundamental constants, each with its own profound significance.
 
@@ -92,6 +94,10 @@ Think of Euler's identity like a car journey:
 
 The equation $e^{i\pi} + 1 = 0$ is like saying: if you drive with the engine running while turning the steering wheel exactly halfway around, then add your starting position to your ending position, you get perfect balance, zero.
 
+<div class="euler-figure">
+  <img src="/images/euler-engine-steering-animated.svg" alt="Animated engine and steering wheel analogy for Euler's identity">
+</div>
+
 ## The Engineering and Physics Interpretation
 
 Imagine standing at point $1$ on the real number line and applying the transformation $e^{i\pi}$:
@@ -125,11 +131,33 @@ These ideas are not decorative. They are the working language of waves, fields, 
 
 Though less obvious, Euler's identity also underlies modern data analysis:
 
-- Fourier analysis of time-series data uses $e^{-2\pi i k n / N}$ to identify periodic patterns
-- Characteristic functions in probability take the form $\mathbb{E}[e^{itX}]$
-- Circular statistics uses $e^{i\theta}$ for angles, phases, and cyclic effects
-- Eigendecomposition methods connect naturally to complex-valued analysis
-- Bayesian and computational methods sometimes operate in spaces where complex exponentials are fundamental
+<div class="euler-formula-card">
+Fourier analysis of time-series data uses the kernel
+
+$$e^{-2\pi i k n / N}$$
+
+to identify periodic patterns.
+</div>
+
+<div class="euler-formula-card">
+Characteristic functions in probability take the form
+
+$$\mathbb{E}[e^{itX}]$$
+
+which connects random variables to Fourier analysis.
+</div>
+
+<div class="euler-formula-card">
+Circular statistics uses
+
+$$e^{i\theta}$$
+
+for angles, phases, and cyclic effects.
+</div>
+
+<div class="euler-formula-card">
+Eigendecomposition methods connect naturally to complex-valued analysis, and Bayesian computational methods often work in spaces where complex exponentials remain fundamental.
+</div>
 
 ### Computer Science and Artificial Intelligence
 

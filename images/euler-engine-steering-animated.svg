@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" role="img" aria-labelledby="title2 desc2">
+  <title id="title2">Animated engine and steering wheel analogy</title>
+  <desc id="desc2">A car moves along a half-circle path from plus one to minus one while labels identify the engine, steering wheel, and pi turn.</desc>
+  <style>
+    .panel { fill: #ffffff; stroke: #d7dde5; stroke-width: 1.5; rx: 16; }
+    .title { font: 700 18px system-ui, sans-serif; fill: #17202a; }
+    .label { font: 14px system-ui, sans-serif; fill: #2c3e50; }
+    .soft { font: 13px system-ui, sans-serif; fill: #576574; }
+    .road { fill: none; stroke: #34495e; stroke-width: 24; stroke-linecap: round; }
+    .road-mid { fill: none; stroke: #f5f6fa; stroke-width: 3; stroke-dasharray: 12 10; }
+    .node { fill: #1f4e79; }
+    .car { fill: #c0392b; stroke: #7f1d1d; stroke-width: 1.5; }
+    .wheel { fill: none; stroke: #2d3436; stroke-width: 3; transform-origin: 560px 130px; animation: wheelTurn 2s linear infinite; }
+    .pointer { fill: #2d3436; transform-origin: 560px 130px; animation: wheelTurn 2s linear infinite; }
+    .carWrap { offset-path: path('M 130 220 A 190 190 0 0 1 510 220'); offset-rotate: auto; animation: drive 8s ease-in-out infinite; }
+    .energy { fill: #f39c12; opacity: 0.85; animation: pulse 1s ease-in-out infinite; }
+    @keyframes drive {
+      0%, 10% { offset-distance: 0%; }
+      45%, 55% { offset-distance: 50%; }
+      90%, 100% { offset-distance: 100%; }
+    }
+    @keyframes wheelTurn {
+      0%, 100% { transform: rotate(-35deg); }
+      50% { transform: rotate(35deg); }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(0.9); opacity: 0.5; }
+      50% { transform: scale(1.08); opacity: 1; }
+    }
+  </style>
+
+  <rect class="panel" x="10" y="10" width="740" height="280" />
+  <text class="title" x="26" y="40">The Engine and Steering Wheel Analogy</text>
+
+  <path class="road" d="M 130 220 A 190 190 0 0 1 510 220" />
+  <path class="road-mid" d="M 130 220 A 190 190 0 0 1 510 220" />
+  <circle class="node" cx="130" cy="220" r="8" />
+  <circle class="node" cx="510" cy="220" r="8" />
+  <text class="label" x="113" y="246">+1</text>
+  <text class="label" x="494" y="246">-1</text>
+  <text class="label" x="302" y="74">π turn</text>
+
+  <g class="carWrap">
+    <g>
+      <rect class="car" x="-20" y="-10" width="40" height="20" rx="6" />
+      <circle cx="-12" cy="12" r="5" fill="#2d3436" />
+      <circle cx="12" cy="12" r="5" fill="#2d3436" />
+      <circle class="energy" cx="-28" cy="0" r="5" />
+      <circle class="energy" cx="-36" cy="0" r="3.5" style="animation-delay:0.2s" />
+    </g>
+  </g>
+
+  <text class="label" x="70" y="110">e = engine</text>
+  <text class="soft" x="70" y="130">continuous power and growth</text>
+  <line x1="145" y1="134" x2="190" y2="170" stroke="#f39c12" stroke-width="2" />
+
+  <circle class="wheel" cx="560" cy="130" r="34" />
+  <line class="wheel" x1="560" y1="98" x2="560" y2="162" />
+  <line class="wheel" x1="528" y1="130" x2="592" y2="130" />
+  <polygon class="pointer" points="560,130 592,124 592,136" />
+  <text class="label" x="612" y="124">i = steering wheel</text>
+  <text class="soft" x="612" y="144">rotation in the complex plane</text>
+
+  <text class="soft" x="214" y="270">Start at +1, turn by π radians, arrive at -1.</text>
+</svg>

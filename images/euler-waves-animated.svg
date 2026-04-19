@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 320" role="img" aria-labelledby="title desc">
+  <title id="title">Animated Euler waves diagram</title>
+  <desc id="desc">A rotating point on the unit circle paired with animated cosine and sine wave traces.</desc>
+  <style>
+    .panel { fill: #ffffff; stroke: #d7dde5; stroke-width: 1.5; rx: 16; }
+    .title { font: 700 18px system-ui, sans-serif; fill: #17202a; }
+    .label { font: 14px system-ui, sans-serif; fill: #2c3e50; }
+    .axis { stroke: #2d3436; stroke-width: 1.5; }
+    .grid { stroke: #dfe6e9; stroke-width: 1; }
+    .circle { fill: none; stroke: #1f4e79; stroke-width: 3; }
+    .radius { stroke: #c0392b; stroke-width: 4; stroke-linecap: round; transform-origin: 160px 175px; animation: spin 8s linear infinite; }
+    .point { fill: #c0392b; transform-origin: 160px 175px; animation: spin 8s linear infinite; }
+    .cos { fill: none; stroke: #1f77b4; stroke-width: 4; stroke-linecap: round; }
+    .sin { fill: none; stroke: #d62728; stroke-width: 4; stroke-linecap: round; }
+    .dot-cos { fill: #1f77b4; animation: moveCos 8s linear infinite; }
+    .dot-sin { fill: #d62728; animation: moveSin 8s linear infinite; }
+    .trace-cos { fill: none; stroke: #1f77b4; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 900; stroke-dashoffset: 900; animation: drawTrace 8s linear infinite; }
+    .trace-sin { fill: none; stroke: #d62728; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 900; stroke-dashoffset: 900; animation: drawTrace 8s linear infinite; }
+    .legend { font: 13px system-ui, sans-serif; fill: #2d3436; }
+    .theta { font: italic 14px serif; fill: #c0392b; }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes drawTrace {
+      from { stroke-dashoffset: 900; }
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes moveCos {
+      0% { transform: translate(0px, 0px); }
+      12.5% { transform: translate(39px, 16px); }
+      25% { transform: translate(78px, 57px); }
+      37.5% { transform: translate(117px, 99px); }
+      50% { transform: translate(156px, 116px); }
+      62.5% { transform: translate(195px, 99px); }
+      75% { transform: translate(234px, 57px); }
+      87.5% { transform: translate(273px, 16px); }
+      100% { transform: translate(312px, 0px); }
+    }
+    @keyframes moveSin {
+      0% { transform: translate(0px, 116px); }
+      12.5% { transform: translate(39px, 57px); }
+      25% { transform: translate(78px, 0px); }
+      37.5% { transform: translate(117px, 57px); }
+      50% { transform: translate(156px, 116px); }
+      62.5% { transform: translate(195px, 174px); }
+      75% { transform: translate(234px, 232px); }
+      87.5% { transform: translate(273px, 174px); }
+      100% { transform: translate(312px, 116px); }
+    }
+  </style>
+
+  <rect class="panel" x="10" y="10" width="740" height="300" />
+
+  <text class="title" x="110" y="40">Unit Circle</text>
+  <line class="axis" x1="160" y1="85" x2="160" y2="265" />
+  <line class="axis" x1="70" y1="175" x2="250" y2="175" />
+  <circle class="circle" cx="160" cy="175" r="80" />
+  <line class="radius" x1="160" y1="175" x2="216.6" y2="118.4" />
+  <circle class="point" cx="216.6" cy="118.4" r="7" />
+  <text class="label" x="262" y="180">Re(z)</text>
+  <text class="label" x="168" y="78">Im(z)</text>
+  <text class="label" x="74" y="193">π</text>
+  <text class="label" x="225" y="112">z = e<tspan dy="-6" font-size="10">iθ</tspan></text>
+  <text class="theta" x="188" y="152">θ</text>
+
+  <text class="title" x="420" y="40">Real &amp; Imaginary Waves</text>
+  <line class="grid" x1="400" y1="117" x2="710" y2="117" />
+  <line class="grid" x1="400" y1="175" x2="710" y2="175" />
+  <line class="grid" x1="400" y1="233" x2="710" y2="233" />
+  <line class="grid" x1="400" y1="80" x2="400" y2="260" />
+  <line class="grid" x1="478" y1="80" x2="478" y2="260" />
+  <line class="grid" x1="556" y1="80" x2="556" y2="260" />
+  <line class="grid" x1="634" y1="80" x2="634" y2="260" />
+  <line class="grid" x1="712" y1="80" x2="712" y2="260" />
+  <line class="axis" x1="400" y1="175" x2="712" y2="175" />
+  <line class="axis" x1="400" y1="80" x2="400" y2="260" />
+  <path class="cos" d="M 400 117 C 439 117, 439 175, 478 175 S 517 233, 556 233 S 595 175, 634 175 S 673 117, 712 117" />
+  <path class="sin" d="M 400 175 C 439 117, 439 117, 478 117 S 517 175, 556 175 S 595 233, 634 233 S 673 175, 712 175" />
+  <path class="trace-cos" d="M 400 117 C 439 117, 439 175, 478 175 S 517 233, 556 233 S 595 175, 634 175 S 673 117, 712 117" />
+  <path class="trace-sin" d="M 400 175 C 439 117, 439 117, 478 117 S 517 175, 556 175 S 595 233, 634 233 S 673 175, 712 175" />
+  <circle class="dot-cos" cx="400" cy="117" r="6" />
+  <circle class="dot-sin" cx="400" cy="175" r="6" />
+  <text class="label" x="394" y="280">0</text>
+  <text class="label" x="462" y="280">π/2</text>
+  <text class="label" x="548" y="280">π</text>
+  <text class="label" x="617" y="280">3π/2</text>
+  <text class="label" x="696" y="280">2π</text>
+  <rect x="582" y="92" width="122" height="46" fill="#ffffff" opacity="0.9" />
+  <line x1="592" y1="106" x2="625" y2="106" stroke="#1f77b4" stroke-width="4" />
+  <text class="legend" x="635" y="111">Real (cos θ)</text>
+  <line x1="592" y1="126" x2="625" y2="126" stroke="#d62728" stroke-width="4" />
+  <text class="legend" x="635" y="131">Imaginary (sin θ)</text>
+</svg>

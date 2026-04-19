@@ -41,3 +41,28 @@
     "vendor/font-awesome/solid",
     "vendor/font-awesome/brands"
 ;
+
+.euler-figure {
+  margin: 1.5rem auto;
+  max-width: 760px;
+}
+
+.euler-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.euler-formula-card {
+  margin: 1rem 0;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid #1f4e79;
+  background: rgba(31, 78, 121, 0.05);
+}
+
+.euler-formula-card p:last-child {
+  margin-bottom: 0;
+}
