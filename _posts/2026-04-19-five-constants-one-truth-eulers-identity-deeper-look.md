@@ -1,8 +1,8 @@
 ---
 title: "Five Constants, One Truth: Euler's Identity, A Deeper Look"
 layout: post
-date: 2026-04-29 12:00:00 +0000
-last_modified_at: 2026-04-29 12:00:00 +0000
+date: 2026-04-19 12:00:00 +0000
+last_modified_at: 2026-04-19 12:00:00 +0000
 published: true
 permalink: /posts/2026/04/five-constants-one-truth-eulers-identity-deeper-look/
 tags:
