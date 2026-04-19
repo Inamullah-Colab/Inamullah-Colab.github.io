@@ -26,13 +26,13 @@ This elegant equation unites five of the most important constants in all of math
 
 - `0` as the additive identity
 - `1` as the multiplicative identity
-- `\pi` as the circle constant
+- `pi` as the circle constant
 - `e` as the growth constant
 - `i` as the imaginary unit
 
-Let's visualize that relationship first.
+Let's visualize this relationship.
 
-![Euler identity figure with the unit circle and real and imaginary waves](/images/euler-identity-waves.jpg)
+![Euler identity diagram with the unit circle and real and imaginary waves](/images/euler-identity-diagram.png)
 
 Euler's identity elegantly connects five fundamental constants, each with its own profound significance.
 
@@ -46,94 +46,91 @@ Zero represents nothingness, the empty baseline from which counting begins. It i
 
 One is the foundation of counting and the multiplicative identity. Any number multiplied by one remains itself. It is the simplest positive integer and the basis from which the natural numbers are built.
 
-### \(\pi\): The Circle Constant
+### pi: The Circle Constant
 
-\(\pi \approx 3.14159\ldots\) emerges from the geometry of circles and spheres. It is the ratio of a circle's circumference to its diameter, and it appears throughout geometry, physics, and engineering. It is irrational and transcendental, so its decimal expansion never terminates or repeats.
+$\pi \approx 3.14159\ldots$ emerges naturally from the geometry of circles and spheres. It is the ratio of a circle's circumference to its diameter, appearing throughout physics, engineering, and natural phenomena. It is transcendental and irrational, so its decimal representation never repeats.
 
-### \(e\): The Growth Constant
+### e: The Growth Constant
 
-\(e \approx 2.71828\ldots\) is the base of the natural logarithm. It appears in compound interest, continuous growth, differential equations, and many natural processes. Whenever growth is proportional to the current state, \(e\) tends to appear.
+$e \approx 2.71828\ldots$ is the base of natural logarithms. It emerges from compound interest, exponential growth, and appears in physics, biology, and chemistry. When something grows at a rate proportional to its current size, $e$ appears naturally.
 
-### \(i\): The Imaginary Unit
+### i: The Imaginary Unit
 
 The imaginary unit satisfies:
 
 $$i^2 = -1$$
 
-Although it sounds abstract, complex numbers are essential in wave physics, quantum mechanics, electrical engineering, and signal processing. The term "imaginary" is historical; the mathematics is completely real in its applications.
+While it seems abstract, complex numbers are essential for describing waves, quantum mechanics, electrical engineering, and signal processing. The label "imaginary" is historical. They are just as real as any other mathematical construct.
 
 ## The Profound Beauty
 
-Euler's identity is striking because five independent concepts combine into one exact relationship:
+What makes Euler's identity so remarkable is how five independent concepts, arising from completely different domains of mathematics, combine into one perfect equation:
 
 $$e^{i\pi} = -1$$
 
 This single equation encapsulates:
 
-- Exponential growth through \(e\)
-- Complex rotation through \(i\)
-- A fundamental angle through \(\pi\), which represents half a turn
-- Perfect opposition through \(-1\)
-- Equilibrium through \(e^{i\pi} + 1 = 0\)
+- Exponential growth represented by $e$
+- Complex rotation represented by $i$
+- The perfect angle represented by $\pi$, which equals exactly half a circle
+- Perfect opposition through $-1$
+- Complete harmony through $e^{i\pi} + 1 = 0$
 
-The beauty is not just mathematical elegance. It is a revelation that seemingly separate ideas such as growth, rotation, and constants from very different parts of mathematics are deeply interconnected.
+The beauty is not just mathematical elegance. It is a revelation that these seemingly disparate concepts are deeply interconnected. They are not separate truths. They are facets of a single underlying reality.
 
 ## The Engine and Steering Wheel Analogy
 
-One way to explain the identity informally is with a driving analogy:
+Think of Euler's identity like a car journey:
 
-- \(e\) is the engine that provides continuous motion
-- \(i\) is the steering mechanism that introduces direction and rotation
-- \(\pi\) is the exact half-turn
-- The result \(-1\) means you arrive exactly opposite your starting point
+- $e$ is the engine. It provides the continuous power and growth.
+- $i$ is the steering wheel. It controls the direction, allowing rotation in the complex plane.
+- $\pi$ is the perfect turn, exactly half a circle or 180 degrees.
+- The result $-1$ means you arrive exactly opposite your starting point
 
-In that picture, \(e^{i\pi} + 1 = 0\) says that the journey and the starting position balance perfectly.
+The equation $e^{i\pi} + 1 = 0$ is like saying: if you drive with the engine running while turning the steering wheel exactly halfway around, then add your starting position to your ending position, you get perfect balance, zero.
 
 ## The Engineering and Physics Interpretation
 
-Imagine standing at point \(1\) on the real number line and applying the transformation \(e^{i\pi}\):
+Imagine standing at point $1$ on the real number line and applying the transformation $e^{i\pi}$:
 
-- The exponent \(i\pi\) instructs the exponential to perform a complex rotation of \(\pi\) radians
-- Starting from \(+1\), a half-turn moves the point exactly to \(-1\)
-- The exponential preserves the magnitude at 1
+- The exponent $i\pi$ instructs the exponential to perform a complex rotation of $\pi$ radians in the complex plane
+- Starting from position $+1$, a $\pi$ radian rotation brings you exactly to $-1$
+- The exponential function maintains the magnitude at exactly $1$
 - The result is a perfect 180-degree reversal without any change in length
 
-So the transformation gives \(e^{i\pi} = -1\), and therefore:
+So the transformation gives $e^{i\pi} = -1$, and therefore:
 
 $$e^{i\pi} + 1 = 0$$
 
-This is not just abstract symbolism. In physics and engineering, complex exponentials describe oscillation, phase, and rotation. Expressions of the form \(e^{i\omega t}\) appear in:
+In physics, this describes how oscillating systems behave. Waves naturally follow the pattern $e^{i\omega t}$, combining an exponential envelope, oscillation frequency, and phase relationships. This is how alternating current circuits operate, how radio waves propagate, and how quantum wavefunctions evolve through time.
 
-- alternating current circuits
-- radio and electromagnetic waves
-- vibration and control systems
-- quantum wavefunctions
+Euler's identity is fundamental to describing periodic and oscillating phenomena:
 
-## Why This Matters Across Science and Technology
+- Quantum mechanics uses complex exponentials of the form $e^{i\theta}$ to describe probability waves and superposition
+- Wave physics describes sound, light, and water waves using $e^{i\omega t}$
+- Control systems use $e^{i\theta}$ to design stable feedback loops
+- Electromagnetism is elegantly expressed using complex-number methods
+- Signal processing relies on Fourier transforms, which decompose signals into $e^{i\omega t}$ components
+
+## Why This Matters: Applications Across Science and Technology
 
 ### Physics and Engineering
 
-Euler's identity sits behind a large amount of scientific mathematics:
-
-- Quantum mechanics uses complex exponentials to describe probability waves, phase, and superposition
-- Wave physics expresses sound, light, and water waves using oscillatory forms such as \(e^{i\omega t}\)
-- Control systems use complex-plane methods to study feedback and stability
-- Electromagnetism is often written more cleanly with complex numbers
-- Signal processing relies on Fourier transforms that decompose signals into complex exponential components
+These ideas are not decorative. They are the working language of waves, fields, and oscillatory systems.
 
 ### Statistics and Data Science
 
-The same structure appears in modern data analysis:
+Though less obvious, Euler's identity also underlies modern data analysis:
 
-- Fourier analysis detects periodic patterns in time series
-- Characteristic functions in probability take the form \(\mathbb{E}[e^{itX}]\)
-- Circular statistics uses \(e^{i\theta}\) for angles, phases, and cyclic effects
+- Fourier analysis of time-series data uses $e^{-2\pi i k n / N}$ to identify periodic patterns
+- Characteristic functions in probability take the form $\mathbb{E}[e^{itX}]$
+- Circular statistics uses $e^{i\theta}$ for angles, phases, and cyclic effects
 - Eigendecomposition methods connect naturally to complex-valued analysis
 - Bayesian and computational methods sometimes operate in spaces where complex exponentials are fundamental
 
 ### Computer Science and Artificial Intelligence
 
-Euler's identity also underlies modern computing:
+Euler's identity is surprisingly central to modern AI and computing:
 
 - Fourier-based methods are used in machine learning and scientific computing
 - Neural networks that use Fourier features rely on sine and cosine structure derived from complex exponentials
@@ -142,7 +139,7 @@ Euler's identity also underlies modern computing:
 - Computer vision models sometimes encode rotational structure using harmonic features
 - Quantum computing represents operations with unitary matrices involving complex exponentials
 - Equivariant and symmetry-aware neural networks use the same mathematical foundations
-- Optimization in some complex-valued learning systems uses \(z = e^{i\theta}\)-style parameterizations
+- Optimization in some complex-valued learning systems uses $z = e^{i\theta}$ style parameterizations
 
 ### Real-World AI Applications
 
@@ -165,6 +162,6 @@ What makes Euler's identity special is that it connects:
 
 All of that appears through one elegantly compact equation.
 
-That is why Euler's identity is more than a mathematical curiosity. It gives a compact description of how reality encodes growth, rotation, oscillation, symmetry, and balance across scales.
+This suggests that Euler's identity is not just a mathematical curiosity. It is a compact description of how reality encodes and transmits information across scales, from quantum mechanics to classical physics to artificial intelligence systems.
 
-In that sense, Euler's identity is more than a curiosity. It is one of the clearest examples of mathematics revealing an underlying unity across disciplines.
+In many ways, understanding Euler's identity is understanding part of the language that nature uses to communicate with itself. Its beauty lies not just in mathematical correctness, but in revealing that seemingly separate mathematical concepts are fundamentally connected.
