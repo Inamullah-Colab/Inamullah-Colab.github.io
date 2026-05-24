@@ -1,5 +1,6 @@
 /* Publications and homepage research cards */
 .page__content {
+  box-sizing: border-box;
   background:
     radial-gradient(circle at 10% 12%, rgba(13, 148, 136, 0.08), transparent 34%),
     radial-gradient(circle at 92% 20%, rgba(245, 158, 11, 0.08), transparent 30%),
@@ -163,7 +164,7 @@
 
 .pub-links a {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 0;
   padding: 6px 10px;
   border-radius: 999px;
   background: rgba(15, 23, 42, 0.04);
@@ -425,18 +426,48 @@
   font-weight: 700;
 }
 
-@media (max-width: 768px) {
+.pub-links,
+.news-feature-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+@media (max-width: 1024px) {
+  .page__content {
+    padding: 18px;
+  }
+
+  .pub-feature-card {
+    grid-template-columns: minmax(220px, 320px) 1fr;
+  }
+
   .news-feature-card {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(160px, 240px) 1fr;
   }
 }
 
 @media (max-width: 768px) {
+  .page__content {
+    border-radius: 14px;
+    padding: 16px;
+  }
+
+  .pub-hero-copy {
+    font-size: 0.98rem;
+  }
+
   .pub-card {
     flex-direction: column;
+    padding: 16px;
   }
 
   .pub-feature-card {
+    grid-template-columns: 1fr;
+    padding: 0.95rem;
+  }
+
+  .news-feature-card {
     grid-template-columns: 1fr;
   }
 
@@ -449,5 +480,71 @@
 
   .pub-img-wrap {
     height: auto;
+  }
+
+  .pub-feature-media img,
+  .news-feature-media img {
+    max-width: 100%;
+  }
+
+  .pub-footer,
+  .pub-mini-footer,
+  .pub-feature-footer {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .pub-stats-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .pub-mini-grid,
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .page__content {
+    border-radius: 12px;
+    padding: 12px;
+  }
+
+  .pub-card,
+  .pub-mini-card,
+  .news-card,
+  .pub-feature-card,
+  .news-feature-card,
+  .pub-stat-card {
+    border-radius: 14px;
+  }
+
+  .pub-title,
+  .pub-mini-title,
+  .news-title {
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .pub-feature-title,
+  .news-feature-title {
+    font-size: 1.1rem;
+    line-height: 1.22;
+  }
+
+  .pub-kicker,
+  .news-date {
+    letter-spacing: 0.04em;
+  }
+
+  .pub-links a,
+  .news-feature-links a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .pub-cite-chip {
+    width: 100%;
+    text-align: center;
   }
 }
