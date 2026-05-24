@@ -1,21 +1,30 @@
 ---
 permalink: /
-title: "About Me"
+title: "About"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
-I am **Inamullah**, a PhD student in Computer Science at the [School of Electronics and Computer Science](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science), [University of Southampton](https://www.southampton.ac.uk/). My research investigates how the **retinal microvasculature can serve as a non-invasive marker of systemic biological processes**, and how information captured in the eye relates to complex interactions spanning molecular, genetic, and clinical domains.
+I am **Inamullah Khan**, a PhD student in Computer Science at the [School of Electronics and Computer Science](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science), [University of Southampton](https://www.southampton.ac.uk/). My research focuses on how **retinal microvascular structure can act as a non-invasive marker of systemic biology**, and how signals captured in the eye relate to molecular, genetic, and clinical processes.
 
-The retina offers a uniquely accessible view of human vascular and neurological systems. Beyond its local anatomy, retinal vascular patterns encode signals associated with cardiometabolic regulation, neurovascular health, and developmental processes. My work focuses on extracting and analysing fine-grained vascular traits, such as vessel calibre, tortuosity, density, and fractal geometry, and on examining how these features relate to **clinical phenotypes, molecular profiles, and genetic variation**.
+The retina provides a uniquely accessible view of vascular and neurological health. My work studies fine-grained retinal traits, including vessel calibre, tortuosity, density, and fractal geometry, and examines how these features relate to **clinical phenotypes, lipidomic profiles, and genetic variation**.
 
-A key objective of my research is not merely to identify statistical relationships, but to **understand the biological structure and mechanisms underlying them**. To achieve this, we develop and apply **mathematical and statistical methodologies** capable of modelling latent structures, mediated pathways, and confounding effects inherent in high-dimensional biomedical data. These approaches include multivariate statistical analysis, causal and mediation modelling, network-based representations, and interpretable machine learning frameworks designed to separate direct effects from indirect or shared influences.
+A central aim of this research is not only to identify associations, but to **understand the biological structure and mechanisms underlying them**. To do that, I develop and apply **mathematical, statistical, and interpretable machine learning methods** for high-dimensional biomedical data, including causal and mediation modelling, pathway-aware representations, and network-based analysis.
 
-By integrating retinal imaging with clinical measurements, lipidomic profiles, and genetic data, my research explores how information propagates across biological scales, from molecular regulation and genetic predisposition to vascular morphology and observable disease risk. This integrative perspective enables the study of **biological pathways, regulatory interactions, and cross-modal dependencies**, rather than analysing each data source in isolation.
+By integrating retinal imaging with clinical, lipidomic, and genetic data, my research explores how information propagates across biological scales, from molecular regulation and inherited predisposition to vascular morphology and disease risk. This integrative perspective supports the study of **biological pathways, regulatory interactions, and cross-modal dependencies**, rather than treating each data source in isolation.
 
 This work aligns closely with the emerging field of **oculomics**, which leverages ocular biomarkers derived from advanced imaging to infer systemic health and disease. My broader research interests include multimodal data integration, explainable and trustworthy AI for healthcare, and the development of computational methods that prioritise interpretability, robustness, and translational relevance.
+
+---
+
+## Research Focus
+
+- **Oculomics and retinal biomarkers** for systemic cardiovascular, metabolic, and neurological health.
+- **Interpretable machine learning** for biomedical imaging and multimodal health data.
+- **Causal and mediation modelling** for pathway-level biological interpretation.
+- **Multi-omics integration** linking retinal phenotypes with lipidomic, genetic, and clinical measurements.
 
 ---
 
@@ -62,19 +71,19 @@ This work aligns closely with the emerging field of **oculomics**, which leverag
 
 ---
 
-## Academic Background and Motivation
+## Background
 
-My academic path has evolved through a combination of interdisciplinary training, professional experience, and personal motivation, ultimately converging on medically oriented computational research.
+My academic path has evolved through interdisciplinary training, professional experience, and a sustained interest in medically relevant computational research.
 
-Before beginning my doctoral studies, I completed a **Master’s degree in Computer Science**, with a major focus on **artificial intelligence for medical imaging**. During this programme, I developed practical experience in image analysis, computational modelling, and data-driven methods applied to biomedical problems. This stage of my training played a formative role in connecting my technical background to healthcare-focused research questions.
+Before beginning my doctoral studies, I completed a **Master's degree in Computer Science**, with a strong focus on **artificial intelligence for medical imaging**. That training gave me practical experience in image analysis, computational modelling, and data-driven approaches to biomedical problems.
 
-Prior to this, I earned a **Bachelor’s degree with a combined emphasis on physics, mathematics, and computer science**, providing a strong foundation in analytical reasoning, mathematical formulation, and algorithmic thinking. Earlier still, I completed a **three-year diploma in civil engineering** and subsequently accumulated **over twelve years of professional experience** in this field. This early exposure to engineering practice fostered a pragmatic mindset, systems-level thinking, and an appreciation for real-world constraints, qualities that continue to influence my research approach.
+Prior to this, I earned a **Bachelor's degree** with combined emphasis on physics, mathematics, and computer science, which provided a strong foundation in analytical reasoning, mathematical formulation, and algorithmic thinking. Earlier, I also completed a **three-year diploma in civil engineering** and accumulated **more than twelve years of professional experience** in that field. That engineering background continues to shape my research through systems thinking, pragmatism, and attention to real-world constraints.
 
-Beyond formal education, my motivation to work on health-related problems is deeply rooted in personal experience. I come from **Bajaur Agency**, a remote tribal region in Pakistan near the Pakistan–Afghanistan border, where access to basic healthcare infrastructure, medical services, and medication has historically been limited. Growing up in such an environment shaped my early awareness of health inequities and instilled a strong desire to contribute, in whatever capacity possible, to improving healthcare outcomes.
+My motivation to work on health-related problems is also rooted in personal experience. I come from **Bajaur Agency**, a remote tribal region in Pakistan near the Pakistan-Afghanistan border, where access to healthcare infrastructure, medical services, and medication has historically been limited. Growing up in that environment shaped my awareness of health inequities and strengthened my commitment to medically relevant research.
 
-Although unstable circumstances prevented me from pursuing a conventional medical career, this aspiration did not diminish. Instead, it evolved. Over time, I recognized that **computational science, engineering, and data-centric methodologies** offer powerful alternatives to support medical research and healthcare delivery. This realisation guided my gradual integration of physics, mathematics, computer science, engineering, and medical imaging into a unified research trajectory.
+Although circumstances prevented me from pursuing a conventional medical career, the motivation remained. Over time, I came to see **computational science, engineering, and data-centric methods** as powerful ways to contribute to medical research and healthcare delivery. That realization gradually brought together my interests in physics, mathematics, computer science, engineering, and medical imaging into a single research trajectory.
 
-My current PhD work represents the synthesis of these experiences. By combining retinal imaging with clinical, molecular, and genetic data, and employing mathematical, statistical, and interpretable machine learning techniques to model complex biological relationships, my research aims to generate mechanistic insights from non-invasive data sources. This intersection, between technical rigor and medical relevance, closely reflects both my intellectual interests and long-term goals.
+My current PhD work is the synthesis of these experiences. By combining retinal imaging with clinical, molecular, and genetic data, and by using mathematical, statistical, and interpretable machine learning methods to model complex biological relationships, I aim to generate mechanistic insight from non-invasive data sources.
 
 ---
 
@@ -88,6 +97,7 @@ My current PhD work represents the synthesis of these experiences. By combining 
 
 {% assign recent_publications = site.data.publications | sort: "date" | reverse %}
 {% assign featured_publication = recent_publications | where: "citation_key", "retisem_ssrn_2026" | first %}
+{% assign listed_recent_publications = recent_publications | where_exp: "item", "item.citation_key != 'retisem_ssrn_2026'" %}
 
 {% if featured_publication %}
   {% assign featured_citation = site.data.citations.papers[featured_publication.citation_key] %}
@@ -117,7 +127,7 @@ My current PhD work represents the synthesis of these experiences. By combining 
 {% endif %}
 
 <div class="pub-mini-grid">
-  {% for publication in recent_publications limit:3 %}
+  {% for publication in listed_recent_publications limit:3 %}
     {% assign citation_entry = site.data.citations.papers[publication.citation_key] %}
     <article class="pub-mini-card">
       <div class="pub-mini-topline">
@@ -142,4 +152,3 @@ My current PhD work represents the synthesis of these experiences. By combining 
 </div>
 
 <p><a href="/publications/" class="btn btn--primary">View all publications</a></p>
-
