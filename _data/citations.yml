@@ -1,6 +1,11 @@
 last_updated_utc: '2026-05-18 10:07:19Z'
 total: 36
 papers:
+  retisem_ssrn_2026:
+    source: doi
+    id: 10.2139/ssrn.6752708
+    count: 0
+    include_in_total: true
   biomimetics_2023:
     source: doi
     id: 10.3390/biomimetics8020187
