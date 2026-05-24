@@ -44,6 +44,34 @@ My current PhD work represents the synthesis of these experiences. By combining 
 ## Recent Publications
 
 {% assign recent_publications = site.data.publications | sort: "date" | reverse %}
+{% assign featured_publication = recent_publications | where: "citation_key", "retisem_ssrn_2026" | first %}
+
+{% if featured_publication %}
+  {% assign featured_citation = site.data.citations.papers[featured_publication.citation_key] %}
+  <article class="pub-feature-card">
+    <div class="pub-feature-media">
+      <img src="{{ featured_publication.image }}" alt="{{ featured_publication.title }}">
+    </div>
+    <div class="pub-feature-body">
+      <p class="pub-kicker">Featured Paper</p>
+      <h3 class="pub-feature-title">{{ featured_publication.title }}</h3>
+      <p class="pub-feature-meta">
+        <strong>{{ featured_publication.year }}</strong>
+        {% if featured_publication.status %} | {{ featured_publication.status }}{% endif %}
+        | <em>{{ featured_publication.venue }}</em>
+      </p>
+      <p class="pub-feature-summary">{{ featured_publication.summary }}</p>
+      <div class="pub-feature-footer">
+        <div class="pub-links">
+          {% for link in featured_publication.links %}
+            <a href="{{ link.url }}">{{ link.label }}</a>
+          {% endfor %}
+        </div>
+        <div class="pub-cite-chip">Citations: <strong>{{ featured_citation.count | default: 0 }}</strong></div>
+      </div>
+    </div>
+  </article>
+{% endif %}
 
 <div class="pub-mini-grid">
   {% for publication in recent_publications limit:3 %}

@@ -60,13 +60,16 @@ author_profile: true
       <div class="pub-list">
         {% for publication in items %}
           {% assign citation_entry = site.data.citations.papers[publication.citation_key] %}
-          <article class="pub-card">
+          <article class="pub-card{% if publication.citation_key == 'retisem_ssrn_2026' %} pub-card-featured{% endif %}">
             <div class="pub-img-wrap">
               <img class="pub-img" src="{{ publication.image }}" alt="{{ publication.title }}">
             </div>
             <div class="pub-body">
               <div class="pub-topline">
                 <span class="pub-year">{{ publication.year }}</span>
+                {% if publication.citation_key == "retisem_ssrn_2026" %}
+                  <span class="pub-badge">Featured</span>
+                {% endif %}
                 {% if publication.status %}
                   <span class="pub-badge">{{ publication.status }}</span>
                 {% endif %}
