@@ -24,13 +24,17 @@ This work aligns closely with the emerging field of **oculomics**, which leverag
 {% assign homepage_news = site.posts | sort: "date" | reverse %}
 
 <article class="news-feature-card">
+  <div class="news-feature-media">
+    <img src="/images/Systemic_Health.png" alt="Illustration linking retinal imaging to systemic health">
+  </div>
   <div class="news-feature-body">
     <p class="pub-kicker">Featured In The News</p>
     <h3 class="news-feature-title">Forbes: How Artificial Intelligence Makes Eye Exams a Gateway to Whole-Body Wellness</h3>
     <p class="news-feature-meta"><strong>November 5, 2025</strong> | Forbes</p>
     <p class="news-feature-summary">
-      Forbes highlighted the growing role of AI-enabled retinal imaging in whole-body wellness, closely aligning with
+      Forbes featured the broader idea at the center of our paper:
       <em>The Eye as a Window to Systemic Health: A Survey of Retinal Imaging from Classical Techniques to Oculomics</em>.
+      The article emphasizes how AI-enabled eye exams can act as a gateway to whole-body wellness by revealing systemic cardiovascular, metabolic, and neurological signals from retinal imaging.
     </p>
     <div class="news-feature-links">
       <a href="https://www.forbes.com/sites/williamhaseltine/2025/11/05/how-artificial-intelligence-makes-eye-exams-a-gateway-to-whole-body-wellness/">Read Forbes article</a>
