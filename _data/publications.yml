@@ -43,6 +43,37 @@
   links:
   - label: Journal
     url: https://www.sciencedirect.com/science/article/pii/S305063282500023X
+- title: 'PAM: Predictive analytics and modules-based computation offloading framework
+    using greedy heuristics and 5G NR-V2X'
+  slug: pam-predictive-analytics-modules-offloading
+  date: '2024-07-01'
+  year: 2024
+  type: manuscripts
+  venue: Transactions on Emerging Telecommunications Technologies
+  status: Published
+  image: /images/500x300.png
+  summary: Introduces a predictive, modules-based computation offloading framework
+    for vehicular fog computing using greedy heuristics and 5G NR-V2X.
+  citation_key: pam_2024
+  links:
+  - label: Journal
+    url: https://doi.org/10.1002/ett.5003
+- title: 'RPRA: Reputation-based prioritization and resource allocation leveraging
+    predictive analytics and vehicular fog computing'
+  slug: rpra-reputation-based-prioritization-resource-allocation
+  date: '2024-03-15'
+  year: 2024
+  type: manuscripts
+  venue: Ad Hoc Networks
+  status: Published
+  image: /images/500x300.png
+  summary: Proposes a trust-aware vehicular fog computing framework for smart healthcare,
+    using predictive analytics and reputation-based resource allocation under latency
+    and energy constraints.
+  citation_key: rpra_2024
+  links:
+  - label: Journal
+    url: https://doi.org/10.1016/j.adhoc.2024.103401
 - title: Deciphering the Impact of Diversity in CNN-Based Ensembles on Overcoming
     Data Imbalance and Scarcity
   slug: diversity-cnn-ensembles-data-imbalance-scarcity
@@ -58,6 +89,22 @@
   links:
   - label: Journal
     url: https://www.sciencedirect.com/science/article/pii/S2352914824001138
+- title: 'TSM: Temporal segmentation and modules-based computation offloading using
+    predictive analytics and NR-V2X'
+  slug: tsm-temporal-segmentation-modules-offloading
+  date: '2023-01-01'
+  year: 2023
+  type: manuscripts
+  venue: Internet of Things
+  status: Published
+  image: /images/500x300.png
+  summary: Presents a temporal segmentation and modules-based offloading strategy
+    for computation-intensive vehicular applications using predictive analytics and
+    NR-V2X.
+  citation_key: tsm_2023
+  links:
+  - label: Journal
+    url: https://doi.org/10.1016/j.iot.2023.100912
 - title: Data Diversity in Convolutional Neural Network Based Ensemble Model for Diabetic
     Retinopathy
   slug: data-diversity-cnn-ensemble-diabetic-retinopathy
