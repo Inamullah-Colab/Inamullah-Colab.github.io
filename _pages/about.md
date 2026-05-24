@@ -19,6 +19,29 @@ This work aligns closely with the emerging field of **oculomics**, which leverag
 
 ---
 
+## News & Updates
+
+{% assign homepage_news = site.posts | sort: "date" | reverse %}
+
+<div class="news-grid">
+  {% for post in homepage_news limit:3 %}
+    <article class="news-card">
+      <p class="news-date">{{ post.date | date: "%d %b %Y" }}</p>
+      <h3 class="news-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+      {% if post.description %}
+        <p class="news-summary">{{ post.description }}</p>
+      {% elsif post.excerpt %}
+        <p class="news-summary">{{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</p>
+      {% endif %}
+      <p class="news-link"><a href="{{ post.url }}">Read update</a></p>
+    </article>
+  {% endfor %}
+</div>
+
+<p><a href="/year-archive/" class="btn btn--primary">View all updates</a></p>
+
+---
+
 ## Academic Background and Motivation
 
 My academic path has evolved through a combination of interdisciplinary training, professional experience, and personal motivation, ultimately converging on medically oriented computational research.
