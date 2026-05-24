@@ -23,6 +23,22 @@ This work aligns closely with the emerging field of **oculomics**, which leverag
 
 {% assign homepage_news = site.posts | sort: "date" | reverse %}
 
+<article class="news-feature-card">
+  <div class="news-feature-body">
+    <p class="pub-kicker">Featured In The News</p>
+    <h3 class="news-feature-title">Forbes: How Artificial Intelligence Makes Eye Exams a Gateway to Whole-Body Wellness</h3>
+    <p class="news-feature-meta"><strong>November 5, 2025</strong> | Forbes</p>
+    <p class="news-feature-summary">
+      Forbes highlighted the growing role of AI-enabled retinal imaging in whole-body wellness, closely aligning with
+      <em>The Eye as a Window to Systemic Health: A Survey of Retinal Imaging from Classical Techniques to Oculomics</em>.
+    </p>
+    <div class="news-feature-links">
+      <a href="https://www.forbes.com/sites/williamhaseltine/2025/11/05/how-artificial-intelligence-makes-eye-exams-a-gateway-to-whole-body-wellness/">Read Forbes article</a>
+      <a href="https://www.sciencedirect.com/science/article/pii/S305063282500023X">View related paper</a>
+    </div>
+  </div>
+</article>
+
 <div class="news-grid">
   {% for post in homepage_news limit:3 %}
     <article class="news-card">
