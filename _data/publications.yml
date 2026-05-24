@@ -3,8 +3,8 @@
   date: '2026-02-26'
   year: 2026
   type: manuscripts
-  venue: SSRN
-  status: Preprint
+  venue: NeurIPS 2026
+  status: Under Review
   image: /images/retisem-2026.png
   summary: RetiSEM introduces a pathway-aware causal modelling framework for retinal-mediated
     vascular mechanisms, aiming to recover interpretable biological structure from
