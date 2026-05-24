@@ -277,6 +277,36 @@ def parse_publications(pub_dir):
     
     return publications
 
+def parse_publications_data(data_file):
+    """Parse publications from the dynamic _data/publications.yml file."""
+    if not os.path.exists(data_file):
+        return []
+
+    with open(data_file, 'r', encoding='utf-8') as file:
+        data = yaml.safe_load(file) or []
+
+    publications = []
+    for item in data:
+        if not isinstance(item, dict):
+            continue
+
+        links = item.get('links') or []
+        first_link = ""
+        if isinstance(links, list) and links:
+            first = links[0]
+            if isinstance(first, dict):
+                first_link = first.get('url', '')
+
+        publications.append({
+            "name": item.get('title', ''),
+            "publisher": item.get('venue', ''),
+            "releaseDate": item.get('date', ''),
+            "website": first_link,
+            "summary": item.get('summary', '')
+        })
+
+    return publications
+
 def parse_talks(talks_dir):
     """Parse talks from the _talks directory."""
     talks = []
@@ -387,7 +417,9 @@ def create_cv_json(md_file, config_file, repo_root, output_file):
     }
     
     # Add publications
-    cv_json["publications"] = parse_publications(os.path.join(repo_root, "_publications"))
+    publications_data_file = os.path.join(repo_root, "_data", "publications.yml")
+    publications_from_data = parse_publications_data(publications_data_file)
+    cv_json["publications"] = publications_from_data or parse_publications(os.path.join(repo_root, "_publications"))
     
     # Add talks
     cv_json["presentations"] = parse_talks(os.path.join(repo_root, "_talks"))

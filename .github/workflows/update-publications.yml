@@ -1,8 +1,12 @@
-name: Update Citation Stats
+name: Update Publications Data
 
 on:
-  schedule:
-    - cron: "0 6 * * 1"
+  push:
+    branches:
+      - master
+    paths:
+      - "markdown_generator/publications.tsv"
+      - "scripts/update_publications_data.py"
   workflow_dispatch:
 
 permissions:
@@ -11,10 +15,8 @@ permissions:
   id-token: write
 
 jobs:
-  update-citations:
+  update-publications:
     runs-on: ubuntu-latest
-    outputs:
-      changed: ${{ steps.detect_changes.outputs.changed }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,15 +29,15 @@ jobs:
       - name: Install deps
         run: pip install pyyaml
 
-      - name: Update citations from OpenAlex
-        run: python scripts/update_citations_openalex.py
+      - name: Generate publications data
+        run: python scripts/update_publications_data.py
 
       - name: Detect changes
         id: detect_changes
         shell: bash
         run: |
           if git diff --quiet; then
-            echo "No citation changes."
+            echo "No publication data changes."
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -46,8 +48,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add _data/citations.yml
-          git commit -m "Auto-update citation statistics"
+          git add _data/publications.yml
+          git commit -m "Auto-update publications data"
           git push
 
       - name: Configure Pages

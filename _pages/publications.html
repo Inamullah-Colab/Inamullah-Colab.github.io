@@ -5,32 +5,92 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
-
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+{% assign publications = site.data.publications | sort: "date" | reverse %}
 
+<section class="pub-hero">
+  <p class="pub-kicker">Research Output</p>
+  <h1 class="pub-hero-title">Publications</h1>
+  <p class="pub-hero-copy">
+    Journal articles and conference contributions spanning retinal imaging, oculomics, interpretable machine learning, and systemic health.
+  </p>
 
+  <div class="pub-stats-wrap">
+    <div class="pub-stat-card">
+      <div class="pub-stat-label">Total citations</div>
+      <div class="pub-stat-value">{{ site.data.citations.total | default: 0 }}</div>
+    </div>
+    <div class="pub-stat-card">
+      <div class="pub-stat-label">Papers tracked</div>
+      <div class="pub-stat-value">{{ publications | size }}</div>
+    </div>
+    <div class="pub-stat-card">
+      <div class="pub-stat-label">Citation snapshot</div>
+      <div class="pub-stat-value pub-stat-date">{{ site.data.citations.last_updated_utc | default: "Not set" | slice: 0, 10 }}</div>
+    </div>
+  </div>
+
+  {% if site.author.googlescholar %}
+    <p class="pub-scholar-link">
+      Citation counts are mirrored from public sources. Full profile:
+      <a href="{{ site.author.googlescholar }}">Google Scholar</a>.
+    </p>
+  {% endif %}
+</section>
+
+{% assign publication_types = "manuscripts|conferences" | split: "|" %}
+
+{% for type in publication_types %}
+  {% assign items = publications | where: "type", type %}
+  {% if items.size > 0 %}
+    <section class="pub-section">
+      <div class="pub-section-header">
+        <h2>
+          {% if type == "manuscripts" %}
+            Journal Articles
+          {% elsif type == "conferences" %}
+            Conference Papers
+          {% else %}
+            Publications
+          {% endif %}
+        </h2>
+      </div>
+
+      <div class="pub-list">
+        {% for publication in items %}
+          {% assign citation_entry = site.data.citations.papers[publication.citation_key] %}
+          <article class="pub-card">
+            <div class="pub-img-wrap">
+              <img class="pub-img" src="{{ publication.image }}" alt="{{ publication.title }}">
+            </div>
+            <div class="pub-body">
+              <div class="pub-topline">
+                <span class="pub-year">{{ publication.year }}</span>
+                {% if publication.status %}
+                  <span class="pub-badge">{{ publication.status }}</span>
+                {% endif %}
+              </div>
+              <h3 class="pub-title">{{ publication.title }}</h3>
+              <p class="pub-meta"><em>{{ publication.venue }}</em></p>
+              <p class="pub-sum">{{ publication.summary }}</p>
+
+              <div class="pub-footer">
+                <div class="pub-links">
+                  {% for link in publication.links %}
+                    <a href="{{ link.url }}">{{ link.label }}</a>
+                  {% endfor %}
+                </div>
+                <div class="pub-cite-chip">
+                  Citations:
+                  <strong>{{ citation_entry.count | default: 0 }}</strong>
+                </div>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+{% endfor %}
 

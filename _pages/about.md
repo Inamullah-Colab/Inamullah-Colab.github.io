@@ -39,3 +39,36 @@ My current PhD work represents the synthesis of these experiences. By combining 
 
 **Artificial Intelligence**, **Machine Learning**, **Interpretable Models**, **Causal and Mediation Analysis**, **Graphical and Network Models**, **Bayesian Methods**, **Mathematical Modelling**, **Medical Imaging**, **Retinal Microvasculature**, **Oculomics**, **Multi-Omics Integration**, **Genetic Variation**, **Clinical Phenotyping**, **Systemic Disease**, **Biomarker Discovery**, **Precision Medicine**
 
+---
+
+## Recent Publications
+
+{% assign recent_publications = site.data.publications | sort: "date" | reverse %}
+
+<div class="pub-mini-grid">
+  {% for publication in recent_publications limit:3 %}
+    {% assign citation_entry = site.data.citations.papers[publication.citation_key] %}
+    <article class="pub-mini-card">
+      <div class="pub-mini-topline">
+        <span>{{ publication.year }}</span>
+        {% if publication.status %}
+          <span class="pub-badge">{{ publication.status }}</span>
+        {% endif %}
+      </div>
+      <h3 class="pub-mini-title">{{ publication.title }}</h3>
+      <p class="pub-mini-meta"><em>{{ publication.venue }}</em></p>
+      <p class="pub-mini-summary">{{ publication.summary }}</p>
+      <div class="pub-mini-footer">
+        <div class="pub-links">
+          {% for link in publication.links limit:1 %}
+            <a href="{{ link.url }}">{{ link.label }}</a>
+          {% endfor %}
+        </div>
+        <div class="pub-cite-chip">Citations: <strong>{{ citation_entry.count | default: 0 }}</strong></div>
+      </div>
+    </article>
+  {% endfor %}
+</div>
+
+<p><a href="/publications/" class="btn btn--primary">View all publications</a></p>
+

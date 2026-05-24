@@ -1,0 +1,75 @@
+- title: Retinal Lipidomics Associations as Candidate Biomarkers for Cardiovascular
+    Health
+  slug: retinal-lipidomics-associations-candidate-biomarkers
+  date: '2025-08-01'
+  year: 2025
+  type: conferences
+  venue: MICAD Proceedings
+  status: Oral Presentation
+  image: /images/micad-2025.png
+  summary: Explores links between retinal microvascular traits and lipidomic profiles
+    to identify candidate non-invasive biomarkers for cardiovascular risk.
+  citation_key: micad_2025
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2508.03538
+- title: Integrated Oculomics and Lipidomics Reveal Microvascular Metabolic Signatures
+    Associated with Cardiovascular Health
+  slug: integrated-oculomics-lipidomics-microvascular-metabolic-signatures
+  date: '2025-07-01'
+  year: 2025
+  type: manuscripts
+  venue: Scientific Reports
+  status: Preprint
+  image: /images/scirep-2025.png
+  summary: Integrates retinal imaging with lipidomic profiles to uncover microvascular
+    and metabolic signatures associated with cardiovascular health.
+  citation_key: scirep_preprint_2025
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2507.12663
+- title: 'The Eye as a Window to Systemic Health: A Survey of Retinal Imaging from
+    Classical Techniques to Oculomics'
+  slug: eye-window-systemic-health-oculomics-survey
+  date: '2025-01-01'
+  year: 2025
+  type: manuscripts
+  venue: 'The Journal of Precision Medicine: Health and Disease'
+  status: Published
+  image: /images/jpmhd-2025.png
+  summary: A broad survey of retinal imaging and oculomics, mapping how ocular biomarkers
+    can inform systemic, cardiovascular, and metabolic health.
+  citation_key: jpmhd_2025
+  links:
+  - label: Journal
+    url: https://www.sciencedirect.com/science/article/pii/S305063282500023X
+- title: Deciphering the Impact of Diversity in CNN-Based Ensembles on Overcoming
+    Data Imbalance and Scarcity
+  slug: diversity-cnn-ensembles-data-imbalance-scarcity
+  date: '2024-01-01'
+  year: 2024
+  type: manuscripts
+  venue: Informatics in Medicine Unlocked
+  status: Published
+  image: /images/imu-2024.png
+  summary: Shows how architectural and data-level diversity in CNN ensembles improves
+    robustness under class imbalance and limited medical imaging data.
+  citation_key: imu_2024
+  links:
+  - label: Journal
+    url: https://www.sciencedirect.com/science/article/pii/S2352914824001138
+- title: Data Diversity in Convolutional Neural Network Based Ensemble Model for Diabetic
+    Retinopathy
+  slug: data-diversity-cnn-ensemble-diabetic-retinopathy
+  date: '2023-01-01'
+  year: 2023
+  type: manuscripts
+  venue: Biomimetics
+  status: Published
+  image: /images/biomimetics-2023.png
+  summary: Examines how ensemble diversity can mitigate data scarcity in diabetic
+    retinopathy modelling and improve generalisation in clinical imaging settings.
+  citation_key: biomimetics_2023
+  links:
+  - label: Journal
+    url: https://www.mdpi.com/2313-7673/8/2/187
