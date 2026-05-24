@@ -1,21 +1,6 @@
 last_updated_utc: '2026-05-18 10:07:19Z'
 total: 36
 papers:
-  rpra_2024:
-    source: doi
-    id: 10.1016/j.adhoc.2024.103401
-    count: 0
-    include_in_total: true
-  pam_2024:
-    source: doi
-    id: 10.1002/ett.5003
-    count: 0
-    include_in_total: true
-  tsm_2023:
-    source: doi
-    id: 10.1016/j.iot.2023.100912
-    count: 0
-    include_in_total: true
   biomimetics_2023:
     source: doi
     id: 10.3390/biomimetics8020187
