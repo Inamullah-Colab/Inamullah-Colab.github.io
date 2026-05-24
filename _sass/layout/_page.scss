@@ -132,31 +132,32 @@ body.view-page {
   background: linear-gradient(180deg, #f1f5f9 0%, #f8fafc 100%) !important;
 }
 
-/* About page: keep sidebar and content visible side-by-side */
+/* Homepage: use a stacked profile + content layout for stronger cross-device consistency */
+body.view-home #main {
+  display: block !important;
+}
+
+body.view-home #main .sidebar {
+  float: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 0 1rem 0 !important;
+  position: relative !important;
+  top: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+body.view-home #main .page {
+  float: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
 @include breakpoint($large) {
-  body.view-home #main {
-    display: grid;
-    grid-template-columns: minmax(250px, 290px) minmax(0, 1fr);
-    column-gap: 1.2rem;
-    align-items: start;
-  }
-
   body.view-home #main .sidebar {
-    float: none !important;
-    width: auto !important;
-    max-width: 290px !important;
-    margin: 0 !important;
-    position: sticky !important;
-    top: calc(#{$masthead-height} + 0.55rem) !important;
-    height: calc(100vh - #{$masthead-height} - 0.85rem) !important;
-    overflow-y: auto !important;
-  }
-
-  body.view-home #main .page {
-    float: none !important;
-    width: auto !important;
     max-width: none !important;
-    margin: 0 !important;
   }
 }
 
