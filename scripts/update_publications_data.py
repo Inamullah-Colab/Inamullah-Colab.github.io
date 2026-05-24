@@ -49,6 +49,11 @@ def main() -> int:
             if label and url:
                 publication["links"].append({"label": label, "url": url})
 
+            press_label = clean(row.get("press_label"))
+            press_url = clean(row.get("press_url"))
+            if press_label and press_url:
+                publication["links"].append({"label": press_label, "url": press_url})
+
             publications.append(publication)
 
     publications.sort(key=lambda item: item["date"], reverse=True)

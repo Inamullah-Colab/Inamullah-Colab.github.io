@@ -58,6 +58,8 @@
   links:
   - label: Journal
     url: https://www.sciencedirect.com/science/article/pii/S305063282500023X
+  - label: Forbes
+    url: https://www.forbes.com/sites/williamhaseltine/2025/11/05/how-artificial-intelligence-makes-eye-exams-a-gateway-to-whole-body-wellness/
 - title: Deciphering the Impact of Diversity in CNN-Based Ensembles on Overcoming
     Data Imbalance and Scarcity
   slug: diversity-cnn-ensembles-data-imbalance-scarcity
