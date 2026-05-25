@@ -118,6 +118,16 @@ body.view-page .sidebar {
   background: linear-gradient(160deg, #374151 0%, #1f2937 50%, #0f766e 100%) !important;
 }
 
+body.view-cv .sidebar,
+body.view-blog-archive .sidebar,
+body.view-post .sidebar,
+body.view-page .sidebar {
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.12), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.12), transparent 34%),
+    linear-gradient(160deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.96) 52%, rgba(14, 116, 144, 0.92) 100%) !important;
+}
+
 body.view-home .sidebar,
 body.view-cv .sidebar,
 body.view-blog-archive .sidebar,
@@ -352,6 +362,59 @@ body.view-page .sidebar::before {
   }
 }
 
+.sidebar-visit-stats {
+  margin-top: 1.25rem;
+  padding: 0.95rem;
+  border-radius: 18px;
+  border: 1px solid rgba(191, 219, 254, 0.45);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06)),
+    rgba(15, 23, 42, 0.2);
+  backdrop-filter: blur(6px);
+}
+
+.sidebar-visit-stats__title {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: inherit;
+}
+
+.sidebar-visit-stats__accent {
+  margin: 0.5rem 0 0.7rem;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #38bdf8 0%, #34d399 45%, #f59e0b 78%, #8b5cf6 100%);
+}
+
+.sidebar-visit-stats a {
+  display: block;
+}
+
+.sidebar-visit-stats img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+body.view-home .sidebar .sidebar-visit-stats {
+  border-color: rgba(191, 219, 254, 0.95);
+  background:
+    radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 34%),
+    linear-gradient(135deg, rgba(248, 250, 252, 0.95), rgba(239, 246, 255, 0.95));
+  box-shadow: 0 12px 24px rgba(148, 163, 184, 0.12);
+}
+
+body.view-home .sidebar .sidebar-visit-stats__title {
+  color: #1f2937;
+}
+
+body.view-home .sidebar .sidebar-visit-stats img {
+  border-color: rgba(191, 219, 254, 0.9);
+}
+
 /* Tablet widths: keep reading width comfortable and avoid sticky overlap */
 @media screen and (min-width: 1024px) and (max-width: 1199px) {
   body.view-home .sidebar,
@@ -489,6 +552,35 @@ body.view-page .sidebar::before {
   background: rgba(255, 255, 255, 0.18);
   color: #ffffff;
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+body.view-cv .sidebar .author__desktop,
+body.view-blog-archive .sidebar .author__desktop,
+body.view-post .sidebar .author__desktop,
+body.view-page .sidebar .author__desktop {
+  color: rgba(248, 250, 252, 0.92);
+}
+
+body.view-cv .sidebar .author__urls a,
+body.view-blog-archive .sidebar .author__urls a,
+body.view-post .sidebar .author__urls a,
+body.view-page .sidebar .author__urls a {
+  border-radius: 10px;
+}
+
+body.view-cv .sidebar .author__urls a:hover,
+body.view-blog-archive .sidebar .author__urls a:hover,
+body.view-post .sidebar .author__urls a:hover,
+body.view-page .sidebar .author__urls a:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+body.view-cv .sidebar .author__urls .icon-pad-right,
+body.view-blog-archive .sidebar .author__urls .icon-pad-right,
+body.view-post .sidebar .author__urls .icon-pad-right,
+body.view-page .sidebar .author__urls .icon-pad-right {
+  background: rgba(255, 255, 255, 0.24);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.24);
 }
 
 body.view-home .sidebar .author__urls .fa-linkedin,
