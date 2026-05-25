@@ -156,14 +156,22 @@ body.view-home #main .page {
 }
 
 @media screen and (min-width: 1200px) {
-  body.view-home #main {
+  body.view-home #main,
+  body.view-page #main,
+  body.view-post #main,
+  body.view-blog-archive #main,
+  body.view-cv #main {
     display: grid !important;
     grid-template-columns: minmax(300px, 350px) minmax(0, 1fr);
     column-gap: 1.5rem;
     align-items: start;
   }
 
-  body.view-home #main .sidebar {
+  body.view-home #main .sidebar,
+  body.view-page #main .sidebar,
+  body.view-post #main .sidebar,
+  body.view-blog-archive #main .sidebar,
+  body.view-cv #main .sidebar {
     width: auto !important;
     max-width: none !important;
     margin: 0 !important;
@@ -174,15 +182,32 @@ body.view-home #main .page {
     overflow-y: auto !important;
   }
 
-  body.view-home #main .page {
+  body.view-home #main .page,
+  body.view-page #main .page,
+  body.view-post #main .page,
+  body.view-cv #main .page,
+  body.view-home #main .archive,
+  body.view-blog-archive #main .archive,
+  body.view-page #main .archive {
+    float: none !important;
     width: auto !important;
     max-width: none !important;
     min-width: 0 !important;
+    margin: 0 !important;
+    padding-right: 0 !important;
   }
 
-  body.view-home #main .page .page__inner-wrap {
+  body.view-home #main .page .page__inner-wrap,
+  body.view-page #main .page .page__inner-wrap,
+  body.view-post #main .page .page__inner-wrap,
+  body.view-cv #main .page .page__inner-wrap {
     max-width: none !important;
     margin: 0 !important;
+  }
+
+  body.view-blog-archive #main .list__item,
+  body.view-page #main .list__item {
+    padding-right: 0 !important;
   }
 }
 
