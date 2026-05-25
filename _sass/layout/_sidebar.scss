@@ -26,6 +26,7 @@
 
   @include breakpoint($large) {
     @include span(2 of 12);
+    width: clamp(300px, 24vw, 340px);
     opacity: 1;
     -webkit-transition: opacity 0.2s ease-in-out;
             transition: opacity 0.2s ease-in-out;
@@ -36,7 +37,7 @@
   }
 
   @include breakpoint($x-large) {
-    max-width: $sidebar-link-max-width;
+    max-width: 340px;
     padding-right: 0;
   }
 
@@ -89,63 +90,12 @@
    DYNAMIC SIDEBAR THEMES BY PAGE TYPE
    ========================================================================== */
 
-.sidebar {
-  border-radius: 14px;
-  padding: 1rem 0.95rem;
-  border: 1px solid rgba(148, 163, 184, 0.25);
-  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.16);
-  position: relative;
-  overflow: hidden;
-}
-
-body.view-home .sidebar {
-  background: linear-gradient(160deg, #0b3a53 0%, #1d4d6b 45%, #0f766e 100%) !important;
-}
-
-body.view-cv .sidebar {
-  background: linear-gradient(160deg, #1f2937 0%, #0f172a 48%, #155e75 100%) !important;
-}
-
-body.view-blog-archive .sidebar {
-  background: linear-gradient(160deg, #3f2a56 0%, #1e3a8a 48%, #065f46 100%) !important;
-}
-
-body.view-post .sidebar {
-  background: linear-gradient(160deg, #2d325a 0%, #1e1b4b 48%, #0c4a6e 100%) !important;
-}
-
-body.view-page .sidebar {
-  background: linear-gradient(160deg, #374151 0%, #1f2937 50%, #0f766e 100%) !important;
-}
-
-body.view-cv .sidebar,
-body.view-blog-archive .sidebar,
-body.view-post .sidebar,
-body.view-page .sidebar {
-  background:
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.12), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.12), transparent 34%),
-    linear-gradient(160deg, rgba(15, 23, 42, 0.98) 0%, rgba(30, 41, 59, 0.96) 52%, rgba(14, 116, 144, 0.92) 100%) !important;
-}
-
+.sidebar,
 body.view-home .sidebar,
 body.view-cv .sidebar,
 body.view-blog-archive .sidebar,
 body.view-post .sidebar,
 body.view-page .sidebar {
-  color: #f8fafc;
-}
-
-body.view-home .sidebar a,
-body.view-cv .sidebar a,
-body.view-blog-archive .sidebar a,
-body.view-post .sidebar a,
-body.view-page .sidebar a {
-  color: #f8fafc;
-}
-
-/* Homepage profile card: use a clean left-column academic card instead of a wide banner */
-body.view-home .sidebar {
   padding: 1.45rem 1.35rem 1.3rem;
   border-radius: 24px;
   border: 1px solid rgba(191, 219, 254, 0.9);
@@ -155,24 +105,61 @@ body.view-home .sidebar {
     #ffffff !important;
   box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
   color: #334155 !important;
+  position: relative;
+  overflow: hidden;
 }
 
-body.view-home .sidebar > div[itemscope] {
+.sidebar::before,
+body.view-home .sidebar::before,
+body.view-cv .sidebar::before,
+body.view-blog-archive .sidebar::before,
+body.view-post .sidebar::before,
+body.view-page .sidebar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  background: linear-gradient(90deg, #38bdf8, #34d399);
+}
+
+.sidebar > div[itemscope],
+body.view-home .sidebar > div[itemscope],
+body.view-cv .sidebar > div[itemscope],
+body.view-blog-archive .sidebar > div[itemscope],
+body.view-post .sidebar > div[itemscope],
+body.view-page .sidebar > div[itemscope] {
   display: block;
 }
 
-body.view-home .sidebar a {
+.sidebar a,
+body.view-home .sidebar a,
+body.view-cv .sidebar a,
+body.view-blog-archive .sidebar a,
+body.view-post .sidebar a,
+body.view-page .sidebar a {
   color: #334155 !important;
 }
 
-body.view-home .sidebar .author__avatar {
+.sidebar .author__avatar,
+body.view-home .sidebar .author__avatar,
+body.view-cv .sidebar .author__avatar,
+body.view-blog-archive .sidebar .author__avatar,
+body.view-post .sidebar .author__avatar,
+body.view-page .sidebar .author__avatar {
   display: block;
   width: 100%;
   margin-bottom: 1.1rem;
   text-align: center;
 }
 
-body.view-home .sidebar .author__avatar img {
+.sidebar .author__avatar img,
+body.view-home .sidebar .author__avatar img,
+body.view-cv .sidebar .author__avatar img,
+body.view-blog-archive .sidebar .author__avatar img,
+body.view-post .sidebar .author__avatar img,
+body.view-page .sidebar .author__avatar img {
   max-width: 180px;
   width: 180px;
   height: 180px;
@@ -184,13 +171,23 @@ body.view-home .sidebar .author__avatar img {
     0 0 0 1px rgba(191, 219, 254, 0.9);
 }
 
-body.view-home .sidebar .author__content {
+.sidebar .author__content,
+body.view-home .sidebar .author__content,
+body.view-cv .sidebar .author__content,
+body.view-blog-archive .sidebar .author__content,
+body.view-post .sidebar .author__content,
+body.view-page .sidebar .author__content {
   display: block;
   padding: 0;
   text-align: left;
 }
 
-body.view-home .sidebar .author__name {
+.sidebar .author__name,
+body.view-home .sidebar .author__name,
+body.view-cv .sidebar .author__name,
+body.view-blog-archive .sidebar .author__name,
+body.view-post .sidebar .author__name,
+body.view-page .sidebar .author__name {
   margin: 0 0 0.45rem 0;
   font-size: 2rem;
   line-height: 1.08;
@@ -205,23 +202,43 @@ body.view-home .sidebar .author__pronouns {
   line-height: 1.35;
 }
 
-body.view-home .sidebar .author__bio {
+.sidebar .author__bio,
+body.view-home .sidebar .author__bio,
+body.view-cv .sidebar .author__bio,
+body.view-blog-archive .sidebar .author__bio,
+body.view-post .sidebar .author__bio,
+body.view-page .sidebar .author__bio {
   margin: 0 0 0.8rem 0;
   font-size: 0.97rem;
   line-height: 1.65;
   color: #64748b;
 }
 
-body.view-home .sidebar .author__urls-wrapper {
+.sidebar .author__urls-wrapper,
+body.view-home .sidebar .author__urls-wrapper,
+body.view-cv .sidebar .author__urls-wrapper,
+body.view-blog-archive .sidebar .author__urls-wrapper,
+body.view-post .sidebar .author__urls-wrapper,
+body.view-page .sidebar .author__urls-wrapper {
   display: block;
   width: 100%;
 }
 
-body.view-home .sidebar .author__urls-wrapper button {
+.sidebar .author__urls-wrapper button,
+body.view-home .sidebar .author__urls-wrapper button,
+body.view-cv .sidebar .author__urls-wrapper button,
+body.view-blog-archive .sidebar .author__urls-wrapper button,
+body.view-post .sidebar .author__urls-wrapper button,
+body.view-page .sidebar .author__urls-wrapper button {
   display: none !important;
 }
 
-body.view-home .sidebar .author__urls {
+.sidebar .author__urls,
+body.view-home .sidebar .author__urls,
+body.view-cv .sidebar .author__urls,
+body.view-blog-archive .sidebar .author__urls,
+body.view-post .sidebar .author__urls,
+body.view-page .sidebar .author__urls {
   display: grid !important;
   position: static !important;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -234,12 +251,22 @@ body.view-home .sidebar .author__urls {
   z-index: auto;
 }
 
-body.view-home .sidebar .author__urls li {
+.sidebar .author__urls li,
+body.view-home .sidebar .author__urls li,
+body.view-cv .sidebar .author__urls li,
+body.view-blog-archive .sidebar .author__urls li,
+body.view-post .sidebar .author__urls li,
+body.view-page .sidebar .author__urls li {
   margin: 0;
   min-width: 0;
 }
 
-body.view-home .sidebar .author__desktop {
+.sidebar .author__desktop,
+body.view-home .sidebar .author__desktop,
+body.view-cv .sidebar .author__desktop,
+body.view-blog-archive .sidebar .author__desktop,
+body.view-post .sidebar .author__desktop,
+body.view-page .sidebar .author__desktop {
   grid-column: 1 / -1;
   display: flex !important;
   align-items: center;
@@ -247,12 +274,17 @@ body.view-home .sidebar .author__desktop {
   background: transparent;
   border: 0;
   border-radius: 0;
-  color: #475569;
+  color: #475569 !important;
   font-size: 0.93rem;
   line-height: 1.4;
 }
 
-body.view-home .sidebar .author__urls a {
+.sidebar .author__urls a,
+body.view-home .sidebar .author__urls a,
+body.view-cv .sidebar .author__urls a,
+body.view-blog-archive .sidebar .author__urls a,
+body.view-post .sidebar .author__urls a,
+body.view-page .sidebar .author__urls a {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -268,15 +300,30 @@ body.view-home .sidebar .author__urls a {
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
-body.view-home .sidebar .author__urls a:hover {
+.sidebar .author__urls a:hover,
+body.view-home .sidebar .author__urls a:hover,
+body.view-cv .sidebar .author__urls a:hover,
+body.view-blog-archive .sidebar .author__urls a:hover,
+body.view-post .sidebar .author__urls a:hover,
+body.view-page .sidebar .author__urls a:hover {
   transform: translateY(-2px);
   border-color: rgba(96, 165, 250, 0.95);
   box-shadow: 0 10px 22px rgba(59, 130, 246, 0.12);
   background: #ffffff;
 }
 
+.sidebar .author__urls .icon-pad-right,
+.sidebar .author__desktop .icon-pad-right,
 body.view-home .sidebar .author__urls .icon-pad-right,
-body.view-home .sidebar .author__desktop .icon-pad-right {
+body.view-home .sidebar .author__desktop .icon-pad-right,
+body.view-cv .sidebar .author__urls .icon-pad-right,
+body.view-cv .sidebar .author__desktop .icon-pad-right,
+body.view-blog-archive .sidebar .author__urls .icon-pad-right,
+body.view-blog-archive .sidebar .author__desktop .icon-pad-right,
+body.view-post .sidebar .author__urls .icon-pad-right,
+body.view-post .sidebar .author__desktop .icon-pad-right,
+body.view-page .sidebar .author__urls .icon-pad-right,
+body.view-page .sidebar .author__desktop .icon-pad-right {
   flex: 0 0 auto;
   width: 1.85rem;
   height: 1.85rem;
@@ -284,49 +331,9 @@ body.view-home .sidebar .author__desktop .icon-pad-right {
   margin-right: 0.55rem;
 }
 
-body.view-home .author__avatar img,
-body.view-cv .author__avatar img,
-body.view-blog-archive .author__avatar img,
-body.view-post .author__avatar img,
-body.view-page .author__avatar img {
-  border-color: rgba(255, 255, 255, 0.45);
-}
-
-body.view-home .sidebar::before,
-body.view-cv .sidebar::before,
-body.view-blog-archive .sidebar::before,
-body.view-post .sidebar::before,
-body.view-page .sidebar::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 7px;
-}
-
-body.view-home .sidebar::before {
-  background: linear-gradient(90deg, #38bdf8, #34d399);
-}
-
-body.view-cv .sidebar::before {
-  background: linear-gradient(90deg, #06b6d4, #60a5fa);
-}
-
-body.view-blog-archive .sidebar::before {
-  background: linear-gradient(90deg, #a855f7, #22c55e);
-}
-
-body.view-post .sidebar::before {
-  background: linear-gradient(90deg, #6366f1, #0ea5e9);
-}
-
-body.view-page .sidebar::before {
-  background: linear-gradient(90deg, #64748b, #14b8a6);
-}
-
 /* Keep left profile sidebar visible while scrolling, without breaking layout */
 @media screen and (min-width: $sidebar-screen-min-width) {
+  .sidebar,
   body.view-home .sidebar,
   body.view-cv .sidebar,
   body.view-blog-archive .sidebar,
@@ -342,22 +349,42 @@ body.view-page .sidebar::before {
 }
 
 @media screen and (max-width: 767px) {
-  body.view-home .sidebar {
+  .sidebar,
+  body.view-home .sidebar,
+  body.view-cv .sidebar,
+  body.view-blog-archive .sidebar,
+  body.view-post .sidebar,
+  body.view-page .sidebar {
     padding: 1.1rem 1rem;
     border-radius: 20px;
   }
 
-  body.view-home .sidebar .author__avatar img {
+  .sidebar .author__avatar img,
+  body.view-home .sidebar .author__avatar img,
+  body.view-cv .sidebar .author__avatar img,
+  body.view-blog-archive .sidebar .author__avatar img,
+  body.view-post .sidebar .author__avatar img,
+  body.view-page .sidebar .author__avatar img {
     width: 118px;
     height: 118px;
     max-width: 118px;
   }
 
-  body.view-home .sidebar .author__name {
+  .sidebar .author__name,
+  body.view-home .sidebar .author__name,
+  body.view-cv .sidebar .author__name,
+  body.view-blog-archive .sidebar .author__name,
+  body.view-post .sidebar .author__name,
+  body.view-page .sidebar .author__name {
     font-size: 1.45rem;
   }
 
-  body.view-home .sidebar .author__urls {
+  .sidebar .author__urls,
+  body.view-home .sidebar .author__urls,
+  body.view-cv .sidebar .author__urls,
+  body.view-blog-archive .sidebar .author__urls,
+  body.view-post .sidebar .author__urls,
+  body.view-page .sidebar .author__urls {
     grid-template-columns: 1fr;
   }
 }
@@ -399,7 +426,12 @@ body.view-page .sidebar::before {
   background: rgba(255, 255, 255, 0.92);
 }
 
-body.view-home .sidebar .sidebar-visit-stats {
+.sidebar .sidebar-visit-stats,
+body.view-home .sidebar .sidebar-visit-stats,
+body.view-cv .sidebar .sidebar-visit-stats,
+body.view-blog-archive .sidebar .sidebar-visit-stats,
+body.view-post .sidebar .sidebar-visit-stats,
+body.view-page .sidebar .sidebar-visit-stats {
   border-color: rgba(191, 219, 254, 0.95);
   background:
     radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 34%),
@@ -407,16 +439,27 @@ body.view-home .sidebar .sidebar-visit-stats {
   box-shadow: 0 12px 24px rgba(148, 163, 184, 0.12);
 }
 
-body.view-home .sidebar .sidebar-visit-stats__title {
+.sidebar .sidebar-visit-stats__title,
+body.view-home .sidebar .sidebar-visit-stats__title,
+body.view-cv .sidebar .sidebar-visit-stats__title,
+body.view-blog-archive .sidebar .sidebar-visit-stats__title,
+body.view-post .sidebar .sidebar-visit-stats__title,
+body.view-page .sidebar .sidebar-visit-stats__title {
   color: #1f2937;
 }
 
-body.view-home .sidebar .sidebar-visit-stats img {
+.sidebar .sidebar-visit-stats img,
+body.view-home .sidebar .sidebar-visit-stats img,
+body.view-cv .sidebar .sidebar-visit-stats img,
+body.view-blog-archive .sidebar .sidebar-visit-stats img,
+body.view-post .sidebar .sidebar-visit-stats img,
+body.view-page .sidebar .sidebar-visit-stats img {
   border-color: rgba(191, 219, 254, 0.9);
 }
 
 /* Tablet widths: keep reading width comfortable and avoid sticky overlap */
 @media screen and (min-width: 1024px) and (max-width: 1199px) {
+  .sidebar,
   body.view-home .sidebar,
   body.view-cv .sidebar,
   body.view-blog-archive .sidebar,
@@ -509,80 +552,7 @@ body.view-home .sidebar .sidebar-visit-stats img {
     margin-bottom: 10px;
   }
 }
-.sidebar .author__name {
-  font-family: $sans-serif;
-  font-size: $type-size-5;
-}
-
-.sidebar .author__desktop {
-  display: none;
-  @media screen and (min-width: 1024px) {
-    display: block;
-  }
-}
-
-/* About/profile icon polish */
-.sidebar .author__urls li {
-  margin-bottom: 0.22rem;
-}
-
-.sidebar .author__urls a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.22rem;
-  padding: 0.2rem 0.35rem 0.2rem 0.12rem;
-  border-radius: 8px;
-  transition: background-color 0.18s ease, transform 0.18s ease;
-}
-
-.sidebar .author__urls a:hover {
-  background: rgba(255, 255, 255, 0.12);
-  text-decoration: none;
-  transform: translateX(2px);
-}
-
-.sidebar .author__urls .icon-pad-right {
-  width: 1.55rem;
-  height: 1.55rem;
-  line-height: 1.55rem;
-  text-align: center;
-  border-radius: 999px;
-  margin-right: 0.28rem;
-  padding-right: 0;
-  background: rgba(255, 255, 255, 0.18);
-  color: #ffffff;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.15);
-}
-
-body.view-cv .sidebar .author__desktop,
-body.view-blog-archive .sidebar .author__desktop,
-body.view-post .sidebar .author__desktop,
-body.view-page .sidebar .author__desktop {
-  color: rgba(248, 250, 252, 0.92);
-}
-
-body.view-cv .sidebar .author__urls a,
-body.view-blog-archive .sidebar .author__urls a,
-body.view-post .sidebar .author__urls a,
-body.view-page .sidebar .author__urls a {
-  border-radius: 10px;
-}
-
-body.view-cv .sidebar .author__urls a:hover,
-body.view-blog-archive .sidebar .author__urls a:hover,
-body.view-post .sidebar .author__urls a:hover,
-body.view-page .sidebar .author__urls a:hover {
-  background: rgba(255, 255, 255, 0.16);
-}
-
-body.view-cv .sidebar .author__urls .icon-pad-right,
-body.view-blog-archive .sidebar .author__urls .icon-pad-right,
-body.view-post .sidebar .author__urls .icon-pad-right,
-body.view-page .sidebar .author__urls .icon-pad-right {
-  background: rgba(255, 255, 255, 0.24);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.24);
-}
-
+.sidebar .author__urls .fa-linkedin,
 body.view-home .sidebar .author__urls .fa-linkedin,
 body.view-cv .sidebar .author__urls .fa-linkedin,
 body.view-blog-archive .sidebar .author__urls .fa-linkedin,
@@ -591,6 +561,7 @@ body.view-page .sidebar .author__urls .fa-linkedin {
   background: rgba(37, 99, 235, 0.25);
 }
 
+.sidebar .author__urls .fa-github,
 body.view-home .sidebar .author__urls .fa-github,
 body.view-cv .sidebar .author__urls .fa-github,
 body.view-blog-archive .sidebar .author__urls .fa-github,
@@ -599,6 +570,7 @@ body.view-page .sidebar .author__urls .fa-github {
   background: rgba(15, 23, 42, 0.35);
 }
 
+.sidebar .author__urls .ai-orcid,
 body.view-home .sidebar .author__urls .ai-orcid,
 body.view-cv .sidebar .author__urls .ai-orcid,
 body.view-blog-archive .sidebar .author__urls .ai-orcid,
