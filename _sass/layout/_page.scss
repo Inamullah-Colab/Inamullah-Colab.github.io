@@ -132,7 +132,7 @@ body.view-page {
   background: linear-gradient(180deg, #f1f5f9 0%, #f8fafc 100%) !important;
 }
 
-/* Homepage: use a stacked profile + content layout for stronger cross-device consistency */
+/* Homepage: restore a proper two-column profile + content layout on desktop */
 body.view-home #main {
   display: block !important;
 }
@@ -155,9 +155,34 @@ body.view-home #main .page {
   margin: 0 !important;
 }
 
-@include breakpoint($large) {
+@media screen and (min-width: 1200px) {
+  body.view-home #main {
+    display: grid !important;
+    grid-template-columns: minmax(270px, 320px) minmax(0, 1fr);
+    column-gap: 1.5rem;
+    align-items: start;
+  }
+
   body.view-home #main .sidebar {
+    width: auto !important;
     max-width: none !important;
+    margin: 0 !important;
+    position: sticky !important;
+    top: calc(#{$masthead-height} + 0.7rem) !important;
+    height: auto !important;
+    max-height: calc(100vh - #{$masthead-height} - 1.2rem) !important;
+    overflow-y: auto !important;
+  }
+
+  body.view-home #main .page {
+    width: auto !important;
+    max-width: none !important;
+    min-width: 0 !important;
+  }
+
+  body.view-home #main .page .page__inner-wrap {
+    max-width: none !important;
+    margin: 0 !important;
   }
 }
 
