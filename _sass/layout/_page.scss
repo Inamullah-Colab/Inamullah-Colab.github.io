@@ -417,6 +417,31 @@ body.view-home #main .page {
   }
 }
 
+body.view-page .page:not(.page--about):not(.page--post):not(.page--cv) {
+  .page__inner-wrap {
+    padding: 1.2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(203, 213, 225, 0.9);
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  }
+
+  .page__title {
+    position: relative;
+    margin-bottom: 0.8rem;
+  }
+
+  .page__title::after {
+    content: "";
+    display: block;
+    width: 92px;
+    height: 4px;
+    margin-top: 0.35rem;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #0ea5e9, #22c55e);
+  }
+}
+
 .page__title {
   margin-top: 0;
   line-height: 1;
