@@ -1,18 +1,18 @@
-- title: 'RetiSEM: Pathway-Aware Causal Modeling for Retinal-Mediated Vascular Mechanisms'
-  slug: retisem-pathway-aware-causal-modeling-retinal-mediated-vascular-mechanisms
+- title: 'RetiSEM: Generalising Causal Models for Fragmented Biomedical Data'
+  slug: retisem-generalising-causal-models-fragmented-biomedical-data
   date: '2026-02-26'
   year: 2026
   type: manuscripts
-  venue: IJCAI(GLOW) 2026
-  status: Accepted
+  venue: IJCAI (GLOW) 2026
+  status: Accepted (Oral)
   image: /images/retisem-2026.png
-  summary: RetiSEM introduces a pathway-aware causal modelling framework for retinal-mediated
-    vascular mechanisms, aiming to recover interpretable biological structure from
-    retinal and vascular relationships.
-  citation_key: retisem_ssrn_2026
+  summary: RetiSEM presents a causal modelling framework for fragmented biomedical
+    data, designed to recover interpretable structure under incomplete, multimodal,
+    and distributed evidence settings.
+  citation_key: retisem_glow_2026
   links:
-  - label: SSRN
-    url: https://ssrn.com/abstract=6752708
+  - label: OpenReview
+    url: https://openreview.net/forum?id=Jaj6hWKcGz
 - title: Retinal Lipidomics Associations as Candidate Biomarkers for Cardiovascular
     Health
   slug: retinal-lipidomics-associations-candidate-biomarkers
