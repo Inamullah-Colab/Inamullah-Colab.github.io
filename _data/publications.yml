@@ -9,7 +9,7 @@
   summary: RetiSEM presents a causal modelling framework for fragmented biomedical
     data, designed to recover interpretable structure under incomplete, multimodal,
     and distributed evidence settings.
-  citation_key: retisem_glow_2026
+  citation_key: retisem_ssrn_2026
   links:
   - label: OpenReview
     url: https://openreview.net/forum?id=Jaj6hWKcGz
