@@ -56,7 +56,7 @@ This work aligns closely with the emerging field of **oculomics**, which leverag
   <article class="news-card">
     <p class="news-date">15 Jun 2026</p>
     <h3 class="news-title"><a href="/publications/">RetiSEM accepted at IJCAI (GLOW) 2026</a></h3>
-    <p class="news-summary">RetiSEM: Generalising Causal Models for Fragmented Biomedical Data has been accepted for oral presentation at IJCAI (GLOW) 2026. This is listed as a publication update rather than a blog post.</p>
+    <p class="news-summary">RetiSEM: Generalising Causal Models for Fragmented Biomedical Data has been accepted for oral presentation at IJCAI (GLOW) 2026.</p>
     <p class="news-link"><a href="https://openreview.net/forum?id=Jaj6hWKcGz">View OpenReview</a></p>
   </article>
   {% for post in homepage_news limit:3 %}
