@@ -1,5 +1,5 @@
-last_updated_utc: '2026-06-22 11:57:38Z'
-total: 36
+last_updated_utc: '2026-06-29 11:02:35Z'
+total: 37
 papers:
   retisem_ssrn_2026:
     source: doi
@@ -14,7 +14,7 @@ papers:
   imu_2024:
     source: doi
     id: 10.1016/j.imu.2024.101557
-    count: 9
+    count: 10
     include_in_total: true
   jpmhd_2025:
     source: doi
