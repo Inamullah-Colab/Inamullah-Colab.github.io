@@ -18,12 +18,31 @@ document.addEventListener("DOMContentLoaded", function () {
   var openers = document.querySelectorAll("[data-lightbox-open]");
   var body = document.body;
   var activeLightbox = null;
+  var activeImage = null;
+  var activeReset = null;
+  var currentScale = 1;
+
+  function applyZoom() {
+    if (!activeImage) return;
+    activeImage.style.transform = "scale(" + currentScale + ")";
+    if (activeReset) {
+      activeReset.textContent = Math.round(currentScale * 100) + "%";
+    }
+  }
+
+  function resetZoom(lightbox) {
+    currentScale = 1;
+    activeImage = lightbox ? lightbox.querySelector(".pub-lightbox__img") : null;
+    activeReset = lightbox ? lightbox.querySelector("[data-zoom-reset]") : null;
+    applyZoom();
+  }
 
   function closeLightbox() {
     if (!activeLightbox) return;
     activeLightbox.classList.remove("is-open");
     activeLightbox.setAttribute("aria-hidden", "true");
     body.classList.remove("pub-lightbox-open");
+    resetZoom(null);
     activeLightbox = null;
   }
 
@@ -38,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
       lightbox.setAttribute("aria-hidden", "false");
       body.classList.add("pub-lightbox-open");
       activeLightbox = lightbox;
+      resetZoom(lightbox);
     });
   });
 
@@ -49,6 +69,25 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
       closeLightbox();
+    }
+  });
+
+  document.addEventListener("click", function (event) {
+    if (event.target.matches("[data-zoom-in]")) {
+      currentScale = Math.min(currentScale + 0.2, 3);
+      applyZoom();
+      return;
+    }
+
+    if (event.target.matches("[data-zoom-out]")) {
+      currentScale = Math.max(currentScale - 0.2, 0.6);
+      applyZoom();
+      return;
+    }
+
+    if (event.target.matches("[data-zoom-reset]")) {
+      currentScale = 1;
+      applyZoom();
     }
   });
 });
