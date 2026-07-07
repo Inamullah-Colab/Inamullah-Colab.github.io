@@ -917,6 +917,63 @@ body.view-cv .sidebar .author__urls a {
   box-shadow: none !important;
 }
 
+body.view-home .sidebar .author__urls .icon-pad-right,
+body.view-page .sidebar .author__urls .icon-pad-right,
+body.view-post .sidebar .author__urls .icon-pad-right,
+body.view-blog-archive .sidebar .author__urls .icon-pad-right,
+body.view-cv .sidebar .author__urls .icon-pad-right,
+body.view-home .sidebar .author__desktop .icon-pad-right,
+body.view-page .sidebar .author__desktop .icon-pad-right,
+body.view-post .sidebar .author__desktop .icon-pad-right,
+body.view-blog-archive .sidebar .author__desktop .icon-pad-right,
+body.view-cv .sidebar .author__desktop .icon-pad-right {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 1.95rem !important;
+  height: 1.95rem !important;
+  min-width: 1.95rem !important;
+  margin-right: 0.7rem !important;
+  border-radius: 4px !important;
+  background: #e9eef4 !important;
+  color: #324154 !important;
+  font-size: 0.96rem !important;
+  box-shadow: none !important;
+}
+
+body.view-home .sidebar .author__urls .fa-linkedin,
+body.view-home .sidebar .author__urls .fa-github,
+body.view-home .sidebar .author__urls .fa-envelope,
+body.view-home .sidebar .author__urls .fa-researchgate,
+body.view-home .sidebar .author__urls .ai-google-scholar,
+body.view-home .sidebar .author__urls .ai-orcid,
+body.view-page .sidebar .author__urls .fa-linkedin,
+body.view-page .sidebar .author__urls .fa-github,
+body.view-page .sidebar .author__urls .fa-envelope,
+body.view-page .sidebar .author__urls .fa-researchgate,
+body.view-page .sidebar .author__urls .ai-google-scholar,
+body.view-page .sidebar .author__urls .ai-orcid,
+body.view-post .sidebar .author__urls .fa-linkedin,
+body.view-post .sidebar .author__urls .fa-github,
+body.view-post .sidebar .author__urls .fa-envelope,
+body.view-post .sidebar .author__urls .fa-researchgate,
+body.view-post .sidebar .author__urls .ai-google-scholar,
+body.view-post .sidebar .author__urls .ai-orcid,
+body.view-blog-archive .sidebar .author__urls .fa-linkedin,
+body.view-blog-archive .sidebar .author__urls .fa-github,
+body.view-blog-archive .sidebar .author__urls .fa-envelope,
+body.view-blog-archive .sidebar .author__urls .fa-researchgate,
+body.view-blog-archive .sidebar .author__urls .ai-google-scholar,
+body.view-blog-archive .sidebar .author__urls .ai-orcid,
+body.view-cv .sidebar .author__urls .fa-linkedin,
+body.view-cv .sidebar .author__urls .fa-github,
+body.view-cv .sidebar .author__urls .fa-envelope,
+body.view-cv .sidebar .author__urls .fa-researchgate,
+body.view-cv .sidebar .author__urls .ai-google-scholar,
+body.view-cv .sidebar .author__urls .ai-orcid {
+  color: #324154 !important;
+}
+
 body.view-home #main .archive,
 body.view-page #main .archive,
 body.view-blog-archive #main .archive,
