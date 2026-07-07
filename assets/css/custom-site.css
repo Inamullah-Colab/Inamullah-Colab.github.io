@@ -993,10 +993,10 @@ body.view-cv #main .page {
   body.view-blog-archive #main,
   body.view-cv #main {
     display: grid !important;
-    grid-template-columns: minmax(360px, 430px) minmax(0, 1fr) !important;
-    gap: 1.75rem !important;
-    column-gap: 1.75rem !important;
-    row-gap: 1.75rem !important;
+    grid-template-columns: 420px minmax(0, 1fr) !important;
+    gap: 1.5rem !important;
+    column-gap: 1.5rem !important;
+    row-gap: 1.5rem !important;
     align-items: start !important;
   }
 
@@ -1004,7 +1004,14 @@ body.view-cv #main .page {
   body.view-page #main .sidebar,
   body.view-post #main .sidebar,
   body.view-blog-archive #main .sidebar,
-  body.view-cv #main .sidebar,
+  body.view-cv #main .sidebar {
+    grid-column: 1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
   body.view-home #main .page,
   body.view-page #main .page,
   body.view-post #main .page,
@@ -1012,6 +1019,21 @@ body.view-cv #main .page {
   body.view-home #main .archive,
   body.view-page #main .archive,
   body.view-blog-archive #main .archive {
+    grid-column: 2 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    justify-self: stretch !important;
     margin: 0 !important;
+  }
+
+  body.view-home #main .page__inner-wrap,
+  body.view-page #main .page__inner-wrap,
+  body.view-post #main .page__inner-wrap,
+  body.view-cv #main .page__inner-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 }
