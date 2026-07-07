@@ -28,6 +28,8 @@
   links:
   - label: OpenReview
     url: https://openreview.net/forum?id=Jaj6hWKcGz
+  - label: arXiv
+    url: https://doi.org/10.48550/arXiv.2606.24488
 - title: Retinal Lipidomics Associations as Candidate Biomarkers for Cardiovascular
     Health
   slug: retinal-lipidomics-associations-candidate-biomarkers
