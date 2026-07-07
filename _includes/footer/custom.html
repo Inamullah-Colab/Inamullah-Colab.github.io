@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function applyZoom() {
     if (!activeImage) return;
-    activeImage.style.transform = "scale(" + currentScale + ")";
+    activeImage.style.width = Math.round(currentScale * 100) + "%";
     if (activeReset) {
       activeReset.textContent = Math.round(currentScale * 100) + "%";
     }
@@ -74,13 +74,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.addEventListener("click", function (event) {
     if (event.target.matches("[data-zoom-in]")) {
-      currentScale = Math.min(currentScale + 0.2, 3);
+      currentScale = Math.min(currentScale + 0.25, 4);
       applyZoom();
       return;
     }
 
     if (event.target.matches("[data-zoom-out]")) {
-      currentScale = Math.max(currentScale - 0.2, 0.6);
+      currentScale = Math.max(currentScale - 0.25, 0.75);
       applyZoom();
       return;
     }
