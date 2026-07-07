@@ -114,8 +114,8 @@ a:hover {
   body.view-blog-archive #main,
   body.view-cv #main {
     display: grid !important;
-    grid-template-columns: minmax(300px, 350px) minmax(0, 1fr);
-    gap: 1rem;
+    grid-template-columns: minmax(360px, 430px) minmax(0, 1fr);
+    gap: 1.25rem;
     align-items: start;
   }
 
@@ -279,6 +279,15 @@ a:hover {
   padding-right: 1rem;
 }
 
+.sidebar .author__urls {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.sidebar .author__urls li {
+  margin-bottom: 0.7rem;
+}
+
 .author__avatar img,
 .author__avatar .author__avatar {
   border-radius: 6px;
@@ -303,6 +312,20 @@ a:hover {
 .sidebar-visit-stats,
 .sidebar-visit-stats__title {
   color: var(--site-ink) !important;
+}
+
+.sidebar-visit-stats {
+  min-height: 178px;
+}
+
+.sidebar-visit-stats a {
+  display: block;
+}
+
+.sidebar-visit-stats img {
+  display: block;
+  width: 100%;
+  min-height: 92px;
 }
 
 .sidebar .btn,
