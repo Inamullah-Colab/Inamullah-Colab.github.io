@@ -994,9 +994,9 @@ body.view-cv #main .page {
   body.view-cv #main {
     display: grid !important;
     grid-template-columns: minmax(360px, 430px) minmax(0, 1fr) !important;
-    gap: 1.25rem !important;
-    column-gap: 1.25rem !important;
-    row-gap: 1.25rem !important;
+    gap: 1.75rem !important;
+    column-gap: 1.75rem !important;
+    row-gap: 1.75rem !important;
     align-items: start !important;
   }
 
