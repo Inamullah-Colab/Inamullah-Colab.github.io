@@ -112,7 +112,7 @@ My current PhD work is the synthesis of these experiences. By combining retinal 
       <img src="{{ featured_publication.image }}" alt="{{ featured_publication.title }}">
     </div>
     <div class="pub-feature-body">
-      <p class="pub-kicker">Featured Paper</p>
+      <p class="pub-kicker">{% if featured_publication.type == "conferences" %}Featured Conference Paper{% else %}Featured Paper{% endif %}</p>
       <h3 class="pub-feature-title">{{ featured_publication.title }}</h3>
       <p class="pub-feature-meta">
         <strong>{{ featured_publication.year }}</strong>
