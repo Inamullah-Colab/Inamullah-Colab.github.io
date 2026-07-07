@@ -5,12 +5,12 @@ author_profile: true
 ---
 
 <div class="cv-academic-header">
-  <h1>Inamullah Khan</h1>
+  <h1>Inam Ullah</h1>
   <p>PhD Student, Computer Science (AI for Healthcare) | University of Southampton</p>
   <div class="cv-contact-grid">
     <span>Southampton, UK</span>
     <span><a href="mailto:inamullahk756@gmail.com">inamullahk756@gmail.com</a></span>
-    <span>+44 07301917166</span>
+    <span>+92 3025562624</span>
     <span><a href="https://www.linkedin.com/in/inam-ullah-khan-a30532150/">LinkedIn</a></span>
   </div>
 </div>
