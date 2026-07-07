@@ -95,14 +95,9 @@ Project Manager (tendering, planning, estimation, billing, client correspondence
    Citations: 0  
    This study integrates retinal imaging with lipidomic profiles in a healthy cohort, revealing microvascular-metabolic signatures linked to cardiovascular health and systemic regulation.
 
-5. Inamullah, et al.  
-   **Dual-Edge Spatial-Jacobian Image Graph Framework for Interpretable DR Grading.**  
-   *Under Review - Symposium (Abstract Version).*  
-   arXiv: <https://doi.org/10.48550/arXiv.2606.24168>  
-   This work introduces a dual-edge image graph framework for interpretable diabetic retinopathy grading by combining vessel-lesion spatial evidence with Jacobian-based lesion-biomarker relationships.
-
 ## Conferences and Seminars
 
+- **RetiSEM: Generalising Causal Models for Fragmented Biomedical Data** - *Accepted for oral presentation at IJCAI 2026*. OpenReview: <https://openreview.net/forum?id=Jaj6hWKcGz>. arXiv: <https://doi.org/10.48550/arXiv.2606.24488>
 - **Causal-RetiGraph: Cross-Cohort Retinal Support and Same-Subject Pathway Analysis for Diabetic Retinopathy** - *Under review as a conference submission in a premier biomedical and bioinformatics venue*. arXiv: <https://doi.org/10.48550/arXiv.2607.05204>
 - **Dual-Edge Spatial-Jacobian Image Graph Framework for Interpretable DR Grading** - *Symposium, under review (abstract version)*. arXiv: <https://doi.org/10.48550/arXiv.2606.24168>
 - **Retinal Lipidomics Associations as Candidate Biomarkers for Cardiovascular Health** - *Accepted for oral presentation at MICAD 2025; to appear in the Springer proceedings* <https://link.springer.com/book/9789819574247>. arXiv: <https://arxiv.org/abs/2508.03538>
