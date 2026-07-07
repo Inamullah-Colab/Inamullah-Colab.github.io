@@ -145,106 +145,6 @@
   opacity: 0.96;
 }
 
-.pub-lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 1200;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-.pub-lightbox.is-open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.pub-lightbox__backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(10, 18, 30, 0.92);
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-}
-
-.pub-lightbox__dialog {
-  position: relative;
-  z-index: 1;
-  width: min(1120px, calc(100vw - 1rem));
-  max-height: calc(100vh - 1rem);
-  padding: 0.8rem;
-  border-radius: 22px;
-  background: rgba(248, 251, 255, 0.995);
-  border: 1px solid rgba(15, 23, 42, 0.10);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.32);
-  display: grid;
-  gap: 0.75rem;
-}
-
-.pub-lightbox__toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-}
-
-.pub-lightbox__zoom-controls {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.pub-lightbox__zoom-btn,
-.pub-lightbox__close {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 2.5rem;
-  padding: 0.38rem 0.8rem;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.08);
-  color: #18212c;
-  text-decoration: none !important;
-  font-size: 0.82rem;
-  font-weight: 700;
-  border: 0;
-  cursor: pointer;
-}
-
-.pub-lightbox__zoom-btn {
-  font-size: 0.92rem;
-}
-
-.pub-lightbox__viewport {
-  overflow: auto;
-  max-height: calc(100vh - 6.25rem);
-  padding: 0.5rem;
-  border-radius: 16px;
-  background: #ffffff;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-}
-
-.pub-lightbox__img {
-  display: block;
-  width: 100%;
-  max-width: none;
-  margin: 0 auto;
-  height: auto;
-  border-radius: 14px;
-  background: #ffffff;
-}
-
-.pub-lightbox__zoom-btn:hover,
-.pub-lightbox__close:hover {
-  background: rgba(15, 23, 42, 0.14);
-}
-
 .pub-card:hover .pub-img,
 .pub-thumb-link:focus-visible .pub-img {
   transform: scale(1.02);
@@ -255,10 +155,6 @@
 .pub-thumb-link:focus-visible {
   outline: 3px solid rgba(76, 139, 245, 0.34);
   outline-offset: 3px;
-}
-
-body.pub-lightbox-open {
-  overflow: hidden;
 }
 
 .pub-body {
@@ -625,28 +521,6 @@ body.pub-lightbox-open {
 
   .pub-thumb-link {
     padding: 0.35rem;
-  }
-
-  .pub-lightbox {
-    padding: 0.75rem;
-  }
-
-  .pub-lightbox__dialog {
-    width: min(100%, calc(100vw - 1rem));
-    padding: 0.7rem;
-  }
-
-  .pub-lightbox__toolbar {
-    flex-wrap: wrap;
-  }
-
-  .pub-lightbox__zoom-controls {
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .pub-lightbox__img {
-    min-width: 100%;
   }
 
   .pub-feature-media img,
