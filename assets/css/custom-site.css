@@ -97,6 +97,65 @@ a:hover {
   margin: 2rem auto 3rem;
 }
 
+@media (min-width: 1200px) {
+  #main {
+    width: min(1680px, calc(100% - 2rem));
+  }
+
+  body.view-home #main,
+  body.view-page #main,
+  body.view-post #main,
+  body.view-blog-archive #main,
+  body.view-cv #main {
+    display: grid !important;
+    grid-template-columns: minmax(300px, 360px) minmax(0, 1fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  body.view-home #main .sidebar,
+  body.view-page #main .sidebar,
+  body.view-post #main .sidebar,
+  body.view-blog-archive #main .sidebar,
+  body.view-cv #main .sidebar {
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  body.view-home #main .page,
+  body.view-page #main .page,
+  body.view-post #main .page,
+  body.view-cv #main .page,
+  body.view-home #main .archive,
+  body.view-page #main .archive,
+  body.view-blog-archive #main .archive {
+    float: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body.view-home #main .page__inner-wrap,
+  body.view-page #main .page__inner-wrap,
+  body.view-post #main .page__inner-wrap,
+  body.view-cv #main .page__inner-wrap {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  body.view-home #main .page__content,
+  body.view-page #main .page__content,
+  body.view-post #main .page__content,
+  body.view-cv #main .page__content {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
 .initial-content,
 .archive,
 .page__content,
