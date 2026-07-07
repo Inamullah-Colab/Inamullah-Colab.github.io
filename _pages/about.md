@@ -9,7 +9,7 @@ redirect_from:
 
 <section class="site-hero">
   <div class="site-hero__content">
-    <p class="site-hero__kicker">Oculomics • Interpretable AI • Biomedical Data Integration</p>
+    <p class="site-hero__kicker">Oculomics &middot; Interpretable AI &middot; Biomedical Data Integration</p>
     <h1 class="site-hero__title">Retinal Biomarkers for Systemic Health, Modeled with Interpretable and Causal AI</h1>
     <p class="site-hero__lead">
       I study how retinal microvascular structure can serve as a non-invasive marker of systemic biology by linking imaging, lipidomics, genetics, and clinical data through interpretable machine learning.
