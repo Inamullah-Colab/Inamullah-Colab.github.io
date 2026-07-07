@@ -7,10 +7,8 @@
 \usepackage[dvipsnames]{xcolor}
 \usepackage{enumitem}
 \usepackage{hyperref}
-\usepackage{tabularx}
 \usepackage{titlesec}
 \usepackage{parskip}
-\usepackage{array}
 \usepackage{ragged2e}
 
 \definecolor{cvnavy}{HTML}{16345B}
@@ -26,7 +24,6 @@
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\setlength{\tabcolsep}{0pt}
 \setlength{\emergencystretch}{2em}
 \setlist[itemize]{leftmargin=1.15em,itemsep=0.18em,topsep=0.2em}
 \titleformat{\section}{\large\bfseries\color{cvnavy}}{}{0pt}{}[\vspace{-0.35em}\color{cvteal}\rule{\linewidth}{0.6pt}]
@@ -35,16 +32,16 @@
 \newcommand{\nameheader}[1]{{\fontsize{24}{26}\selectfont\bfseries\color{cvnavy} #1}}
 \newcommand{\roleheader}[1]{{\normalsize\color{cvtext} #1}}
 \newcommand{\entry}[4]{
-  \begin{tabularx}{\linewidth}{@{}>{\RaggedRight\arraybackslash}X >{\RaggedLeft\arraybackslash}p{3.15cm}@{}}
-  \textbf{#1} & {\small\color{cvmuted}#2} \\
-  \emph{#3} & {\small\color{cvmuted}\emph{#4}}
-  \end{tabularx}\par
+  \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lr}
+  \textbf{#1} & {\small\color{cvmuted}#2}
+  \end{tabular*}\par
+  \emph{#3}\hfill{\small\color{cvmuted}\emph{#4}}\par
   \vspace{0.12em}
 }
 \newcommand{\paper}[4]{
-  \begin{tabularx}{\linewidth}{@{}>{\RaggedRight\arraybackslash}X >{\RaggedLeft\arraybackslash}p{1.5cm}@{}}
+  \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lr}
   \textbf{#1} & {\small\color{cvmuted}#2}
-  \end{tabularx}\par
+  \end{tabular*}\par
   \emph{#3}\\
   {\small #4}\par\vspace{0.32em}
 }
@@ -67,12 +64,8 @@
 \roleheader{PhD Student in Computer Science (AI for Healthcare), University of Southampton}
 
 \vspace{0.35em}
-\begin{tabularx}{0.92\linewidth}{@{}>{\RaggedRight\arraybackslash}X >{\Centering\arraybackslash}X >{\RaggedLeft\arraybackslash}X@{}}
-\contactline{Southampton, United Kingdom} &
-\contactline{+92 302 5562624} &
-\contactline{\href{mailto:inamullahk756@gmail.com}{inamullahk756@gmail.com}} \\
-\multicolumn{3}{@{}c@{}}{\contactline{\href{https://inamullah-colab.github.io/}{Website} \quad | \quad \href{https://www.linkedin.com/in/inam-ullah-khan-a30532150/}{LinkedIn} \quad | \quad \href{https://scholar.google.com/citations?user=PRKY9rYAAAAJ&hl=en}{Google Scholar} \quad | \quad \href{https://orcid.org/0009-0004-4458-8777}{ORCID} \quad | \quad \href{https://github.com/Inamullah-Colab}{GitHub}}}
-\end{tabularx}
+\contactline{Southampton, United Kingdom \quad | \quad +92 302 5562624 \quad | \quad \href{mailto:inamullahk756@gmail.com}{inamullahk756@gmail.com}}\\[0.18em]
+\contactline{\href{https://inamullah-colab.github.io/}{Website} \quad | \quad \href{https://www.linkedin.com/in/inam-ullah-khan-a30532150/}{LinkedIn} \quad | \quad \href{https://scholar.google.com/citations?user=PRKY9rYAAAAJ&hl=en}{Google Scholar} \quad | \quad \href{https://orcid.org/0009-0004-4458-8777}{ORCID} \quad | \quad \href{https://github.com/Inamullah-Colab}{GitHub}}
 \end{center}
 
 \vspace{0.3em}
@@ -173,27 +166,30 @@ Oculomics and retinal biomarkers for systemic health; interpretable and causal m
 \end{itemize}
 
 \section*{References}
-\begin{tabularx}{\linewidth}{@{}>{\RaggedRight\arraybackslash}X >{\RaggedRight\arraybackslash}X@{\hspace{0.8cm}}}
+\noindent
+\begin{minipage}[t]{0.47\linewidth}
 \refblock
 {Dr. Shoaib Jameel}
 {Associate Professor, University of Southampton}
 {M.S.Jameel@soton.ac.uk}
 {https://bashthebuilder.github.io/}
-&
+\end{minipage}\hfill
+\begin{minipage}[t]{0.47\linewidth}
 \refblock
 {Dr. Ernesto Elias Vidal Rosas}
 {Lecturer, University of Southampton}
 {E.E.Vidal-Rosas@soton.ac.uk}
 {https://www.southampton.ac.uk/people/62tttx/doctor-ernesto-elias-vidal-rosas#about}
-\end{tabularx}
+\end{minipage}
 
 \vspace{0.45em}
-\begin{tabularx}{0.48\linewidth}{@{}>{\RaggedRight\arraybackslash}X@{}}
+\noindent
+\begin{minipage}[t]{0.47\linewidth}
 \refblock
 {Dr. Saima Hassan}
 {Assistant Professor, Kohat University of Science and Technology}
 {saimahassan@kust.edu.pk}
 {https://www.linkedin.com/in/drsaima-hassan/?originalSubdomain=pk}
-\end{tabularx}
+\end{minipage}
 
 \end{document}
