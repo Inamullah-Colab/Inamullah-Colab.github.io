@@ -844,13 +844,14 @@ body.view-page .sidebar .author__avatar,
 body.view-post .sidebar .author__avatar,
 body.view-blog-archive .sidebar .author__avatar,
 body.view-cv .sidebar .author__avatar {
-  width: 176px !important;
-  max-width: 176px !important;
+  width: 100% !important;
+  max-width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
   margin-bottom: 1rem !important;
   border-radius: 6px !important;
   overflow: hidden !important;
+  aspect-ratio: 1 / 1 !important;
 }
 
 body.view-home .sidebar .author__avatar img,
@@ -858,12 +859,15 @@ body.view-page .sidebar .author__avatar img,
 body.view-post .sidebar .author__avatar img,
 body.view-blog-archive .sidebar .author__avatar img,
 body.view-cv .sidebar .author__avatar img {
-  width: 176px !important;
-  height: 176px !important;
-  max-width: 176px !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
   border-radius: 6px !important;
   border: 3px solid #ffffff !important;
   box-shadow: 0 8px 18px rgba(31, 41, 51, 0.10) !important;
+  object-fit: cover !important;
+  object-position: center top !important;
 }
 
 body.view-home .sidebar .sidebar-visit-stats__accent,
