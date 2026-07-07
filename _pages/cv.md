@@ -131,6 +131,10 @@ Project Manager (tendering, planning, estimation, billing, client correspondence
 - President's Initiative on Provision of Education Scholarship (Pakistan, 2007-2010)
 - PhD Research Studentship, Faculty of Engineering and Physical Sciences, University of Southampton
 
+## Academic Service
+
+- PC Member / Reviewer, IEEE BIBM (Bioinformatics and Biomedicine) Conference - reviewed conference paper submissions.
+
 ## Leadership and Volunteering
 
 - Team leadership roles in construction projects (2012-2022)
