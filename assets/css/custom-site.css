@@ -380,6 +380,15 @@ a.btn:hover,
   background: #ffffff;
 }
 
+.archive.archive--single-page {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.archive.archive--single-page .page__content {
+  border-radius: 18px;
+}
+
 .page__content {
   background: var(--site-paper-strong);
   color: var(--site-ink);
@@ -821,7 +830,7 @@ body.view-post .sidebar,
 body.view-blog-archive .sidebar,
 body.view-cv .sidebar {
   padding: 1.2rem 1.1rem 1.15rem !important;
-  border-radius: 6px !important;
+  border-radius: 18px !important;
   background: #ffffff !important;
   background-image: none !important;
   border: 1px solid var(--site-line) !important;
@@ -849,7 +858,7 @@ body.view-cv .sidebar .author__avatar {
   margin-left: auto !important;
   margin-right: auto !important;
   margin-bottom: 1rem !important;
-  border-radius: 6px !important;
+  border-radius: 18px !important;
   overflow: hidden !important;
   aspect-ratio: 1 / 1 !important;
 }
@@ -863,7 +872,7 @@ body.view-cv .sidebar .author__avatar img {
   width: 100% !important;
   height: 100% !important;
   max-width: none !important;
-  border-radius: 6px !important;
+  border-radius: 18px !important;
   border: 3px solid #ffffff !important;
   box-shadow: 0 8px 18px rgba(31, 41, 51, 0.10) !important;
   object-fit: cover !important;
