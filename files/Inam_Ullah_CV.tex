@@ -1,6 +1,6 @@
-\documentclass[10.5pt,a4paper]{article}
+\documentclass[11pt,a4paper]{article}
 
-\usepackage[a4paper,margin=1.45cm]{geometry}
+\usepackage[a4paper,margin=1.55cm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -11,6 +11,7 @@
 \usepackage{titlesec}
 \usepackage{parskip}
 \usepackage{array}
+\usepackage{ragged2e}
 
 \definecolor{cvnavy}{HTML}{16345B}
 \definecolor{cvteal}{HTML}{1E7F7A}
@@ -25,43 +26,50 @@
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
-\setlist[itemize]{leftmargin=1.15em,itemsep=0.2em,topsep=0.25em}
+\setlength{\tabcolsep}{0pt}
+\setlist[itemize]{leftmargin=1.15em,itemsep=0.18em,topsep=0.2em}
 \titleformat{\section}{\large\bfseries\color{cvnavy}}{}{0pt}{}[\vspace{-0.35em}\color{cvteal}\rule{\linewidth}{0.6pt}]
-\titlespacing*{\section}{0pt}{0.8em}{0.45em}
+\titlespacing*{\section}{0pt}{0.75em}{0.35em}
 
 \newcommand{\nameheader}[1]{{\fontsize{24}{26}\selectfont\bfseries\color{cvnavy} #1}}
-\newcommand{\roleheader}[1]{{\large\color{cvtext} #1}}
+\newcommand{\roleheader}[1]{{\normalsize\color{cvtext} #1}}
 \newcommand{\entry}[4]{
-  \textbf{#1} \hfill {\color{cvmuted}#2} \\
-  \emph{#3} \hfill {\color{cvmuted}\emph{#4}}\par
+  \textbf{#1} \hfill {\small\color{cvmuted}#2} \\
+  \emph{#3} \hfill {\small\color{cvmuted}\emph{#4}}\par
+  \vspace{0.15em}
 }
 \newcommand{\paper}[4]{
-  \textbf{#1} \hfill {\color{cvmuted}#2}\\
+  \textbf{#1} \hfill {\small\color{cvmuted}#2}\\
   \emph{#3}\\
-  #4\par\vspace{0.35em}
+  {\small #4}\par\vspace{0.35em}
+}
+\newcommand{\contactline}[1]{{\small #1}}
+\newcommand{\refblock}[4]{
+  \textbf{#1}\\
+  {\small #2}\\
+  {\small \href{mailto:#3}{#3}}\\
+  {\small \href{#4}{#4}}
 }
 
 \begin{document}
 \color{cvtext}
+\small
 
+\begin{center}
 \nameheader{Inam Ullah Khan}
 
-\vspace{0.15em}
+\vspace{0.2em}
 \roleheader{PhD Student in Computer Science (AI for Healthcare), University of Southampton}
 
-\vspace{0.45em}
-\begin{tabularx}{\linewidth}{@{}X X@{}}
-Southampton, United Kingdom &
-\href{mailto:inamullahk756@gmail.com}{inamullahk756@gmail.com} \\
-\href{https://inamullah-colab.github.io/}{inamullah-colab.github.io} &
-+92 302 5562624 \\
-\href{https://www.linkedin.com/in/inam-ullah-khan-a30532150/}{LinkedIn} \quad
-\href{https://scholar.google.com/citations?user=PRKY9rYAAAAJ&hl=en}{Google Scholar} &
-\href{https://orcid.org/0009-0004-4458-8777}{ORCID} \quad
-\href{https://github.com/Inamullah-Colab}{GitHub}
-\end{tabularx}
+\vspace{0.35em}
+\contactline{Southampton, United Kingdom \quad | \quad +92 302 5562624 \quad | \quad \href{mailto:inamullahk756@gmail.com}{inamullahk756@gmail.com}}\\[0.2em]
+\contactline{\href{https://inamullah-colab.github.io/}{Website} \quad | \quad \href{https://www.linkedin.com/in/inam-ullah-khan-a30532150/}{LinkedIn} \quad | \quad \href{https://scholar.google.com/citations?user=PRKY9rYAAAAJ&hl=en}{Google Scholar} \quad | \quad \href{https://orcid.org/0009-0004-4458-8777}{ORCID} \quad | \quad \href{https://github.com/Inamullah-Colab}{GitHub}}
+\end{center}
+
+\vspace{0.3em}
 
 \section*{Professional Profile}
+\justifying
 Researcher in oculomics, interpretable machine learning, and multimodal biomedical data integration. My work studies how retinal microvascular structure can serve as a non-invasive marker of systemic biology by linking imaging, lipidomics, genetics, and clinical phenotypes. I develop mathematically grounded and biologically interpretable methods for fragmented and high-dimensional health data, with emphasis on causal modelling, mediation analysis, pathway-aware representation, and clinically relevant biomarker discovery.
 
 \section*{Core Research Areas}
@@ -96,9 +104,7 @@ Oculomics and retinal biomarkers for systemic health; interpretable and causal m
 \end{itemize}
 
 \section*{Teaching Experience}
-\begin{itemize}
-  \item \textbf{University of Southampton modules supported:} COMP1314 Data Management; COMP1202 Programming I (Java); COMP1312 Programming I (Python/C); AICE1003 High-Level Programming (Python); AICE1005 Algorithms and Analysis; AICE1006 Data Analytics; AICE1008 Mathematics for Artificial Intelligence and Computer Engineering II; ELEC1300 Part One Laboratory Programme; ELEC1312 C Programming Laboratories; ELEC6213 Image Processing.
-\end{itemize}
+\textbf{University of Southampton modules supported:} COMP1314 Data Management; COMP1202 Programming I (Java); COMP1312 Programming I (Python/C); AICE1003 High-Level Programming (Python); AICE1005 Algorithms and Analysis; AICE1006 Data Analytics; AICE1008 Mathematics for Artificial Intelligence and Computer Engineering II; ELEC1300 Part One Laboratory Programme; ELEC1312 C Programming Laboratories; ELEC6213 Image Processing.
 
 \section*{Selected Publications}
 \paper
@@ -125,7 +131,7 @@ Oculomics and retinal biomarkers for systemic health; interpretable and causal m
 {Biomimetics}
 {\href{https://www.mdpi.com/2313-7673/8/2/187}{Journal link}.}
 
-\section*{Conference Papers and Presentations}
+\section*{Selected Conference Papers and Presentations}
 \begin{itemize}
   \item \textbf{RetiSEM: Generalising Causal Models for Fragmented Biomedical Data}. Accepted for oral presentation at \textbf{IJCAI 2026}. OpenReview: \href{https://openreview.net/forum?id=Jaj6hWKcGz}{link}. arXiv: \href{https://doi.org/10.48550/arXiv.2606.24488}{2606.24488}.
   \item \textbf{Causal-RetiGraph: Cross-Cohort Retinal Support and Same-Subject Pathway Analysis for Diabetic Retinopathy}. Under review as a conference submission in a premier biomedical and bioinformatics venue. arXiv: \href{https://doi.org/10.48550/arXiv.2607.05204}{2607.05204}.
@@ -156,21 +162,27 @@ Oculomics and retinal biomarkers for systemic health; interpretable and causal m
 \end{itemize}
 
 \section*{References}
-\textbf{Dr. Shoaib Jameel}\\
-Associate Professor, University of Southampton\\
-Email: \href{mailto:M.S.Jameel@soton.ac.uk}{M.S.Jameel@soton.ac.uk}\\
-Web: \href{https://bashthebuilder.github.io/}{bashthebuilder.github.io}
+\begin{tabularx}{\linewidth}{@{}>{\RaggedRight\arraybackslash}X >{\RaggedRight\arraybackslash}X@{}}
+\refblock
+{Dr. Shoaib Jameel}
+{Associate Professor, University of Southampton}
+{M.S.Jameel@soton.ac.uk}
+{https://bashthebuilder.github.io/}
+&
+\refblock
+{Dr. Ernesto Elias Vidal Rosas}
+{Lecturer, University of Southampton}
+{E.E.Vidal-Rosas@soton.ac.uk}
+{https://www.southampton.ac.uk/people/62tttx/doctor-ernesto-elias-vidal-rosas#about}
+\end{tabularx}
 
 \vspace{0.45em}
-\textbf{Dr. Ernesto Elias Vidal Rosas}\\
-Lecturer, University of Southampton\\
-Email: \href{mailto:E.E.Vidal-Rosas@soton.ac.uk}{E.E.Vidal-Rosas@soton.ac.uk}\\
-Web: \href{https://www.southampton.ac.uk/people/62tttx/doctor-ernesto-elias-vidal-rosas#about}{University profile}
-
-\vspace{0.45em}
-\textbf{Dr. Saima Hassan}\\
-Assistant Professor, Kohat University of Science and Technology\\
-Email: \href{mailto:saimahassan@kust.edu.pk}{saimahassan@kust.edu.pk}\\
-Web: \href{https://www.linkedin.com/in/drsaima-hassan/?originalSubdomain=pk}{LinkedIn profile}
+\begin{tabularx}{\linewidth}{@{}>{\RaggedRight\arraybackslash}X@{}}
+\refblock
+{Dr. Saima Hassan}
+{Assistant Professor, Kohat University of Science and Technology}
+{saimahassan@kust.edu.pk}
+{https://www.linkedin.com/in/drsaima-hassan/?originalSubdomain=pk}
+\end{tabularx}
 
 \end{document}
