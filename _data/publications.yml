@@ -17,8 +17,8 @@
   slug: retisem-generalising-causal-models-fragmented-biomedical-data
   date: '2026-02-26'
   year: 2026
-  type: manuscripts
-  venue: IJCAI (GLOW) 2026
+  type: conferences
+  venue: IJCAI 2026
   status: Accepted (Oral)
   image: /images/retisem-2026.png
   summary: RetiSEM presents a causal modelling framework for fragmented biomedical
