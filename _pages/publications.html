@@ -60,7 +60,13 @@ author_profile: true
           {% assign citation_entry = site.data.citations.papers[publication.citation_key] %}
           <article class="pub-card{% if publication.citation_key == 'retisem_ssrn_2026' %} pub-card-featured{% endif %}">
             <div class="pub-img-wrap">
-              <img class="pub-img" src="{{ publication.image }}" alt="{{ publication.title }}">
+              <a class="pub-thumb-link" href="{{ publication.image }}" target="_blank" rel="noopener" aria-label="Open thumbnail preview for {{ publication.title }}">
+                <img class="pub-img" src="{{ publication.image }}" alt="{{ publication.title }}">
+                <span class="pub-thumb-hint">Hover to enlarge</span>
+                <span class="pub-preview" aria-hidden="true">
+                  <img class="pub-preview-img" src="{{ publication.image }}" alt="">
+                </span>
+              </a>
             </div>
             <div class="pub-body">
               <div class="pub-topline">
