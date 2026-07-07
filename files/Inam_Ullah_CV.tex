@@ -32,18 +32,17 @@
 \newcommand{\nameheader}[1]{{\fontsize{24}{26}\selectfont\bfseries\color{cvnavy} #1}}
 \newcommand{\roleheader}[1]{{\normalsize\color{cvtext} #1}}
 \newcommand{\entry}[4]{
-  \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lr}
-  \textbf{#1} & {\small\color{cvmuted}#2}
-  \end{tabular*}\par
-  \emph{#3}\hfill{\small\color{cvmuted}\emph{#4}}\par
-  \vspace{0.12em}
+  \textbf{#1}\par
+  {\small\color{cvmuted}#2}\par
+  \emph{#3}%
+  \if\relax\detokenize{#4}\relax\else\hfill{\small\color{cvmuted}\emph{#4}}\fi\par
+  \vspace{0.08em}
 }
 \newcommand{\paper}[4]{
-  \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lr}
-  \textbf{#1} & {\small\color{cvmuted}#2}
-  \end{tabular*}\par
+  \textbf{#1}\par
+  {\small\color{cvmuted}#2}\par
   \emph{#3}\\
-  {\small #4}\par\vspace{0.32em}
+  {\small #4}\par\vspace{0.36em}
 }
 \newcommand{\contactline}[1]{{\small #1}}
 \newcommand{\refblock}[4]{
