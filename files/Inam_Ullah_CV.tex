@@ -1,0 +1,175 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[a4paper,margin=1.65cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{parskip}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue!50!black,
+  linkcolor=black
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=1.2em, itemsep=0.2em, topsep=0.2em}
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\vspace{-0.35em}\rule{\linewidth}{0.4pt}]
+\titlespacing*{\section}{0pt}{0.8em}{0.45em}
+
+\newcommand{\cvname}[1]{{\fontsize{22}{24}\selectfont\bfseries #1}}
+\newcommand{\cvrole}[1]{{\large #1}}
+\newcommand{\cvsubheading}[4]{
+  \textbf{#1} \hfill #2 \\
+  \emph{#3} \hfill \emph{#4}\par
+}
+\newcommand{\cvpub}[4]{
+  \textbf{#1} \hfill #2 \\
+  \emph{#3} \\
+  #4\par\vspace{0.35em}
+}
+
+\begin{document}
+
+\cvname{Inam Ullah Khan}
+
+\vspace{0.2em}
+\cvrole{PhD Student in Computer Science (AI for Healthcare) | University of Southampton}
+
+\vspace{0.45em}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+Southampton, United Kingdom &
+\href{mailto:inamullahk756@gmail.com}{inamullahk756@gmail.com} \\
+\href{https://www.linkedin.com/in/inam-ullah-khan-a30532150/}{LinkedIn} \quad
+\href{https://scholar.google.com/citations?user=PRKY9rYAAAAJ&hl=en}{Google Scholar} \quad
+\href{https://orcid.org/0009-0004-4458-8777}{ORCID} &
++92 302 5562624 \\
+\href{https://github.com/Inamullah-Colab}{GitHub} \quad
+\href{https://inamullah-colab.github.io/}{Website} &
+\href{https://www.researchgate.net/profile/Inam-Ullah-31}{ResearchGate}
+\end{tabularx}
+
+\section*{Professional Profile}
+PhD researcher working at the intersection of oculomics, interpretable machine learning, causal modelling, and multimodal biomedical data integration. My research studies how retinal microvascular structure can act as a non-invasive marker of systemic biology by linking imaging, lipidomics, genetics, and clinical phenotypes. I build mathematically grounded and clinically interpretable methods for high-dimensional health data, with particular interest in pathway-aware modelling, mediation analysis, multimodal integration, and robust translational AI.
+
+\section*{Research Interests}
+Oculomics; retinal biomarkers for systemic health; interpretable machine learning; causal and mediation modelling; multimodal biomedical data integration; clinical and molecular phenotyping; biomarker discovery; mathematical and statistical modelling; medical imaging; precision medicine.
+
+\section*{Education}
+\cvsubheading{University of Southampton, United Kingdom}{Sep 2024 -- Present}{PhD in Computer Science (Artificial Intelligence)}{}
+\begin{itemize}
+  \item Research focus: retinal imaging, lipidomics, genetics, and clinical data integration for systemic biomarker discovery and interpretable AI for healthcare.
+\end{itemize}
+
+\cvsubheading{Kohat University of Science and Technology, Pakistan}{Oct 2018 -- Jan 2022}{MSc in Computer Science (Artificial Intelligence)}{GPA: 3.24/4.00}
+\begin{itemize}
+  \item Thesis: \emph{Analyzing the Role of Diversity in Convolutional Neural Networks Based Homogeneous Ensemble Model for Imbalanced Data Classification.}
+\end{itemize}
+
+\cvsubheading{Virtual University, Pakistan}{Mar 2016 -- Oct 2018}{Master in Computer Science}{GPA: 3.29/4.00}
+
+\cvsubheading{University of Sargodha, Pakistan}{Sep 2013 -- Mar 2016}{BSc in Physics, Mathematics, and Computer Science}{}
+
+\cvsubheading{KRL Institute of Technology, Pakistan}{Aug 2007 -- Jul 2010}{Diploma of Associate Engineering (Civil)}{Grade: 76\%}
+
+\section*{Research and Academic Experience}
+\cvsubheading{University of Southampton, United Kingdom}{Sep 2024 -- Present}{PhD Researcher / Research Assistant}{}
+\begin{itemize}
+  \item Conduct research on retinal imaging, oculomics, lipidomics, and clinical data integration for cardiovascular and systemic biomarker discovery.
+  \item Develop interpretable machine learning, causal modelling, mediation analysis, and network-based methods for fragmented and multimodal biomedical datasets.
+  \item Support teaching and laboratory delivery across data management, programming, algorithms, data analytics, image processing, and mathematics for AI.
+  \item Contribute to Southampton Research Software Group training activities (SUSAI) and invigilation support.
+\end{itemize}
+
+\cvsubheading{Kohat University of Science and Technology, Pakistan}{Jan 2021 -- Jan 2022}{Research Assistant}{}
+\begin{itemize}
+  \item Contributed to data curation, model development, experimental analysis, and manuscript preparation in applied machine learning research.
+\end{itemize}
+
+\section*{Industry Experience}
+\cvsubheading{Shan Construction Company, Islamabad, Pakistan}{Dec 2017 -- Feb 2022}{Project Manager}{}
+\begin{itemize}
+  \item Managed tendering, planning, estimation, billing, technical coordination, and client communication across civil engineering projects.
+  \item Built practical strengths in systems thinking, project delivery, documentation, and decision-making under real operational constraints.
+\end{itemize}
+
+\section*{Teaching and Academic Support}
+\textbf{University of Southampton teaching support}:
+COMP1314 Data Management; COMP1202 Programming I (Java); COMP1312 Programming I (Python/C); AICE1003 High-Level Programming (Python); AICE1005 Algorithms and Analysis; AICE1006 Data Analytics; AICE1008 Mathematics for Artificial Intelligence and Computer Engineering II; ELEC1300 Part One Laboratory Programme; ELEC1312 C Programming Laboratories; ELEC6213 Image Processing.
+
+\section*{Selected Publications}
+\cvpub
+{Integrated Oculomics and Lipidomics Reveal Microvascular Metabolic Signatures Associated with Cardiovascular Health}
+{2025}
+{Scientific Reports, preprint}
+{Integrates retinal imaging with lipidomic profiles to identify microvascular and metabolic signatures associated with cardiovascular health. arXiv: \href{https://arxiv.org/abs/2507.12663}{2507.12663}.}
+
+\cvpub
+{The Eye as a Window to Systemic Health: A Survey of Retinal Imaging from Classical Techniques to Oculomics}
+{2025}
+{The Journal of Precision Medicine: Health and Disease}
+{\href{https://www.sciencedirect.com/science/article/pii/S305063282500023X}{Journal article}.}
+
+\cvpub
+{Deciphering the Impact of Diversity in CNN-Based Ensembles on Overcoming Data Imbalance and Scarcity}
+{2024}
+{Informatics in Medicine Unlocked}
+{\href{https://www.sciencedirect.com/science/article/pii/S2352914824001138}{Journal article}.}
+
+\cvpub
+{Data Diversity in Convolutional Neural Network Based Ensemble Model for Diabetic Retinopathy}
+{2023}
+{Biomimetics}
+{\href{https://www.mdpi.com/2313-7673/8/2/187}{Journal article}.}
+
+\section*{Conference Papers and Research Presentations}
+\begin{itemize}
+  \item \textbf{RetiSEM: Generalising Causal Models for Fragmented Biomedical Data}. Accepted for oral presentation at \textbf{IJCAI 2026}. OpenReview: \href{https://openreview.net/forum?id=Jaj6hWKcGz}{link}. arXiv: \href{https://doi.org/10.48550/arXiv.2606.24488}{2606.24488}.
+  \item \textbf{Causal-RetiGraph: Cross-Cohort Retinal Support and Same-Subject Pathway Analysis for Diabetic Retinopathy}. Under review as a conference submission in a premier biomedical and bioinformatics venue. arXiv: \href{https://doi.org/10.48550/arXiv.2607.05204}{2607.05204}.
+  \item \textbf{Dual-Edge Spatial-Jacobian Image Graph Framework for Interpretable DR Grading}. Symposium abstract version under review. arXiv: \href{https://doi.org/10.48550/arXiv.2606.24168}{2606.24168}.
+  \item \textbf{Retinal Lipidomics Associations as Candidate Biomarkers for Cardiovascular Health}. Accepted for oral presentation at \textbf{MICAD 2025}; Springer proceedings forthcoming. Springer: \href{https://link.springer.com/book/9789819574247}{book}. arXiv: \href{https://arxiv.org/abs/2508.03538}{2508.03538}.
+  \item First Multi-Disciplinary Student Research Workshop, KUST, Mar 2021.
+  \item Poster presentation on soft sensors in cement and nuclear industry using deep learning, Aug 2021.
+\end{itemize}
+
+\section*{Technical Skills}
+\begin{itemize}
+  \item \textbf{Programming:} Python, R, Java, C, SQL, MATLAB, Bash, LaTeX.
+  \item \textbf{Machine learning and scientific computing:} PyTorch, TensorFlow, scikit-learn, OpenCV, NumPy, Pandas, SciPy, Matplotlib, SPSS.
+  \item \textbf{Systems and tooling:} Linux, Git, GitHub, Jupyter, VS Code.
+  \item \textbf{Research workflows:} interpretable ML, multimodal integration, causal modelling, prompt-assisted research workflows, scientific writing support.
+\end{itemize}
+
+\section*{Awards, Funding, and Service}
+\begin{itemize}
+  \item PhD Research Studentship, Faculty of Engineering and Physical Sciences, University of Southampton.
+  \item President's Initiative on Provision of Education Scholarship, Pakistan.
+  \item PC Member / Reviewer, IEEE BIBM Conference.
+\end{itemize}
+
+\section*{Certifications}
+\begin{itemize}
+  \item Programming Essentials in C (Cisco)
+  \item Introduction to IoT, Networking, and Cybersecurity (Cisco)
+  \item Fundamentals of Machine Learning for Healthcare (Coursera)
+  \item Machine Learning (Coursera, Andrew Ng)
+  \item Bioinformatics: Introduction and Methods (Coursera)
+\end{itemize}
+
+\section*{Leadership and Volunteering}
+\begin{itemize}
+  \item Team leadership roles in construction projects, 2012 -- 2022.
+  \item Volunteer, Act of Kindness, Islamabad, 2017 -- 2024.
+\end{itemize}
+
+\section*{References}
+Available on request. If needed, academic referees currently listed on my website include collaborators and supervisors from the University of Southampton and Kohat University of Science and Technology.
+
+\end{document}
