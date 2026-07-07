@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am **Inam Ullah Khan**, a PhD student in Computer Science at the [School of Electronics and Computer Science](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science), [University of Southampton](https://www.southampton.ac.uk/). My research focuses on how **retinal microvascular structure can act as a non-invasive marker of systemic biology**, and how signals captured in the eye relate to molecular, genetic, and clinical processes.
+I am **Inam Ullah**, a PhD student in Computer Science at the [School of Electronics and Computer Science](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science), [University of Southampton](https://www.southampton.ac.uk/). My research focuses on how **retinal microvascular structure can act as a non-invasive marker of systemic biology**, and how signals captured in the eye relate to molecular, genetic, and clinical processes.
 
 The retina provides a uniquely accessible view of vascular and neurological health. My work studies fine-grained retinal traits, including vessel calibre, tortuosity, density, and fractal geometry, and examines how these features relate to **clinical phenotypes, lipidomic profiles, and genetic variation**.
 
@@ -55,8 +55,8 @@ This work aligns closely with the emerging field of **oculomics**, which leverag
 <div class="news-grid">
   <article class="news-card">
     <p class="news-date">15 Jun 2026</p>
-    <h3 class="news-title"><a href="/publications/">RetiSEM accepted at IJCAI_2026</a></h3>
-    <p class="news-summary">RetiSEM: Generalising Causal Models for Fragmented Biomedical Data has been accepted for oral presentation at IJCAI (GLOW) 2026.</p>
+    <h3 class="news-title"><a href="/publications/">RetiSEM accepted at IJCAI 2026</a></h3>
+    <p class="news-summary">RetiSEM: Generalising Causal Models for Fragmented Biomedical Data has been accepted for oral presentation at IJCAI 2026.</p>
     <p class="news-link"><a href="https://openreview.net/forum?id=Jaj6hWKcGz">View OpenReview</a></p>
   </article>
   {% for post in homepage_news limit:3 %}
