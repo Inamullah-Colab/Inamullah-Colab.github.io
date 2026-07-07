@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About"
+title: "About Me"
 author_profile: true
 redirect_from:
   - /about/
@@ -12,7 +12,7 @@ redirect_from:
     <p class="site-hero__kicker">Oculomics • Interpretable AI • Biomedical Data Integration</p>
     <h1 class="site-hero__title">Retinal Biomarkers for Systemic Health, Modeled with Interpretable and Causal AI</h1>
     <p class="site-hero__lead">
-      I study how retinal microvascular structure can serve as a non-invasive marker of systemic biology, linking imaging, lipidomics, genetics, and clinical data through interpretable machine learning and pathway-aware modelling.
+      I study how retinal microvascular structure can serve as a non-invasive marker of systemic biology by linking imaging, lipidomics, genetics, and clinical data through interpretable machine learning.
     </p>
     <div class="site-hero__actions">
       <a href="/publications/" class="btn btn--primary">View Publications</a>
