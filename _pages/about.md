@@ -7,6 +7,34 @@ redirect_from:
   - /about.html
 ---
 
+<section class="site-hero">
+  <div class="site-hero__content">
+    <p class="site-hero__kicker">Oculomics • Interpretable AI • Biomedical Data Integration</p>
+    <h1 class="site-hero__title">Retinal Biomarkers for Systemic Health, Modeled with Interpretable and Causal AI</h1>
+    <p class="site-hero__lead">
+      I study how retinal microvascular structure can serve as a non-invasive marker of systemic biology, linking imaging, lipidomics, genetics, and clinical data through interpretable machine learning and pathway-aware modelling.
+    </p>
+    <div class="site-hero__actions">
+      <a href="/publications/" class="btn btn--primary">View Publications</a>
+      <a href="/cv/" class="btn btn--inverse">Open CV</a>
+    </div>
+  </div>
+  <div class="site-hero__stats">
+    <div class="site-hero__stat">
+      <span class="site-hero__stat-value">51</span>
+      <span class="site-hero__stat-label">Google Scholar Citations</span>
+    </div>
+    <div class="site-hero__stat">
+      <span class="site-hero__stat-value">AI + Retina</span>
+      <span class="site-hero__stat-label">Core Research Direction</span>
+    </div>
+    <div class="site-hero__stat">
+      <span class="site-hero__stat-value">Southampton</span>
+      <span class="site-hero__stat-label">PhD Base</span>
+    </div>
+  </div>
+</section>
+
 I am **Inam Ullah**, a PhD student in Computer Science at the [School of Electronics and Computer Science](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science), [University of Southampton](https://www.southampton.ac.uk/). My research focuses on how **retinal microvascular structure can act as a non-invasive marker of systemic biology**, and how signals captured in the eye relate to molecular, genetic, and clinical processes.
 
 The retina provides a uniquely accessible view of vascular and neurological health. My work studies fine-grained retinal traits, including vessel calibre, tortuosity, density, and fractal geometry, and examines how these features relate to **clinical phenotypes, lipidomic profiles, and genetic variation**.
