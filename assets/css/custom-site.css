@@ -322,11 +322,29 @@ button,
   box-shadow: none;
 }
 
+.btn a,
+a.btn,
+.page__content a.btn,
+.archive a.btn,
+.sidebar a.btn,
+.page__content .btn,
+.archive .btn,
+.sidebar .btn {
+  color: #ffffff !important;
+}
+
 .btn:hover,
 button:hover,
 .sidebar .btn:hover {
   background: #0f3a68;
   transform: none;
+}
+
+a.btn:hover,
+.page__content a.btn:hover,
+.archive a.btn:hover,
+.sidebar a.btn:hover {
+  color: #ffffff !important;
 }
 
 .archive,
