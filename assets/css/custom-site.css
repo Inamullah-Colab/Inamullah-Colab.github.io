@@ -813,3 +813,89 @@ img {
     text-align: center;
   }
 }
+
+/* Shared page alignment: keep CV, Home, Publications, Blog, and standard pages on one system */
+body.view-home .sidebar,
+body.view-page .sidebar,
+body.view-post .sidebar,
+body.view-blog-archive .sidebar,
+body.view-cv .sidebar {
+  padding: 1.2rem 1.1rem 1.15rem !important;
+  border-radius: 6px !important;
+  background: #ffffff !important;
+  border: 1px solid var(--site-line) !important;
+  box-shadow: var(--site-shadow-soft) !important;
+  overflow: visible !important;
+}
+
+body.view-home .sidebar::before,
+body.view-page .sidebar::before,
+body.view-post .sidebar::before,
+body.view-blog-archive .sidebar::before,
+body.view-cv .sidebar::before {
+  content: none !important;
+}
+
+body.view-home .sidebar .author__avatar img,
+body.view-page .sidebar .author__avatar img,
+body.view-post .sidebar .author__avatar img,
+body.view-blog-archive .sidebar .author__avatar img,
+body.view-cv .sidebar .author__avatar img {
+  width: 176px !important;
+  height: 176px !important;
+  max-width: 176px !important;
+  border-radius: 6px !important;
+  border: 3px solid #ffffff !important;
+  box-shadow: 0 8px 18px rgba(31, 41, 51, 0.10) !important;
+}
+
+body.view-home .sidebar .author__name,
+body.view-page .sidebar .author__name,
+body.view-post .sidebar .author__name,
+body.view-blog-archive .sidebar .author__name,
+body.view-cv .sidebar .author__name {
+  font-size: 1.4rem !important;
+  line-height: 1.15 !important;
+  margin-bottom: 0.45rem !important;
+}
+
+body.view-home .sidebar .author__bio,
+body.view-page .sidebar .author__bio,
+body.view-post .sidebar .author__bio,
+body.view-blog-archive .sidebar .author__bio,
+body.view-cv .sidebar .author__bio {
+  font-size: 0.98rem !important;
+  line-height: 1.6 !important;
+  margin-bottom: 0.85rem !important;
+}
+
+body.view-home .sidebar .author__urls,
+body.view-page .sidebar .author__urls,
+body.view-post .sidebar .author__urls,
+body.view-blog-archive .sidebar .author__urls,
+body.view-cv .sidebar .author__urls {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 0.75rem !important;
+  margin-top: 0.85rem !important;
+}
+
+body.view-home .sidebar .author__urls a,
+body.view-page .sidebar .author__urls a,
+body.view-post .sidebar .author__urls a,
+body.view-blog-archive .sidebar .author__urls a,
+body.view-cv .sidebar .author__urls a {
+  min-height: 3.15rem !important;
+  border-radius: 4px !important;
+  background: #f8fafc !important;
+  border: 1px solid rgba(15, 23, 42, 0.10) !important;
+  box-shadow: none !important;
+}
+
+body.view-home #main .archive,
+body.view-page #main .archive,
+body.view-blog-archive #main .archive,
+body.view-post #main .page,
+body.view-cv #main .page {
+  align-self: start !important;
+}
