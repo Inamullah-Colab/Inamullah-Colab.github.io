@@ -13,4 +13,45 @@
     await mermaid.run({querySelector:'code.language-mermaid'});
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var openers = document.querySelectorAll("[data-lightbox-open]");
+  var body = document.body;
+  var activeLightbox = null;
+
+  function closeLightbox() {
+    if (!activeLightbox) return;
+    activeLightbox.classList.remove("is-open");
+    activeLightbox.setAttribute("aria-hidden", "true");
+    body.classList.remove("pub-lightbox-open");
+    activeLightbox = null;
+  }
+
+  openers.forEach(function (opener) {
+    opener.addEventListener("click", function (event) {
+      var targetId = opener.getAttribute("data-lightbox-open");
+      var lightbox = document.getElementById(targetId);
+      if (!lightbox) return;
+      event.preventDefault();
+      closeLightbox();
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+      body.classList.add("pub-lightbox-open");
+      activeLightbox = lightbox;
+    });
+  });
+
+  document.addEventListener("click", function (event) {
+    if (!event.target.matches("[data-lightbox-close]")) return;
+    closeLightbox();
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeLightbox();
+    }
+  });
+});
+</script>
+
 <!-- end custom footer snippets -->
