@@ -823,6 +823,7 @@ body.view-cv .sidebar {
   padding: 1.2rem 1.1rem 1.15rem !important;
   border-radius: 6px !important;
   background: #ffffff !important;
+  background-image: none !important;
   border: 1px solid var(--site-line) !important;
   box-shadow: var(--site-shadow-soft) !important;
   overflow: visible !important;
@@ -834,6 +835,22 @@ body.view-post .sidebar::before,
 body.view-blog-archive .sidebar::before,
 body.view-cv .sidebar::before {
   content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+body.view-home .sidebar .author__avatar,
+body.view-page .sidebar .author__avatar,
+body.view-post .sidebar .author__avatar,
+body.view-blog-archive .sidebar .author__avatar,
+body.view-cv .sidebar .author__avatar {
+  width: 176px !important;
+  max-width: 176px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 1rem !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
 }
 
 body.view-home .sidebar .author__avatar img,
@@ -847,6 +864,14 @@ body.view-cv .sidebar .author__avatar img {
   border-radius: 6px !important;
   border: 3px solid #ffffff !important;
   box-shadow: 0 8px 18px rgba(31, 41, 51, 0.10) !important;
+}
+
+body.view-home .sidebar .sidebar-visit-stats__accent,
+body.view-page .sidebar .sidebar-visit-stats__accent,
+body.view-post .sidebar .sidebar-visit-stats__accent,
+body.view-blog-archive .sidebar .sidebar-visit-stats__accent,
+body.view-cv .sidebar .sidebar-visit-stats__accent {
+  display: none !important;
 }
 
 body.view-home .sidebar .author__name,
