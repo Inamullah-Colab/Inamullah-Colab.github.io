@@ -95,8 +95,15 @@ Project Manager (tendering, planning, estimation, billing, client correspondence
    Citations: 0  
    This study integrates retinal imaging with lipidomic profiles in a healthy cohort, revealing microvascular-metabolic signatures linked to cardiovascular health and systemic regulation.
 
+5. Inamullah, et al.  
+   **Dual-Edge Spatial-Jacobian Image Graph Framework for Interpretable DR Grading.**  
+   *Under Review - Symposium (Abstract Version).*  
+   arXiv: <https://doi.org/10.48550/arXiv.2606.24168>  
+   This work introduces a dual-edge image graph framework for interpretable diabetic retinopathy grading by combining vessel-lesion spatial evidence with Jacobian-based lesion-biomarker relationships.
+
 ## Conferences and Seminars
 
+- **Dual-Edge Spatial-Jacobian Image Graph Framework for Interpretable DR Grading** - *Symposium, under review (abstract version)*. arXiv: <https://doi.org/10.48550/arXiv.2606.24168>
 - **Retinal Lipidomics Associations as Candidate Biomarkers for Cardiovascular Health** - *MICAD Proceedings, 2025 (Oral Presentation)*. arXiv: <https://arxiv.org/abs/2508.03538>
 - First Multi-Disciplinary Student Research Workshop, KUST (Mar 2021) - Presented MSc research.
 - Poster presentation: Role of soft sensors in cement and nuclear industry using deep learning (Aug 2021).

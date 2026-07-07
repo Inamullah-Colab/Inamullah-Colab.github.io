@@ -3,8 +3,8 @@
   date: '2026-06-01'
   year: 2026
   type: conferences
-  venue: Symposium abstract version
-  status: Under Review (Symposium Abstract)
+  venue: Symposium
+  status: Under Review (Abstract Version)
   image: /images/dual-edge-spatial-jacobian-2026.png
   summary: Introduces a dual-edge spatial-Jacobian image graph framework for interpretable
     diabetic retinopathy grading by combining vessel-lesion spatial edges with Jacobian-based
