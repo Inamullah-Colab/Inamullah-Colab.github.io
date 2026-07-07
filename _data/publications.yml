@@ -1,18 +1,3 @@
-- title: Dual-Edge Spatial-Jacobian Image Graph Framework for Interpretable DR Grading
-  slug: dual-edge-spatial-jacobian-image-graph-framework-interpretable-dr-grading
-  date: '2026-06-01'
-  year: 2026
-  type: conferences
-  venue: Symposium
-  status: Under Review (Abstract Version)
-  image: /images/dual-edge-spatial-jacobian-2026.png
-  summary: Introduces a dual-edge spatial-Jacobian image graph framework for interpretable
-    diabetic retinopathy grading by combining vessel-lesion spatial edges with Jacobian-based
-    lesion-biomarker edges.
-  citation_key: dual_edge_spatial_jacobian_2026
-  links:
-  - label: arXiv
-    url: https://doi.org/10.48550/arXiv.2606.24168
 - title: 'Causal-RetiGraph: Cross-Cohort Retinal Support and Same-Subject Pathway
     Analysis for Diabetic Retinopathy'
   slug: causal-retigraph-cross-cohort-retinal-support-same-subject-pathway-analysis-dr
@@ -29,6 +14,21 @@
   links:
   - label: arXiv
     url: https://doi.org/10.48550/arXiv.2607.05204
+- title: Dual-Edge Spatial-Jacobian Image Graph Framework for Interpretable DR Grading
+  slug: dual-edge-spatial-jacobian-image-graph-framework-interpretable-dr-grading
+  date: '2026-06-01'
+  year: 2026
+  type: conferences
+  venue: Symposium
+  status: Under Review (Abstract Version)
+  image: /images/dual-edge-spatial-jacobian-2026.png
+  summary: Introduces a dual-edge spatial-Jacobian image graph framework for interpretable
+    diabetic retinopathy grading by combining vessel-lesion spatial edges with Jacobian-based
+    lesion-biomarker edges.
+  citation_key: dual_edge_spatial_jacobian_2026
+  links:
+  - label: arXiv
+    url: https://doi.org/10.48550/arXiv.2606.24168
 - title: 'RetiSEM: Generalising Causal Models for Fragmented Biomedical Data'
   slug: retisem-generalising-causal-models-fragmented-biomedical-data
   date: '2026-02-26'
