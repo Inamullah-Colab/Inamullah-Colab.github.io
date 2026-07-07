@@ -1037,3 +1037,36 @@ body.view-cv #main .page {
     padding: 0 !important;
   }
 }
+
+/* Make single-page layouts use the same one-panel content structure as archive pages */
+body.view-home .page .page__inner-wrap,
+body.view-page .page .page__inner-wrap,
+body.view-post .page .page__inner-wrap,
+body.view-cv .page .page__inner-wrap {
+  background: #ffffff !important;
+  border: 1px solid var(--site-line) !important;
+  border-radius: 6px !important;
+  box-shadow: var(--site-shadow-soft) !important;
+  padding: 1.4rem 1.5rem 1.6rem !important;
+}
+
+body.view-home .page .page__content,
+body.view-page .page .page__content,
+body.view-post .page .page__content,
+body.view-cv .page .page__content {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+body.view-home .page .page__meta,
+body.view-page .page .page__meta,
+body.view-post .page .page__meta,
+body.view-cv .page .page__meta {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
