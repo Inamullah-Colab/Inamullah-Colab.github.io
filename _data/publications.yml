@@ -34,13 +34,16 @@
   date: '2025-08-01'
   year: 2025
   type: conferences
-  venue: MICAD Proceedings
-  status: Oral Presentation
+  venue: Proceedings of 2025 International Conference on Medical Imaging and Computer-Aided
+    Diagnosis (MICAD 2025)
+  status: Accepted (Oral Presentation; Springer proceedings forthcoming)
   image: /images/micad-2025.png
   summary: Explores links between retinal microvascular traits and lipidomic profiles
     to identify candidate non-invasive biomarkers for cardiovascular risk.
   citation_key: micad_2025
   links:
+  - label: Springer Proceedings
+    url: https://link.springer.com/book/9789819574247
   - label: arXiv
     url: https://arxiv.org/abs/2508.03538
 - title: Integrated Oculomics and Lipidomics Reveal Microvascular Metabolic Signatures
