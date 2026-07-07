@@ -83,6 +83,24 @@ button {
   font-family: var(--font-body);
 }
 
+.archive,
+.page,
+.page__inner-wrap,
+.page__content,
+.sidebar,
+.sidebar p,
+.sidebar li,
+.sidebar a,
+.archive p,
+.archive li,
+.archive a,
+.page__content p,
+.page__content li,
+.page__content a,
+.page__content strong {
+  color: var(--site-ink);
+}
+
 h1,
 h2,
 h3,
@@ -223,26 +241,32 @@ a:hover {
 
 .greedy-nav {
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(12, 18, 34, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   box-shadow: 0 10px 30px rgba(3, 8, 20, 0.18);
 }
 
 .greedy-nav .visible-links {
   padding: 0.2rem 0.35rem;
+  background: transparent !important;
 }
 
 .greedy-nav .visible-links li a {
   border-radius: 999px;
   padding: 0.55rem 0.85rem;
+  color: #eef2ff;
 }
 
 .greedy-nav .visible-links li a:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .greedy-nav .visible-links a:hover {
   color: #ffffff;
+}
+
+.greedy-nav button {
+  color: #eef2ff !important;
 }
 
 .sidebar,
@@ -297,6 +321,15 @@ a:hover {
   color: var(--site-muted);
 }
 
+.sidebar .author__name,
+.sidebar .author__bio,
+.sidebar .author__desktop,
+.sidebar .author__urls a,
+.sidebar-visit-stats,
+.sidebar-visit-stats__title {
+  color: var(--site-ink) !important;
+}
+
 .sidebar .btn,
 .btn,
 button,
@@ -337,6 +370,7 @@ button:hover,
     radial-gradient(circle at 12% 0%, rgba(108, 99, 255, 0.06), transparent 18%),
     radial-gradient(circle at 92% 10%, rgba(45, 212, 191, 0.06), transparent 16%),
     var(--site-paper-strong);
+  color: var(--site-ink);
 }
 
 .page__title {
@@ -364,6 +398,16 @@ button:hover,
   color: #17212b;
 }
 
+.page__content a,
+.archive a {
+  color: #4f46e5;
+}
+
+.page__content a:hover,
+.archive a:hover {
+  color: #3730a3;
+}
+
 .page__content hr {
   border-color: rgba(44, 62, 80, 0.10);
 }
@@ -378,7 +422,7 @@ button:hover,
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background:
-    linear-gradient(135deg, rgba(17, 24, 39, 0.92), rgba(16, 24, 44, 0.88)),
+    linear-gradient(135deg, rgba(19, 26, 45, 0.96), rgba(23, 30, 52, 0.92)),
     radial-gradient(circle at top right, rgba(108, 99, 255, 0.20), transparent 26%);
   box-shadow: 0 18px 38px rgba(3, 8, 20, 0.28);
   overflow: hidden;
@@ -410,7 +454,7 @@ button:hover,
   max-width: 56rem;
   margin: 0.75rem 0 0;
   font-size: 0.98rem;
-  color: #c3d0ed;
+  color: #d6def3;
 }
 
 .site-hero__actions {
@@ -445,7 +489,7 @@ button:hover,
 
 .site-hero__stat-label {
   font-size: 0.84rem;
-  color: #c1cbe1;
+  color: #d1d8ea;
 }
 
 .cv-academic-header {
