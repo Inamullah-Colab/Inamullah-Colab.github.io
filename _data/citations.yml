@@ -1,5 +1,5 @@
-last_updated_utc: '2026-07-07 15:35:00Z'
-total: 51
+last_updated_utc: '2026-07-13 09:29:25Z'
+total: 38
 papers:
   causal_retigraph_2026:
     source: arxiv
@@ -19,17 +19,17 @@ papers:
   biomimetics_2023:
     source: doi
     id: 10.3390/biomimetics8020187
-    count: 26
+    count: 24
     include_in_total: true
   imu_2024:
     source: doi
     id: 10.1016/j.imu.2024.101557
-    count: 17
+    count: 10
     include_in_total: true
   jpmhd_2025:
     source: doi
     id: 10.1016/j.premed.2025.100023
-    count: 7
+    count: 3
     include_in_total: true
   micad_2025:
     source: arxiv
