@@ -26,6 +26,10 @@ Three themes became especially clear:
 
 These are not just school topics. They are part of the working language of modern science and computing.
 
+<div class="math-journey-figure">
+  <img src="/images/scientific-math-foundations.png" alt="Infographic summarising how trigonometry, linear algebra, and optimization connect school mathematics to modern scientific computing and machine learning.">
+</div>
+
 ## Part A: Trigonometry as a Computational Tool
 
 ### 1. The basic ratios are scale-stable
