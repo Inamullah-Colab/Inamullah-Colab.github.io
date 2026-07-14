@@ -1,285 +1,294 @@
 ---
-title: "Scientific & Mathematical Foundations: The “Magic” Formulas I Once Ignored"
+title: "Scientific and Mathematical Foundations: Formulas I Once Memorised, Then Finally Understood"
 layout: post
 categories: [foundations, mathematics, scientific-computing]
 tags: [trigonometry, linear-algebra, machine-learning, optimization]
+excerpt: "A practical reflection on why trigonometry, linear algebra, and optimization are not isolated school topics, but part of the working language of modern computation."
 ---
 
-## A school-time memory (and what changed later)
+## A School-Time Memory
 
-When I was at school, I used to see these formula sheets and honestly think:
+When I was at school, I often looked at pages full of formulas and thought:
 
-> “Why am I memorising this? It feels like a total waste of time.”
+> Why am I memorising this? What is it actually for?
 
-At that time, I couldn’t connect the symbols to anything real.
+At the time, the symbols felt detached from reality. They looked like exercises for passing exams, not tools for understanding anything meaningful.
 
-But with the passage of time—moving into **scientific computing, AI, imaging, and machine learning**—I began to see the “magic” behind those formulas:
+That changed later.
 
-- **Trigonometry** explains rotations, signals, waves, periodic patterns, projections, and geometry.  
-- **Linear algebra** explains data as vectors, transformations, embeddings, PCA, and model layers.  
-- **Calculus + optimization** explains learning: how parameters move to reduce error.
+As I moved into scientific computing, machine learning, image analysis, and data-driven research, I began to see that many of those same formulas were not academic ornaments at all. They were compact descriptions of how computation, geometry, signals, and learning behave.
 
-So today I see it differently:
+Three themes became especially clear:
 
-These are not school-only topics.  
-They are the **core language** of computation.
+- **Trigonometry** explains rotation, periodicity, oscillation, and geometry.
+- **Linear algebra** explains vectors, similarity, transformations, and data representation.
+- **Calculus and optimization** explain training, learning dynamics, and parameter updates.
 
----
+These are not just school topics. They are part of the working language of modern science and computing.
 
-<p align="center">
-  <img src="/assets/img/fundamental-trigonometry-formula-sheet.png" width="700" />
-</p>
+## Part A: Trigonometry as a Computational Tool
 
----
+### 1. The basic ratios are scale-stable
 
-# Part A — Trigonometry (but explained like a computation tool)
+For a right triangle with angle $\theta$,
 
-## A1) The meaning of sin, cos, tan (Right triangle view)
+$$
+\sin \theta = \frac{\text{opposite}}{\text{hypotenuse}}, \qquad
+\cos \theta = \frac{\text{adjacent}}{\text{hypotenuse}}, \qquad
+\tan \theta = \frac{\text{opposite}}{\text{adjacent}}.
+$$
 
-For a right triangle with angle \(\theta\):
+The important idea is not memorisation for its own sake. These are **ratios**, so they remain unchanged when the triangle is scaled up or down. That is why they are useful: they describe shape and orientation, not absolute size.
 
-\[
-\sin\theta = \frac{\text{Opposite}}{\text{Hypotenuse}},\quad
-\cos\theta = \frac{\text{Adjacent}}{\text{Hypotenuse}},\quad
-\tan\theta = \frac{\text{Opposite}}{\text{Adjacent}}
-\]
+### 2. The unit circle is the central picture
 
-**Computational meaning:**  
-These are ratios—**normalised measurements**—so they stay stable even if the triangle is scaled up/down.
+The most useful geometric interpretation is the unit circle.
 
----
+At angle $\theta$, the corresponding point on the unit circle is
 
-## A2) The unit circle trick (the “no memorisation” method)
+$$
+(\cos \theta, \sin \theta).
+$$
 
-If you remember only one idea, remember this:
+This immediately tells us:
 
-> On the unit circle, the point at angle \(\theta\) is  
-> \[
-(\cos\theta, \sin\theta)
-\]
+- $\cos \theta$ is the horizontal coordinate,
+- $\sin \theta$ is the vertical coordinate.
 
-So:
-- \(\cos\theta\) = x-coordinate  
-- \(\sin\theta\) = y-coordinate
+It also explains the identity
 
-This makes the identity obvious:
+$$
+\sin^2 \theta + \cos^2 \theta = 1,
+$$
 
-\[
-\sin^2\theta + \cos^2\theta = 1
-\]
+because the unit circle itself satisfies $x^2 + y^2 = 1$.
 
-Because it’s literally the circle equation \(x^2 + y^2 = 1\).
+This is one reason the unit-circle viewpoint is better than treating trigonometry as a list of disconnected formulas.
 
----
+### 3. Why trigonometry appears in computing
 
-## A3) Why trig keeps appearing in AI, vision, and signals
+#### Rotation and coordinate changes
 
-### (i) Rotations (vision, robotics, geometry)
-A 2D rotation matrix:
+In two dimensions, a rotation by angle $\theta$ is represented by
 
-\[
-R(\theta)=
+$$
+R(\theta) =
 \begin{bmatrix}
-\cos\theta & -\sin\theta \\
-\sin\theta & \cos\theta
-\end{bmatrix}
-\]
+\cos \theta & -\sin \theta \\
+\sin \theta & \cos \theta
+\end{bmatrix}.
+$$
 
-This is the basis of:
-- camera alignment,
-- image registration,
+This structure appears in:
+
+- image alignment,
+- robotics and pose estimation,
 - coordinate transforms,
-- geometry in ML pipelines.
+- geometric processing pipelines.
 
-### (ii) Waves and frequency (signal processing)
-Many real-world signals can be represented using sine/cosine components (Fourier idea). That’s why trig is foundational for:
-- image filtering,
+#### Periodic structure and signals
+
+Sine and cosine are also the natural language of oscillatory behaviour. Waves, vibration, periodic sampling, and Fourier analysis all depend on trigonometric structure.
+
+That is why trigonometry becomes practical in tasks such as:
+
+- signal filtering,
 - denoising,
-- compression,
-- spectral analysis.
+- frequency-domain analysis,
+- image reconstruction and compression.
 
-(If you work with medical images, this becomes extremely practical.)
+### 4. A few identities are genuinely useful
 
----
+The identities worth keeping close are not a huge list. A small number already takes you far:
 
-## A4) Short list of trig identities you actually use
+$$
+\tan \theta = \frac{\sin \theta}{\cos \theta},
+$$
 
-### Reciprocal identities
-\[
-\sec\theta = \frac{1}{\cos\theta},\quad
-\csc\theta = \frac{1}{\sin\theta},\quad
-\cot\theta = \frac{1}{\tan\theta}
-\]
+$$
+\sec \theta = \frac{1}{\cos \theta}, \qquad
+\csc \theta = \frac{1}{\sin \theta}, \qquad
+\cot \theta = \frac{1}{\tan \theta},
+$$
 
-### Quotient identity
-\[
-\tan\theta = \frac{\sin\theta}{\cos\theta}
-\]
+and
 
-### Pythagorean identities
-\[
-\sin^2\theta + \cos^2\theta = 1,\quad
-1 + \tan^2\theta = \sec^2\theta
-\]
+$$
+\sin^2 \theta + \cos^2 \theta = 1, \qquad
+1 + \tan^2 \theta = \sec^2 \theta.
+$$
 
----
+The real value of these identities is not symbolic manipulation alone. They let us move between equivalent views of the same structure.
 
-# Part B — Linear algebra (the backbone of machine learning)
+## Part B: Linear Algebra as the Language of Data
 
-If trigonometry explains geometry, **linear algebra explains data**.
+If trigonometry explains geometry, linear algebra explains how data is represented and transformed.
 
-## B1) Vectors = features (a row of numbers with meaning)
-A data point in ML is often a vector:
+### 1. Vectors are structured data points
 
-\[
-x = (x_1, x_2, \dots, x_d)
-\]
+A data point with $d$ features can be written as
 
-Each coordinate is a feature.  
-So “learning” often means learning relationships between vectors.
+$$
+x = (x_1, x_2, \dots, x_d)^\top.
+$$
 
----
+Each coordinate carries meaning: intensity, measurement, score, frequency, biomarker, embedding component, or something else depending on the application.
 
-## B2) Dot product = similarity (why cosine similarity works)
+Once data is represented as vectors, many computational questions become geometric questions.
 
-The dot product:
+### 2. Dot products explain alignment and similarity
 
-\[
-a \cdot b = \sum_i a_i b_i
-\]
+The dot product of two vectors $a$ and $b$ is
 
-Geometric identity:
+$$
+a^\top b = \sum_{i=1}^{d} a_i b_i.
+$$
 
-\[
-a \cdot b = \|a\|\|b\|\cos(\theta)
-\]
+Geometrically,
 
-So:
-- same direction ⇒ \(\cos(\theta)\approx 1\) ⇒ high similarity  
-- perpendicular ⇒ \(\cos(\theta)=0\) ⇒ no alignment  
-- opposite ⇒ \(\cos(\theta)\approx -1\)
+$$
+a^\top b = \|a\| \, \|b\| \cos \theta.
+$$
 
-This is exactly why:
-- cosine similarity works for embeddings,
-- attention uses dot products,
-- nearest-neighbour geometry matters.
+This matters because it tells us how aligned two vectors are:
 
----
+- if $\theta \approx 0$, the vectors point in similar directions,
+- if $\theta = \frac{\pi}{2}$, they are orthogonal,
+- if $\theta \approx \pi$, they point in opposite directions.
 
-## B3) Matrices = transformations (the simplest powerful idea)
+This is why dot products and cosine similarity appear so often in:
 
-A matrix is a function that transforms a vector:
+- embeddings,
+- retrieval systems,
+- nearest-neighbour methods,
+- attention mechanisms in deep learning.
 
-\[
-y = Ax
-\]
+### 3. Matrices are transformations
 
-In ML:
-- a linear layer is a matrix multiplication
-- stacking layers = composing transformations
+A matrix acts on a vector to produce another vector:
 
-In statistics:
-- covariance is a matrix
-- regression can be written in matrix form
+$$
+y = Ax.
+$$
 
----
+This is one of the most important ideas in applied mathematics.
 
-## B4) Eigenvalues + PCA intuition (why “principal directions” matter)
+In machine learning, a linear layer is a matrix transformation.  
+In statistics, covariance is organised as a matrix.  
+In dimensionality reduction, matrices encode directions of variance and projection.
 
-Eigen relation:
+Linear algebra is not just about arranging numbers in rows and columns. It is about describing structured transformations.
 
-\[
+### 4. Eigenvalues and principal directions
+
+The eigenvalue relation
+
+$$
 Av = \lambda v
-\]
+$$
 
-Interpretation:
-- \(v\) is a direction that stays “in the same line” after transformation
-- \(\lambda\) is how much stretching happens
+means that the vector $v$ keeps its direction under the transformation $A$, while its magnitude is scaled by $\lambda$.
 
-PCA uses this idea to find directions of maximum variance (data structure), which is why eigen concepts keep appearing in scientific ML.
+This idea is central to principal component analysis (PCA), spectral methods, and many forms of structured data analysis.
 
----
+It explains why some directions in data are more informative than others.
 
-# Part C — Machine learning essentials (math that explains training)
+## Part C: Machine Learning as Applied Optimization
 
-## C1) Training is optimization (not magic)
+### 1. Training is not magic
 
-We choose parameters \(\theta\) to minimise a loss \(L(\theta)\):
+Much of learning can be described by one update rule:
 
-\[
-\theta \leftarrow \theta - \alpha \nabla_\theta L(\theta)
-\]
+$$
+\theta \leftarrow \theta - \alpha \nabla_\theta L(\theta),
+$$
 
-- \(\alpha\) is the learning rate
-- \(\nabla\) is the gradient (direction of steepest increase)
-- we move *against* it to reduce loss
+where:
 
-This is the simplest mathematical explanation of learning.
+- $\theta$ denotes the parameters,
+- $L(\theta)$ is the loss,
+- $\nabla_\theta L(\theta)$ is the gradient,
+- $\alpha$ is the learning rate.
 
----
+The logic is simple: the gradient points in the direction of steepest increase, so we move in the opposite direction to reduce the loss.
 
-## C2) Two core losses that appear everywhere
+This is the clearest mathematical explanation of what model training is doing.
 
-### Regression (MSE)
-\[
-\text{MSE}=\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2
-\]
+### 2. Two losses appear again and again
 
-### Classification (cross-entropy)
-For true label distribution \(y\) and predicted probabilities \(\hat{p}\):
+For regression, one standard loss is mean squared error:
 
-\[
-L = -\sum_k y_k \log(\hat{p}_k)
-\]
+$$
+\mathrm{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2.
+$$
 
-These are not just formulas—they define what the model learns to prioritise.
+For classification, cross-entropy is fundamental:
 
----
+$$
+L = - \sum_{k} y_k \log \hat{p}_k.
+$$
 
-## C3) Regularization (how models avoid overfitting)
+These losses are not merely formulas to optimise. They define what the model is being encouraged to care about.
 
-L2 (ridge-style) regularization:
-\[
-L_{\text{total}} = L + \lambda \|\theta\|_2^2
-\]
+### 3. Regularization controls complexity
 
-L1 (lasso-style) regularization:
-\[
-L_{\text{total}} = L + \lambda \|\theta\|_1
-\]
+Regularization modifies the objective to discourage overly flexible solutions.
 
-Very simple story:
-- L2 shrinks weights smoothly
-- L1 encourages sparsity (feature selection behaviour)
+L2 regularization:
 
----
+$$
+L_{\mathrm{total}} = L + \lambda \|\theta\|_2^2
+$$
 
-# A compact “mental map” of everything above
+L1 regularization:
 
-**Trigonometry**
-→ rotations, unit circle, periodicity, geometry  
-**Linear algebra**
-→ vectors, dot products, transformations, eigen structure  
-**Machine learning**
-→ loss functions, gradients, optimization, generalization
+$$
+L_{\mathrm{total}} = L + \lambda \|\theta\|_1
+$$
 
-Once I started seeing this as one connected chain, the “memorisation pain” disappeared.
+At a high level:
 
----
+- **L2** shrinks parameters smoothly,
+- **L1** promotes sparsity and can behave like feature selection.
 
-# References (reliable, widely used)
+This is one of the simplest examples of how mathematical structure shapes model behaviour.
 
-- Strang, G. *Introduction to Linear Algebra*. Wellesley-Cambridge Press.  
-- Goodfellow, I., Bengio, Y., & Courville, A. *Deep Learning*. MIT Press.  
-- Bishop, C. M. *Pattern Recognition and Machine Learning*. Springer.  
-- Murphy, K. P. *Machine Learning: A Probabilistic Perspective*. MIT Press.  
-- Boyd, S., & Vandenberghe, L. *Convex Optimization*. Cambridge University Press.
+## A Compact Mental Map
 
----
+The connection can be summarised like this:
 
-## Final note to my future self
+- **Trigonometry**: rotation, periodicity, geometry, waves
+- **Linear algebra**: vectors, similarity, transformations, structure
+- **Optimization**: losses, gradients, updates, generalization
 
-If I ever catch myself thinking “why do I need this?”, I’ll remember:
+Once these topics are seen as parts of one connected system, they stop feeling like disconnected chapters and start functioning as a coherent toolkit.
 
-These formulas are not decoration.  
-They are the **tools that explain how computation behaves**.
+## Why This Matters
+
+What changed for me was not that the formulas themselves became more complicated. What changed was the context.
+
+The same mathematical objects that once looked abstract later appeared in:
+
+- image geometry,
+- signal processing,
+- statistical modelling,
+- machine learning,
+- scientific inference.
+
+That is the point I wish I had understood earlier: many formulas become meaningful only when you see what they are modelling.
+
+## References
+
+- Strang, G. *Introduction to Linear Algebra*. Wellesley-Cambridge Press.
+- Goodfellow, I., Bengio, Y., and Courville, A. *Deep Learning*. MIT Press.
+- Bishop, C. M. *Pattern Recognition and Machine Learning*. Springer.
+- Murphy, K. P. *Machine Learning: A Probabilistic Perspective*. MIT Press.
+- Boyd, S., and Vandenberghe, L. *Convex Optimization*. Cambridge University Press.
+
+## Final Note
+
+If I ever find myself asking, "Why do I need this?", the better question is:
+
+What behaviour is this formula trying to describe?
+
+That is usually where the meaning begins.
