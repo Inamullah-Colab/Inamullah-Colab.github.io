@@ -13,22 +13,6 @@ author_profile: true
   <p class="pub-hero-copy">
     Journal articles and conference contributions spanning retinal imaging, oculomics, interpretable machine learning, and systemic health.
   </p>
-
-  <div class="pub-stats-wrap">
-    <div class="pub-stat-card">
-      <div class="pub-stat-label">Total citations</div>
-      <div class="pub-stat-value">{{ site.data.citations.total | default: 0 }}</div>
-    </div>
-    <div class="pub-stat-card">
-      <div class="pub-stat-label">Papers tracked</div>
-      <div class="pub-stat-value">{{ publications | size }}</div>
-    </div>
-    <div class="pub-stat-card">
-      <div class="pub-stat-label">Citation snapshot</div>
-      <div class="pub-stat-value pub-stat-date">{{ site.data.citations.last_updated_utc | default: "Not set" | slice: 0, 10 }}</div>
-    </div>
-  </div>
-
 </section>
 
 {% assign publication_types = "manuscripts|conferences" | split: "|" %}
