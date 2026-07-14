@@ -103,6 +103,10 @@ a:hover {
   margin: 2rem auto 3rem;
 }
 
+#main.main--full-width {
+  width: min(1680px, calc(100% - 1.5rem));
+}
+
 @media (min-width: 1200px) {
   #main {
     width: min(1920px, calc(100% - 1rem));
@@ -159,6 +163,23 @@ a:hover {
   body.view-cv #main .page__content {
     width: 100% !important;
     max-width: none !important;
+  }
+
+  body.view-post #main.main--full-width {
+    display: block !important;
+    width: min(1880px, calc(100% - 1rem)) !important;
+  }
+
+  body.view-post #main.main--full-width .page,
+  body.view-post #main.main--full-width .page__inner-wrap,
+  body.view-post #main.main--full-width .page__content,
+  body.view-post #main.main--full-width .page__related {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    float: none !important;
   }
 }
 
@@ -1044,5 +1065,17 @@ body.view-cv #main .page {
     max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
+  }
+
+  body.view-post #main.main--full-width {
+    display: block !important;
+    width: min(1880px, calc(100% - 1rem)) !important;
+  }
+
+  body.view-post #main.main--full-width .page {
+    grid-column: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
   }
 }
