@@ -56,6 +56,43 @@
   background: #fff;
 }
 
+.diagnostics-figure-wide {
+  margin: 1.5rem 0;
+  width: 100%;
+  max-width: none;
+}
+
+.diagnostics-figure-wide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.diagnostics-figure-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 1.5rem;
+}
+
+.diagnostics-figure-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  background: #fff;
+}
+
+@media (max-width: 900px) {
+  .diagnostics-figure-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .euler-formula-card {
   margin: 1rem 0;
   padding: 1rem 1.2rem;

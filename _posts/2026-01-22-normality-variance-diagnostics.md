@@ -136,8 +136,10 @@ The first two figures are useful as a dashboard view of the full benchmark:
 - the pass-rate plot summarises how often each dataset behaves in a Gaussian-like way across variables,
 - the skew-versus-kurtosis plot shows whether the departures are driven more by asymmetry, tail-heaviness, or both.
 
-![Pass rates by dataset](/assets/normality-report/pass_rate_by_dataset.png)
-![Skew vs kurtosis scatter](/assets/normality-report/skew_kurtosis_scatter.png)
+<div class="diagnostics-figure-grid">
+  <img src="/assets/normality-report/pass_rate_by_dataset.png" alt="Pass rates by dataset for four normality tests">
+  <img src="/assets/normality-report/skew_kurtosis_scatter.png" alt="Scatter plot of skewness versus kurtosis across datasets">
+</div>
 
 Already at this stage, two broad regimes appear:
 
@@ -175,8 +177,10 @@ This dataset behaves almost exactly as one would hope in a near-Gaussian regime:
 
 That combination suggests a relatively well-behaved linear-Gaussian environment. In such a setting, **PC** and **NOTEARS** are natural reference methods because their structural assumptions are not being strongly violated from the start [1,6].
 
-![HighDim-S p-values](/assets/normality-report/pvalues_HighDim-S_data.png)
-![HighDim-S QQ + hist](/assets/normality-report/qq_hist_HighDim-S_data.png)
+<div class="diagnostics-figure-grid">
+  <img src="/assets/normality-report/pvalues_HighDim-S_data.png" alt="Histogram of p-values for HighDim-S data">
+  <img src="/assets/normality-report/qq_hist_HighDim-S_data.png" alt="QQ plots and histograms for HighDim-S data">
+</div>
 
 ### HighDim-D_data: strong evidence of non-Gaussianity
 
@@ -190,8 +194,10 @@ This is not a mild deviation. It is a qualitatively different distributional reg
 
 In this regime, **LiNGAM** becomes especially relevant because non-Gaussianity is part of the identifiability story rather than merely a nuisance [7]. If nonlinear mechanisms are also suspected, **GraNDAG** becomes a reasonable additional candidate [8].
 
-![HighDim-D p-values](/assets/normality-report/pvalues_HighDim-D_data.png)
-![HighDim-D QQ + hist](/assets/normality-report/qq_hist_HighDim-D_data.png)
+<div class="diagnostics-figure-grid">
+  <img src="/assets/normality-report/pvalues_HighDim-D_data.png" alt="Histogram of p-values for HighDim-D data">
+  <img src="/assets/normality-report/qq_hist_HighDim-D_data.png" alt="QQ plots and histograms for HighDim-D data">
+</div>
 
 ### LowDim datasets: mostly well-behaved
 
@@ -203,8 +209,10 @@ The low-dimensional datasets are, for the most part, statistically calm:
 
 LowDim-D_data shows somewhat more tail activity than the others, but not enough to move it into a clearly heavy-tailed regime. In practice, these look like sensible environments for **PC** and **NOTEARS**, with non-Gaussian methods serving more as robustness comparators than as necessary first choices.
 
-![LowDim-D p-values](/assets/normality-report/pvalues_LowDim-D_data.png)
-![LowDim-D QQ + hist](/assets/normality-report/qq_hist_LowDim-D_data.png)
+<div class="diagnostics-figure-grid">
+  <img src="/assets/normality-report/pvalues_LowDim-D_data.png" alt="Histogram of p-values for LowDim-D data">
+  <img src="/assets/normality-report/qq_hist_LowDim-D_data.png" alt="QQ plots and histograms for LowDim-D data">
+</div>
 
 ### MidDim-D_data: tail instability becomes visible
 
@@ -216,8 +224,10 @@ MidDim-D_data is more ambiguous than HighDim-D_data, but the signal is still cle
 
 This is the kind of regime where a purely Gaussian interpretation becomes hard to defend, even if some variables still pass individual tests. I would therefore treat **LiNGAM** as a serious candidate here and keep **GraNDAG** in play if there is reason to expect nonlinear mechanisms.
 
-![MidDim-D p-values](/assets/normality-report/pvalues_MidDim-D_data.png)
-![MidDim-D QQ + hist](/assets/normality-report/qq_hist_MidDim-D_data.png)
+<div class="diagnostics-figure-grid">
+  <img src="/assets/normality-report/pvalues_MidDim-D_data.png" alt="Histogram of p-values for MidDim-D data">
+  <img src="/assets/normality-report/qq_hist_MidDim-D_data.png" alt="QQ plots and histograms for MidDim-D data">
+</div>
 
 ### MidDim-S_data: mixed structure
 
@@ -235,8 +245,10 @@ That makes this a useful comparison regime:
 - **LiNGAM** may gain an advantage if the non-Gaussian subset is informative,
 - **GraNDAG** may be useful if there is also nonlinear mechanism complexity.
 
-![MidDim-S p-values](/assets/normality-report/pvalues_MidDim-S_data.png)
-![MidDim-S QQ + hist](/assets/normality-report/qq_hist_MidDim-S_data.png)
+<div class="diagnostics-figure-grid">
+  <img src="/assets/normality-report/pvalues_MidDim-S_data.png" alt="Histogram of p-values for MidDim-S data">
+  <img src="/assets/normality-report/qq_hist_MidDim-S_data.png" alt="QQ plots and histograms for MidDim-S data">
+</div>
 
 ## A Practical Decision Framework
 
