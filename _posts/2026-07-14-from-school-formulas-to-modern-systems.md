@@ -57,7 +57,7 @@ The figure below is meant to do more than look attractive. It is intended to sum
 - and finally social and medical applications.
 
 <div class="math-journey-figure">
-  <img src="/images/math-from-school-to-modern-systems.svg" alt="Visual map linking the unit circle and trigonometric ratios to classical mathematics, physics, probability, machine learning, language models, and real-world applications.">
+  <img src="/images/math-from-school-to-modern-systems.png" alt="Visual map linking the unit circle and trigonometric ratios to classical mathematics, physics, probability, machine learning, language models, and real-world applications.">
 </div>
 
 The point of the figure is not to claim that every modern system comes directly from one trigonometric identity. That would be shallow. The point is subtler: the same foundational mathematics keeps reappearing, often under different names, in more advanced computational settings.
