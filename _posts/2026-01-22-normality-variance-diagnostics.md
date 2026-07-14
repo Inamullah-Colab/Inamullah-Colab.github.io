@@ -15,6 +15,8 @@ tags:
 excerpt: "A professional diagnostic framework for checking Gaussianity, tail behaviour, and variable-wise distributional stability before comparing causal discovery methods."
 ---
 
+# Normality and Variance Diagnostics for Causal Discovery
+
 Before comparing causal discovery methods, I usually ask a simpler question first:
 
 **What kind of data regime am I actually dealing with?**

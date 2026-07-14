@@ -17,6 +17,8 @@ tags:
 excerpt: "A detailed reflection on how the formulas that once felt empty at school later became part of the practical language of modelling, proof, simulation, machine learning, and medical applications."
 ---
 
+# From School Formulas to Modern Systems
+
 There was a stage in school when I genuinely felt bored by mathematics and physics.
 
 Not because the subjects were unimportant, but because I could not yet see what they were for.
