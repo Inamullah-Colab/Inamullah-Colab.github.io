@@ -4,7 +4,6 @@ layout: post
 date: 2026-07-14 12:00:00 +0000
 last_modified_at: 2026-07-14 12:00:00 +0000
 published: true
-author_profile: false
 permalink: /posts/2026/07/from-school-formulas-to-modern-systems/
 tags:
   - mathematics
