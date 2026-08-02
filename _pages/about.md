@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I am **Inam Ullah**, a PhD student in Computer Science at the [School of Electronics and Computer Science](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science), [University of Southampton](https://www.southampton.ac.uk/). My research focuses on how **retinal microvascular structure can act as a non-invasive marker of systemic biology**, and how signals captured in the eye relate to molecular, genetic, and clinical processes.
+I am **Inam Ullah**, a PhD Candidate in Computer Science at the [School of Electronics and Computer Science](https://www.southampton.ac.uk/about/faculties-schools-departments/school-of-electronics-and-computer-science), [University of Southampton](https://www.southampton.ac.uk/). My research focuses on how **retinal microvascular structure can act as a non-invasive marker of systemic biology**, and how signals captured in the eye relate to molecular, genetic, and clinical processes.
 
 The retina provides a uniquely accessible view of vascular and neurological health. My work studies fine-grained retinal traits, including vessel calibre, tortuosity, density, and fractal geometry, and examines how these features relate to **clinical phenotypes, lipidomic profiles, and genetic variation**.
 
