@@ -1,5 +1,5 @@
-last_updated_utc: '2026-07-27 09:53:49Z'
-total: 38
+last_updated_utc: '2026-08-03 09:47:29Z'
+total: 40
 papers:
   causal_retigraph_2026:
     source: arxiv
@@ -29,7 +29,7 @@ papers:
   jpmhd_2025:
     source: doi
     id: 10.1016/j.premed.2025.100023
-    count: 3
+    count: 5
     include_in_total: true
   micad_2025:
     source: arxiv
