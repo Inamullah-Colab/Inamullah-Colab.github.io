@@ -99,7 +99,7 @@ Project Manager (tendering, planning, estimation, billing, client correspondence
 
 - **RetiSEM: Generalising Causal Models for Fragmented Biomedical Data** - *Accepted for oral presentation at IJCAI 2026*. OpenReview: <https://openreview.net/forum?id=Jaj6hWKcGz>. arXiv: <https://doi.org/10.48550/arXiv.2606.24488>
 - **Causal-RetiGraph: Cross-Cohort Retinal Support and Same-Subject Pathway Analysis for Diabetic Retinopathy** - *Under review as a conference submission in a premier biomedical and bioinformatics venue*. arXiv: <https://doi.org/10.48550/arXiv.2607.05204>
-- **Dual-Edge Spatial-Jacobian Image Graph Framework for Interpretable DR Grading** - *Symposium, under review (abstract version)*. arXiv: <https://doi.org/10.48550/arXiv.2606.24168>
+- **Dual-Edge Spatial-Jacobian Image Graph Framework for Interpretable DR Grading** - *Accepted at the UKAIRS 2026 Symposium, Emerging Research track*. UKAIRS details: <https://www.ukairs.ac.uk/MyPapers/Details/13301>. arXiv: <https://doi.org/10.48550/arXiv.2606.24168>
 - **Retinal Lipidomics Associations as Candidate Biomarkers for Cardiovascular Health** - *Accepted for oral presentation at MICAD 2025; to appear in the Springer proceedings* <https://link.springer.com/book/9789819574247>. arXiv: <https://arxiv.org/abs/2508.03538>
 - First Multi-Disciplinary Student Research Workshop, KUST (Mar 2021) - Presented MSc research.
 - Poster presentation: Role of soft sensors in cement and nuclear industry using deep learning (Aug 2021).

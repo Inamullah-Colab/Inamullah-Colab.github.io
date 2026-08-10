@@ -54,6 +54,12 @@ This work aligns closely with the emerging field of **oculomics**, which leverag
 
 <div class="news-grid">
   <article class="news-card">
+    <p class="news-date">10 Aug 2026</p>
+    <h3 class="news-title"><a href="/publications/">Dual-Edge Spatial-Jacobian paper accepted at UKAIRS 2026</a></h3>
+    <p class="news-summary">A Dual-Edge Spatial-Jacobian Image Graph for Interpretable Diabetic Retinopathy Grading has been accepted to the UKAIRS 2026 Symposium in the Emerging Research track.</p>
+    <p class="news-link"><a href="https://www.ukairs.ac.uk/MyPapers/Details/13301">View submission details</a></p>
+  </article>
+  <article class="news-card">
     <p class="news-date">15 Jun 2026</p>
     <h3 class="news-title"><a href="/publications/">RetiSEM accepted at IJCAI 2026</a></h3>
     <p class="news-summary">RetiSEM: Generalising Causal Models for Fragmented Biomedical Data has been accepted for oral presentation at IJCAI 2026.</p>

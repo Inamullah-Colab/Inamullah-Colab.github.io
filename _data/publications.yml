@@ -19,14 +19,16 @@
   date: '2026-06-01'
   year: 2026
   type: conferences
-  venue: Symposium
-  status: Under Review (Abstract Version)
+  venue: UKAIRS 2026 Symposium (Emerging Research Track)
+  status: Accepted
   image: /images/dual-edge-spatial-jacobian-2026.png
   summary: Introduces a dual-edge spatial-Jacobian image graph framework for interpretable
     diabetic retinopathy grading by combining vessel-lesion spatial edges with Jacobian-based
     lesion-biomarker edges.
   citation_key: dual_edge_spatial_jacobian_2026
   links:
+  - label: UKAIRS Details
+    url: https://www.ukairs.ac.uk/MyPapers/Details/13301
   - label: arXiv
     url: https://doi.org/10.48550/arXiv.2606.24168
 - title: 'RetiSEM: Generalising Causal Models for Fragmented Biomedical Data'
