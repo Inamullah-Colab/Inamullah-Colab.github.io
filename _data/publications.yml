@@ -25,14 +25,12 @@
   summary: Introduces a dual-edge spatial-Jacobian image graph framework for interpretable
     diabetic retinopathy grading by combining vessel-lesion spatial edges with Jacobian-based
     lesion-biomarker edges.
-  citation_key: dual_edge_spatial_jacobian_2026
+  citation_key: arXiv
   links:
   - label: UKAIRS 2026
     url: https://www.ukairs.ac.uk/Home/Welcome
   - label: UKAIRS Details
     url: https://www.ukairs.ac.uk/MyPapers/Details/13301
-  - label: arXiv
-    url: https://doi.org/10.48550/arXiv.2606.24168
 - title: 'RetiSEM: Generalising Causal Models for Fragmented Biomedical Data'
   slug: retisem-generalising-causal-models-fragmented-biomedical-data
   date: '2026-02-26'
