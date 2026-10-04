@@ -32,8 +32,8 @@ papers:
     count: 6
     include_in_total: true
   micad_2025:
-    source: arxiv
-    id: '2508.03538'
+    source: doi
+    id: 10.1007/978-981-95-7425-4_50
     count: 0
     include_in_total: true
   scirep_preprint_2025:

@@ -48,24 +48,22 @@
     url: https://openreview.net/forum?id=Jaj6hWKcGz
   - label: arXiv
     url: https://doi.org/10.48550/arXiv.2606.24488
-- title: Retinal Lipidomics Associations as Candidate Biomarkers for Cardiovascular
+- title: Retinal–Lipidomics Associations as Candidate Biomarkers for Cardiovascular
     Health
   slug: retinal-lipidomics-associations-candidate-biomarkers
-  date: '2025-08-01'
-  year: 2025
+  date: '2026-08-15'
+  year: 2026
   type: conferences
   venue: Proceedings of 2025 International Conference on Medical Imaging and Computer-Aided
     Diagnosis (MICAD 2025)
-  status: Accepted (Oral Presentation; Springer proceedings forthcoming)
+  status: Published (Oral Presentation)
   image: /images/micad-2025.png
   summary: Explores links between retinal microvascular traits and lipidomic profiles
     to identify candidate non-invasive biomarkers for cardiovascular risk.
   citation_key: micad_2025
   links:
-  - label: Springer Proceedings
-    url: https://link.springer.com/book/9789819574247
-  - label: arXiv
-    url: https://arxiv.org/abs/2508.03538
+  - label: Springer Chapter
+    url: https://link.springer.com/chapter/10.1007/978-981-95-7425-4_50
 - title: Integrated Oculomics and Lipidomics Characterise Cross-Sectional Retinal–Lipidomic
     Associations in a Generally Healthy Biobank Population
   slug: integrated-oculomics-lipidomics-microvascular-metabolic-signatures
