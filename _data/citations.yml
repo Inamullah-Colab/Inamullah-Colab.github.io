@@ -1,51 +1,61 @@
-last_updated_utc: '2026-10-04 16:53:18Z'
-total: 42
+last_updated_utc: '2026-10-04 16:58:33Z'
+total: 55
 papers:
   causal_retigraph_2026:
     source: arxiv
     id: '2607.05204'
     count: 0
     include_in_total: true
-    last_updated_utc: '2026-10-04 16:53:18Z'
+    last_updated_utc: '2026-10-04 16:58:33Z'
+    scholar_id: hsZV8lGYWTMC
   dual_edge_spatial_jacobian_2026:
     source: arxiv
     id: '2606.24168'
     count: 0
     include_in_total: true
-    last_updated_utc: '2026-10-04 16:53:18Z'
+    last_updated_utc: '2026-10-04 16:58:33Z'
+    scholar_id: L1USKYWJimsC
   retisem_ssrn_2026:
     source: doi
     id: 10.48550/arXiv.2606.24488
     count: 0
     include_in_total: true
-    last_updated_utc: '2026-10-04 16:53:18Z'
+    last_updated_utc: '2026-10-04 16:58:33Z'
+    scholar_id: jU7OWUQzBzMC
   biomimetics_2023:
     source: doi
     id: 10.3390/biomimetics8020187
-    count: 24
+    count: 25
     include_in_total: true
-    last_updated_utc: '2026-10-04 16:53:18Z'
+    last_updated_utc: '2026-10-04 16:58:33Z'
+    scholar_id: 4vMrXwiscB8C
   imu_2024:
     source: doi
     id: 10.1016/j.imu.2024.101557
-    count: 10
+    count: 17
     include_in_total: true
-    last_updated_utc: '2026-10-04 16:53:18Z'
+    last_updated_utc: '2026-10-04 16:58:33Z'
+    scholar_id: U4n9YNQMCAIC
   jpmhd_2025:
     source: doi
     id: 10.1016/j.premed.2025.100023
-    count: 7
+    count: 12
     include_in_total: true
-    last_updated_utc: '2026-10-04 16:53:18Z'
+    last_updated_utc: '2026-10-04 16:58:33Z'
+    scholar_id: 7H_MAutzIkAC
   micad_2025:
     source: doi
     id: 10.1007/978-981-95-7425-4_50
     count: 0
     include_in_total: true
-    last_updated_utc: '2026-10-04 16:53:18Z'
+    last_updated_utc: '2026-10-04 16:58:33Z'
+    scholar_id: Br1UauaknNIC
   scirep_preprint_2025:
     source: arxiv
     id: '2507.12663'
     count: 1
     include_in_total: true
-    last_updated_utc: '2026-10-04 16:53:18Z'
+    last_updated_utc: '2026-10-04 16:58:33Z'
+    scholar_id: LdasjJ6CEcoC
+scholar_profile_id: PRKY9rYAAAAJ
+source: google_scholar
