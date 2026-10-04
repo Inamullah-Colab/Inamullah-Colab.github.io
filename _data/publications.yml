@@ -66,20 +66,21 @@
     url: https://link.springer.com/book/9789819574247
   - label: arXiv
     url: https://arxiv.org/abs/2508.03538
-- title: Integrated Oculomics and Lipidomics Reveal Microvascular Metabolic Signatures
-    Associated with Cardiovascular Health
+- title: Integrated Oculomics and Lipidomics Characterise Cross-Sectional Retinal–Lipidomic
+    Associations in a Generally Healthy Biobank Population
   slug: integrated-oculomics-lipidomics-microvascular-metabolic-signatures
-  date: '2025-07-01'
-  year: 2025
+  date: '2026-10-01'
+  year: 2026
   type: manuscripts
   venue: Scientific Reports
-  status: Preprint
+  status: Accepted for publication
   image: /images/scirep-2025.png
-  summary: Integrates retinal imaging with lipidomic profiles to uncover microvascular
-    and metabolic signatures associated with cardiovascular health.
+  summary: Characterises cross-sectional associations between retinal traits and
+    lipidomic profiles in a generally healthy biobank population. Accepted for
+    publication in Scientific Reports on 1 October 2026.
   citation_key: scirep_preprint_2025
   links:
-  - label: arXiv
+  - label: arXiv preprint
     url: https://arxiv.org/abs/2507.12663
 - title: 'The Eye as a Window to Systemic Health: A Survey of Retinal Imaging from
     Classical Techniques to Oculomics'

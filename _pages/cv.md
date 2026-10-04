@@ -89,11 +89,11 @@ Project Manager (tendering, planning, estimation, billing, client correspondence
    <https://www.sciencedirect.com/science/article/pii/S305063282500023X>
 
 4. Inamullah, et al.  
-   **Integrated Oculomics and Lipidomics Reveal Microvascular Metabolic Signatures Associated with Cardiovascular Health.**  
-   *Under Review - Scientific Reports (Nature Portfolio).*  
-   arXiv: <https://arxiv.org/abs/2507.12663>  
+   **Integrated Oculomics and Lipidomics Characterise Cross-Sectional Retinal–Lipidomic Associations in a Generally Healthy Biobank Population.**<br>
+   *Accepted for publication in Scientific Reports (Nature Portfolio) on 1 October 2026.*<br>
+   arXiv preprint: <https://arxiv.org/abs/2507.12663><br>
    Citations: 0  
-   This study integrates retinal imaging with lipidomic profiles in a healthy cohort, revealing microvascular-metabolic signatures linked to cardiovascular health and systemic regulation.
+   This study characterises cross-sectional associations between retinal traits and lipidomic profiles in a generally healthy biobank population.
 
 ## Conferences and Seminars
 
