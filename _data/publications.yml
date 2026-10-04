@@ -1,3 +1,35 @@
+- title: "Integrated Oculomics and Lipidomics Characterise Cross-Sectional Retinal\u2013\
+    Lipidomic Associations in a Generally Healthy Biobank Population"
+  slug: integrated-oculomics-lipidomics-microvascular-metabolic-signatures
+  date: '2026-10-01'
+  year: 2026
+  type: manuscripts
+  venue: Scientific Reports (Nature Portfolio)
+  status: Accepted for publication
+  image: /images/scirep-2025.png
+  summary: Characterises cross-sectional associations between retinal traits and lipidomic
+    profiles in a generally healthy biobank population. Accepted for publication in
+    Scientific Reports (Nature Portfolio) on 1 October 2026.
+  citation_key: scirep_preprint_2025
+  links:
+  - label: arXiv preprint
+    url: https://arxiv.org/abs/2507.12663
+- title: "Retinal\u2013Lipidomics Associations as Candidate Biomarkers for Cardiovascular\
+    \ Health"
+  slug: retinal-lipidomics-associations-candidate-biomarkers
+  date: '2026-08-15'
+  year: 2026
+  type: conferences
+  venue: Proceedings of 2025 International Conference on Medical Imaging and Computer-Aided
+    Diagnosis (MICAD 2025)
+  status: Published (Oral Presentation)
+  image: /images/micad-2025.png
+  summary: Explores links between retinal microvascular traits and lipidomic profiles
+    to identify candidate non-invasive biomarkers for cardiovascular risk.
+  citation_key: micad_2025
+  links:
+  - label: Springer Chapter
+    url: https://link.springer.com/chapter/10.1007/978-981-95-7425-4_50
 - title: 'Causal-RetiGraph: Cross-Cohort Retinal Support and Same-Subject Pathway
     Analysis for Diabetic Retinopathy'
   slug: causal-retigraph-cross-cohort-retinal-support-same-subject-pathway-analysis-dr
@@ -25,7 +57,7 @@
   summary: Introduces a dual-edge spatial-Jacobian image graph framework for interpretable
     diabetic retinopathy grading by combining vessel-lesion spatial edges with Jacobian-based
     lesion-biomarker edges.
-  citation_key: arXiv
+  citation_key: dual_edge_spatial_jacobian_2026
   links:
   - label: UKAIRS 2026
     url: https://www.ukairs.ac.uk/Home/Welcome
@@ -48,38 +80,6 @@
     url: https://openreview.net/forum?id=Jaj6hWKcGz
   - label: arXiv
     url: https://doi.org/10.48550/arXiv.2606.24488
-- title: Retinal–Lipidomics Associations as Candidate Biomarkers for Cardiovascular
-    Health
-  slug: retinal-lipidomics-associations-candidate-biomarkers
-  date: '2026-08-15'
-  year: 2026
-  type: conferences
-  venue: Proceedings of 2025 International Conference on Medical Imaging and Computer-Aided
-    Diagnosis (MICAD 2025)
-  status: Published (Oral Presentation)
-  image: /images/micad-2025.png
-  summary: Explores links between retinal microvascular traits and lipidomic profiles
-    to identify candidate non-invasive biomarkers for cardiovascular risk.
-  citation_key: micad_2025
-  links:
-  - label: Springer Chapter
-    url: https://link.springer.com/chapter/10.1007/978-981-95-7425-4_50
-- title: Integrated Oculomics and Lipidomics Characterise Cross-Sectional Retinal–Lipidomic
-    Associations in a Generally Healthy Biobank Population
-  slug: integrated-oculomics-lipidomics-microvascular-metabolic-signatures
-  date: '2026-10-01'
-  year: 2026
-  type: manuscripts
-  venue: Scientific Reports (Nature Portfolio)
-  status: Accepted for publication
-  image: /images/scirep-2025.png
-  summary: Characterises cross-sectional associations between retinal traits and
-    lipidomic profiles in a generally healthy biobank population. Accepted for
-    publication in Scientific Reports (Nature Portfolio) on 1 October 2026.
-  citation_key: scirep_preprint_2025
-  links:
-  - label: arXiv preprint
-    url: https://arxiv.org/abs/2507.12663
 - title: 'The Eye as a Window to Systemic Health: A Survey of Retinal Imaging from
     Classical Techniques to Oculomics'
   slug: eye-window-systemic-health-oculomics-survey

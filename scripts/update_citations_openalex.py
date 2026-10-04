@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import os
 import sys
 import urllib.parse
 import urllib.request
@@ -18,6 +19,10 @@ DATA_FILE = ROOT / "_data" / "citations.yml"
 
 
 def fetch_json(url: str) -> dict | None:
+    params = {"select": "id,cited_by_count"}
+    if os.environ.get("OPENALEX_API_KEY"):
+        params["api_key"] = os.environ["OPENALEX_API_KEY"]
+    url += ("&" if "?" in url else "?") + urllib.parse.urlencode(params)
     req = urllib.request.Request(
         url,
         headers={"User-Agent": "inamullah-colab-citation-updater/1.0"},
@@ -25,7 +30,9 @@ def fetch_json(url: str) -> dict | None:
     try:
         with urllib.request.urlopen(req, timeout=20) as resp:
             return json.loads(resp.read().decode("utf-8"))
-    except Exception:
+    except Exception as exc:
+        # Do not log the request URL, which may contain an API key.
+        print(f"OpenAlex request failed ({type(exc).__name__})", file=sys.stderr)
         return None
 
 
@@ -40,6 +47,9 @@ def get_count_from_doi(doi: str) -> int | None:
 
 
 def get_count_from_arxiv(arxiv_id: str) -> int | None:
+    count = get_count_from_doi(f"10.48550/arXiv.{arxiv_id}")
+    if count is not None:
+        return count
     filt = f"locations.landing_page_url:https://arxiv.org/abs/{arxiv_id}"
     query = urllib.parse.urlencode({"filter": filt, "per-page": 1})
     url = f"https://api.openalex.org/works?{query}"
@@ -67,7 +77,10 @@ def main() -> int:
         return 1
 
     total = 0
-    for _, item in papers.items():
+    refreshed = 0
+    failed = []
+    now = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M:%SZ")
+    for key, item in papers.items():
         if not isinstance(item, dict):
             continue
         source = str(item.get("source", "")).strip().lower()
@@ -82,19 +95,29 @@ def main() -> int:
 
         if count is not None:
             item["count"] = int(count)
+            item["last_updated_utc"] = now
+            refreshed += 1
+            print(f"{key}: {count}")
+        else:
+            failed.append(key)
+            print(f"Could not refresh {key}; keeping the previous count", file=sys.stderr)
 
         current = int(item.get("count", 0) or 0)
         if include:
             total += current
 
+    if not refreshed:
+        print("No citation counts were refreshed; leaving data unchanged", file=sys.stderr)
+        return 1
     cfg["total"] = int(total)
-    cfg["last_updated_utc"] = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M:%SZ")
+    if not failed:
+        cfg["last_updated_utc"] = now
 
     with DATA_FILE.open("w", encoding="utf-8", newline="\n") as f:
         yaml.safe_dump(cfg, f, sort_keys=False, allow_unicode=False)
 
     print(f"Updated total citations: {total}")
-    return 0
+    return 1 if failed else 0
 
 
 if __name__ == "__main__":

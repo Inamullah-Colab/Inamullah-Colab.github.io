@@ -1,43 +1,51 @@
-last_updated_utc: '2026-09-28 13:09:28Z'
-total: 41
+last_updated_utc: '2026-10-04 16:51:33Z'
+total: 42
 papers:
   causal_retigraph_2026:
     source: arxiv
     id: '2607.05204'
     count: 0
     include_in_total: true
+    last_updated_utc: '2026-10-04 16:51:33Z'
   dual_edge_spatial_jacobian_2026:
     source: arxiv
     id: '2606.24168'
     count: 0
     include_in_total: true
+    last_updated_utc: '2026-10-04 16:51:33Z'
   retisem_ssrn_2026:
     source: doi
-    id: 10.2139/ssrn.6752708
+    id: 10.48550/arXiv.2606.24488
     count: 0
     include_in_total: true
+    last_updated_utc: '2026-10-04 16:51:33Z'
   biomimetics_2023:
     source: doi
     id: 10.3390/biomimetics8020187
     count: 24
     include_in_total: true
+    last_updated_utc: '2026-10-04 16:51:33Z'
   imu_2024:
     source: doi
     id: 10.1016/j.imu.2024.101557
     count: 10
     include_in_total: true
+    last_updated_utc: '2026-10-04 16:51:33Z'
   jpmhd_2025:
     source: doi
     id: 10.1016/j.premed.2025.100023
-    count: 6
+    count: 7
     include_in_total: true
+    last_updated_utc: '2026-10-04 16:51:33Z'
   micad_2025:
     source: doi
     id: 10.1007/978-981-95-7425-4_50
     count: 0
     include_in_total: true
+    last_updated_utc: '2026-10-04 16:51:33Z'
   scirep_preprint_2025:
     source: arxiv
     id: '2507.12663'
     count: 1
     include_in_total: true
+    last_updated_utc: '2026-10-04 16:51:33Z'
