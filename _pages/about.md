@@ -55,8 +55,8 @@ This work aligns closely with the emerging field of **oculomics**, which leverag
 <div class="news-grid">
   <article class="news-card">
     <p class="news-date">01 Oct 2026</p>
-    <h3 class="news-title"><a href="/news/2026/10/oculomics-lipidomics-scientific-reports-accepted/">Oculomics and Lipidomics paper accepted in Scientific Reports</a></h3>
-    <p class="news-summary">Integrated Oculomics and Lipidomics Characterise Cross-Sectional Retinal–Lipidomic Associations in a Generally Healthy Biobank Population was accepted for publication in Scientific Reports on 1 October 2026.</p>
+    <h3 class="news-title"><a href="/news/2026/10/oculomics-lipidomics-scientific-reports-accepted/">Oculomics and Lipidomics paper accepted in Scientific Reports (Nature Portfolio)</a></h3>
+    <p class="news-summary">Integrated Oculomics and Lipidomics Characterise Cross-Sectional Retinal–Lipidomic Associations in a Generally Healthy Biobank Population was accepted for publication in Scientific Reports (Nature Portfolio) on 1 October 2026.</p>
     <p class="news-link"><a href="/news/2026/10/oculomics-lipidomics-scientific-reports-accepted/">Read update</a></p>
   </article>
   <article class="news-card">
