@@ -55,9 +55,9 @@ This work aligns closely with the emerging field of **oculomics**, which leverag
 <div class="news-grid">
   <article class="news-card">
     <p class="news-date">01 Oct 2026</p>
-    <h3 class="news-title"><a href="/news/2026/10/oculomics-lipidomics-scientific-reports-accepted/">Oculomics and Lipidomics paper accepted in Scientific Reports (Nature Portfolio)</a></h3>
+    <h3 class="news-title"><a href="/publications/">Oculomics and Lipidomics paper accepted in Scientific Reports (Nature Portfolio)</a></h3>
     <p class="news-summary">Integrated Oculomics and Lipidomics Characterise Cross-Sectional Retinal–Lipidomic Associations in a Generally Healthy Biobank Population was accepted for publication in Scientific Reports (Nature Portfolio) on 1 October 2026.</p>
-    <p class="news-link"><a href="/news/2026/10/oculomics-lipidomics-scientific-reports-accepted/">Read update</a></p>
+    <p class="news-link"><a href="/publications/">View publication</a></p>
   </article>
   <article class="news-card">
     <p class="news-date">10 Aug 2026</p>
@@ -71,8 +71,7 @@ This work aligns closely with the emerging field of **oculomics**, which leverag
     <p class="news-summary">RetiSEM: Generalising Causal Models for Fragmented Biomedical Data has been accepted for oral presentation at IJCAI 2026.</p>
     <p class="news-link"><a href="https://openreview.net/forum?id=Jaj6hWKcGz">View OpenReview</a></p>
   </article>
-  {% assign other_homepage_news = homepage_news | where_exp: "post", "post.url != '/news/2026/10/oculomics-lipidomics-scientific-reports-accepted/'" %}
-  {% for post in other_homepage_news limit:3 %}
+  {% for post in homepage_news limit:3 %}
     <article class="news-card">
       <p class="news-date">{{ post.date | date: "%d %b %Y" }}</p>
       <h3 class="news-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
