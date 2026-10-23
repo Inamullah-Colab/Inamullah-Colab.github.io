@@ -42,7 +42,8 @@ assert not re.search(r"{{|{%", html), "Unresolved template in preview"
 for name in ("portfolio.css",):
     shutil.copy2(ROOT / "assets/css" / name, output / "assets/css" / name)
 (output / "images").mkdir(exist_ok=True)
-for name in ("Profile_pic.jpg", "favicon.svg"):
+image_names = ["Profile_pic.jpg", "favicon.svg", "jpmhd-2025.png"] + [Path(item["image"]).name for item in items]
+for name in image_names:
     shutil.copy2(ROOT / "images" / name, output / "images" / name)
 
 # A portable copy can be opened directly without a running preview server.
@@ -50,7 +51,8 @@ portable = html
 for name in ("portfolio.css",):
     portable = portable.replace('<link rel="stylesheet" href="/assets/css/' + name + '">',
                                 '<style>' + (ROOT / "assets/css" / name).read_text(encoding="utf-8") + '</style>')
-for name, mime in (("Profile_pic.jpg", "image/jpeg"), ("favicon.svg", "image/svg+xml")):
+for name in image_names:
+    mime = "image/jpeg" if name.endswith(".jpg") else "image/svg+xml" if name.endswith(".svg") else "image/png"
     data = base64.b64encode((ROOT / "images" / name).read_bytes()).decode("ascii")
     portable = portable.replace('"/images/' + name + '"', '"data:' + mime + ';base64,' + data + '"')
 # Keep section navigation within the portable preview; other pages use the live domain.

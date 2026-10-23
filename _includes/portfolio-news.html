@@ -3,6 +3,7 @@
   <div class="updates-layout">
     <article class="press-feature">
       <p class="eyebrow">Featured in Forbes</p>
+      <figure class="press-paper-figure"><a href="/images/jpmhd-2025.png" aria-label="Open full figure from our oculomics survey"><img src="/images/jpmhd-2025.png" alt="Survey figure connecting retinal vessel analysis, vascular measurements, and ocular and systemic phenotypes" width="7716" height="9095" loading="lazy" decoding="async"></a><figcaption>From our oculomics survey · Select to view the full figure</figcaption></figure>
       <p class="press-date"><time datetime="2025-11-05">5 November 2025</time> · William A. Haseltine</p>
       <h3>Our oculomics survey featured in Forbes.</h3>
       <p>The Forbes article “AI Eye Exams Could Detect Heart Disease, Diabetes And More Earlier” links to our survey, <em>The Eye as a Window to Systemic Health</em>, in its discussion of retinal imaging and chronic disease research.</p>
@@ -13,10 +14,13 @@
       {% assign news_items = site.data.news | sort: "date" | reverse %}
       {% for item in news_items limit:4 %}
       <li class="update-item">
+        <a class="update-image" href="{{ item.image | escape }}" aria-label="Open full figure: {{ item.image_alt | escape }}"><img src="{{ item.image | escape }}" alt="{{ item.image_alt | escape }}" width="160" height="120" loading="lazy" decoding="async"></a>
+        <div class="update-body">
         <div class="update-meta"><time datetime="{{ item.date }}">{{ item.date | date: "%d %b %Y" }}</time><span>{{ item.category | escape }}</span></div>
         <h3>{{ item.title | escape }}</h3>
         <p>{{ item.summary | escape }}</p>
         <a href="{{ item.url | escape }}">{{ item.link_label | escape }} <span aria-hidden="true">↗</span></a>
+        </div>
       </li>
       {% endfor %}
     </ol>

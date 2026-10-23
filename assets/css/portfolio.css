@@ -51,3 +51,17 @@
 .update-item > a { font-size: 13px; }
 @media (max-width: 900px) { .updates-layout { gap: 25px; } .press-feature { padding: 24px; } }
 @media (max-width: 620px) { .updates-layout { grid-template-columns: 1fr; gap: 30px; } }
+
+/* Keep complete scientific figures visible, with full-size images one click away. */
+.press-paper-figure { margin: 20px 0; }
+.press-paper-figure > a { display: block; border: 1px solid var(--line); border-radius: 4px; background: white; padding: 12px; }
+.press-paper-figure img { width: 100%; height: auto; max-height: 300px; object-fit: contain; }
+.press-paper-figure figcaption { margin-top: 8px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.update-item { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 20px; align-items: start; }
+.update-image { display: flex; align-items: center; justify-content: center; background: white; border: 1px solid var(--line); padding: 8px; border-radius: 4px; }
+.update-image:hover, .press-paper-figure > a:hover { border-color: var(--accent); }
+.update-image img { width: 100%; height: 110px; object-fit: contain; }
+.update-body { min-width: 0; }
+.update-body > a { font-size: 13px; }
+@media (min-width: 621px) and (max-width: 900px) { .update-item { grid-template-columns: 100px minmax(0, 1fr); gap: 14px; } .update-image img { height: 90px; } }
+@media (max-width: 400px) { .update-item { grid-template-columns: 90px minmax(0, 1fr); gap: 12px; } .update-image img { height: 80px; } }
