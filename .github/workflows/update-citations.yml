@@ -1,8 +1,7 @@
 name: Update Citation Stats
 
 on:
-  schedule:
-    - cron: "0 6 * * *"
+  # No recurring schedule. Run manually or when the updater code changes.
   workflow_dispatch:
   push:
     branches: [master]
