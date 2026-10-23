@@ -4,3 +4,28 @@
 @media(max-width:900px){.wrap{width:calc(100% - 48px)}.site-header{align-items:start;gap:20px}.site-header nav{gap:15px;justify-content:end}.hero{gap:35px;padding-block:50px}.hero h1{font-size:46px}.hero-photo img{height:300px}.project-grid{gap:20px}.practice{gap:35px}.publication{grid-template-columns:130px 1fr 75px;gap:15px}.site-footer{flex-direction:column}}
 @media(max-width:620px){body{font-size:16px}.wrap{width:calc(100% - 36px)}.site-header{flex-direction:column;padding-block:20px;gap:18px}.site-header nav{justify-content:start;gap:17px}.site-header nav a{font-size:12px}.nav-cv{padding:5px 9px}.hero{grid-template-columns:1fr;padding-block:38px;gap:25px}.hero h1{font-size:43px;letter-spacing:-1.6px}.intro{font-size:16px}.hero-photo{max-width:300px}.hero-photo img{height:260px}.research-strip{gap:10px;flex-direction:column}.section{padding-block:40px}.section-heading{align-items:start;flex-direction:column;gap:15px}.project-grid,.practice,.notes{grid-template-columns:1fr;gap:30px}.project{padding-bottom:10px}.publication{grid-template-columns:1fr;gap:10px}.publication>a{justify-self:start}.publication .pub-meta span{display:inline;margin-left:8px}.skill-row{grid-template-columns:100px 1fr}.contact{padding:26px;margin-block:35px;align-items:start;flex-direction:column;gap:15px}.social-links{gap:15px}.site-footer nav{gap:15px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Connect the professional story to the research without adding another card grid. */
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 70px;
+}
+.story h2 {
+  font: 400 clamp(30px, 3vw, 40px)/1.2 Georgia, serif;
+  letter-spacing: -1px;
+  margin: 0 0 24px;
+}
+.story a { font-size: 14px; }
+.story p:not(.eyebrow) { color: var(--muted); margin: 0 0 18px; }
+.story .story-thread {
+  font-size: 12px;
+  color: var(--accent);
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+.story-thread span { padding-inline: 6px; }
+.section-intro { max-width: 800px; color: var(--muted); margin: -10px 0 30px; }
+.publication strong { color: var(--ink); font-weight: 600; }
+@media (max-width: 900px) { .story { gap: 35px; } }
+@media (max-width: 620px) { .story { grid-template-columns: 1fr; gap: 24px; } }

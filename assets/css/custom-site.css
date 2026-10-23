@@ -1,18 +1,18 @@
 :root {
-  --site-bg: #f3f5f7;
-  --site-bg-soft: #e7ebef;
+  --site-bg: #f7f7f2;
+  --site-bg-soft: #e8eeea;
   --site-paper: #ffffff;
   --site-paper-strong: #ffffff;
-  --site-ink: #1f2933;
-  --site-muted: #586574;
-  --site-line: rgba(31, 41, 51, 0.12);
-  --site-accent: #002147;
-  --site-accent-2: #0f3a68;
-  --site-accent-3: #8b6f47;
+  --site-ink: #182e32;
+  --site-muted: #526367;
+  --site-line: #cdd6d1;
+  --site-accent: #145c53;
+  --site-accent-2: #145c53;
+  --site-accent-3: #145c53;
   --site-shadow: 0 18px 40px rgba(15, 23, 42, 0.10);
   --site-shadow-soft: 0 8px 18px rgba(15, 23, 42, 0.08);
-  --font-display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "URW Palladio L", Georgia, serif;
-  --font-body: "Plus Jakarta Sans", "Aptos", "Avenir Next", "Segoe UI", "Helvetica Neue", Helvetica, sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: "Segoe UI", Arial, sans-serif;
 }
 
 html {
@@ -23,8 +23,8 @@ html {
 
 body {
   font-family: var(--font-body);
-  color: #18212c;
-  background: linear-gradient(180deg, #f7f8fa 0%, #edf1f4 100%);
+  color: #182e32;
+  background: var(--site-bg);
   background-attachment: fixed;
 }
 
@@ -78,7 +78,7 @@ h6,
 .news-feature-title {
   font-family: var(--font-display);
   letter-spacing: -0.02em;
-  color: #152030;
+  color: #182e32;
 }
 
 p,
@@ -95,7 +95,7 @@ a {
 }
 
 a:hover {
-  color: #8b84ff;
+  color: #145c53;
 }
 
 #main {
@@ -170,7 +170,7 @@ a:hover {
 }
 
 .masthead {
-  background: #002147;
+  background: #182e32;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: none;
 }
@@ -240,7 +240,7 @@ a:hover {
 }
 
 .greedy-nav .hidden-links {
-  background: #002147 !important;
+  background: #182e32 !important;
   border: 1px solid rgba(255, 255, 255, 0.10);
 }
 
@@ -359,7 +359,7 @@ a.btn,
 .btn:hover,
 button:hover,
 .sidebar .btn:hover {
-  background: #0f3a68;
+  background: #145c53;
   transform: none;
 }
 
@@ -416,17 +416,17 @@ a.btn:hover,
 }
 
 .page__content strong {
-  color: #17212b;
+  color: var(--site-ink);
 }
 
 .page__content a,
 .archive a {
-  color: #0f3a68 !important;
+  color: #145c53 !important;
 }
 
 .page__content a:hover,
 .archive a:hover {
-  color: #002147 !important;
+  color: #182e32 !important;
 }
 
 .page__content hr {
@@ -573,7 +573,7 @@ a.btn:hover,
 
 .pub-card-featured,
 .pub-feature-card {
-  border-color: rgba(108, 99, 255, 0.22);
+  border-color: rgba(20, 92, 83, 0.22);
 }
 
 .pub-card-featured::before,
@@ -586,9 +586,9 @@ a.btn:hover,
 }
 
 .pub-badge {
-  background: rgba(108, 99, 255, 0.10);
-  border-color: rgba(108, 99, 255, 0.18);
-  color: #564cf1;
+  background: rgba(20, 92, 83, 0.10);
+  border-color: rgba(20, 92, 83, 0.18);
+  color: #145c53;
 }
 
 .pub-cite-chip {
@@ -635,12 +635,12 @@ a.btn:hover,
 
 .page__footer {
   margin-top: 2rem;
-  background: #002147;
+  background: #182e32;
   color: rgba(255, 255, 255, 0.82);
 }
 
 .page__footer a {
-  color: #f7d7aa;
+  color: #bad7cb;
 }
 
 table {
@@ -925,7 +925,7 @@ body.view-blog-archive .sidebar .author__urls a,
 body.view-cv .sidebar .author__urls a {
   min-height: 3.15rem !important;
   border-radius: 4px !important;
-  background: #f8fafc !important;
+  background: var(--site-bg) !important;
   border: 1px solid rgba(15, 23, 42, 0.10) !important;
   box-shadow: none !important;
 }
@@ -948,8 +948,8 @@ body.view-cv .sidebar .author__desktop .icon-pad-right {
   min-width: 1.95rem !important;
   margin-right: 0.7rem !important;
   border-radius: 4px !important;
-  background: #e9eef4 !important;
-  color: #324154 !important;
+  background: var(--site-bg-soft) !important;
+  color: var(--site-ink) !important;
   font-size: 0.96rem !important;
   box-shadow: none !important;
 }
@@ -984,7 +984,7 @@ body.view-cv .sidebar .author__urls .fa-envelope,
 body.view-cv .sidebar .author__urls .fa-researchgate,
 body.view-cv .sidebar .author__urls .ai-google-scholar,
 body.view-cv .sidebar .author__urls .ai-orcid {
-  color: #324154 !important;
+  color: var(--site-ink) !important;
 }
 
 body.view-home #main .archive,
