@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | escape }} | Inam Ullah Khan</title>
+  <meta name="description" content="{{ page.description | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:title" content="{{ page.title | escape }} | Inam Ullah Khan">
+  <meta property="og:description" content="{{ page.description | escape }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/images/Profile_pic.jpg' | absolute_url }}">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/portfolio.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="wordmark" href="/" aria-label="Inam Ullah Khan home">Inam Ullah Khan<span>Research &amp; applied AI</span></a>
+    <nav aria-label="Main navigation">
+      <a href="/#research">Research</a>
+      <a href="/publications/">Publications</a>
+      <a href="/background/">About</a>
+      <a href="/year-archive/">Writing</a>
+      <a class="nav-cv" href="/cv/">View CV <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="main" class="wrap">{{ content }}</main>
+  <footer class="site-footer wrap">
+    <p>Inam Ullah Khan <span>Southampton, United Kingdom</span></p>
+    <nav aria-label="Footer navigation"><a href="/services/">Teaching &amp; service</a><a href="/resources/">Resources</a><a href="/privacy/">Privacy</a><a href="/sitemap/">Sitemap</a></nav>
+  </footer>
+</body>
+</html>
