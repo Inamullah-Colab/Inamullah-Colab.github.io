@@ -1,0 +1,24 @@
+<section id="news" class="section" aria-labelledby="news-title">
+  <div class="section-heading"><div><p class="eyebrow">Research, publications &amp; conferences</p><h2 id="news-title">News &amp; Updates</h2></div><a href="/publications/">Explore the publications <span aria-hidden="true">↗</span></a></div>
+  <div class="updates-layout">
+    <article class="press-feature">
+      <p class="eyebrow">Featured in Forbes</p>
+      <p class="press-date"><time datetime="2025-11-05">5 November 2025</time> · William A. Haseltine</p>
+      <h3>Our oculomics survey featured in Forbes.</h3>
+      <p>The Forbes article “AI Eye Exams Could Detect Heart Disease, Diabetes And More Earlier” links to our survey, <em>The Eye as a Window to Systemic Health</em>, in its discussion of retinal imaging and chronic disease research.</p>
+      <p class="press-summary">Connecting retinal imaging, artificial intelligence, and the wider conversation about systemic health.</p>
+      <div class="press-links"><a href="https://www.forbes.com/sites/williamhaseltine/2025/11/05/how-artificial-intelligence-makes-eye-exams-a-gateway-to-whole-body-wellness/">Read the Forbes feature <span aria-hidden="true">↗</span></a><a href="https://doi.org/10.1016/j.premed.2025.100023">Read our survey <span aria-hidden="true">↗</span></a></div>
+    </article>
+    <ol class="updates-list">
+      {% assign news_items = site.data.news | sort: "date" | reverse %}
+      {% for item in news_items limit:4 %}
+      <li class="update-item">
+        <div class="update-meta"><time datetime="{{ item.date }}">{{ item.date | date: "%d %b %Y" }}</time><span>{{ item.category | escape }}</span></div>
+        <h3>{{ item.title | escape }}</h3>
+        <p>{{ item.summary | escape }}</p>
+        <a href="{{ item.url | escape }}">{{ item.link_label | escape }} <span aria-hidden="true">↗</span></a>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>

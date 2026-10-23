@@ -4,9 +4,7 @@ permalink: /background/
 author_profile: true
 ---
 
-## From civil engineering to computational health research
-
-{% include story-path.html %}
+## Bringing different perspectives to healthcare AI
 
 I began my professional journey in **civil engineering as an associate engineer**, where complex problems had to become practical solutions. Working with physical systems taught me to think about how components interact, respect real-world constraints, and ask whether a solution works beyond the drawing board.
 

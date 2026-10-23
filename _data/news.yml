@@ -1,0 +1,26 @@
+# Add new announcements here, using the actual announcement/publication date.
+# The homepage displays the four most recent entries automatically.
+- date: '2026-10-01'
+  category: Paper accepted
+  title: Oculomics and lipidomics study accepted in Scientific Reports
+  summary: Our study of cross-sectional retinal–lipidomic associations in a generally healthy biobank population has been accepted for publication.
+  url: /publications/
+  link_label: Publication details
+- date: '2026-08-15'
+  category: Paper published
+  title: Retinal–lipidomics work published in the MICAD proceedings
+  summary: Our work on candidate biomarkers for cardiovascular health is available as a Springer chapter in the MICAD 2025 proceedings.
+  url: https://link.springer.com/chapter/10.1007/978-981-95-7425-4_50
+  link_label: Read the chapter
+- date: '2026-08-10'
+  category: Conference acceptance
+  title: Interpretable retinal image graphs accepted at UKAIRS 2026
+  summary: The Dual-Edge Spatial-Jacobian image graph paper was accepted in the Emerging Research track.
+  url: https://www.ukairs.ac.uk/MyPapers/Details/13301
+  link_label: Conference details
+- date: '2026-06-15'
+  category: Oral presentation
+  title: RetiSEM accepted for oral presentation at IJCAI 2026
+  summary: Our framework studies causal modelling with fragmented biomedical data.
+  url: https://openreview.net/forum?id=Jaj6hWKcGz
+  link_label: View the paper
