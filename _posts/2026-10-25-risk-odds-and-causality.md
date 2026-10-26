@@ -273,5 +273,3 @@ Risk compares events with all people at risk; odds compare events with non-event
 5. Zhang J, Yu KF. What's the Relative Risk? A Method of Correcting the Odds Ratio in Cohort Studies of Common Outcomes. *JAMA*. 1998;280(19):1690–1691. https://doi.org/10.1001/jama.280.19.1690
 6. Pearl J. *Causality: Models, Reasoning, and Inference*. 2nd ed. Cambridge University Press, 2009. https://doi.org/10.1017/CBO9780511803161
 7. Hernán MA. The C-Word: Scientific Euphemisms Do Not Improve Causal Inference From Observational Data. *American Journal of Public Health*. 2018;108(5):616–619. https://doi.org/10.2105/AJPH.2018.304337
-
-**Further reading supplied by the reader:** https://academic.oup.com/book/24421/chapter-abstract/187403266?redirectedFrom=fulltext (consult the original chapter for its precise scope and terminology).
