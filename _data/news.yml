@@ -1,13 +1,13 @@
 # Add new announcements here, using the actual announcement/publication date.
 # The homepage displays the four most recent entries automatically.
-- date: '2026-10-01'
-  category: Paper accepted
+- date: '2026-10-27'
+  category: Paper published
   image: /images/scirep-2025.png
   image_alt: Network of associations between retinal artery width and lipid species
-  title: Oculomics and lipidomics study accepted in a Nature Portfolio journal
-  summary: Our study of cross-sectional retinal–lipidomic associations in a generally healthy biobank population has been accepted for publication in Scientific Reports, part of Nature Portfolio.
-  url: /publications/
-  link_label: Publication details
+  title: Oculomics and lipidomics study published in Scientific Reports
+  summary: Our study of cross-sectional retinal–lipidomic associations in a generally healthy biobank population has been published in Scientific Reports, part of Nature Portfolio.
+  url: https://www.nature.com/articles/s41598-026-74898-2
+  link_label: Read the paper
 - date: '2026-08-15'
   category: Paper published
   image: /images/micad-2025.png

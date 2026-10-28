@@ -51,8 +51,8 @@ papers:
     last_updated_utc: '2026-10-20 10:35:57Z'
     scholar_id: Br1UauaknNIC
   scirep_preprint_2025:
-    source: arxiv
-    id: '2507.12663'
+    source: doi
+    id: 10.1038/s41598-026-74898-2
     count: 1
     include_in_total: true
     last_updated_utc: '2026-10-20 10:35:57Z'

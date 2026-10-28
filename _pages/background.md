@@ -13,7 +13,7 @@ Today, I bring these perspectives together as a **Computer Science PhD researche
 ## How this perspective connects to my publications
 
 - **Practical modelling:** my [work on diversity in CNN ensembles](https://www.mdpi.com/2313-7673/8/2/187) examines a central challenge in medical imaging: learning from scarce and imbalanced data.
-- **Connecting biological systems:** the [oculomics and lipidomics study](https://arxiv.org/abs/2507.12663) characterises cross-sectional associations between retinal vascular traits and molecular profiles. It connects quantitative image measurements with questions about systemic biology.
+- **Connecting biological systems:** the [oculomics and lipidomics study](https://www.nature.com/articles/s41598-026-74898-2) characterises cross-sectional associations between retinal vascular traits and molecular profiles. It connects quantitative image measurements with questions about systemic biology.
 - **Mathematical structure under real data constraints:** [RetiSEM](https://openreview.net/forum?id=Jaj6hWKcGz) studies interpretable causal modelling with fragmented biomedical evidence, bringing statistical reasoning to the problem of incomplete measurements.
 
 Together, these studies connect my interests in systems, quantitative reasoning, and computation. They also frame the problems I want to work on with academic and industry teams: interpretable models, biomedical data integration, and methods that remain useful under practical data constraints.

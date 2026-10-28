@@ -90,8 +90,8 @@ Project Manager (tendering, planning, estimation, billing, client correspondence
 
 4. Inamullah, et al.  
    **Integrated Oculomics and Lipidomics Characterise Cross-Sectional Retinal–Lipidomic Associations in a Generally Healthy Biobank Population.**<br>
-   *Accepted for publication in Scientific Reports (Nature Portfolio) on 1 October 2026.*<br>
-   arXiv preprint: <https://arxiv.org/abs/2507.12663><br>
+   *Published in Scientific Reports (Nature Portfolio) on 27 October 2026.*<br>
+   Published article: <https://www.nature.com/articles/s41598-026-74898-2><br>
    Citations: {{ site.data.citations.papers.scirep_preprint_2025.count | default: 0 }}<br>
    This study characterises cross-sectional associations between retinal traits and lipidomic profiles in a generally healthy biobank population.
 

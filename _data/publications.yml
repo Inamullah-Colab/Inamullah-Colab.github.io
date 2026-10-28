@@ -1,19 +1,19 @@
 - title: "Integrated Oculomics and Lipidomics Characterise Cross-Sectional Retinal\u2013\
     Lipidomic Associations in a Generally Healthy Biobank Population"
   slug: integrated-oculomics-lipidomics-microvascular-metabolic-signatures
-  date: '2026-10-01'
+  date: '2026-10-27'
   year: 2026
   type: manuscripts
   venue: Scientific Reports (Nature Portfolio)
-  status: Accepted for publication
+  status: Published
   image: /images/scirep-2025.png
   summary: Characterises cross-sectional associations between retinal traits and lipidomic
-    profiles in a generally healthy biobank population. Accepted for publication in
-    Scientific Reports (Nature Portfolio) on 1 October 2026.
+    profiles in a generally healthy biobank population. Published in Scientific Reports
+    (Nature Portfolio) on 27 October 2026.
   citation_key: scirep_preprint_2025
   links:
-  - label: arXiv preprint
-    url: https://arxiv.org/abs/2507.12663
+  - label: Published article
+    url: https://www.nature.com/articles/s41598-026-74898-2
 - title: "Retinal\u2013Lipidomics Associations as Candidate Biomarkers for Cardiovascular\
     \ Health"
   slug: retinal-lipidomics-associations-candidate-biomarkers
