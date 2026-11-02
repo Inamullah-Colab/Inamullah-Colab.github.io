@@ -2,7 +2,7 @@
 (() => {
   const config=window.GRADE_DEMO_CONFIG;
   const $=id=>document.getElementById(id);
-  const state={cases:[],caseId:'grade-2',connected:false,busy:false,controller:null};
+  const state={cases:[],caseId:'grade-2',connected:false,busy:false,controller:null,predictionId:null,uploading:false,previewURL:null};
   const shortLabels=['No DR','Mild','Moderate','Severe','Proliferative'];
   const subLabels=['Grade 0','Grade 1','Grade 2','Grade 3','Grade 4'];
   const base=config.backendURL.replace(/\/$/,'');
@@ -11,10 +11,13 @@
     $('connection').querySelector('span').textContent=message;
   }
   function controls() {
-    $('question').disabled=!state.connected||state.busy;
-    $('send').disabled=!state.connected||state.busy||!$('question').value.trim();
-    document.querySelectorAll('[data-question]').forEach(b=>b.disabled=!state.connected||state.busy);
-    document.querySelectorAll('.grade-choice').forEach(b=>b.disabled=state.busy);
+    const unavailable=!state.connected||state.busy||state.uploading||(!state.caseId&&!state.predictionId);
+    $('question').disabled=unavailable;
+    $('upload-button').disabled=!state.connected||state.busy||state.uploading||!$('retinal-file').files.length;
+    $('retinal-file').disabled=state.busy||state.uploading;
+    $('send').disabled=unavailable||!$('question').value.trim();
+    document.querySelectorAll('[data-question]').forEach(b=>b.disabled=unavailable);
+    document.querySelectorAll('.grade-choice').forEach(b=>b.disabled=state.busy||state.uploading);
     $('thinking').hidden=!state.busy;
   }
   function message(role,text,reference=null) {
@@ -34,11 +37,13 @@
     return article;
   }
   function choose(caseId) {
-    if(state.busy)return;
-    state.caseId=caseId;
+    if(state.busy||state.uploading)return;
+    state.predictionId=null;state.caseId=caseId;
+    $('image-result').hidden=true;
     document.querySelectorAll('.grade-choice').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.case===caseId)));
     const sample=state.cases.find(c=>c.id===caseId);
     $('probability').textContent=`${Math.round(100*sample.probabilities[sample.grade])}%`;
+    document.querySelector('.profile').style.setProperty('--score',`${100*sample.probabilities[sample.grade]}%`);
     $('chat-log').replaceChildren();
     const welcome=message('assistant',`You’ve selected an illustrative grade ${sample.grade} context: ${sample.label.toLowerCase()}. Ask what the category means, how to interpret the model probability, or which inputs the grader used.\n\nThe example supplies the grading facts. The live language model helps plan the explanation.`);
     welcome.classList.add('welcome');$('question').value='';controls();
@@ -83,23 +88,84 @@
     }
   }
   async function ask(question) {
-    question=question.trim();if(!question||state.busy||!state.connected)return;
+    question=question.trim();if(!question||state.busy||state.uploading||!state.connected||(!state.caseId&&!state.predictionId))return;
     state.busy=true;state.controller=new AbortController();controls();message('user',question);$('question').value='';
     const timer=setTimeout(()=>state.controller.abort(),120000);
     try {
       let result;
       if(config.transport==='gradio')result=await gradio(question,state.caseId,state.controller.signal);
       else {
-        const response=await fetch(base+'/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question,case_id:state.caseId}),signal:state.controller.signal});
-        if(!response.ok)throw new Error(response.status===429?'The assistant is busy. Please retry shortly.':'The live backend could not answer. Please retry shortly.');
+        const response=await fetch(base+'/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(state.predictionId?{question,prediction_id:state.predictionId}:{question,case_id:state.caseId}),signal:state.controller.signal});
+        if(!response.ok){const detail=await response.json().catch(()=>({}));throw new Error(detail.detail||'The live backend could not answer. Please retry shortly.');}
         result=await response.json();
       }
-      if(result.live_llm!==true||typeof result.answer!=='string'||result.case_id!==state.caseId)throw new Error('The backend response did not match the selected live example.');
+      if(result.live_llm!==true||typeof result.answer!=='string'||(state.predictionId?result.prediction_id!==state.predictionId||result.example_context!==false:result.case_id!==state.caseId))throw new Error('The backend response did not match the selected live example.');
       message('assistant',result.answer,result.reference);
     } catch(error) {
       message('error',error.name==='AbortError'?'This request timed out while waiting for the hosted model. You can retry; no saved answer has been substituted.':error.message);
     } finally {clearTimeout(timer);state.busy=false;state.controller=null;controls();$('question').focus();}
   }
+  async function uploadImage(event) {
+    event.preventDefault();const file=$('retinal-file').files[0];
+    if(!file||state.busy||state.uploading||!state.connected)return;
+    if(file.size>10*1024*1024){$('upload-status').textContent='Choose a file no larger than 10 MB.';return;}
+    state.uploading=true;state.caseId=null;state.predictionId=null;$('image-result').hidden=true;
+    document.querySelectorAll('.grade-choice').forEach(b=>b.setAttribute('aria-pressed','false'));
+    $('chat-log').replaceChildren();$('probability').textContent='—';
+    document.querySelector('.profile').style.setProperty('--score','0%');controls();
+    const start=Date.now();let timer;
+    try {
+      $('upload-status').textContent='Uploading photograph…';
+      const controller=new AbortController();timer=setTimeout(()=>controller.abort(),60000);
+      const response=await fetch(base+'/api/predict',{method:'POST',headers:{'Content-Type':file.type||'application/octet-stream'},body:file,signal:controller.signal});
+      clearTimeout(timer);
+      const data=await response.json();if(!response.ok)throw new Error(data.detail||'Upload failed.');
+      if(typeof data.prediction_id!=='string'||!/^[A-Za-z0-9_-]{40,64}$/.test(data.prediction_id))throw new Error('Invalid upload response.');
+      let ready=null;
+      while(Date.now()-start<19*60*1000) {
+        $('upload-status').textContent=`Extracting X1–X4 and grading… ${Math.floor((Date.now()-start)/1000)} seconds. Keep this page open.`;
+        await new Promise(resolve=>setTimeout(resolve,3000));
+        const poll=await fetch(base+'/api/predictions/'+data.prediction_id,{cache:'no-store',signal:AbortSignal.timeout(20000)});
+        const job=await poll.json();if(!poll.ok)throw new Error(job.detail||'Unable to retrieve prediction.');
+        if(job.status==='failed')throw new Error(job.detail||'Processing failed. No grade was produced.');
+        if(job.status==='ready'){ready=job;break;}
+      }
+      if(!ready)throw new Error('Image processing timed out. No result is shown.');
+      const result=ready.prediction;const probs=result.class_probabilities;
+      if(!Array.isArray(probs)||probs.length!==5||!probs.every(v=>Number.isFinite(v)&&v>=0&&v<=1)||!Number.isInteger(result.predicted_grade)||result.predicted_grade<0||result.predicted_grade>4)throw new Error('Invalid grading response.');
+      state.predictionId=data.prediction_id;
+      $('predicted-grade').textContent=`Grade ${result.predicted_grade} · ${shortLabels[result.predicted_grade]}`;
+      $('class-probabilities').replaceChildren();
+      probs.forEach((probability,grade)=>{
+        const row=document.createElement('div');row.className='probability-row';
+        const label=document.createElement('span');label.textContent=`${grade} · ${shortLabels[grade]}`;
+        const bar=document.createElement('div');bar.className='probability-bar';const fill=document.createElement('span');fill.style.width=`${probability*100}%`;bar.append(fill);
+        const value=document.createElement('span');value.textContent=`${(100*probability).toFixed(1)}%`;row.append(label,bar,value);$('class-probabilities').append(row);
+      });
+      $('prediction-model').textContent=`${result.model_stage} · Inputs: ${result.streams_used.join(', ')}`;
+      $('image-result').hidden=false;$('probability').textContent=`${(100*probs[result.predicted_grade]).toFixed(1)}%`;
+      document.querySelector('.profile').style.setProperty('--score',`${100*probs[result.predicted_grade]}%`);
+      $('upload-status').textContent='Image graded. Ask about this actual prediction below. This session expires in 30 minutes.';
+      message('assistant',`Your uploaded photograph was graded by the trained retinal model as grade ${result.predicted_grade} (${shortLabels[result.predicted_grade]}), with ${(100*probs[result.predicted_grade]).toFixed(1)}% model probability. All X1–X4 streams were extracted from this image. This is an uncalibrated research prediction requiring clinical review. Ask me to explain the grade, probability, or inputs.`);
+    } catch(error) {
+      $('upload-status').textContent=error.name==='AbortError'?'The upload connection timed out. Please retry.':error.message;
+      message('error','No grading result is available. '+$('upload-status').textContent);
+    } finally {clearTimeout(timer);state.uploading=false;controls();}
+    if(state.predictionId)await ask('What does this grade mean?');
+  }
+  $('upload-form').addEventListener('submit',uploadImage);
+  $('retinal-file').addEventListener('change',()=>{
+    if(state.previewURL)URL.revokeObjectURL(state.previewURL);
+    const file=$('retinal-file').files[0];$('image-preview').hidden=!file;
+    if(file){
+      state.previewURL=URL.createObjectURL(file);$('image-preview').src=state.previewURL;
+      state.caseId=null;state.predictionId=null;$('image-result').hidden=true;
+      document.querySelectorAll('.grade-choice').forEach(b=>b.setAttribute('aria-pressed','false'));
+      $('chat-log').replaceChildren();message('assistant','New photograph selected. Choose Analyze retinal image to extract X1–X4 and obtain its grading result.');
+      $('probability').textContent='—';document.querySelector('.profile').style.setProperty('--score','0%');
+    }
+    controls();
+  });
   async function init() {
     $('backend-link').href=config.spaceURL;
     try {
@@ -109,7 +175,7 @@
         const button=document.createElement('button');button.type='button';button.className='grade-choice';button.dataset.case=c.id;button.setAttribute('aria-pressed','false');
         const number=document.createElement('span');number.className='grade-number';number.textContent=c.grade;
         const text=document.createElement('span');const strong=document.createElement('strong');strong.textContent=shortLabels[c.grade];const small=document.createElement('small');small.textContent=subLabels[c.grade];text.append(strong,small);button.append(number,text);button.addEventListener('click',()=>choose(c.id));$('grade-options').append(button);
-      });choose(state.caseId);await checkConnection();
+      });state.caseId=null;document.querySelector('.profile').style.setProperty('--score','0%');message('assistant','Upload a retinal photograph and select Analyze retinal image. The trained model will extract X1–X4 and predict a grade; I will then explain that actual result. You can also open the illustrative examples to explore the chat.');await checkConnection();
     } catch(error) {connection('Examples unavailable','offline');message('error',error.message);}
   }
   $('chat-form').addEventListener('submit',event=>{event.preventDefault();ask($('question').value);});

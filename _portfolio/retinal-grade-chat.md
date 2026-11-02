@@ -1,9 +1,11 @@
 ---
-title: "Retinal Grade Explorer: live LLM demo"
-excerpt: "Ask questions about illustrative diabetic retinopathy grades with a separately hosted Qwen model. Research demonstration."
+title: "Retinal Grade Explorer: image grading and live LLM explanations"
+excerpt: "Upload a retinal JPG/PNG for X1–X4 extraction, ResNet-152 grading, probabilities and live Qwen explanations. Research demonstration."
 collection: portfolio
 ---
 
-[Open the live grade-questioning demo](/retinal-grade-chat/)
+[Open the retinal image grading demo](/retinal-grade-chat/)
 
-This research interface explains fixed, illustrative grade contexts with cited grading definitions. It uses Qwen2.5-1.5B-Instruct through a separately hosted FastAPI backend. It does not analyze uploaded images or provide treatment decisions. The backend currently uses a temporary HTTPS tunnel and requires the research server to remain running.
+Upload a retinal photograph to run the original X1–X4 extractors and frozen ResNet-152 grader. The page displays all five class probabilities and a live Qwen explanation tied to the server-held prediction. Optional examples are illustrative.
+
+This is a research model requiring clinical review. Historical external evaluation used different X3 preprocessing from training, so those scores are not performance estimates for this training-aligned upload pipeline. Consistent reevaluation is needed. No treatment decisions or patient history are included. The temporary HTTPS backend requires the existing research server to remain running.
