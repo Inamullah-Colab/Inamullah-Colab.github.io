@@ -1,0 +1,1 @@
+window.GRADE_DEMO_CONFIG=Object.freeze({"transport": "fastapi", "backendURL": "https://gospel-isolated-qualification-shirt.trycloudflare.com", "spaceURL": "https://gospel-isolated-qualification-shirt.trycloudflare.com/docs", "model": "Qwen2.5-1.5B-Instruct"});

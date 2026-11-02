@@ -1,0 +1,12 @@
+{
+  "source_title": "American Diabetes Association: Disease Severity Scale for Diabetes-Related Retinal Disease (2022)",
+  "source_url": "https://www.ncbi.nlm.nih.gov/books/NBK582431/table/db202238.T3/",
+  "scope": "Educational definitions of grading categories; not an interpretation of a particular image and not treatment guidance",
+  "definitions": {
+    "0": "The lowest category indicates no visible diabetic retinopathy findings in this grading scale.",
+    "1": "The mild category corresponds to small vessel bulges called microaneurysms in the clinical scale.",
+    "2": "This is an intermediate non-proliferative category, between mild and severe retinal disease.",
+    "3": "The severe non-proliferative category refers to extensive retinal vascular changes without proliferative vessel growth.",
+    "4": "The proliferative category involves abnormal new vessels and/or bleeding into the vitreous gel or just in front of the retina."
+  }
+}
