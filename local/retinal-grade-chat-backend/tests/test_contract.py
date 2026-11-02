@@ -2,7 +2,8 @@ import sys
 from pathlib import Path
 import pytest
 
-sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'backend'))
+package_root=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(package_root/'backend' if (package_root/'backend').is_dir() else package_root))
 from service import CASES,validate_request,explain_case
 from assistant import GradeAssistant
 
