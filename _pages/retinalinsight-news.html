@@ -1,0 +1,35 @@
+---
+layout: portfolio
+title: "Beyond a grade: bringing retinal AI evidence into view"
+description: "The story behind RetinalInsight, a research workspace connecting diabetic retinopathy grading with vessel structure, weak lesion evidence, Grad-CAM, biomarkers and cited explanations."
+permalink: /news/2026/11/retinalinsight-contextual-dr-grading/
+---
+<article class="research-dispatch">
+<p><a href="/#news">← News &amp; Updates</a></p>
+<p class="eyebrow">Research software · 3 November 2026 · Inam Ullah Khan</p>
+<h1>Beyond a grade: bringing retinal AI evidence into view.</h1>
+<p class="dispatch-deck">An AI model can return a number in seconds. Understanding what sits behind that number is a different challenge. RetinalInsight puts the image, its contextual features and the model’s explanation in the same workspace.</p>
+<figure class="retinal-news-figure"><a href="/images/retinalinsight-dashboard-hd.webp"><img src="/images/retinalinsight-dashboard-hd.webp" alt="Full HD RetinalInsight dashboard showing a retinal photograph beside model attention and grading results" width="1920" height="1080" decoding="async"></a><figcaption>1920 × 1080 dashboard overview. Select the image to open its full-resolution file. This saved research example is not a clinician assessment.</figcaption></figure>
+<div class="dispatch-prose">
+<h2>A result that invites a closer look</h2>
+<p>A retinal photograph is a view of a living network: vessels bend, divide and change in width, while image patterns provide further information for a grading model. A predicted diabetic retinopathy grade compresses that complexity into one output. My aim with RetinalInsight is to bring some of that context back into view.</p>
+<p>The workspace puts the original photograph next to the model’s probabilities and attention map. Below it, visitors can inspect the vessel structures, visual-evidence maps and measured biomarkers used to contextualise the result. The question becomes more useful: what was measured, where did the image model focus, and what can those observations reasonably tell us?</p>
+<h2>Four complementary views of the retina</h2>
+<p><strong>X1 — the vessel map.</strong> Thin vessel centrelines describe the network’s structure: how it connects, branches and ends. Overlay and skeleton views make those extracted structures visible.</p>
+<p><strong>X2 — visual clues.</strong> Five colour-coded maps show weak image cues associated with lesion-related patterns. These heuristic proxies help describe the model inputs; they do not confirm that a particular lesion is present. Grad-CAM is displayed separately and highlights image regions contributing to the model’s predicted class.</p>
+<p><strong>X3 — learned image patterns.</strong> A lesion-trained encoder turns the photograph into a numerical representation for the grader. This stream captures learned features rather than supplying verified lesion locations, boxes or counts.</p>
+<p><strong>X4 — vessel measurements.</strong> The report exposes 72 vascular biomarkers, including descriptors of vessel width, occupancy, tortuosity, curvature and network complexity. Their units, assumptions and regional context matter: a measured value alone is not a normal-or-abnormal verdict.</p>
+<h2>From evidence to a conversation</h2>
+<p>The assistant is designed to help visitors ask about a grade, an image feature or a vascular measurement. It combines the current report with a curated, cited knowledge library. That makes the explanation inspectable: the values should come from the report, and the scientific context should have a traceable source.</p>
+<p>The language component uses retrieval augmentation; adding literature is not the same as training new model weights. Improving the relevance and variety of its answers remains an active development task. Patient-history integration and clinical treatment advice are outside the current implementation.</p>
+<h2>Built on shared research</h2>
+<p>This integration builds on <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9290317/">AutoMorph, by Yukun Zhou and colleagues</a>, for retinal vascular analysis; <a href="https://arxiv.org/abs/2107.08274">lesion-based contrastive learning, by Yijin Huang, Li Lin and colleagues</a>, for the lesion-trained representation; and <a href="https://arxiv.org/abs/1610.02391">Grad-CAM, by Selvaraju and colleagues</a>, for image-model attribution. Their methods and contributions are acknowledged in the source repository.</p>
+<p>RetinalInsight sits within my wider interest in interpretable retinal imaging and oculomics. That wider research includes our survey, <a href="https://doi.org/10.1016/j.premed.2025.100023"><em>The Eye as a Window to Systemic Health</em></a>, discussed in the <a href="/news/2025/11/forbes-eye-window-systemic-health/">Forbes coverage of AI-enabled eye examinations</a>. The new software focuses on contextual DR grading; it does not establish systemic diagnoses.</p>
+<h2>A prototype with a clear next step</h2>
+<p>The research setup uses 10,000 EyePACS training images, 2,910 APTOS validation images and 1,636 Messidor-2 test images. An audit identified inconsistent X3 preprocessing in the historical external evaluation. Those scores require consistent reevaluation before they can support performance claims for this upload pipeline.</p>
+<p class="dispatch-note">This is research software requiring clinical review. Model probabilities are uncalibrated; attention and proxy maps are not confirmed lesions. Next steps include consistent external evaluation, closer review of the evidence displays and refinement of the assistant’s answers.</p>
+<p>The code, notebook and acknowledgements are available in a dedicated repository. The GitHub Pages dashboard can display saved reports locally in the browser; image analysis and live model questions require a running model environment, such as the Colab notebook.</p>
+<div class="press-links"><a href="/retinal-grade-chat/">Open RetinalInsight ↗</a><a href="https://github.com/Inamullah-Colab/retinalinsight-dr-grading">Explore the source &amp; citations ↗</a></div>
+</div>
+<figure class="retinal-news-figure"><a href="/images/retinalinsight-dashboard-full.webp"><img class="full-dashboard" src="/images/retinalinsight-dashboard-full.webp" alt="Complete RetinalInsight dashboard including the photograph, nine evidence panels, X1–X4 guide, measurement tables and assistant" width="1920" height="4989" loading="lazy" decoding="async"></a><figcaption>The complete dashboard, including all nine evidence views. Select to inspect the full-resolution image.</figcaption></figure>
+</article>

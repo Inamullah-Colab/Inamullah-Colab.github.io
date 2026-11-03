@@ -65,3 +65,25 @@
 .update-body > a { font-size: 13px; }
 @media (min-width: 621px) and (max-width: 900px) { .update-item { grid-template-columns: 100px minmax(0, 1fr); gap: 14px; } .update-image img { height: 90px; } }
 @media (max-width: 400px) { .update-item { grid-template-columns: 90px minmax(0, 1fr); gap: 12px; } .update-image img { height: 80px; } }
+
+/* RetinalInsight research announcement: a full-width editorial feature. */
+.retinal-news-feature{border-top:3px solid var(--accent);padding:28px 0 38px;margin:0 0 38px;border-bottom:1px solid var(--line)}
+.retinal-news-heading{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin:20px 0 26px}
+.retinal-news-heading h3{font:400 clamp(30px,3.5vw,46px)/1.12 Georgia,serif;letter-spacing:-1px;margin:0}
+.retinal-news-heading p{margin:0;color:var(--muted);font-size:17px}
+.retinal-news-figure{margin:0 0 26px}
+.retinal-news-figure>a{display:block;border:1px solid var(--line);background:#eff6f8;border-radius:5px;overflow:hidden}
+.retinal-news-figure img{width:100%;height:auto}
+.retinal-news-figure figcaption{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.6}
+.retinal-news-story{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.retinal-news-story p{color:var(--muted);font-size:15px;margin:0}
+.retinal-news-story strong{color:var(--ink)}
+.research-dispatch{max-width:960px;margin:54px auto 70px}
+.research-dispatch h1{font:400 clamp(36px,4.7vw,60px)/1.08 Georgia,serif;letter-spacing:-1.5px;margin:20px 0}
+.research-dispatch .dispatch-deck{font-size:21px;color:var(--muted);max-width:820px}
+.research-dispatch .dispatch-prose{max-width:760px;margin:36px auto}
+.research-dispatch h2{font:400 30px/1.2 Georgia,serif;margin:36px 0 18px}
+.research-dispatch p{overflow-wrap:break-word}
+.research-dispatch .dispatch-note{border-left:3px solid var(--accent);padding:14px 20px;background:var(--wash);font-size:15px}
+.research-dispatch .full-dashboard{max-height:none}
+@media(max-width:620px){.retinal-news-heading,.retinal-news-story{grid-template-columns:1fr;gap:20px}.retinal-news-heading p{font-size:16px}.research-dispatch{margin-block:35px}.research-dispatch .dispatch-deck{font-size:18px}}
