@@ -6,6 +6,7 @@
   const shortLabels=['No DR','Mild','Moderate','Severe','Proliferative'];
   const subLabels=['Grade 0','Grade 1','Grade 2','Grade 3','Grade 4'];
   const base=config.backendURL.replace(/\/$/,'');
+  let lastDashboardReport;let currentAssets=[];let importSequence=0;
   function connection(message,mode='') {
     $('connection').className=`connection ${mode}`;
     $('connection').querySelector('span').textContent=message;
@@ -21,6 +22,9 @@
     $('thinking').hidden=!state.busy;
     $('report-file').disabled=state.busy||state.uploading;
     if(state.imported){connection('Saved report · local viewer');$('retry').hidden=true;}
+    $('screening-file').disabled=state.busy||state.uploading;
+    $('upload-button').hidden=state.imported||!$('retinal-file').files.length;
+    syncDashboard();
   }
   function message(role,text,reference=null,references=[]) {
     const article=document.createElement('article');article.className=`message ${role}`;
@@ -112,7 +116,7 @@
   function renderEvidence(evidence) {
     if(!evidence)return;
     $('evidence-panel').hidden=false;$('stream-summaries').replaceChildren();$('evidence-images').replaceChildren();$('evidence-tables').replaceChildren();$('evidence-references').replaceChildren();
-    const descriptions={X1:'Vessel skeleton occupancy, junction and endpoint pixels, connected components, and supplementary processed-pixel length.',X2:'Five weak lesion-evidence proxy channels. A separate real Grad-CAM view attributes the frozen grader image branch; it does not replace the trained X2 inputs.',X3:'Lesion-trained contrastive embedding. The configured checkpoint does not detect lesion boxes or counts; these are explicitly unavailable.',X4:'72 measured biomarkers covering vessel density, tortuosity, curvature, fractal complexity, width, caliber ratios and region-specific structure.'};
+    const descriptions={X1:'The vessel road map: centerlines, connections, endpoints and supplementary length in processed pixels.',X2:'Weak visual clues. A separate Grad-CAM shows model attention. These pictures do not confirm a lesion.',X3:'A learned numerical description from a lesion-trained encoder. It does not locate or count lesions.',X4:'72 vessel measurements, including width, density, bending and network complexity. No clinical normal/abnormal cutoffs are supplied.'};
     ['X1','X2','X3','X4'].forEach(stream=>{
       const card=document.createElement('article');card.className='stream-card';const title=document.createElement('h3');title.textContent=stream+' · '+evidence[stream].role;const text=document.createElement('p');text.textContent=descriptions[stream];card.append(title,text);$('stream-summaries').append(card);
       const details=document.createElement('details');details.className='evidence-details';const summary=document.createElement('summary');summary.textContent=stream+' · Full measured values and definitions';details.append(summary);
@@ -121,7 +125,7 @@
       Object.entries(values).forEach(([key,value])=>{const row=document.createElement('tr');const definition=(evidence[stream].definitions||[]).find(d=>d.feature===key);const meaning=definition?definition.meaning+' '+definition.unit:stream==='X2'?'Weak proxy feature, not a lesion diagnosis':stream==='X3'?'Embedding activation, not a named lesion':key.includes('length')?'Supplemental length in processed pixels':key.includes('density')?'Skeleton occupancy fraction':key.includes('branchpoints')?'Junction pixels; not verified bifurcation count':'Computed skeleton descriptor';[key,Number(value).toPrecision(7),meaning].forEach(text=>{const td=document.createElement('td');td.textContent=text;row.append(td);});body.append(row);});
       table.append(body);wrap.append(table);details.append(wrap);$('evidence-tables').append(details);
     });
-    evidence.images.forEach(asset=>{if(!/^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(asset.data_url))return;const figure=document.createElement('figure');const img=document.createElement('img');img.src=asset.data_url;img.alt=asset.title;img.loading='lazy';const caption=document.createElement('figcaption');const title=document.createElement('strong');title.textContent=asset.title;caption.append(title,document.createTextNode(asset.caption));figure.append(img,caption);$('evidence-images').append(figure);});
+    evidence.images.forEach(asset=>{if(!/^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(asset.data_url))return;const figure=document.createElement('figure');const img=document.createElement('img');img.src=asset.data_url;img.alt=asset.title;img.loading='lazy';const caption=document.createElement('figcaption');const title=document.createElement('strong');title.textContent=asset.title;caption.append(title,document.createTextNode(asset.caption));const opener=document.createElement('button');opener.type='button';opener.className='image-open';opener.setAttribute('aria-label','Enlarge '+asset.title);opener.append(img);opener.addEventListener('click',()=>openEvidenceImage(asset));figure.dataset.group=evidenceGroup(asset);figure.append(opener,caption);$('evidence-images').append(figure);});
     const note=document.createElement('p');note.textContent=evidence.interpretation_policy;$('evidence-references').append(note);
     evidence.references.forEach(ref=>{const p=document.createElement('p');const a=document.createElement('a');a.href=ref.url;a.textContent=ref.title;a.target='_blank';a.rel='noopener noreferrer';p.append(a,document.createTextNode(' — '+ref.summary+' '+ref.limits));$('evidence-references').append(p);});
   }
@@ -150,7 +154,7 @@
       if(e[stream].supplemental_measurements&&!numericObject(e[stream].supplemental_measurements,100))throw new Error('Invalid supplementary measurements.');
       if(e[stream].definitions&&(!Array.isArray(e[stream].definitions)||e[stream].definitions.length>1000||!e[stream].definitions.every(d=>text(d.feature,500)&&text(d.meaning,5000)&&text(d.unit,1000))))throw new Error('Invalid feature descriptions.');
     }
-    for(const asset of e.images) {
+    for(const asset of [...e.images,...(e.original_image?[e.original_image]:[])]) {
       if(!text(asset.title,1000)||!text(asset.caption,5000)||typeof asset.data_url!=='string'||asset.data_url.length>2*1024*1024||!/^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(asset.data_url))throw new Error('Only embedded PNG evidence images are supported.');
       const head=atob(asset.data_url.split(',')[1].slice(0,48));
       if(head.slice(0,8)!=='\x89PNG\r\n\x1a\n')throw new Error('Invalid PNG evidence image.');
@@ -165,7 +169,7 @@
     const file=$('report-file').files[0];if(!file||state.busy||state.uploading)return;
     try {
       if(file.size>20*1024*1024)throw new Error('Choose a report no larger than 20 MB.');
-      const raw=JSON.parse(await file.text());const result=validateSavedReport(raw);
+      const sequence=++importSequence;const raw=JSON.parse(await file.text());if(sequence!==importSequence)return;const result=validateSavedReport(raw);
       state.imported=true;state.predictionId=null;state.caseId=null;state.report=raw;
       $('image-result').hidden=false;$('evidence-panel').hidden=true;$('class-probabilities').replaceChildren();$('chat-log').replaceChildren();
       $('image-preview').hidden=true;document.querySelectorAll('.grade-choice').forEach(b=>b.setAttribute('aria-pressed','false'));
@@ -242,6 +246,7 @@
   }
   $('upload-form').addEventListener('submit',uploadImage);
   $('retinal-file').addEventListener('change',()=>{
+    ++importSequence;
     if(state.previewURL)URL.revokeObjectURL(state.previewURL);
     const file=$('retinal-file').files[0];$('image-preview').hidden=!file;
     if(file){
@@ -253,6 +258,71 @@
     }
     controls();
   });
+  function evidenceGroup(asset) {
+    const id=String(asset.id||'');return id.startsWith('vessel')?'vessel':id.startsWith('proxy')?'proxy':id==='gradcam'?'gradcam':id==='embedding'?'embedding':'other';
+  }
+  function openEvidenceImage(asset) {
+    $('dialog-title').textContent=asset.title;$('dialog-image').src=asset.data_url;$('dialog-image').alt=asset.title;$('dialog-caption').textContent=asset.caption;
+    $('image-dialog').showModal();
+  }
+  function updateAttention() {
+    const index=Number($('attention-select').value);const asset=currentAssets[index];
+    $('attention-preview').hidden=!asset;$('attention-empty').hidden=Boolean(asset);
+    if(asset){$('attention-preview').src=asset.data_url;$('attention-preview').alt=asset.title;$('attention-caption').textContent=asset.caption;}
+    else $('attention-caption').textContent='Evidence views appear when a graded image report is available.';
+  }
+  function syncDashboard() {
+    const result=state.report?.prediction||state.report;
+    const file=state.imported?$('report-file').files[0]:$('retinal-file').files[0];
+    const example=state.caseId?state.cases.find(c=>c.id===state.caseId):null;
+    $('case-name').textContent=example?`Illustrative grade ${example.grade} context`:file?.name||'No file selected';
+    $('source-mode').textContent=state.uploading?'Processing image…':state.imported?'Saved Colab report':result?'Live model result':example?'Illustrative example':file?'Image selected':'Ready to begin';
+    $('result-origin').textContent=result?(state.imported?'Saved result':'Live result'):example?'Example context':'Awaiting analysis';
+    $('result-source').textContent=state.imported?'Saved report':'Connected model';
+    const graded=result&&Number.isInteger(result.predicted_grade)&&Array.isArray(result.class_probabilities);
+    $('result-empty').hidden=Boolean(result);
+    if(result){
+      $('quality-result').textContent=result.status==='quality_rejected'?'Rejected by quality model':result.quality_assessment?.Prediction===0?'Accepted by quality model':'Not recorded in report';
+      if(graded){
+        const probability=result.class_probabilities[result.predicted_grade];
+        $('interpretation-text').textContent=`${state.imported?'The saved report records':'The image model predicts'} grade ${result.predicted_grade} (${shortLabels[result.predicted_grade]}), with ${(100*probability).toFixed(1)}% model probability. This score is uncalibrated and does not confirm a diagnosis. Explore the vessel maps, evidence views and measurements below, then use the assistant to understand them.`;
+      }else $('interpretation-text').textContent=result.reason||'No grade was produced because the required measurements were incomplete.';
+    }else if(state.uploading)$('interpretation-text').textContent='The pipeline is checking image quality and extracting the required evidence. A result will only be shown when processing completes.';
+    else if(example)$('interpretation-text').textContent=`An illustrative grade ${example.grade} chat context is selected. There is no associated retinal photograph and no image analysis has been performed for this example.`;
+    else $('interpretation-text').textContent=file?'Image selected. Analyze it with the connected backend, or process it in the free Colab notebook and open its downloaded report here.':'Choose one file above: a retinal JPG/PNG for analysis, or a Colab JSON report for immediate local viewing.';
+    document.querySelectorAll('.grade-scale [data-grade]').forEach(item=>item.classList.toggle('selected',Boolean(graded)&&Number(item.dataset.grade)===result.predicted_grade));
+    if(state.report!==lastDashboardReport){
+      currentAssets=(result?.evidence?.images||[]).filter(asset=>typeof asset.data_url==='string'&&/^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(asset.data_url));
+      $('attention-select').replaceChildren();
+      if(currentAssets.length){currentAssets.forEach((asset,index)=>{const option=document.createElement('option');option.value=String(index);option.textContent=asset.title;$('attention-select').append(option);});const cam=currentAssets.findIndex(asset=>asset.id==='gradcam');$('attention-select').value=String(cam>=0?cam:0);}
+      else{const option=document.createElement('option');option.textContent='No evidence loaded';$('attention-select').append(option);}
+      $('attention-select').disabled=!currentAssets.length;updateAttention();lastDashboardReport=state.report;
+      document.querySelectorAll('.filter-button').forEach(button=>button.classList.toggle('active',button.dataset.filter==='all'));
+      document.querySelectorAll('#evidence-images figure').forEach(figure=>figure.hidden=false);
+    }
+    const original=!state.imported&&!state.caseId&&state.previewURL;
+    const sourceAsset=result?.evidence?.original_image||currentAssets.find(asset=>asset.id==='fundus_original')||currentAssets.find(asset=>asset.id==='vessel_overlay')||currentAssets[0];
+    if(original){$('image-preview').src=state.previewURL;$('image-preview').alt='Selected retinal photograph';$('image-preview').hidden=false;$('source-empty').hidden=true;$('source-image-title').textContent='Retinal photograph';$('source-image-label').textContent='Selected image';$('source-image-caption').textContent='The photograph selected on this device. Model attention and other derived views are shown separately.';}
+    else if(sourceAsset){$('image-preview').src=sourceAsset.data_url;$('image-preview').alt=sourceAsset.title;$('image-preview').hidden=false;$('source-empty').hidden=true;$('source-image-title').textContent=sourceAsset.id==='fundus_original'?'Retinal photograph':sourceAsset.id==='vessel_overlay'?'Retina with vessel overlay':'Saved image view';$('source-image-label').textContent='From report';$('source-image-caption').textContent=sourceAsset.id==='fundus_original'?sourceAsset.caption:'This saved report contains derived views. The original photograph is not included; the actual saved '+sourceAsset.title.toLowerCase()+' is shown here.';}
+    else{$('image-preview').hidden=true;$('source-empty').hidden=false;$('source-image-title').textContent='Retinal image';$('source-image-label').textContent='No image loaded';$('source-image-caption').textContent='No photograph or evidence image is available for this context.';}
+    if(state.imported)$('upload-status').textContent='Viewing saved outputs in your browser. No model is rerun and the report is not sent to the backend.';
+  }
+  $('screening-file').addEventListener('change',()=>{
+    const file=$('screening-file').files[0];if(!file)return;
+    const isReport=file.name.toLowerCase().endsWith('.json')||file.type==='application/json';
+    if(!isReport&&!/\.(png|jpe?g)$/i.test(file.name)){ $('report-status').textContent='Choose a retinal JPG/PNG image or a Colab JSON report.';return; }
+    const transfer=new DataTransfer();transfer.items.add(file);
+    if(isReport){$('retinal-file').value='';$('report-file').files=transfer.files;$('report-file').dispatchEvent(new Event('change'));}
+    else{$('report-file').value='';$('retinal-file').files=transfer.files;$('retinal-file').dispatchEvent(new Event('change'));$('report-status').textContent='Image selected. Choose Analyze image to use the connected model, or open Colab to process it there.';$('upload-status').textContent='New image analysis requires an available model backend. Saved Colab reports open without it.';}
+  });
+  $('attention-select').addEventListener('change',updateAttention);
+  $('close-image-dialog').addEventListener('click',()=>$('image-dialog').close());
+  $('image-dialog').addEventListener('click',event=>{if(event.target===$('image-dialog'))$('image-dialog').close();});
+  document.querySelectorAll('.filter-button').forEach(button=>button.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-button').forEach(other=>other.classList.toggle('active',other===button));
+    document.querySelectorAll('#evidence-images figure').forEach(figure=>figure.hidden=button.dataset.filter!=='all'&&figure.dataset.group!==button.dataset.filter);
+  }));
+  document.querySelectorAll('.nav-link').forEach(link=>link.addEventListener('click',event=>{const target=document.querySelector(link.getAttribute('href'));if(target?.hidden){event.preventDefault();$('screening').scrollIntoView();$('report-status').textContent='Open an image or Colab report above to view its images and measurements.';}document.querySelectorAll('.nav-link').forEach(other=>other.classList.toggle('active',other===link));}));
   async function init() {
     $('backend-link').href=config.spaceURL;
     try {
