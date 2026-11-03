@@ -227,12 +227,12 @@
       if(typeof data.prediction_id!=='string'||!/^[A-Za-z0-9_-]{40,64}$/.test(data.prediction_id))throw new Error('Invalid upload response.');
       $('upload-status').textContent='Image accepted. Waiting for an available image worker…';
       let ready=null;
-      while(Date.now()-start<3*60*60*1000) {
+      while(Date.now()-start<5*60*60*1000) {
         await new Promise(resolve=>setTimeout(resolve,3000));
         const poll=await fetch(base+'/api/predictions/'+data.prediction_id,{cache:'no-store',signal:AbortSignal.timeout(20000)});
         const job=await poll.json();if(!poll.ok)throw new Error(job.detail||'Unable to retrieve prediction.');
         if(job.status==='queued')$('upload-status').textContent=`Waiting for an image worker · queue position ${Number.isInteger(job.queue_position)?job.queue_position:'pending'}. Keep this page open; your image will start automatically.`;
-        if(job.status==='processing')$('upload-status').textContent='Your image is being analysed. Extracting X1–X4 and model evidence…';
+        if(job.status==='processing')$('upload-status').textContent=(job.progress?.phase==='grading'?'Features extracted. Calculating the grade and evidence…':'Your image is being analysed. Extracting X1–X4…')+(job.progress?.device==='cpu'?' Using CPU because GPU capacity is unavailable; this may take longer.':'');
         if(job.status==='failed')throw new Error(job.detail||'Processing failed. No grade was produced.');
         if(job.status==='ready'){ready=job;break;}
       }

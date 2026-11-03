@@ -1,5 +1,5 @@
 """Single-image extraction using the frozen study's original feature definitions."""
-import os,sys,json,subprocess
+import os,sys,json,subprocess,shutil,shlex
 from pathlib import Path
 from types import SimpleNamespace
 import numpy as np
@@ -11,14 +11,50 @@ AUTOMORPH=Path(os.environ.get('AUTOMORPH_ROOT','/home/i1n23/AutoMorph'))
 RXG=Path(os.environ.get('RETINAL_RXG_ROOT','/home/i1n23/retina_graph_dr/github_ready_xai_graph_dr'))
 PYTHON=Path(os.environ.get('AUTOMORPH_PYTHON','/home/i1n23/miniconda3/envs/automorph/bin/python'))
 
+def write_progress(root,phase,device):
+    target=Path(root)/'progress.json';temporary=target.with_suffix('.tmp')
+    temporary.write_text(json.dumps({'phase':phase,'device':device}));temporary.replace(target)
+
+def extraction_device():
+    if os.getenv('RETINAL_EXTRACTION_DEVICE','auto')=='cpu':return 'cpu'
+    try:
+        if torch.cuda.is_available() and torch.cuda.mem_get_info()[0]>=8*1024**3:return 'cuda'
+    except (RuntimeError,AssertionError):pass
+    return 'cpu'
+
 def predict_upload(image_path,workspace):
-    root=Path(workspace);data=root/'automorph';(data/'images').mkdir(parents=True)
-    (data/'images/upload.png').symlink_to(Path(image_path).resolve())
-    pd.DataFrame({'fundus':['upload.png'],'res':[0.008]}).to_csv(data/'resolution_information.csv',index=False)
-    env=os.environ.copy();env.update(AUTOMORPH_DATA=str(data),PATH=str(PYTHON.parent)+os.pathsep+env['PATH'],OMP_NUM_THREADS='2',MKL_NUM_THREADS='2')
-    with (root/'extract.log').open('w') as log:
-        subprocess.run(['bash','run_noclean.sh'],cwd=AUTOMORPH,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
-    return grade_extracted(image_path,root,data)
+    root=Path(workspace);data=root/'automorph';device=extraction_device()
+    for attempt in range(2):
+        if attempt:shutil.rmtree(data)
+        (data/'images').mkdir(parents=True)
+        (data/'images/upload.png').symlink_to(Path(image_path).resolve())
+        pd.DataFrame({'fundus':['upload.png'],'res':[0.008]}).to_csv(data/'resolution_information.csv',index=False)
+        env=os.environ.copy();env.update(AUTOMORPH_DATA=str(data),PATH=str(PYTHON.parent)+os.pathsep+env['PATH'],OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',MPLBACKEND='Agg')
+        if device=='cpu':
+            # Upstream shell scripts assign CUDA_VISIBLE_DEVICES=0 themselves.
+            # A private interpreter launcher enforces CPU after those assignments.
+            launchers=root/'cpu-bin';launchers.mkdir(exist_ok=True)
+            launcher=launchers/'python'
+            launcher.write_text('#!/bin/sh\nexport CUDA_VISIBLE_DEVICES=\nexec '+shlex.quote(str(PYTHON))+' \"$@\"\n')
+            launcher.chmod(0o700)
+            env['CUDA_VISIBLE_DEVICES']='';env['PATH']=str(launchers)+os.pathsep+env['PATH']
+        write_progress(root,'extracting',device)
+        logfile=root/f'extract-{attempt}.log'
+        with logfile.open('w') as log:
+            completed=subprocess.run(['bash','run_noclean.sh'],cwd=AUTOMORPH,env=env,stdout=log,stderr=subprocess.STDOUT)
+        text=logfile.read_text(errors='replace')
+        oom='out of memory' in text.lower() or 'cuda error' in text.lower()
+        if device=='cuda' and oom and attempt==0:
+            device='cpu';continue
+        if oom:raise ValueError('The server ran out of processing memory. No grade was produced. Please retry later; this is a server resource failure, not an assessment of your image.')
+        if completed.returncode or 'Traceback (most recent call last)' in text:
+            raise ValueError('The server could not complete retinal extraction. No grade was produced. This processing failure does not establish that your photograph is unsuitable.')
+        break
+    write_progress(root,'grading',device)
+    result=grade_extracted(image_path,root,data)
+    result['processing_device']=device
+    (root/'prediction.json').write_text(json.dumps(result))
+    return result
 
 def grade_extracted(image_path,root,data):
     m3=data/'Results/M3/Macular_Features.csv'

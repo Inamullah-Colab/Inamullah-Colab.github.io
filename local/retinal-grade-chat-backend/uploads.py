@@ -42,13 +42,13 @@ async def run_job(token,image):
     job=jobs[token];process=None
     try:
         with tempfile.TemporaryDirectory(prefix='retinal-upload-') as directory:
-            root=Path(directory);image.save(root/'input.png');image.close()
+            root=Path(directory);image.save(root/'input.png');image.close();job['_progress_path']=root/'progress.json'
             async with workers:
                 job['status']='processing'
                 env=os.environ.copy();env.update(OMP_NUM_THREADS='2',MKL_NUM_THREADS='2')
                 with (root/'worker.log').open('wb') as log:
                     process=await asyncio.create_subprocess_exec(str(PYTHON),str(Path(__file__).with_name('image_pipeline.py')),str(root/'input.png'),str(root),env=env,stdout=log,stderr=log,start_new_session=True)
-                    try:code=await asyncio.wait_for(process.wait(),timeout=1020)
+                    try:code=await asyncio.wait_for(process.wait(),timeout=1800)
                     except (asyncio.TimeoutError,asyncio.CancelledError):
                         os.killpg(process.pid,signal.SIGTERM)
                         try:await asyncio.wait_for(process.wait(),10)
@@ -66,7 +66,7 @@ async def run_job(token,image):
         job.update(status='failed',detail='The model server restarted. Please upload the image again.');raise
     except Exception:job.update(status='failed',detail='Image processing is unavailable. No grade was produced. Please retry later.')
     finally:
-        image.close();job['expires']=time.monotonic()+TTL
+        image.close();job.pop('_progress_path',None);job['expires']=time.monotonic()+TTL
 
 def register(app):
     @app.post('/api/predict',status_code=202)
@@ -98,6 +98,11 @@ def register(app):
     async def prediction(token:str):
         job=get_job(token)
         result={'prediction_id':token,'status':job['status']}
+        if job['status']=='processing' and job.get('_progress_path'):
+            try:
+                progress=json.loads(job['_progress_path'].read_text())
+                if progress.get('phase') in ('extracting','grading') and progress.get('device') in ('cpu','cuda'):result['progress']=progress
+            except (OSError,ValueError):pass
         if job['status']=='queued':result['queue_position']=queue_position(token)
         if job['status']=='ready':result.update(prediction=job['prediction'],example_context=False)
         if job['status']=='failed':result['detail']=job['detail']
