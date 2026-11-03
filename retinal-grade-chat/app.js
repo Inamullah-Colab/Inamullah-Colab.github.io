@@ -2,7 +2,7 @@
 (() => {
   const config=window.GRADE_DEMO_CONFIG;
   const $=id=>document.getElementById(id);
-  const state={cases:[],caseId:'grade-2',connected:false,busy:false,controller:null,predictionId:null,uploading:false,previewURL:null};
+  const state={cases:[],caseId:'grade-2',connected:false,busy:false,controller:null,predictionId:null,uploading:false,previewURL:null,report:null};
   const shortLabels=['No DR','Mild','Moderate','Severe','Proliferative'];
   const subLabels=['Grade 0','Grade 1','Grade 2','Grade 3','Grade 4'];
   const base=config.backendURL.replace(/\/$/,'');
@@ -20,7 +20,7 @@
     document.querySelectorAll('.grade-choice').forEach(b=>b.disabled=state.busy||state.uploading);
     $('thinking').hidden=!state.busy;
   }
-  function message(role,text,reference=null) {
+  function message(role,text,reference=null,references=[]) {
     const article=document.createElement('article');article.className=`message ${role}`;
     const label=document.createElement('div');label.className='message-label';label.textContent=role==='user'?'You':role==='error'?'Connection update':'Grade assistant';
     const body=document.createElement('div');body.className='message-text';body.textContent=text;
@@ -33,13 +33,14 @@
         }
       } catch (_) { /* Ignore malformed reference URLs. */ }
     }
+    references.forEach(ref=>{try{const url=new URL(ref.url);if(url.protocol==='https:'){const a=document.createElement('a');a.href=url.href;a.target='_blank';a.rel='noopener noreferrer';a.textContent=ref.title;article.append(document.createElement('br'),a);}}catch(_){}});
     $('chat-log').append(article);$('chat-log').scrollTop=$('chat-log').scrollHeight;
     return article;
   }
   function choose(caseId) {
     if(state.busy||state.uploading)return;
     state.predictionId=null;state.caseId=caseId;
-    $('image-result').hidden=true;
+    $('image-result').hidden=true;$('evidence-panel').hidden=true;state.report=null;
     document.querySelectorAll('.grade-choice').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.case===caseId)));
     const sample=state.cases.find(c=>c.id===caseId);
     $('probability').textContent=`${Math.round(100*sample.probabilities[sample.grade])}%`;
@@ -100,16 +101,33 @@
         result=await response.json();
       }
       if(result.live_llm!==true||typeof result.answer!=='string'||(state.predictionId?result.prediction_id!==state.predictionId||result.example_context!==false:result.case_id!==state.caseId))throw new Error('The backend response did not match the selected live example.');
-      message('assistant',result.answer,result.reference);
+      message('assistant',result.answer,result.reference,result.references||[]);
     } catch(error) {
       message('error',error.name==='AbortError'?'This request timed out while waiting for the hosted model. You can retry; no saved answer has been substituted.':error.message);
     } finally {clearTimeout(timer);state.busy=false;state.controller=null;controls();$('question').focus();}
   }
+  function renderEvidence(evidence) {
+    if(!evidence)return;
+    $('evidence-panel').hidden=false;$('stream-summaries').replaceChildren();$('evidence-images').replaceChildren();$('evidence-tables').replaceChildren();$('evidence-references').replaceChildren();
+    const descriptions={X1:'Vessel skeleton occupancy, junction and endpoint pixels, connected components, and supplementary processed-pixel length.',X2:'Five weak lesion-evidence proxy channels. A separate real Grad-CAM view attributes the frozen grader image branch; it does not replace the trained X2 inputs.',X3:'Lesion-trained contrastive embedding. The configured checkpoint does not detect lesion boxes or counts; these are explicitly unavailable.',X4:'72 measured biomarkers covering vessel density, tortuosity, curvature, fractal complexity, width, caliber ratios and region-specific structure.'};
+    ['X1','X2','X3','X4'].forEach(stream=>{
+      const card=document.createElement('article');card.className='stream-card';const title=document.createElement('h3');title.textContent=stream+' · '+evidence[stream].role;const text=document.createElement('p');text.textContent=descriptions[stream];card.append(title,text);$('stream-summaries').append(card);
+      const details=document.createElement('details');details.className='evidence-details';const summary=document.createElement('summary');summary.textContent=stream+' · Full measured values and definitions';details.append(summary);
+      const wrap=document.createElement('div');wrap.className='feature-table-wrap';const table=document.createElement('table');table.className='feature-table';const head=document.createElement('thead');const tr=document.createElement('tr');['Feature','Value','Meaning / units'].forEach(label=>{const th=document.createElement('th');th.textContent=label;tr.append(th);});head.append(tr);table.append(head);const body=document.createElement('tbody');
+      const values=stream==='X3'?Object.fromEntries(evidence.X3.top_components.map(v=>['embedding component '+v.index,v.value])):{...evidence[stream].features,...(evidence[stream].supplemental_measurements||{})};
+      Object.entries(values).forEach(([key,value])=>{const row=document.createElement('tr');const definition=(evidence[stream].definitions||[]).find(d=>d.feature===key);const meaning=definition?definition.meaning+' '+definition.unit:stream==='X2'?'Weak proxy feature, not a lesion diagnosis':stream==='X3'?'Embedding activation, not a named lesion':key.includes('length')?'Supplemental length in processed pixels':key.includes('density')?'Skeleton occupancy fraction':key.includes('branchpoints')?'Junction pixels; not verified bifurcation count':'Computed skeleton descriptor';[key,Number(value).toPrecision(7),meaning].forEach(text=>{const td=document.createElement('td');td.textContent=text;row.append(td);});body.append(row);});
+      table.append(body);wrap.append(table);details.append(wrap);$('evidence-tables').append(details);
+    });
+    evidence.images.forEach(asset=>{if(!/^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(asset.data_url))return;const figure=document.createElement('figure');const img=document.createElement('img');img.src=asset.data_url;img.alt=asset.title;img.loading='lazy';const caption=document.createElement('figcaption');const title=document.createElement('strong');title.textContent=asset.title;caption.append(title,document.createTextNode(asset.caption));figure.append(img,caption);$('evidence-images').append(figure);});
+    const note=document.createElement('p');note.textContent=evidence.interpretation_policy;$('evidence-references').append(note);
+    evidence.references.forEach(ref=>{const p=document.createElement('p');const a=document.createElement('a');a.href=ref.url;a.textContent=ref.title;a.target='_blank';a.rel='noopener noreferrer';p.append(a,document.createTextNode(' — '+ref.summary+' '+ref.limits));$('evidence-references').append(p);});
+  }
+  $('download-report').addEventListener('click',()=>{if(!state.report)return;const url=URL.createObjectURL(new Blob([JSON.stringify(state.report,null,2)],{type:'application/json'}));const link=document.createElement('a');link.href=url;link.download='retinal-evidence-report.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),5000);});
   async function uploadImage(event) {
     event.preventDefault();const file=$('retinal-file').files[0];
     if(!file||state.busy||state.uploading||!state.connected)return;
     if(file.size>10*1024*1024){$('upload-status').textContent='Choose a file no larger than 10 MB.';return;}
-    state.uploading=true;state.caseId=null;state.predictionId=null;$('image-result').hidden=true;
+    state.uploading=true;state.caseId=null;state.predictionId=null;$('image-result').hidden=true;$('evidence-panel').hidden=true;state.report=null;
     document.querySelectorAll('.grade-choice').forEach(b=>b.setAttribute('aria-pressed','false'));
     $('chat-log').replaceChildren();$('probability').textContent='—';
     document.querySelector('.profile').style.setProperty('--score','0%');controls();
@@ -133,7 +151,7 @@
       if(!ready)throw new Error('Image processing timed out. No result is shown.');
       const result=ready.prediction;const probs=result.class_probabilities;
       if(!Array.isArray(probs)||probs.length!==5||!probs.every(v=>Number.isFinite(v)&&v>=0&&v<=1)||!Number.isInteger(result.predicted_grade)||result.predicted_grade<0||result.predicted_grade>4)throw new Error('Invalid grading response.');
-      state.predictionId=data.prediction_id;
+      state.predictionId=data.prediction_id;state.report=ready;renderEvidence(result.evidence);
       $('predicted-grade').textContent=`Grade ${result.predicted_grade} · ${shortLabels[result.predicted_grade]}`;
       $('class-probabilities').replaceChildren();
       probs.forEach((probability,grade)=>{
@@ -159,7 +177,7 @@
     const file=$('retinal-file').files[0];$('image-preview').hidden=!file;
     if(file){
       state.previewURL=URL.createObjectURL(file);$('image-preview').src=state.previewURL;
-      state.caseId=null;state.predictionId=null;$('image-result').hidden=true;
+      state.caseId=null;state.predictionId=null;$('image-result').hidden=true;$('evidence-panel').hidden=true;state.report=null;
       document.querySelectorAll('.grade-choice').forEach(b=>b.setAttribute('aria-pressed','false'));
       $('chat-log').replaceChildren();message('assistant','New photograph selected. Choose Analyze retinal image to extract X1–X4 and obtain its grading result.');
       $('probability').textContent='—';document.querySelector('.profile').style.setProperty('--score','0%');

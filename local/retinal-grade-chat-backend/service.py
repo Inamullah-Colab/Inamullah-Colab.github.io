@@ -24,8 +24,14 @@ def explain_case(assistant,question,case_id):
 def explain_prediction(assistant,question,prediction_id,prediction):
     if not isinstance(question,str) or not question.strip() or len(question)>1200:raise ValueError('Enter a question within 1,200 characters.')
     response=assistant.answer(question,prediction['class_probabilities'],prediction['streams_used'])
+    from evidence import explain_evidence
+    from assistant import GradeAssistant
+    evidence_text,refs=('',[])
+    if GradeAssistant.supported_intent(question)=='evidence':
+        evidence_text,refs=explain_evidence(question,prediction.get('evidence'))
+        if evidence_text:response['answer']+='\n\n'+evidence_text
     return {'answer':response['answer'],'facts':response['facts'],'reference':response.get('reference'),
-            'prediction_id':prediction_id,'example_context':False,
+            'prediction_id':prediction_id,'example_context':False,'references':refs,'evidence_grounded':bool(evidence_text),
             'context_provenance':'Actual uploaded-image prediction from the frozen '+prediction['model_stage']+' grader and newly extracted X1–X4 streams. Research output requiring clinical review.',
             'model':assistant.cfg['model_id'],'model_revision':assistant.cfg['revision'],'live_llm':True,
             'method':'Live LLM explanation planning with scope guards and server-held image grading facts.',

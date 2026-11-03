@@ -55,7 +55,7 @@ class GradeAssistant:
             ('history',r'\bhistory\b|previous|earlier|\bold\b|last year|last visit|past medical|\brecords?\b'),
             ('treatment',r'treat|medicat|medicin|prescri|\bdrug\b|\bdose\b|tablet|insulin|surg|\blaser\b|inject|eye drops?|therapy'),
             ('confidence',r'confiden|probab|certain|uncertain|reliab|\bwrong\b|incorrect|calibrat|\btrust\b|\bchances?\b|accura|\berrors?\b'),
-            ('evidence',r'\bwhy\b|evidence|features?|biomarker|\binputs?\b|finding|information|\bbasis\b|vessel|vascular|reason'),
+            ('evidence',r'\bx[1-4]\b|literature|papers?|studies|research|grad.?cam|xai|lesion|morph|curvat|length|tortuos|fractal|density|arter|vein|\bwhy\b|evidence|features?|biomarker|\binputs?\b|finding|information|\bbasis\b|vessel|vascular|reason'),
             ('grade',r'\bgrades?\b|\bstages?\b|sever|\bmild\b|\bmoderate\b|proliferative|categor|classif|\blabel\b|advanced disease|what.*mean|explain this|interpret this')]
         for intent,pattern in groups:
             if re.search(pattern,q):return intent
@@ -84,7 +84,7 @@ class GradeAssistant:
         reference=json.loads((ROOT/'grade_reference.json').read_text())
         definition='General category definition: '+reference['definitions'][str(grade)]
         facts={'predicted_grade':grade,'grade_label':GRADES[grade],'class_probabilities':p.tolist(),'max_probability':float(p.max()),'calibration_status':'not clinically calibrated','streams_used':streams}
-        stream_names={'raw_image':'the retinal photograph','X1':'blood-vessel structure','X2':'model-derived lesion cues','X3':'image features','X4':'retinal vessel biomarkers'}
+        stream_names={'raw_image':'the retinal photograph','X1':'blood-vessel structure','X2':'weak lesion-evidence proxies','X3':'lesion-trained contrastive image features','X4':'retinal vessel biomarkers'}
         answers={
             'grade':f'The image model predicts grade {grade}: {GRADES[grade]}. '+definition+' Image findings need clinical review.',
             'confidence':f'The largest model probability is {p.max():.1%}. It is not a validated probability that this prediction is correct.',

@@ -1,0 +1,6 @@
+artifacts/*.tar.gz
+reports/
+__pycache__/
+*.pyc
+.venv/
+.env

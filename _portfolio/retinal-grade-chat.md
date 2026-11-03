@@ -1,11 +1,13 @@
 ---
-title: "Retinal Grade Explorer: image grading and live LLM explanations"
-excerpt: "Upload a retinal JPG/PNG for X1–X4 extraction, ResNet-152 grading, probabilities and live Qwen explanations. Research demonstration."
+title: "Retinal Evidence Explorer: morphology, grading and LLM explanations"
+excerpt: "Inspect X1–X4 vessel structures, weak evidence, Grad-CAM and biomarkers, or run the interactive Colab notebook."
 collection: portfolio
 ---
 
-[Open the retinal image grading demo](/retinal-grade-chat/)
+[Open the retinal evidence website](/retinal-grade-chat/)
 
-Upload a retinal photograph to run the original X1–X4 extractors and frozen ResNet-152 grader. The page displays all five class probabilities and a live Qwen explanation tied to the server-held prediction. Optional examples are illustrative.
+[Open the free interactive Colab notebook](https://colab.research.google.com/github/Inamullah-Colab/Inamullah-Colab.github.io/blob/master/local/retinal-colab-evidence/notebooks/Retinal_Evidence_Explorer.ipynb)
 
-This is a research model requiring clinical review. Historical external evaluation used different X3 preprocessing from training, so those scores are not performance estimates for this training-aligned upload pipeline. Consistent reevaluation is needed. No treatment decisions or patient history are included. The temporary HTTPS backend requires the existing research server to remain running.
+Actual image predictions are accompanied by vessel skeleton overlays, all 72 X4 biomarkers, weak X2 evidence maps, a separate true Grad-CAM, and summaries of the lesion-trained X3 representation. A local Qwen assistant explains measured results with primary literature citations. X3 is an encoder; lesion boxes and counts are unavailable.
+
+The separate source package is in local/retinal-colab-evidence. Colab requires the supplied model bundle in the user's Drive and starts no public server. The website backend still requires the existing server and temporary tunnel. Historical external scores require consistent X3 preprocessing reevaluation. This is research software requiring clinical review.

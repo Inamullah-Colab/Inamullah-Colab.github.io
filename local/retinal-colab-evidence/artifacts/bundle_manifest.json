@@ -1,0 +1,589 @@
+{
+  "version": 1,
+  "files": {
+    "AutoMorph/csv_merge.py": {
+      "sha256": "be1060d45414260c8b3ce6d3835eb409f21a8a5140c67acb50c8ba05e7ec8389",
+      "bytes": 2187
+    },
+    "AutoMorph/automorph_data.py": {
+      "sha256": "3a86e0e1a09e25f247e7411e4cda23f9c9170b2a16ada6e90e0978c8e485a3ae",
+      "bytes": 786
+    },
+    "AutoMorph/run_noclean.sh": {
+      "sha256": "6f27c7763acc1ad677092c00f0602f0bbc63b8f6ece63b4adec596a8b645889e",
+      "bytes": 2490
+    },
+    "AutoMorph/README.md": {
+      "sha256": "2520b69925a529ac694492baa867aa2483bc059430927d1da7e799bae0e22b21",
+      "bytes": 3264
+    },
+    "AutoMorph/LICENSE": {
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    "AutoMorph/M0_Preprocess/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "AutoMorph/M0_Preprocess/EyeQ_process_main.py": {
+      "sha256": "9e6108ed32951c7633b13bfddf55870e79a18a2b2cb2c1708bd1784d491d938a",
+      "bytes": 2053
+    },
+    "AutoMorph/M0_Preprocess/fundus_prep.py": {
+      "sha256": "701bc837e1b7cfdeeef6702b918b2f612fe1c3fa83c2b229ee1ce2879da49d71",
+      "bytes": 6153
+    },
+    "AutoMorph/M1_Retinal_Image_quality_EyePACS/merge_quality_assessment.py": {
+      "sha256": "c6fdb7a6ddffdd1f09337274793184710e63b5eab66a809bac25181959073255",
+      "bytes": 1433
+    },
+    "AutoMorph/M1_Retinal_Image_quality_EyePACS/model.py": {
+      "sha256": "f6fb08a4e4d16a15905c499fe8955914818a33ce494432926cf9c1b7fcc01e70",
+      "bytes": 3299
+    },
+    "AutoMorph/M1_Retinal_Image_quality_EyePACS/test_outside.sh": {
+      "sha256": "42443684caca4e1050deec6118f443c3288de090a9b25fa3dcfe76e34c8c855a",
+      "bytes": 540
+    },
+    "AutoMorph/M1_Retinal_Image_quality_EyePACS/test_outside.py": {
+      "sha256": "157a7e8d475eec4604a6aeda0713666283572d3a2bdf655c07ee59202dac18be",
+      "bytes": 13263
+    },
+    "AutoMorph/M1_Retinal_Image_quality_EyePACS/dataset.py": {
+      "sha256": "c968f66df5eb2ba2200bc4b53f27dd9583bc19e1307509cf3d932bd1b70a7536",
+      "bytes": 4699
+    },
+    "AutoMorph/M1_Retinal_Image_quality_EyePACS/Retinal_quality/EyePACS_quality/efficientnet/1_seed_40/best_loss_checkpoint.pth": {
+      "sha256": "51c337cae6393eaef9fb8a80ff8fbc02013ac10de62f9777aa5a338c8b3ccbc6",
+      "bytes": 72859173
+    },
+    "AutoMorph/M1_Retinal_Image_quality_EyePACS/Retinal_quality/EyePACS_quality/efficientnet/2_seed_38/best_loss_checkpoint.pth": {
+      "sha256": "12b730d353f41bbb8bb08126280dbb663bc07c007b1b2d76001fff266edaef4a",
+      "bytes": 72859173
+    },
+    "AutoMorph/M1_Retinal_Image_quality_EyePACS/Retinal_quality/EyePACS_quality/efficientnet/3_seed_36/best_loss_checkpoint.pth": {
+      "sha256": "3b775a78481b69004b56164f23e3122046846d368b07bfaf7707c041aedd531f",
+      "bytes": 72859173
+    },
+    "AutoMorph/M1_Retinal_Image_quality_EyePACS/Retinal_quality/EyePACS_quality/efficientnet/7_seed_28/best_loss_checkpoint.pth": {
+      "sha256": "f17683b20bc6ce4f1945cf86826ae8567bbbeae25dbd728b923162533209a6c8",
+      "bytes": 72859173
+    },
+    "AutoMorph/M1_Retinal_Image_quality_EyePACS/Retinal_quality/EyePACS_quality/efficientnet/6_seed_30/best_loss_checkpoint.pth": {
+      "sha256": "dc8cf19c7807666251d461ee3ab93fd26dc3c357f4dcb1819de5d5f603562f24",
+      "bytes": 72859173
+    },
+    "AutoMorph/M1_Retinal_Image_quality_EyePACS/Retinal_quality/EyePACS_quality/efficientnet/5_seed_32/best_loss_checkpoint.pth": {
+      "sha256": "d8f2c23c23a5651d8ce1574e86a440082becf6b330d03c8af880ee68b71abff3",
+      "bytes": 72859173
+    },
+    "AutoMorph/M1_Retinal_Image_quality_EyePACS/Retinal_quality/EyePACS_quality/efficientnet/0_seed_42/best_loss_checkpoint.pth": {
+      "sha256": "a9e2a9f530e0ddd0ad2b442e4eeb5d4d28bc8afd309971c7625274ae0fef0063",
+      "bytes": 72859173
+    },
+    "AutoMorph/M1_Retinal_Image_quality_EyePACS/Retinal_quality/EyePACS_quality/efficientnet/4_seed_34/best_loss_checkpoint.pth": {
+      "sha256": "9fcfd919558a6230d4190d400971958c4491f939435e9d3903af945b6a9b46ce",
+      "bytes": 72859173
+    },
+    "AutoMorph/M2_Artery_vein/test_outside.sh": {
+      "sha256": "b1081bd844790663f0896b8578136443cc2c45bd8e8b92d953baac4c66890e51",
+      "bytes": 520
+    },
+    "AutoMorph/M2_Artery_vein/test_outside.py": {
+      "sha256": "e2cd04e4f57800d9c4988ee0912503a9da40a4af69cd43ad1a4a56c233d2732f",
+      "bytes": 23639
+    },
+    "AutoMorph/M2_Artery_vein/FD_cal.py": {
+      "sha256": "2be3b92d7e9f50c3db45aa7ceab282c7892cb3ec8370b8d7a76f926b601ba5e9",
+      "bytes": 1209
+    },
+    "AutoMorph/M2_Artery_vein/scripts/model.py": {
+      "sha256": "aebe7ecc2e138066d7f615391902c319fdb9ec6cc94b2d0b76aff6a04c883961",
+      "bytes": 11603
+    },
+    "AutoMorph/M2_Artery_vein/scripts/utils.py": {
+      "sha256": "f33853960cf372c52e7277d641b68e79ba3d07b6824a8a11aa5019979e0ad581",
+      "bytes": 512
+    },
+    "AutoMorph/M2_Artery_vein/scripts/dataset.py": {
+      "sha256": "f939ec7f59043a5c37a02eb46a37d8a88f1c8c2a3f556d39a8fec1fd7d02c52f",
+      "bytes": 8241
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_28/Discriminator_unet/CP_best_F1_all.pth": {
+      "sha256": "b2fdc3a7046a74b6e2d9b64abed32fb105fa27cccf2a1405d739ca509a457991",
+      "bytes": 36664847
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_28/Discriminator_unet/CP_best_F1_V.pth": {
+      "sha256": "6b2c68a0c283e053d39940b80b19d46aa74c2010ba3427ffa3c45ef3f8e93d15",
+      "bytes": 34647455
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_28/Discriminator_unet/CP_best_F1_A.pth": {
+      "sha256": "5c74fa3c3bcaf2e82d70a07e06130496b3aaed9ed12d404a90a8bd931ebfcdc9",
+      "bytes": 34647455
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_34/Discriminator_unet/CP_best_F1_all.pth": {
+      "sha256": "76f105d7263590b738805471c33c9a064e7262c7980f0923b58e3c1cc8d29eb1",
+      "bytes": 36664847
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_34/Discriminator_unet/CP_best_F1_V.pth": {
+      "sha256": "a39438cbe2c3a570af4f48f9aac60fd04bf5fe79e5a7059284823973f88dad72",
+      "bytes": 34647455
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_34/Discriminator_unet/CP_best_F1_A.pth": {
+      "sha256": "a00245a32a3d73f97fafd00ec00ee8f5702dfee45273651f6151074f1574f858",
+      "bytes": 34647455
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_42/Discriminator_unet/CP_best_F1_all.pth": {
+      "sha256": "d7533956fbe66cfeacb96b3adc64c5b2cde1ccf8f7ba18ab6fd202cc8b378bfd",
+      "bytes": 36664847
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_42/Discriminator_unet/CP_best_F1_V.pth": {
+      "sha256": "bd046264bc5f7efd484318762e65a82eda3475276b350a7e44ba09df137e79cf",
+      "bytes": 34647455
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_42/Discriminator_unet/CP_best_F1_A.pth": {
+      "sha256": "a4575fc7af025e2bdc84f78c7f0caddabf376a97f65717f7066871fb8acd275e",
+      "bytes": 34647455
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_38/Discriminator_unet/CP_best_F1_all.pth": {
+      "sha256": "81af0349273dd9875707b2991571f4fd5bdd7db53d1278122f0a68d5e86da566",
+      "bytes": 36664847
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_38/Discriminator_unet/CP_best_F1_V.pth": {
+      "sha256": "6b584dbf2ea88aed44fcbe4350badc1a6ffd15c04ea07764c4ddab69be7ca0c8",
+      "bytes": 34647455
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_38/Discriminator_unet/CP_best_F1_A.pth": {
+      "sha256": "b87d74428a1570839b569549667ccb82d66a814be7f6cd3212753f1bd51521a0",
+      "bytes": 34647455
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_36/Discriminator_unet/CP_best_F1_all.pth": {
+      "sha256": "397b7719ec6fe9d029285567a7c88f60c9f2b0f68843c1a125a08d512cd69dea",
+      "bytes": 36664847
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_36/Discriminator_unet/CP_best_F1_V.pth": {
+      "sha256": "6b643c0c7c91dd7124b257b698e192d8b5f4af0611bf7c9fd0b30948ec2f3415",
+      "bytes": 34647455
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_36/Discriminator_unet/CP_best_F1_A.pth": {
+      "sha256": "dbf5ab5cd1ea7dccbc522ee5c423d69efd45467f35d7af20d3c0d60d8c31b72e",
+      "bytes": 34647455
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_32/Discriminator_unet/CP_best_F1_all.pth": {
+      "sha256": "e0cd6dc90704992bea6fd9a51dd497cadc46ddd01ba027df5f9ca48db0cc196d",
+      "bytes": 36664847
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_32/Discriminator_unet/CP_best_F1_V.pth": {
+      "sha256": "1b824cab65bea3dfa8068dbefa76cc6bf995231269332251234c06c232ca7268",
+      "bytes": 34647455
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_32/Discriminator_unet/CP_best_F1_A.pth": {
+      "sha256": "b9abc2ebe6aa072e76c092116211766a3daa67bbc3e612b205546ae8659ed95f",
+      "bytes": 34647455
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_30/Discriminator_unet/CP_best_F1_all.pth": {
+      "sha256": "dd2e7b1aba15e37b3973aae615d2b3b30451801ad6cf59b9d5809081c296aaa4",
+      "bytes": 36664847
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_30/Discriminator_unet/CP_best_F1_V.pth": {
+      "sha256": "03568ca6d2623e0f85125d54125e77ed481d2a2846a95ebf980acce95cbd7d13",
+      "bytes": 34647455
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_30/Discriminator_unet/CP_best_F1_A.pth": {
+      "sha256": "51293fe408dc9deba9f691a003f3fe55f1a08c204049152698a7cac3af0e8e91",
+      "bytes": 34647455
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_40/Discriminator_unet/CP_best_F1_all.pth": {
+      "sha256": "da7c942a0ab876b1951d4c6bcb53bf093e4a8ff56351adedc275274ce58f6672",
+      "bytes": 36664847
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_40/Discriminator_unet/CP_best_F1_V.pth": {
+      "sha256": "d82da459466fd3dcf62006b605de86dbd6f04f90fbd74cccdfed4cd7f05d9496",
+      "bytes": 34647455
+    },
+    "AutoMorph/M2_Artery_vein/ALL-AV/20210724_ALL-AV_randomseed_40/Discriminator_unet/CP_best_F1_A.pth": {
+      "sha256": "4b5cad4edd51cb0a583eb99fe433bf193c1ad4102d7e4f5a7dcaab4d26524f3b",
+      "bytes": 34647455
+    },
+    "AutoMorph/M2_Vessel_seg/test_outside_integrated.py": {
+      "sha256": "295e4bd16a1f133ca8aebff95a3c4b764dcbebe71d2793ab8c9bb1bbc3bec92a",
+      "bytes": 16045
+    },
+    "AutoMorph/M2_Vessel_seg/model.py": {
+      "sha256": "af6083a8b8d9ae4f3dfca956c697757403941626900ebe3152ea63ed81ed4a83",
+      "bytes": 7241
+    },
+    "AutoMorph/M2_Vessel_seg/test_outside.sh": {
+      "sha256": "059cce6b0c0a10b8f1f64eea30b559519eec9e243a4666dcaf797a64ff9bb46c",
+      "bytes": 1601
+    },
+    "AutoMorph/M2_Vessel_seg/utils.py": {
+      "sha256": "6a128feca741ad4cd460960c7de1586cfcee54fc86373b0b14744efe47656b9b",
+      "bytes": 305
+    },
+    "AutoMorph/M2_Vessel_seg/FD_cal.py": {
+      "sha256": "2be3b92d7e9f50c3db45aa7ceab282c7892cb3ec8370b8d7a76f926b601ba5e9",
+      "bytes": 1209
+    },
+    "AutoMorph/M2_Vessel_seg/dataset.py": {
+      "sha256": "133cf92e813a3dd6649227e7329e3a6138655e8b15af092e9df6953e26028ba9",
+      "bytes": 10277
+    },
+    "AutoMorph/M2_Vessel_seg/Saved_model/train_on_ALL-SIX/20210630_uniform_thres40_ALL-SIX_savebest_randomseed_30/G_best_F1_epoch.pth": {
+      "sha256": "01d8c6586e2cb85379ad4450faf52b91211b11a7523872582c73d8a056695bbf",
+      "bytes": 34647071
+    },
+    "AutoMorph/M2_Vessel_seg/Saved_model/train_on_ALL-SIX/20210630_uniform_thres40_ALL-SIX_savebest_randomseed_28/G_best_F1_epoch.pth": {
+      "sha256": "f9a7a48408aae2d5ca6b804b0161685e7f1eccd4392d4fb05a75a251a9794b05",
+      "bytes": 34647071
+    },
+    "AutoMorph/M2_Vessel_seg/Saved_model/train_on_ALL-SIX/20210630_uniform_thres40_ALL-SIX_savebest_randomseed_32/G_best_F1_epoch.pth": {
+      "sha256": "f7f8478600c992845dbd050328e35212376f4043b9aeefef81f90862d118fe2a",
+      "bytes": 34647071
+    },
+    "AutoMorph/M2_Vessel_seg/Saved_model/train_on_ALL-SIX/20210630_uniform_thres40_ALL-SIX_savebest_randomseed_26/G_best_F1_epoch.pth": {
+      "sha256": "d5398fe124b075a475dd12df4228ab63142afb9aeddcbff1412fbe0fc37e0e4a",
+      "bytes": 34647071
+    },
+    "AutoMorph/M2_Vessel_seg/Saved_model/train_on_ALL-SIX/20210630_uniform_thres40_ALL-SIX_savebest_randomseed_34/G_best_F1_epoch.pth": {
+      "sha256": "f52ae57d0c6edf40ea140e1895168325bf2d86a992154b96d15360b7f28e6fab",
+      "bytes": 34647071
+    },
+    "AutoMorph/M2_Vessel_seg/Saved_model/train_on_ALL-SIX/20210630_uniform_thres40_ALL-SIX_savebest_randomseed_42/G_best_F1_epoch.pth": {
+      "sha256": "d611116ab4b4f70890dc8325c1328fd1d756a2771f5438a7a89e45b2d833dcdb",
+      "bytes": 34647071
+    },
+    "AutoMorph/M2_Vessel_seg/Saved_model/train_on_ALL-SIX/20210630_uniform_thres40_ALL-SIX_savebest_randomseed_38/G_best_F1_epoch.pth": {
+      "sha256": "941383529931393b1ba8fd89686aa1e881b1434e8a599c7b74079ce1a1a889e0",
+      "bytes": 34647071
+    },
+    "AutoMorph/M2_Vessel_seg/Saved_model/train_on_ALL-SIX/20210630_uniform_thres40_ALL-SIX_savebest_randomseed_24/G_best_F1_epoch.pth": {
+      "sha256": "916e4f3ed5725bf11800de42c6adff7205455e3a7ce22ae712e67f3328aa1362",
+      "bytes": 34647071
+    },
+    "AutoMorph/M2_Vessel_seg/Saved_model/train_on_ALL-SIX/20210630_uniform_thres40_ALL-SIX_savebest_randomseed_40/G_best_F1_epoch.pth": {
+      "sha256": "8b824b13fe61cda6ad4836f72cc5f9aaef9f548cbc29903997108cca2d746241",
+      "bytes": 34647071
+    },
+    "AutoMorph/M2_Vessel_seg/Saved_model/train_on_ALL-SIX/20210630_uniform_thres40_ALL-SIX_savebest_randomseed_36/G_best_F1_epoch.pth": {
+      "sha256": "24bee0876f2da5992a08221cf61dba3de98f4d5d3ad4f025ccb7fde643148b11",
+      "bytes": 34647071
+    },
+    "AutoMorph/M2_lwnet_disc_cup/test_outside.sh": {
+      "sha256": "1d4a2c47268c3e4e087cebb2b8c66e49b0b8d11de837b416366ba66a58f8862f",
+      "bytes": 211
+    },
+    "AutoMorph/M2_lwnet_disc_cup/generate_av_results.py": {
+      "sha256": "d539ea131c5e8a55059da5e251929e74a34cde24beef7db5c992aaaf8d4755b7",
+      "bytes": 36910
+    },
+    "AutoMorph/M2_lwnet_disc_cup/utils/model_saving_loading.py": {
+      "sha256": "02d628670359b55e7554c27611b14ee8ea3e884d450e6a4cf04ba137736f39d2",
+      "bytes": 1081
+    },
+    "AutoMorph/M2_lwnet_disc_cup/utils/reproducibility.py": {
+      "sha256": "a19760d2be77df561dedcf48ff720245a4bc2c67e9135f7eda0666dd7e4aac88",
+      "bytes": 440
+    },
+    "AutoMorph/M2_lwnet_disc_cup/utils/get_loaders.py": {
+      "sha256": "7d8893a901cd9898fe4132fba6029440b43bda6aa63037b93881753db3198207",
+      "bytes": 8839
+    },
+    "AutoMorph/M2_lwnet_disc_cup/utils/evaluation.py": {
+      "sha256": "fdcf202cc6262eb89cd5badbf86f947837aeb33eb552047cea3555be14f35562",
+      "bytes": 4862
+    },
+    "AutoMorph/M2_lwnet_disc_cup/utils/paired_transforms_tv04.py": {
+      "sha256": "53b69d639b946853f17cbab1ec7b9f64b87fcd3bbff3dade74d08b2145f32ded",
+      "bytes": 57401
+    },
+    "AutoMorph/M2_lwnet_disc_cup/utils/get_loaders_backup.py": {
+      "sha256": "dc9aa8990b46a1918b3bedb834f2e90ac630d2ddf286a3cd6434edeaf6c83789",
+      "bytes": 8614
+    },
+    "AutoMorph/M2_lwnet_disc_cup/models/get_model.py": {
+      "sha256": "53f79d5275f9d156c64d5fe9f0d6f3af2c33f6110a43533760119e06b30a7d34",
+      "bytes": 1922
+    },
+    "AutoMorph/M2_lwnet_disc_cup/models/res_unet_adrian.py": {
+      "sha256": "021f4f37405acf517e247e769dd0a89cf986d66eba733d012027a085617f15cb",
+      "bytes": 8290
+    },
+    "AutoMorph/M2_lwnet_disc_cup/experiments/wnet_All_three_1024_disc_cup/32/config.cfg": {
+      "sha256": "1136c1b15bd404d093058137c0d61453330c44ca1c8ec69d091a07490e73ef0d",
+      "bytes": 500
+    },
+    "AutoMorph/M2_lwnet_disc_cup/experiments/wnet_All_three_1024_disc_cup/32/model_checkpoint.pth": {
+      "sha256": "b072e49f565de497c66d1dd7a737d89ba32642ea8463be585939661b07ac7243",
+      "bytes": 1002643
+    },
+    "AutoMorph/M2_lwnet_disc_cup/experiments/wnet_All_three_1024_disc_cup/30/config.cfg": {
+      "sha256": "3386a05622cd93ab40f0589b9984cb8f48fdb04b3d3a200de77727316a73a39a",
+      "bytes": 500
+    },
+    "AutoMorph/M2_lwnet_disc_cup/experiments/wnet_All_three_1024_disc_cup/30/model_checkpoint.pth": {
+      "sha256": "e848215a59d02a770d01728e61fb3e88702c41b27c3fd1bc5025840c24168406",
+      "bytes": 1002643
+    },
+    "AutoMorph/M2_lwnet_disc_cup/experiments/wnet_All_three_1024_disc_cup/36/config.cfg": {
+      "sha256": "74c264f4971ccfaaca41a74948b54382f5bbb62fcab441672bebf2383f438d65",
+      "bytes": 500
+    },
+    "AutoMorph/M2_lwnet_disc_cup/experiments/wnet_All_three_1024_disc_cup/36/model_checkpoint.pth": {
+      "sha256": "cb8b457059f8d0a642d8ef6f90144e0c8231913578f8f69772e1ba43014cccd0",
+      "bytes": 1002643
+    },
+    "AutoMorph/M2_lwnet_disc_cup/experiments/wnet_All_three_1024_disc_cup/40/config.cfg": {
+      "sha256": "559a088a57b6b0a5718d3be850231ec20cb16956b41c97a047e9d3adab5afa94",
+      "bytes": 500
+    },
+    "AutoMorph/M2_lwnet_disc_cup/experiments/wnet_All_three_1024_disc_cup/40/model_checkpoint.pth": {
+      "sha256": "5fd4fb7792b7941245014f1d1649c2822b8b409b40ccab30463858a50b2889e8",
+      "bytes": 1002643
+    },
+    "AutoMorph/M2_lwnet_disc_cup/experiments/wnet_All_three_1024_disc_cup/28/config.cfg": {
+      "sha256": "f9762d8ff49f79c2c386373b36877e5d7172d107038b934b145fea5db76f4e36",
+      "bytes": 500
+    },
+    "AutoMorph/M2_lwnet_disc_cup/experiments/wnet_All_three_1024_disc_cup/28/model_checkpoint.pth": {
+      "sha256": "6022098f7fa5494b60e673685a7baab350d4d3f71a221bd79106658f23d555c2",
+      "bytes": 1002643
+    },
+    "AutoMorph/M2_lwnet_disc_cup/experiments/wnet_All_three_1024_disc_cup/42/config.cfg": {
+      "sha256": "a227ef1ae092ee24666435c99da8cd599fdea692e46de3d1d68c3595a2d4bc9f",
+      "bytes": 483
+    },
+    "AutoMorph/M2_lwnet_disc_cup/experiments/wnet_All_three_1024_disc_cup/42/model_checkpoint.pth": {
+      "sha256": "bf3a4086d0aa96b39bebd6b0d1f841a9ed3e7384f4c548beb53b2fb0ffeba5af",
+      "bytes": 1002643
+    },
+    "AutoMorph/M2_lwnet_disc_cup/experiments/wnet_All_three_1024_disc_cup/34/config.cfg": {
+      "sha256": "d911e048ca266dcae07d641905ce27349309e8723ff37ac4b927c7fe2ae6029f",
+      "bytes": 500
+    },
+    "AutoMorph/M2_lwnet_disc_cup/experiments/wnet_All_three_1024_disc_cup/34/model_checkpoint.pth": {
+      "sha256": "9151d2c43cc91dde2039502480e9f119e4aa975e727d414fabfbe4c5124f3957",
+      "bytes": 1002643
+    },
+    "AutoMorph/M2_lwnet_disc_cup/experiments/wnet_All_three_1024_disc_cup/38/config.cfg": {
+      "sha256": "dbbf2d949acfd3550730a66a4f87f3d8d1e9585e2b2b17b1da6626c58b55ecd9",
+      "bytes": 500
+    },
+    "AutoMorph/M2_lwnet_disc_cup/experiments/wnet_All_three_1024_disc_cup/38/model_checkpoint.pth": {
+      "sha256": "bce9906613219cc46f180217dac194bf327ad67dde7d91eaf26261aca0dc3527",
+      "bytes": 1002643
+    },
+    "AutoMorph/M3_feature_zone/.travis.yml": {
+      "sha256": "3818d518f1e4164aeecd59ae27b8c845b0331ef22211afc8dafa9497d2d828ce",
+      "bytes": 383
+    },
+    "AutoMorph/M3_feature_zone/.codecov.yml": {
+      "sha256": "1fd1bf3d990ca34c06d4ce2e961eb9493998c0e6d71c4eae57ad78401a61b952",
+      "bytes": 40
+    },
+    "AutoMorph/M3_feature_zone/.vscode/settings.json": {
+      "sha256": "ca3efb46421861fd7cec0d2ec41bfda971bbc2b4077cfc05db689d11c2418984",
+      "bytes": 287
+    },
+    "AutoMorph/M3_feature_zone/retipy/create_datasets_disc_centred_C.py": {
+      "sha256": "b76496104a396a07cdf9f1b13cdc1f2260cc3e7d461146e092b51606e6d0ba10",
+      "bytes": 9987
+    },
+    "AutoMorph/M3_feature_zone/retipy/roi_tortuosity.py": {
+      "sha256": "007deae93189e17e2b67a555807c36fe744cc3fd9f23d8296cffe309955bbb5f",
+      "bytes": 2086
+    },
+    "AutoMorph/M3_feature_zone/retipy/create_datasets_disc_centred_B.py": {
+      "sha256": "ed92d997dd71be4be5ea4f7d9f7be67c46d74fdeed9aa85e7e66845d96af90a3",
+      "bytes": 9990
+    },
+    "AutoMorph/M3_feature_zone/retipy/create_datasets_macular_centred_B.py": {
+      "sha256": "319c74fab85730fa8c172fd897f2225315dcf187476bf3f4cb6c7ca45a8eadcf",
+      "bytes": 10060
+    },
+    "AutoMorph/M3_feature_zone/retipy/setup.py": {
+      "sha256": "d11c7fe02a38fcdd986fc316ba2328dbc7454b6c3cbb55d869e857cd996fe239",
+      "bytes": 1483
+    },
+    "AutoMorph/M3_feature_zone/retipy/create_datasets_macular_centred_C.py": {
+      "sha256": "bb5613849e50e82734f8fb63e8b67cc34adbc241bd439870030c3da75cb01840",
+      "bytes": 10040
+    },
+    "AutoMorph/M3_feature_zone/retipy/create_datasets.py": {
+      "sha256": "2f561a2cc87524a6dc3f5392d2a2406ca610f9a37473669318a840ebd6db8e23",
+      "bytes": 8161
+    },
+    "AutoMorph/M3_feature_zone/retipy/function_/smoothing.py": {
+      "sha256": "2317b021767630e2d470cf24a9402a57855d7e3fc32fe5ade9f248c767a2a213",
+      "bytes": 1789
+    },
+    "AutoMorph/M3_feature_zone/retipy/function_/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "AutoMorph/M3_feature_zone/retipy/function_/thinning.py": {
+      "sha256": "c56e8eab9a1770ed6fd88ade0330d5fe7ba1203051a978123a83368aeff0a981",
+      "bytes": 2730
+    },
+    "AutoMorph/M3_feature_zone/retipy/function_/fractal_dimension.py": {
+      "sha256": "bc6e6fb9ef56e17a1a0360eba42e537c7a5a5885bb2d3b95c9f9dc27feb55b27",
+      "bytes": 2001
+    },
+    "AutoMorph/M3_feature_zone/retipy/retipy/math.py": {
+      "sha256": "e1c40dfc274f45c3712060f328b4cd71686c5dbfd84b0bf0f12493fe28899e4c",
+      "bytes": 2320
+    },
+    "AutoMorph/M3_feature_zone/retipy/retipy/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "AutoMorph/M3_feature_zone/retipy/retipy/retina.py": {
+      "sha256": "1139d5bfa219d2159a33a1540dffa6a1102fec8496ee93f24d905f3731c34d91",
+      "bytes": 25267
+    },
+    "AutoMorph/M3_feature_zone/retipy/retipy/retina_grayscale.py": {
+      "sha256": "2e28a9d87583ab5130015f5a703fcc8ded693cb24484452953969f5c3a13b8ee",
+      "bytes": 14536
+    },
+    "AutoMorph/M3_feature_zone/retipy/retipy/tortuosity.py": {
+      "sha256": "e48194fca345460658a332be748f0ff421d383af9be9d3a41decb352415f2a00",
+      "bytes": 4055
+    },
+    "AutoMorph/M3_feature_zone/retipy/retipy/configuration.py": {
+      "sha256": "01b503b4614eafe6abb080ce83136ab7eba85e5e606092b3e32bede7ebe69df2",
+      "bytes": 4026
+    },
+    "AutoMorph/M3_feature_zone/retipy/retipy/landmarks.py": {
+      "sha256": "01c54458cb5344e014fe6d6740b73ef82903a58d58460a1c82319204f4ba02b8",
+      "bytes": 8148
+    },
+    "AutoMorph/M3_feature_zone/retipy/retipy/tortuosity_measures.py": {
+      "sha256": "f0f6bdc3a513d78d5e746d1c262b85a165237f036bc91e733b671b0ef92da605",
+      "bytes": 20266
+    },
+    "AutoMorph/M3_feature_zone/retipy/retipy/vessel_classification.py": {
+      "sha256": "65b927f014596046f8ae5c8aaf76ce3ff70658769c64e25a02f4b464c1312ebc",
+      "bytes": 18080
+    },
+    "AutoMorph/M3_feature_zone/retipy/resources/retipy.config": {
+      "sha256": "20477260cc9f778648ab7986efb1c6e7f680058a71f98c94cf73ca6af96fb63e",
+      "bytes": 189
+    },
+    "AutoMorph/M3_feature_whole_pic/.travis.yml": {
+      "sha256": "3818d518f1e4164aeecd59ae27b8c845b0331ef22211afc8dafa9497d2d828ce",
+      "bytes": 383
+    },
+    "AutoMorph/M3_feature_whole_pic/.codecov.yml": {
+      "sha256": "1fd1bf3d990ca34c06d4ce2e961eb9493998c0e6d71c4eae57ad78401a61b952",
+      "bytes": 40
+    },
+    "AutoMorph/M3_feature_whole_pic/.vscode/settings.json": {
+      "sha256": "ca3efb46421861fd7cec0d2ec41bfda971bbc2b4077cfc05db689d11c2418984",
+      "bytes": 287
+    },
+    "AutoMorph/M3_feature_whole_pic/retipy/create_datasets_macular_centred.py": {
+      "sha256": "c555287c618b9ca0be97f61a7e0efa83a052f5ca636ba5ef9ae33c9a78d9b356",
+      "bytes": 8686
+    },
+    "AutoMorph/M3_feature_whole_pic/retipy/roi_tortuosity.py": {
+      "sha256": "007deae93189e17e2b67a555807c36fe744cc3fd9f23d8296cffe309955bbb5f",
+      "bytes": 2086
+    },
+    "AutoMorph/M3_feature_whole_pic/retipy/create_datasets_disc_centred.py": {
+      "sha256": "2f734a6af8b690dddea8183d3f4c6bb7c964db90cc19a943d48e0231225c0529",
+      "bytes": 8628
+    },
+    "AutoMorph/M3_feature_whole_pic/retipy/setup.py": {
+      "sha256": "d11c7fe02a38fcdd986fc316ba2328dbc7454b6c3cbb55d869e857cd996fe239",
+      "bytes": 1483
+    },
+    "AutoMorph/M3_feature_whole_pic/retipy/function_/smoothing.py": {
+      "sha256": "2317b021767630e2d470cf24a9402a57855d7e3fc32fe5ade9f248c767a2a213",
+      "bytes": 1789
+    },
+    "AutoMorph/M3_feature_whole_pic/retipy/function_/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "AutoMorph/M3_feature_whole_pic/retipy/function_/thinning.py": {
+      "sha256": "c56e8eab9a1770ed6fd88ade0330d5fe7ba1203051a978123a83368aeff0a981",
+      "bytes": 2730
+    },
+    "AutoMorph/M3_feature_whole_pic/retipy/function_/fractal_dimension.py": {
+      "sha256": "bc6e6fb9ef56e17a1a0360eba42e537c7a5a5885bb2d3b95c9f9dc27feb55b27",
+      "bytes": 2001
+    },
+    "AutoMorph/M3_feature_whole_pic/retipy/retipy/math.py": {
+      "sha256": "e1c40dfc274f45c3712060f328b4cd71686c5dbfd84b0bf0f12493fe28899e4c",
+      "bytes": 2320
+    },
+    "AutoMorph/M3_feature_whole_pic/retipy/retipy/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "AutoMorph/M3_feature_whole_pic/retipy/retipy/retina.py": {
+      "sha256": "1139d5bfa219d2159a33a1540dffa6a1102fec8496ee93f24d905f3731c34d91",
+      "bytes": 25267
+    },
+    "AutoMorph/M3_feature_whole_pic/retipy/retipy/retina_grayscale.py": {
+      "sha256": "2e28a9d87583ab5130015f5a703fcc8ded693cb24484452953969f5c3a13b8ee",
+      "bytes": 14536
+    },
+    "AutoMorph/M3_feature_whole_pic/retipy/retipy/tortuosity.py": {
+      "sha256": "e48194fca345460658a332be748f0ff421d383af9be9d3a41decb352415f2a00",
+      "bytes": 4055
+    },
+    "AutoMorph/M3_feature_whole_pic/retipy/retipy/configuration.py": {
+      "sha256": "01b503b4614eafe6abb080ce83136ab7eba85e5e606092b3e32bede7ebe69df2",
+      "bytes": 4026
+    },
+    "AutoMorph/M3_feature_whole_pic/retipy/retipy/landmarks.py": {
+      "sha256": "01c54458cb5344e014fe6d6740b73ef82903a58d58460a1c82319204f4ba02b8",
+      "bytes": 8148
+    },
+    "AutoMorph/M3_feature_whole_pic/retipy/retipy/tortuosity_measures.py": {
+      "sha256": "3a06d3d808cf4c1e04cad9f7b7544f6fb5fe767947979a16e8a5c50a95035866",
+      "bytes": 15991
+    },
+    "AutoMorph/M3_feature_whole_pic/retipy/retipy/vessel_classification.py": {
+      "sha256": "65b927f014596046f8ae5c8aaf76ce3ff70658769c64e25a02f4b464c1312ebc",
+      "bytes": 18080
+    },
+    "AutoMorph/M3_feature_whole_pic/retipy/resources/retipy.config": {
+      "sha256": "20477260cc9f778648ab7986efb1c6e7f680058a71f98c94cf73ca6af96fb63e",
+      "bytes": 189
+    },
+    "study/feature_schema.json": {
+      "sha256": "abb278400edf6a54f5bdc36e81ffed748ee978fb8a26c654ab3940b04dbda93f",
+      "bytes": 60155
+    },
+    "study/features/preprocessors.joblib": {
+      "sha256": "50c0525512ad2126e8d15eccca5e754f2deefec833708244e1aed95ecfb3d257",
+      "bytes": 2147522
+    },
+    "study/results/image_selection_frozen.json": {
+      "sha256": "21f5b015a65fccbbab22b85ef5d081d352dee57964a47ab79db42a0c798259f2",
+      "bytes": 569
+    },
+    "study/results/feature_selection_frozen.json": {
+      "sha256": "3f605a768f573b92b8b18ad917450f609d07cfc47349e84effc318d6d4795d0a",
+      "bytes": 765
+    },
+    "study/results/IMAGE_resnet152/checkpoint.pt": {
+      "sha256": "bc1120333386e0529e5481ea1c7b270c4e344c6ac2dc31181aabe26bf0b071bb",
+      "bytes": 234827118
+    },
+    "weights/huang.pt": {
+      "sha256": "b87ac5b33265ab0a05c1a43a1d5f259ae0ebeaca0e4e6159e31749280815c5db",
+      "bytes": 94301880
+    },
+    "torch/hub/checkpoints/efficientnet-b4-6ed6700e.pth": {
+      "sha256": "6ed6700e361e3878dc53f285f3df4abf9f39f6da23545cac065b7dc9467a8959",
+      "bytes": 77999237
+    },
+    "rxg/src/rxg/dr_xai_evidence.py": {
+      "sha256": "8b40538128cc46cefd15d660df732cb51eb3bc51683f6399fcd9893cc4c29e2c",
+      "bytes": 10567
+    }
+  }
+}

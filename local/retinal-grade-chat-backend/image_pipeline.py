@@ -26,7 +26,7 @@ def grade_extracted(image_path,root,data):
     table=pd.read_csv(m3)
     if len(table)!=1:raise ValueError('The image did not produce a usable retinal feature measurement.')
     sys.path.insert(0,str(STUDY/'scripts'));sys.path.insert(0,str(RXG/'src'))
-    from prepare import summarize
+    from evidence import summarize_skeletons as summarize
     from rxg.dr_xai_evidence import DRXAIPreprocessor,LESION_CHANNELS,lesion_evidence_maps,lesion_map_embedding,map_stats
     schema=json.loads((STUDY/'feature_schema.json').read_text())
     x1dirs={'artery':'artery_vein/artery_binary_skeleton','vein':'artery_vein/vein_binary_skeleton','binary':'binary_vessel/binary_skeleton'}
@@ -53,9 +53,12 @@ def grade_extracted(image_path,root,data):
     with torch.inference_mode():x3=model(tensor).numpy()[0]
     raw={'X1':[x1[k] for k in schema['X1']],'X2':[x2[k] for k in schema['X2']],'X3':x3.tolist(),'X4':[x4[k] for k in schema['X4']]}
     if any(not np.isfinite(v).all() for v in raw.values()):raise ValueError('Incomplete feature extraction; no grade was produced.')
-    from predict import ImagePredictor
-    result=ImagePredictor(device='cpu').predict(str(image_path),raw)
+    from portable_predictor import ImagePredictor
+    predictor=ImagePredictor(device='cpu')
+    result=predictor.predict(str(image_path),raw)
     result.update(feature_dimensions={k:len(v) for k,v in raw.items()},resolution_assumption='0.008 mm/pixel assumed, matching the study; not measured',feature_policy='strict complete X1–X4',x2_provenance='weak lesion-evidence proxies, not verified lesion findings',x3_preprocessing='EyePACS training: torchvision ResNet50, 224px bicubic, ImageNet normalization',evaluation_status='Prior APTOS/Messidor results used a different X3 preprocessing pipeline; those scores are not validated performance estimates for this upload pipeline.')
+    from evidence import build_evidence
+    result['evidence']=build_evidence(image_path,data,x1,x2,x4,x3,maps,rgb,raw,predictor,result['predicted_grade'])
     (root/'prediction.json').write_text(json.dumps(result))
     return result
 

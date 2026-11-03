@@ -1,0 +1,51 @@
+[
+  {
+    "id": "automorph",
+    "title": "Zhou et al. (2022), AutoMorph",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9290317/",
+    "summary": "AutoMorph combines quality assessment, anatomical segmentation and vascular measurements. It provides density, width, tortuosity and fractal descriptors from segmentation maps.",
+    "limits": "Segmentation errors and imaging differences affect measurements. Literature associations do not establish a diagnosis or a threshold for this uploaded image."
+  },
+  {
+    "id": "lcl",
+    "title": "Huang et al. (2021), Lesion-Based Contrastive Learning",
+    "url": "https://arxiv.org/abs/2107.08274",
+    "summary": "Lesion patches guide contrastive representation learning for DR grading. The released encoder produces image representations; a separate detector is needed for lesion boxes and counts.",
+    "limits": "Embedding components do not correspond to named lesions. The authors separately warn about limited cross-dataset generalization of their lesion detector."
+  },
+  {
+    "id": "gradcam",
+    "title": "Selvaraju et al. (2017), Grad-CAM",
+    "url": "https://openaccess.thecvf.com/content_ICCV_2017/papers/Selvaraju_Grad-CAM_Visual_Explanations_ICCV_2017_paper.pdf",
+    "summary": "Grad-CAM weights convolutional activations using class-score gradients to localize regions contributing to a target prediction.",
+    "limits": "It is coarse model attribution, not lesion segmentation, proof of causality or ground-truth localization. This implementation attributes only the fusion model image branch while holding tabular inputs fixed."
+  },
+  {
+    "id": "grading",
+    "title": "ADA (2022), International Clinical DR Disease Severity Scale",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK582431/table/db202238.T3/",
+    "summary": "The clinical scale defines five DR severity categories. Clinical findings are needed to establish a category.",
+    "limits": "A model probability or weak feature map does not establish these clinical findings."
+  },
+  {
+    "id": "vascular-cohort",
+    "title": "Retinal vascular geometry and 6-year incidence/progression of DR (2017)",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28623387/",
+    "summary": "A longitudinal cohort examined tortuosity, branching, fractal dimension and caliber in relation to later DR outcomes. These descriptors can supply contextual vascular information beyond a grade alone.",
+    "limits": "Observational associations do not identify causality, an individual risk probability or a normal range for this AutoMorph image."
+  },
+  {
+    "id": "saliency-checks",
+    "title": "Adebayo et al. (2018), Sanity Checks for Saliency Maps",
+    "url": "https://proceedings.neurips.cc/paper/8160-sanity-checks-for-saliency-maps.pdf",
+    "summary": "Visual appeal alone does not establish that a saliency map faithfully explains a model. Model/data randomization checks can help evaluate an explanation method.",
+    "limits": "This demo generates Grad-CAM but does not claim independent clinical or comprehensive saliency validation."
+  },
+  {
+    "id": "lcl-code",
+    "title": "Huang et al., official lesion-detector documentation",
+    "url": "https://github.com/YijinHuang/Lesion-based-Contrastive-Learning#lesion-detection-network",
+    "summary": "The project provides a lesion detector separately from its contrastive encoder and documents limits in cross-dataset detection performance.",
+    "limits": "That separate detector checkpoint is not configured here. Unavailable detections are not equivalent to a negative lesion examination."
+  }
+]

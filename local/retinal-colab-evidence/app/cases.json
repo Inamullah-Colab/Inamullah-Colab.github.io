@@ -1,0 +1,102 @@
+[
+  {
+    "id": "grade-0",
+    "grade": 0,
+    "label": "No diabetic retinopathy",
+    "probabilities": [
+      0.82,
+      0.045,
+      0.045,
+      0.045,
+      0.045
+    ],
+    "streams": [
+      "raw_image",
+      "X1",
+      "X2",
+      "X3",
+      "X4"
+    ],
+    "provenance": "Illustrative example probability profile, not a newly analyzed image or a measured accuracy."
+  },
+  {
+    "id": "grade-1",
+    "grade": 1,
+    "label": "Mild diabetic retinopathy",
+    "probabilities": [
+      0.045,
+      0.82,
+      0.045,
+      0.045,
+      0.045
+    ],
+    "streams": [
+      "raw_image",
+      "X1",
+      "X2",
+      "X3",
+      "X4"
+    ],
+    "provenance": "Illustrative example probability profile, not a newly analyzed image or a measured accuracy."
+  },
+  {
+    "id": "grade-2",
+    "grade": 2,
+    "label": "Moderate diabetic retinopathy",
+    "probabilities": [
+      0.045,
+      0.045,
+      0.82,
+      0.045,
+      0.045
+    ],
+    "streams": [
+      "raw_image",
+      "X1",
+      "X2",
+      "X3",
+      "X4"
+    ],
+    "provenance": "Illustrative example probability profile, not a newly analyzed image or a measured accuracy."
+  },
+  {
+    "id": "grade-3",
+    "grade": 3,
+    "label": "Severe diabetic retinopathy",
+    "probabilities": [
+      0.045,
+      0.045,
+      0.045,
+      0.82,
+      0.045
+    ],
+    "streams": [
+      "raw_image",
+      "X1",
+      "X2",
+      "X3",
+      "X4"
+    ],
+    "provenance": "Illustrative example probability profile, not a newly analyzed image or a measured accuracy."
+  },
+  {
+    "id": "grade-4",
+    "grade": 4,
+    "label": "Proliferative diabetic retinopathy",
+    "probabilities": [
+      0.045,
+      0.045,
+      0.045,
+      0.045,
+      0.82
+    ],
+    "streams": [
+      "raw_image",
+      "X1",
+      "X2",
+      "X3",
+      "X4"
+    ],
+    "provenance": "Illustrative example probability profile, not a newly analyzed image or a measured accuracy."
+  }
+]
