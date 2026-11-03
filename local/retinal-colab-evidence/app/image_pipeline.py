@@ -12,12 +12,18 @@ RXG=Path(os.environ.get('RETINAL_RXG_ROOT','/home/i1n23/retina_graph_dr/github_r
 PYTHON=Path(os.environ.get('AUTOMORPH_PYTHON','/home/i1n23/miniconda3/envs/automorph/bin/python'))
 
 def predict_upload(image_path,workspace):
-    root=Path(workspace);data=root/'automorph';(data/'images').mkdir(parents=True)
-    (data/'images/upload.png').symlink_to(Path(image_path).resolve())
+    root=Path(workspace);data=root/'automorph';(data/'images').mkdir(parents=True,exist_ok=True)
+    staged=data/'images/upload.png'
+    if staged.is_symlink() or staged.exists():
+        if staged.resolve()!=Path(image_path).resolve():raise ValueError('This analysis folder already belongs to a different image; use a new output folder.')
+    else:staged.symlink_to(Path(image_path).resolve())
     pd.DataFrame({'fundus':['upload.png'],'res':[0.008]}).to_csv(data/'resolution_information.csv',index=False)
     env=os.environ.copy();env.update(AUTOMORPH_DATA=str(data),PATH=str(PYTHON.parent)+os.pathsep+env['PATH'],OMP_NUM_THREADS='2',MKL_NUM_THREADS='2')
     with (root/'extract.log').open('w') as log:
-        subprocess.run(['bash','run_noclean.sh'],cwd=AUTOMORPH,env=env,stdout=log,stderr=subprocess.STDOUT,check=True)
+        completed=subprocess.run(['bash','run_noclean.sh'],cwd=AUTOMORPH,env=env,stdout=log,stderr=subprocess.STDOUT)
+    if completed.returncode:
+        tail='\n'.join((root/'extract.log').read_text(errors='replace').splitlines()[-60:])
+        raise RuntimeError(f'AutoMorph extraction exited with code {completed.returncode}. The actual extraction log follows:\n{tail}')
     return grade_extracted(image_path,root,data)
 
 def grade_extracted(image_path,root,data):
@@ -35,7 +41,8 @@ def grade_extracted(image_path,root,data):
     x1=summarize(SimpleNamespace(id_code='upload',**paths))
     x4={k:float(pd.to_numeric(table.iloc[0].get(k.removeprefix('x4_macula__')),errors='coerce')) for k in schema['X4']}
     # Same strict all-feature-valid policy as the study: do not fabricate missing streams.
-    if not all(np.isfinite(v) and v>=0 for v in x4.values()):raise ValueError('Some retinal biomarkers could not be measured reliably. This model requires a complete X1–X4 feature set; try a clearer fundus photograph.')
+    missing=[k.removeprefix('x4_macula__') for k,v in x4.items() if not np.isfinite(v) or v<0]
+    if missing:raise ValueError('X4 biomarker extraction is incomplete: '+', '.join(missing)+'. The strict complete-feature policy stops grading; missing measurements have not been invented. This is a measurement-quality failure, not a diagnosis.')
     rgb=DRXAIPreprocessor(image_size=448)(str(image_path));maps=lesion_evidence_maps(rgb);x2={}
     for name in LESION_CHANNELS:x2.update(map_stats(maps[name],f'x2_{name}'))
     stacked=np.stack([maps[n] for n in LESION_CHANNELS]);x2.update(x2_total_evidence_mean=float(stacked.mean()),x2_total_evidence_max=float(stacked.max()))
