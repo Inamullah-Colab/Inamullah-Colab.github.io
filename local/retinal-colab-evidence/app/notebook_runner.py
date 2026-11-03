@@ -15,7 +15,11 @@ def main():
     out=Path(args.output).resolve();out.mkdir(parents=True,exist_ok=True)
     prediction=predict_upload(Path(args.image).resolve(),out)
     (out/'evidence_report.json').write_text(json.dumps(prediction,indent=2))
-    print('Ready. Grade:',prediction['predicted_grade'],'Evidence panels:',len(prediction['evidence']['images']),flush=True)
+    if prediction.get('status')=='graded':
+        print('Ready. Grade:',prediction['predicted_grade'],'Evidence panels:',len(prediction['evidence']['images']),flush=True)
+    else:
+        print('Analysis completed without a grade: '+prediction.get('reason','Incomplete image measurements.'),flush=True)
+        print(prediction.get('next_step',''),flush=True)
 if __name__=='__main__':
     try:main()
     except Exception as exc:
