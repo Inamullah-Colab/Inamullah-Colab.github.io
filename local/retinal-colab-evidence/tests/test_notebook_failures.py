@@ -23,3 +23,22 @@ def test_runner_reports_gpu_error_instead_of_only_subprocess_status(tmp_path):
  assert 'Enable a Colab GPU runtime' in result.stderr
  assert 'RETINAL ANALYSIS FAILED' in result.stderr
  assert 'Enable a Colab GPU runtime' in json.loads((out/'failure.json').read_text())['detail']
+
+
+def test_colab_inline_backend_is_replaced_in_worker(tmp_path,monkeypatch):
+ import image_pipeline
+ tools=tmp_path/'tools';tools.mkdir()
+ (tools/'run_noclean.sh').write_text("python -c \"import matplotlib; print('WORKER_BACKEND=' + str(matplotlib.get_backend())); assert str(matplotlib.get_backend()).lower() == 'agg'\"\nexit 7\n")
+ monkeypatch.setattr(image_pipeline,'AUTOMORPH',tools)
+ monkeypatch.setattr(image_pipeline,'PYTHON',Path(sys.executable))
+ monkeypatch.setenv('MPLBACKEND','module://matplotlib_inline.backend_inline')
+ image=tmp_path/'input.png';image.write_bytes(b'test');out=tmp_path/'analysis';out.mkdir()
+ with pytest.raises(RuntimeError,match='WORKER_BACKEND=Agg|WORKER_BACKEND=agg'):
+  image_pipeline.predict_upload(image,out)
+ assert 'not a valid value for backend' not in (out/'extract.log').read_text()
+
+def test_notebook_runner_configures_headless_plotting(tmp_path,monkeypatch):
+ from notebook_runner import configure
+ monkeypatch.setenv('MPLBACKEND','module://matplotlib_inline.backend_inline')
+ configure(tmp_path)
+ assert os.environ['MPLBACKEND']=='Agg'

@@ -18,7 +18,7 @@ def predict_upload(image_path,workspace):
         if staged.resolve()!=Path(image_path).resolve():raise ValueError('This analysis folder already belongs to a different image; use a new output folder.')
     else:staged.symlink_to(Path(image_path).resolve())
     pd.DataFrame({'fundus':['upload.png'],'res':[0.008]}).to_csv(data/'resolution_information.csv',index=False)
-    env=os.environ.copy();env.update(AUTOMORPH_DATA=str(data),PATH=str(PYTHON.parent)+os.pathsep+env['PATH'],OMP_NUM_THREADS='2',MKL_NUM_THREADS='2')
+    env=os.environ.copy();env.update(AUTOMORPH_DATA=str(data),PATH=str(PYTHON.parent)+os.pathsep+env['PATH'],OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',MPLBACKEND='Agg')
     with (root/'extract.log').open('w') as log:
         completed=subprocess.run(['bash','run_noclean.sh'],cwd=AUTOMORPH,env=env,stdout=log,stderr=subprocess.STDOUT)
     if completed.returncode:
