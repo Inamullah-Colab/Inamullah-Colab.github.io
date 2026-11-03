@@ -32,3 +32,7 @@ Version 2 stops immediately after a quality-model rejection and returns status q
 ## Question-specific knowledge (v3)
 
 See literature/KNOWLEDGE_LIBRARY.md and app/knowledge_base.json. The assistant retrieves 26 cited ophthalmology/oculomics topics, focuses on the metric asked about, labels each user question, and handles short follow-ups. This expands inference-time knowledge; it does not fine-tune Qwen or add systemic diagnostic capabilities. The model bundle is unchanged.
+
+## View your Colab output on GitHub Pages
+
+After asking questions, download evidence_report.json from Colab. On https://inamullah-colab.github.io/retinal-grade-chat/ choose Load a saved report. The browser displays the exact saved grade/probabilities, evidence images, full feature tables and saved conversation. This viewer works without the model backend and sends no report data to it. Values are read from the file, not recomputed or independently verified. Continue live LLM questions in Colab. Older reports without conversation data still show their images and measurements. Never commit private reports to the public repository.

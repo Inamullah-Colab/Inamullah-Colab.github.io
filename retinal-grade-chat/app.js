@@ -2,7 +2,7 @@
 (() => {
   const config=window.GRADE_DEMO_CONFIG;
   const $=id=>document.getElementById(id);
-  const state={cases:[],caseId:'grade-2',connected:false,busy:false,controller:null,predictionId:null,uploading:false,previewURL:null,report:null};
+  const state={cases:[],caseId:'grade-2',connected:false,busy:false,controller:null,predictionId:null,uploading:false,previewURL:null,report:null,imported:false};
   const shortLabels=['No DR','Mild','Moderate','Severe','Proliferative'];
   const subLabels=['Grade 0','Grade 1','Grade 2','Grade 3','Grade 4'];
   const base=config.backendURL.replace(/\/$/,'');
@@ -11,7 +11,7 @@
     $('connection').querySelector('span').textContent=message;
   }
   function controls() {
-    const unavailable=!state.connected||state.busy||state.uploading||(!state.caseId&&!state.predictionId);
+    const unavailable=state.imported||!state.connected||state.busy||state.uploading||(!state.caseId&&!state.predictionId);
     $('question').disabled=unavailable;
     $('upload-button').disabled=!state.connected||state.busy||state.uploading||!$('retinal-file').files.length;
     $('retinal-file').disabled=state.busy||state.uploading;
@@ -19,10 +19,12 @@
     document.querySelectorAll('[data-question]').forEach(b=>b.disabled=unavailable);
     document.querySelectorAll('.grade-choice').forEach(b=>b.disabled=state.busy||state.uploading);
     $('thinking').hidden=!state.busy;
+    $('report-file').disabled=state.busy||state.uploading;
+    if(state.imported){connection('Saved report · local viewer');$('retry').hidden=true;}
   }
   function message(role,text,reference=null,references=[]) {
     const article=document.createElement('article');article.className=`message ${role}`;
-    const label=document.createElement('div');label.className='message-label';label.textContent=role==='user'?'You':role==='error'?'Connection update':'Grade assistant';
+    const label=document.createElement('div');label.className='message-label';label.textContent=role==='user'?'You':role==='error'?'Connection update':state.imported?'Saved report / assistant':'Grade assistant';
     const body=document.createElement('div');body.className='message-text';body.textContent=text;
     article.append(label,body);
     if(reference?.url) {
@@ -39,7 +41,8 @@
   }
   function choose(caseId) {
     if(state.busy||state.uploading)return;
-    state.predictionId=null;state.caseId=caseId;
+    state.imported=false;state.predictionId=null;state.caseId=caseId;
+    $('question').placeholder='Ask about this grading result…';connection(state.connected?'Live model connected':'Backend unavailable',state.connected?'online':'offline');
     $('image-result').hidden=true;$('evidence-panel').hidden=true;state.report=null;
     document.querySelectorAll('.grade-choice').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.case===caseId)));
     const sample=state.cases.find(c=>c.id===caseId);
@@ -89,7 +92,7 @@
     }
   }
   async function ask(question) {
-    question=question.trim();if(!question||state.busy||state.uploading||!state.connected||(!state.caseId&&!state.predictionId))return;
+    question=question.trim();if(!question||state.imported||state.busy||state.uploading||!state.connected||(!state.caseId&&!state.predictionId))return;
     state.busy=true;state.controller=new AbortController();controls();message('user',question);$('question').value='';
     const timer=setTimeout(()=>state.controller.abort(),120000);
     try {
@@ -122,10 +125,76 @@
     const note=document.createElement('p');note.textContent=evidence.interpretation_policy;$('evidence-references').append(note);
     evidence.references.forEach(ref=>{const p=document.createElement('p');const a=document.createElement('a');a.href=ref.url;a.textContent=ref.title;a.target='_blank';a.rel='noopener noreferrer';p.append(a,document.createTextNode(' — '+ref.summary+' '+ref.limits));$('evidence-references').append(p);});
   }
+  function validateSavedReport(container) {
+    const result=container?.prediction||container;
+    if(!result||typeof result!=='object'||Array.isArray(result))throw new Error('Choose a JSON evidence report downloaded from Colab.');
+    const text=(value,max=30000)=>typeof value==='string'&&value.length<=max;
+    const numericObject=(value,max)=>value&&typeof value==='object'&&!Array.isArray(value)&&Object.keys(value).length<=max&&Object.entries(value).every(([k,v])=>text(k,500)&&Number.isFinite(v));
+    const validReference=ref=>{try{return text(ref.title,1000)&&text(ref.url,3000)&&new URL(ref.url).protocol==='https:';}catch(_){return false;}};
+    if(['quality_rejected','feature_incomplete'].includes(result.status)) {
+      if(result.predicted_grade!==null||result.class_probabilities!==null||!text(result.reason,5000))throw new Error('Invalid no-grade report.');
+      const available=result.available_features||{};
+      if(Object.keys(available).length>4||!Object.values(available).every(v=>numericObject(v,1000)))throw new Error('Invalid partial feature values.');
+      return result;
+    }
+    const p=result.class_probabilities;const grade=result.predicted_grade;
+    if(!Array.isArray(p)||p.length!==5||!p.every(v=>Number.isFinite(v)&&v>=0&&v<=1)||Math.abs(p.reduce((a,b)=>a+b,0)-1)>.0001||!Number.isInteger(grade)||grade<0||grade>4||p[grade]!==Math.max(...p))throw new Error('Report must contain a valid grade and five normalized probabilities.');
+    if(!text(result.model_stage,500)||!Array.isArray(result.streams_used)||!result.streams_used.every(s=>['raw_image','X1','X2','X3','X4'].includes(s)))throw new Error('Invalid model information.');
+    const e=result.evidence;
+    if(!e||!Array.isArray(e.images)||e.images.length>16||!Array.isArray(e.references)||e.references.length>40||!e.references.every(validReference))throw new Error('The report is missing valid evidence images or citations.');
+    for(const stream of ['X1','X2','X3','X4']) {
+      if(!e[stream]||!text(e[stream].role,1000))throw new Error('The report is missing '+stream+' evidence.');
+      if(stream==='X3') {
+        if(!Array.isArray(e.X3.top_components)||e.X3.top_components.length>100||!e.X3.top_components.every(v=>Number.isInteger(v.index)&&v.index>=0&&Number.isFinite(v.value)))throw new Error('Invalid X3 representation.');
+      } else if(!numericObject(e[stream].features,1000))throw new Error('Invalid '+stream+' measurements.');
+      if(e[stream].supplemental_measurements&&!numericObject(e[stream].supplemental_measurements,100))throw new Error('Invalid supplementary measurements.');
+      if(e[stream].definitions&&(!Array.isArray(e[stream].definitions)||e[stream].definitions.length>1000||!e[stream].definitions.every(d=>text(d.feature,500)&&text(d.meaning,5000)&&text(d.unit,1000))))throw new Error('Invalid feature descriptions.');
+    }
+    for(const asset of e.images) {
+      if(!text(asset.title,1000)||!text(asset.caption,5000)||typeof asset.data_url!=='string'||asset.data_url.length>2*1024*1024||!/^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(asset.data_url))throw new Error('Only embedded PNG evidence images are supported.');
+      const head=atob(asset.data_url.split(',')[1].slice(0,48));
+      if(head.slice(0,8)!=='\x89PNG\r\n\x1a\n')throw new Error('Invalid PNG evidence image.');
+      const bytes=Uint8Array.from(head,c=>c.charCodeAt(0));const view=new DataView(bytes.buffer);const w=view.getUint32(16),h=view.getUint32(20);
+      if(!w||!h||w>2048||h>2048)throw new Error('Evidence images must be at most 2048 pixels per side.');
+    }
+    const turns=result.conversation||[];
+    if(!Array.isArray(turns)||turns.length>100||!turns.every(t=>text(t.question,1200)&&text(t.answer,30000)&&(!t.references||(Array.isArray(t.references)&&t.references.length<=40&&t.references.every(validReference)))&&(!t.reference||validReference(t.reference))))throw new Error('Invalid saved conversation.');
+    return result;
+  }
+  async function importSavedReport() {
+    const file=$('report-file').files[0];if(!file||state.busy||state.uploading)return;
+    try {
+      if(file.size>20*1024*1024)throw new Error('Choose a report no larger than 20 MB.');
+      const raw=JSON.parse(await file.text());const result=validateSavedReport(raw);
+      state.imported=true;state.predictionId=null;state.caseId=null;state.report=raw;
+      $('image-result').hidden=false;$('evidence-panel').hidden=true;$('class-probabilities').replaceChildren();$('chat-log').replaceChildren();
+      $('image-preview').hidden=true;document.querySelectorAll('.grade-choice').forEach(b=>b.setAttribute('aria-pressed','false'));
+      $('question').value='';$('question').placeholder='Saved report viewer. Continue live questions in Colab.';
+      $('report-status').textContent='Saved report loaded locally. These results come from your file and were not recomputed or independently verified here.';
+      if(['quality_rejected','feature_incomplete'].includes(result.status)) {
+        $('predicted-grade').textContent='No grade produced';$('prediction-model').textContent=result.reason;
+        $('probability').textContent='—';document.querySelector('.profile').style.setProperty('--score','0%');
+        $('evidence-panel').hidden=false;$('stream-summaries').replaceChildren();$('evidence-images').replaceChildren();$('evidence-tables').replaceChildren();$('evidence-references').replaceChildren();
+        Object.entries(result.available_features||{}).forEach(([stream,values])=>{const block=document.createElement('article');block.className='stream-card';const title=document.createElement('h3');title.textContent=stream+' · available measurements';const body=document.createElement('pre');body.textContent=JSON.stringify(values,null,2);body.style.whiteSpace='pre-wrap';block.append(title,body);$('evidence-tables').append(block);});
+        message('assistant',result.reason+' '+(result.next_step||''));
+      } else {
+        const probs=result.class_probabilities;renderEvidence(result.evidence);
+        $('predicted-grade').textContent=`Saved grade ${result.predicted_grade} · ${shortLabels[result.predicted_grade]}`;
+        probs.forEach((probability,grade)=>{const row=document.createElement('div');row.className='probability-row';const label=document.createElement('span');label.textContent=`${grade} · ${shortLabels[grade]}`;const bar=document.createElement('div');bar.className='probability-bar';const fill=document.createElement('span');fill.style.width=`${probability*100}%`;bar.append(fill);const value=document.createElement('span');value.textContent=`${(100*probability).toFixed(1)}%`;row.append(label,bar,value);$('class-probabilities').append(row);});
+        $('prediction-model').textContent=result.model_stage+' · saved report · '+result.streams_used.join(', ');
+        $('probability').textContent=`${(100*probs[result.predicted_grade]).toFixed(1)}%`;document.querySelector('.profile').style.setProperty('--score',`${100*probs[result.predicted_grade]}%`);
+        message('assistant','Viewing your saved Colab results. The figures, probabilities and measurements are read from the report. No model has run on this page for this file. Live questions can continue in Colab.');
+        (result.conversation||[]).forEach(turn=>{message('user',turn.question);message('assistant',turn.answer,turn.reference,turn.references||[]);});
+      }
+      controls();
+    } catch(error){$('report-status').textContent='Report could not be loaded: '+error.message;}
+  }
+  $('report-file').addEventListener('change',importSavedReport);
   $('download-report').addEventListener('click',()=>{if(!state.report)return;const url=URL.createObjectURL(new Blob([JSON.stringify(state.report,null,2)],{type:'application/json'}));const link=document.createElement('a');link.href=url;link.download='retinal-evidence-report.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),5000);});
   async function uploadImage(event) {
     event.preventDefault();const file=$('retinal-file').files[0];
     if(!file||state.busy||state.uploading||!state.connected)return;
+    state.imported=false;$('question').placeholder='Ask about this grading result…';
     if(file.size>10*1024*1024){$('upload-status').textContent='Choose a file no larger than 10 MB.';return;}
     state.uploading=true;state.caseId=null;state.predictionId=null;$('image-result').hidden=true;$('evidence-panel').hidden=true;state.report=null;
     document.querySelectorAll('.grade-choice').forEach(b=>b.setAttribute('aria-pressed','false'));
@@ -176,7 +245,7 @@
     if(state.previewURL)URL.revokeObjectURL(state.previewURL);
     const file=$('retinal-file').files[0];$('image-preview').hidden=!file;
     if(file){
-      state.previewURL=URL.createObjectURL(file);$('image-preview').src=state.previewURL;
+      state.imported=false;$('question').placeholder='Ask about this grading result…';connection(state.connected?'Live model connected':'Backend unavailable',state.connected?'online':'offline');state.previewURL=URL.createObjectURL(file);$('image-preview').src=state.previewURL;
       state.caseId=null;state.predictionId=null;$('image-result').hidden=true;$('evidence-panel').hidden=true;state.report=null;
       document.querySelectorAll('.grade-choice').forEach(b=>b.setAttribute('aria-pressed','false'));
       $('chat-log').replaceChildren();message('assistant','New photograph selected. Choose Analyze retinal image to extract X1–X4 and obtain its grading result.');
