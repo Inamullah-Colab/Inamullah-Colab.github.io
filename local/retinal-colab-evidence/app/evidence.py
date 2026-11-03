@@ -4,6 +4,20 @@ import base64,io,json,re
 import cv2,numpy as np
 from PIL import Image,ImageDraw
 REFERENCES=json.loads(Path(__file__).with_name('literature.json').read_text())
+# Distinct channel identities; fixed proxy values are never rescaled for appearance.
+LESION_PALETTE={
+    'microaneurysm':{'color':'#CC79A7','name':'purple-pink','rgb':(204,121,167)},
+    'hemorrhage':{'color':'#E69F00','name':'orange','rgb':(230,159,0)},
+    'hard_exudate':{'color':'#F0E442','name':'yellow','rgb':(240,228,66)},
+    'cotton_wool_spot':{'color':'#56B4E9','name':'sky blue','rgb':(86,180,233)},
+    'neovascularization':{'color':'#009E73','name':'green','rgb':(0,158,115)}
+}
+
+def lesion_overlay(base,heat,rgb):
+    heat=cv2.resize(np.asarray(heat,np.float32),(base.shape[1],base.shape[0]),interpolation=cv2.INTER_LINEAR)
+    alpha=np.clip(np.nan_to_num(heat,nan=0.,posinf=1.,neginf=0.),0,1)[...,None]*.78
+    return np.uint8(np.clip((1-alpha)*np.asarray(base,np.float32)+alpha*np.asarray(rgb,np.float32),0,255))
+
 
 def summarize_skeletons(row):
     cv2.setNumThreads(1);out={'id_code':row.id_code}
@@ -53,7 +67,12 @@ def build_evidence(image_path,data,x1,x2,x4,x3,maps,rgb,raw,predictor,grade):
         overlay[visible]=color;skeleton[visible]=color
     images=[{'id':'vessel_overlay','title':'X1 · Vessel skeleton overlay','caption':'AutoMorph cropped coordinates. Arteries red, veins blue, remaining binary vessels green. Segmentation predictions, not expert annotations.','data_url':png_data(overlay)},
             {'id':'vessel_skeleton','title':'X1 · Vessel topology','caption':'Skeleton map in the same cropped coordinate frame. Junction-pixel counts are not verified anatomical bifurcation counts.','data_url':png_data(skeleton)}]
-    for name,heat in maps.items():images.append({'id':'proxy_'+name,'title':'X2 proxy · '+name.replace('_',' '),'caption':'Weak heuristic evidence on the DR-XAI-preprocessed image. Color is proxy strength, not lesion probability or verified detection.','data_url':png_data(heat_overlay(rgb,heat))})
+    for name,heat in maps.items():
+        palette=LESION_PALETTE[name]
+        images.append({'id':'proxy_'+name,'title':'X2 proxy · '+name.replace('_',' '),
+            'caption':f"{palette['name'].capitalize()} identifies this channel. Tint strength shows the fixed 0–1 weak-proxy value; zero leaves the photograph unchanged. This is not a lesion probability or verified detection.",
+            'legend':{'kind':'proxy','color':palette['color'],'color_name':palette['name'],'label':'Weak proxy strength','minimum':0,'maximum':1,'normalization':'fixed; no per-image rescaling'},
+            'data_url':png_data(lesion_overlay(rgb,heat,palette['rgb']))})
     cam,active=predictor.gradcam(str(image_path),raw,grade)
     with Image.open(image_path) as im:base=np.asarray(im.convert('RGB').resize((224,224)))
     images.append({'id':'gradcam','title':f'Grad-CAM · predicted grade {grade}','caption':'Actual frozen ResNet152 fusion-image branch attribution; raw-image coordinates resized to 224px. Tabular streams held fixed. '+('Positive attribution shown.' if active else 'No positive attribution at this layer; a zero map is shown.'),'data_url':png_data(heat_overlay(base,cam))})

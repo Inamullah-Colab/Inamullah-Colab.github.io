@@ -113,6 +113,18 @@
       message('error',error.name==='AbortError'?'This request timed out while waiting for the hosted model. You can retry; no saved answer has been substituted.':error.message);
     } finally {clearTimeout(timer);state.busy=false;state.controller=null;controls();$('question').focus();}
   }
+  function mapLegend(asset) {
+    const legend=document.createElement('div');legend.className='map-legend';
+    const id=String(asset.id||'');
+    if(id.startsWith('proxy_')&&asset.legend?.kind==='proxy'&&/^#[0-9a-f]{6}$/i.test(asset.legend.color)) {
+      const title=document.createElement('span');title.className='legend-title';title.textContent=(asset.legend.color_name||'Channel colour')+' · weak proxy strength';
+      const bar=document.createElement('span');bar.className='legend-bar';bar.style.background=`linear-gradient(to right,#fff,${asset.legend.color})`;
+      const limits=document.createElement('span');limits.className='legend-limits';limits.textContent='0 · no tint                         1 · stronger proxy';legend.append(title,bar,limits);return legend;
+    }
+    if(id.startsWith('proxy_')) {legend.classList.add('legacy-map');legend.textContent='Legacy shared colour scale. New analyses use distinct channel colours; this saved image is preserved.';return legend;}
+    if(id==='gradcam') {const title=document.createElement('span');title.className='legend-title';title.textContent='Relative model attention';const bar=document.createElement('span');bar.className='legend-bar gradcam-bar';const limits=document.createElement('span');limits.className='legend-limits';limits.textContent='Lower                                     Higher';legend.append(title,bar,limits);return legend;}
+    return null;
+  }
   function renderEvidence(evidence) {
     if(!evidence)return;
     $('evidence-panel').hidden=false;$('stream-summaries').replaceChildren();$('evidence-images').replaceChildren();$('evidence-tables').replaceChildren();$('evidence-references').replaceChildren();
@@ -125,7 +137,7 @@
       Object.entries(values).forEach(([key,value])=>{const row=document.createElement('tr');const definition=(evidence[stream].definitions||[]).find(d=>d.feature===key);const meaning=definition?definition.meaning+' '+definition.unit:stream==='X2'?'Weak proxy feature, not a lesion diagnosis':stream==='X3'?'Embedding activation, not a named lesion':key.includes('length')?'Supplemental length in processed pixels':key.includes('density')?'Skeleton occupancy fraction':key.includes('branchpoints')?'Junction pixels; not verified bifurcation count':'Computed skeleton descriptor';[key,Number(value).toPrecision(7),meaning].forEach(text=>{const td=document.createElement('td');td.textContent=text;row.append(td);});body.append(row);});
       table.append(body);wrap.append(table);details.append(wrap);$('evidence-tables').append(details);
     });
-    evidence.images.forEach(asset=>{if(!/^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(asset.data_url))return;const figure=document.createElement('figure');const img=document.createElement('img');img.src=asset.data_url;img.alt=asset.title;img.loading='lazy';const caption=document.createElement('figcaption');const title=document.createElement('strong');title.textContent=asset.title;caption.append(title,document.createTextNode(asset.caption));const opener=document.createElement('button');opener.type='button';opener.className='image-open';opener.setAttribute('aria-label','Enlarge '+asset.title);opener.append(img);opener.addEventListener('click',()=>openEvidenceImage(asset));figure.dataset.group=evidenceGroup(asset);figure.append(opener,caption);$('evidence-images').append(figure);});
+    evidence.images.forEach(asset=>{if(!/^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(asset.data_url))return;const figure=document.createElement('figure');const img=document.createElement('img');img.src=asset.data_url;img.alt=asset.title;img.loading='lazy';const caption=document.createElement('figcaption');const title=document.createElement('strong');title.textContent=asset.title;caption.append(title,document.createTextNode(asset.caption));const legend=mapLegend(asset);if(legend)caption.append(legend);const opener=document.createElement('button');opener.type='button';opener.className='image-open';opener.setAttribute('aria-label','Enlarge '+asset.title);opener.append(img);opener.addEventListener('click',()=>openEvidenceImage(asset));figure.dataset.group=evidenceGroup(asset);figure.append(opener,caption);$('evidence-images').append(figure);});
     const note=document.createElement('p');note.textContent=evidence.interpretation_policy;$('evidence-references').append(note);
     evidence.references.forEach(ref=>{const p=document.createElement('p');const a=document.createElement('a');a.href=ref.url;a.textContent=ref.title;a.target='_blank';a.rel='noopener noreferrer';p.append(a,document.createTextNode(' — '+ref.summary+' '+ref.limits));$('evidence-references').append(p);});
   }
@@ -155,6 +167,7 @@
       if(e[stream].definitions&&(!Array.isArray(e[stream].definitions)||e[stream].definitions.length>1000||!e[stream].definitions.every(d=>text(d.feature,500)&&text(d.meaning,5000)&&text(d.unit,1000))))throw new Error('Invalid feature descriptions.');
     }
     for(const asset of [...e.images,...(e.original_image?[e.original_image]:[])]) {
+      if(asset.legend&&(asset.legend.kind!=='proxy'||!/^#[0-9a-f]{6}$/i.test(asset.legend.color)||asset.legend.minimum!==0||asset.legend.maximum!==1))throw new Error('Invalid evidence colour legend.');
       if(!text(asset.title,1000)||!text(asset.caption,5000)||typeof asset.data_url!=='string'||asset.data_url.length>2*1024*1024||!/^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(asset.data_url))throw new Error('Only embedded PNG evidence images are supported.');
       const head=atob(asset.data_url.split(',')[1].slice(0,48));
       if(head.slice(0,8)!=='\x89PNG\r\n\x1a\n')throw new Error('Invalid PNG evidence image.');
@@ -268,8 +281,8 @@
   function updateAttention() {
     const index=Number($('attention-select').value);const asset=currentAssets[index];
     $('attention-preview').hidden=!asset;$('attention-empty').hidden=Boolean(asset);
-    if(asset){$('attention-preview').src=asset.data_url;$('attention-preview').alt=asset.title;$('attention-caption').textContent=asset.caption;}
-    else $('attention-caption').textContent='Evidence views appear when a graded image report is available.';
+    if(asset){$('attention-preview').src=asset.data_url;$('attention-preview').alt=asset.title;$('attention-caption').textContent=asset.caption;const legend=mapLegend(asset);$('attention-legend').replaceChildren();if(legend)$('attention-legend').append(legend);}
+    else {$('attention-caption').textContent='Evidence views appear when a graded image report is available.';$('attention-legend').replaceChildren();}
   }
   function syncDashboard() {
     const result=state.report?.prediction||state.report;
