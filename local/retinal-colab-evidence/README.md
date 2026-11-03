@@ -5,7 +5,7 @@ Separate, retrievable research package for free interactive Colab sessions. It r
 ## Start
 
 1. Download artifacts/retinal_models_v1.tar.gz from the project workspace and place it in your own Google Drive. The large inference-only bundle stays outside GitHub; no datasets, original retinal photographs, credentials or patient records are included.
-2. Open notebooks/Retinal_Evidence_Explorer_v2.ipynb in Colab, choose a GPU runtime, and run the setup cells. Set BUNDLE_PATH to your Drive file. The notebook verifies checksums and installs an isolated Python3.11 model environment.
+2. Open notebooks/Retinal_Evidence_Explorer_v3.ipynb in Colab, choose a GPU runtime, and run the setup cells. Set BUNDLE_PATH to your Drive file. The notebook verifies checksums and installs an isolated Python3.11 model environment.
 3. Upload a retinal JPG/PNG, run analysis, inspect overlays/tables and ask questions in the notebook chat. The first environment/model download and each AutoMorph analysis can take several minutes. Free GPU availability and runtime limits apply. No public API, tunnel or external website hosting is started.
 4. Download your report or explicitly copy it to Drive. Reports and input images stay in your notebook runtime until the cleanup cell or runtime termination; they are not automatically uploaded to GitHub or this research server.
 
@@ -28,3 +28,7 @@ See literature/STREAM_GUIDE.md. X2 is weak proxy evidence. X3 is a lesion-traine
 ## Normal no-grade outcomes
 
 Version 2 stops immediately after a quality-model rejection and returns status quality_rejected with no grade or disease probabilities. If required measurements are incomplete, status feature_incomplete retains available X1/X4 values and lists missing measurements. Display, chat and download cells handle both statuses without raising a traceback. A quality-model decision is not proof of clinical ungradability. Grading remains conditional on accepted quality and complete model inputs; no values are fabricated. The existing model bundle is unchanged.
+
+## Question-specific knowledge (v3)
+
+See literature/KNOWLEDGE_LIBRARY.md and app/knowledge_base.json. The assistant retrieves 26 cited ophthalmology/oculomics topics, focuses on the metric asked about, labels each user question, and handles short follow-ups. This expands inference-time knowledge; it does not fine-tune Qwen or add systemic diagnostic capabilities. The model bundle is unchanged.

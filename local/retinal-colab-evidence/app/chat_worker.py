@@ -5,10 +5,13 @@ from assistant import GradeAssistant
 from service import explain_prediction
 prediction=json.loads(Path(sys.argv[1]).read_text())
 assistant=GradeAssistant(device=os.environ.get('NOTEBOOK_LLM_DEVICE','cuda'))
-print(json.dumps({'ready':True,'model':assistant.cfg['model_id']}),flush=True)
+from knowledge import DATABASE
+conversation=[]
+print(json.dumps({'ready':True,'model':assistant.cfg['model_id'],'knowledge_topics':len(DATABASE['topics']),'knowledge_version':DATABASE['version']}),flush=True)
 for line in sys.stdin:
     try:
         question=json.loads(line)['question']
-        result=explain_prediction(assistant,question,'notebook-local-session',prediction)
+        result=explain_prediction(assistant,question,'notebook-local-session',prediction,previous_questions=conversation[-3:])
+        conversation.append(question)
         print(json.dumps(result),flush=True)
     except Exception as exc:print(json.dumps({'error':str(exc)}),flush=True)

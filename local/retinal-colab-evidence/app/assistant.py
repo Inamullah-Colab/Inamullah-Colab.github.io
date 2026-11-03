@@ -75,6 +75,21 @@ class GradeAssistant:
         with torch.inference_mode():scores=self.model(**x).logits[0,-1,[v[0] for v in tokens]]
         return ['definition','probability','inputs'][int(scores.argmax())]
 
+    def select_knowledge_facts(self,question,candidates):
+        """Select relevant fact IDs; never show model-generated medical prose."""
+        messages=[{'role':'system','content':'Choose the fact IDs most relevant to the question. Return a JSON array with at most four IDs copied exactly from the supplied list. Do not invent facts or identifiers.'},
+                  {'role':'user','content':json.dumps({'question':question,'facts':candidates},ensure_ascii=False)}]
+        prompt=self.tokenizer.apply_chat_template(messages,tokenize=False,add_generation_prompt=True)
+        inputs=self.tokenizer(prompt,return_tensors='pt').to(self.device)
+        with torch.inference_mode():generated=self.model.generate(**inputs,max_new_tokens=100,do_sample=False,temperature=None,top_p=None,top_k=None,pad_token_id=self.tokenizer.eos_token_id)
+        text=self.tokenizer.decode(generated[0,inputs.input_ids.shape[1]:],skip_special_tokens=True)
+        match=re.search(r'\[[^\[\]]*\]',text)
+        if not match:return []
+        try:ids=json.loads(match.group())
+        except (ValueError,TypeError):return []
+        allowed={item['id'] for item in candidates}
+        return list(dict.fromkeys(item for item in ids if isinstance(item,str) and item in allowed))[:4] if isinstance(ids,list) else []
+
     def answer(self,question,probabilities,streams):
         p=np.asarray(probabilities,dtype=float)
         if p.shape!=(5,) or not np.isfinite(p).all() or (p<0).any() or abs(p.sum()-1)>1e-4:raise ValueError('Expected five normalized grade probabilities')

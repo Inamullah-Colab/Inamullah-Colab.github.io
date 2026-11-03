@@ -14,16 +14,37 @@ def validate_request(question,case_id):
 def explain_case(assistant,question,case_id):
     question,case=validate_request(question,case_id)
     response=assistant.answer(question,case['probabilities'],case['streams'])
+    from knowledge import answer_knowledge
+    from assistant import GradeAssistant
+    knowledge=None if GradeAssistant.supported_intent(question) in ['treatment','history'] else answer_knowledge(question,{},assistant)
+    if knowledge:
+        response['answer']=knowledge['answer'];response['reference']=None
     return {'answer':response['answer'],'facts':response['facts'],'reference':response.get('reference'),
             'case_id':case_id,'example_context':True,'context_provenance':case['provenance'],
+            'references':knowledge['references'] if knowledge else [],'knowledge_augmented':bool(knowledge),
+            'retrieved_topics':knowledge['topic_ids'] if knowledge else [],'weights_finetuned':False,
             'model':assistant.cfg['model_id'],'model_revision':assistant.cfg['revision'],
             'live_llm':True,'method':'Live LLM response planning with explicit scope guards and factual rendering.',
             'detail_panel':response.get('llm_selected_detail_panel')}
 
 
-def explain_prediction(assistant,question,prediction_id,prediction):
+def explain_prediction(assistant,question,prediction_id,prediction,previous_questions=None):
     if not isinstance(question,str) or not question.strip() or len(question)>1200:raise ValueError('Enter a question within 1,200 characters.')
     response=assistant.answer(question,prediction['class_probabilities'],prediction['streams_used'])
+    from knowledge import answer_knowledge
+    from assistant import GradeAssistant
+    # Keep the existing treatment/patient-record boundary. Broader educational topics are retrieved separately.
+    intent=GradeAssistant.supported_intent(question)
+    knowledge=None if intent in ['treatment','history'] else answer_knowledge(question,prediction,assistant,previous_questions)
+    if knowledge:
+        return {'answer':knowledge['answer'],'facts':response['facts'],'reference':None,
+                'prediction_id':prediction_id,'example_context':False,'references':knowledge['references'],
+                'evidence_grounded':knowledge['evidence_grounded'],'knowledge_augmented':True,
+                'knowledge_version':knowledge['knowledge_version'],'retrieved_topics':knowledge['topic_ids'],
+                'retrieved_fact_ids':knowledge['retrieved_fact_ids'],'resolved_query':knowledge['resolved_query'],
+                'context_provenance':'Current uploaded-image facts plus curated cited educational context; systemic diagnoses are not inferred.',
+                'model':assistant.cfg['model_id'],'model_revision':assistant.cfg['revision'],'live_llm':True,
+                'method':knowledge['answer_method'],'weights_finetuned':False,'detail_panel':None}
     from evidence import explain_evidence
     from assistant import GradeAssistant
     evidence_text,refs=('',[])

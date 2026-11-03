@@ -1,0 +1,598 @@
+{
+  "version": "2026-11-03.1",
+  "scope": "Curated educational ophthalmology, systemic-health context, oculomics and model methods; not comprehensive ophthalmology training",
+  "weight_finetuning_performed": false,
+  "topics": [
+    {
+      "id": "dr-overview",
+      "title": "Diabetic retinopathy: what the grade describes",
+      "keywords": [
+        "diabetic retinopathy",
+        "dr grading",
+        "diabetes retina",
+        "npdr",
+        "pdr"
+      ],
+      "facts": [
+        "Diabetic retinopathy affects retinal blood vessels in people with diabetes. Early disease may have no noticeable symptoms.",
+        "Clinical assessment considers visible retinal findings. A five-class model output is a research prediction, not a comprehensive eye examination."
+      ],
+      "source": {
+        "id": "dr-overview",
+        "title": "Diabetic retinopathy: what the grade describes",
+        "url": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/diabetic-retinopathy"
+      },
+      "boundary": "The current grader predicts DR severity only; it does not establish diabetes or exclude other eye diseases.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "dr-mechanism",
+      "title": "How diabetes affects retinal vessels",
+      "keywords": [
+        "high glucose",
+        "blood sugar",
+        "diabetes damage",
+        "capillary damage",
+        "microvascular"
+      ],
+      "facts": [
+        "Long-term high blood glucose can damage small retinal vessels, affecting blood flow and allowing fluid leakage or bleeding.",
+        "Advanced disease can involve fragile new vessels. Segmentation geometry alone does not establish these clinical findings."
+      ],
+      "source": {
+        "id": "dr-mechanism",
+        "title": "How diabetes affects retinal vessels",
+        "url": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/diabetic-retinopathy"
+      },
+      "boundary": "This image pipeline does not measure blood glucose, diabetes duration, or verified lesion counts.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "eye-anatomy",
+      "title": "Retina, macula and optic nerve",
+      "keywords": [
+        "anatomy",
+        "macula",
+        "retina function",
+        "optic nerve",
+        "how eye works"
+      ],
+      "facts": [
+        "The retina is light-sensitive tissue at the back of the eye. The macula supports detailed central vision.",
+        "Diseases affecting the macula and diseases affecting the optic nerve are different clinical problems; a DR grade does not summarize them all."
+      ],
+      "source": {
+        "id": "eye-anatomy",
+        "title": "Retina, macula and optic nerve",
+        "url": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/age-related-macular-degeneration"
+      },
+      "boundary": "A fundus photograph shows posterior-eye structures; it does not replace tests of visual function or the anterior eye.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "macular-edema",
+      "title": "Macular edema and the limits of a DR grade",
+      "keywords": [
+        "macular edema",
+        "macular oedema",
+        "dme",
+        "swelling",
+        "oct"
+      ],
+      "facts": [
+        "Macular edema is swelling in the macular region. It can cause blurred or distorted vision.",
+        "Clinical assessment may require retinal imaging beyond a color photograph. A DR severity label alone does not establish edema."
+      ],
+      "source": {
+        "id": "macular-edema",
+        "title": "Macular edema and the limits of a DR grade",
+        "url": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/macular-edema"
+      },
+      "boundary": "This system does not process OCT images or provide a validated macular-edema diagnosis.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "glaucoma",
+      "title": "Glaucoma and optic nerve assessment",
+      "keywords": [
+        "glaucoma",
+        "cup disc",
+        "cdr",
+        "eye pressure",
+        "optic disc"
+      ],
+      "facts": [
+        "Glaucoma is a group of diseases that damage the optic nerve. Evaluation includes an eye examination and visual-field testing.",
+        "Eye pressure and optic-disc appearance are relevant, but a cup-to-disc ratio alone is not a glaucoma diagnosis."
+      ],
+      "source": {
+        "id": "glaucoma",
+        "title": "Glaucoma and optic nerve assessment",
+        "url": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/glaucoma"
+      },
+      "boundary": "The X4 cup/disc measurements are image-derived descriptors. This DR model does not measure eye pressure or diagnose glaucoma.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "amd",
+      "title": "Age-related macular degeneration",
+      "keywords": [
+        "amd",
+        "macular degeneration",
+        "drusen",
+        "wet amd",
+        "dry amd"
+      ],
+      "facts": [
+        "AMD affects the macula and central vision. Dry and wet AMD have different disease mechanisms and clinical courses.",
+        "Wet AMD involves abnormal vessels; a generic weak evidence map cannot distinguish it reliably from other retinal conditions."
+      ],
+      "source": {
+        "id": "amd",
+        "title": "Age-related macular degeneration",
+        "url": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/age-related-macular-degeneration"
+      },
+      "boundary": "No validated AMD or drusen detector is configured in this system.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "cataract",
+      "title": "Cataract and image clarity",
+      "keywords": [
+        "cataract",
+        "cloudy lens",
+        "hazy",
+        "glare"
+      ],
+      "facts": [
+        "A cataract is a cloudy area in the lens and can cause blurred or hazy vision.",
+        "Image clarity can affect retinal analysis, but rejection by an image-quality model does not establish cataract."
+      ],
+      "source": {
+        "id": "cataract",
+        "title": "Cataract and image clarity",
+        "url": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/cataracts"
+      },
+      "boundary": "The quality model estimates whether a photograph is usable; it does not diagnose the reason for poor image quality.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "dry-eye",
+      "title": "Dry eye is different from retinal disease",
+      "keywords": [
+        "dry eye",
+        "tears",
+        "scratchy",
+        "burning"
+      ],
+      "facts": [
+        "Dry eye occurs when tear quantity or function is inadequate and can cause discomfort and blurred vision.",
+        "Tear-film assessment differs from retinal vessel analysis."
+      ],
+      "source": {
+        "id": "dry-eye",
+        "title": "Dry eye is different from retinal disease",
+        "url": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/dry-eye"
+      },
+      "boundary": "A retinal photograph and X1\u2013X4 features cannot diagnose dry eye.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "refraction",
+      "title": "Refractive errors and blurred vision",
+      "keywords": [
+        "myopia",
+        "hyperopia",
+        "astigmatism",
+        "presbyopia",
+        "refractive",
+        "short sight",
+        "long sight"
+      ],
+      "facts": [
+        "Refractive errors occur when light does not focus correctly on the retina. Types include myopia, hyperopia, astigmatism and presbyopia.",
+        "Blurred vision has several possible causes, so it cannot be assigned to DR from a symptom alone."
+      ],
+      "source": {
+        "id": "refraction",
+        "title": "Refractive errors and blurred vision",
+        "url": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/refractive-errors"
+      },
+      "boundary": "No refraction or visual-acuity measurement is available from this pipeline.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "vein-occlusion",
+      "title": "Retinal vein occlusion",
+      "keywords": [
+        "vein occlusion",
+        "crvo",
+        "brvo",
+        "blocked vein",
+        "blood clot"
+      ],
+      "facts": [
+        "Central retinal vein occlusion occurs when a clot blocks the main retinal vein. Clinical assessment uses an eye examination and imaging.",
+        "It is a distinct disease from diabetic retinopathy and can affect retinal circulation."
+      ],
+      "source": {
+        "id": "vein-occlusion",
+        "title": "Retinal vein occlusion",
+        "url": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/central-retinal-vein-occlusion-crvo"
+      },
+      "boundary": "Vein geometry and proxy maps do not provide a validated vein-occlusion diagnosis.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "detachment",
+      "title": "Retinal detachment and urgent symptoms",
+      "keywords": [
+        "retinal detachment",
+        "curtain",
+        "flashes",
+        "new floaters",
+        "sudden vision loss"
+      ],
+      "facts": [
+        "Retinal detachment occurs when the retina separates from its normal position.",
+        "A sudden increase in floaters, flashes of light, or a curtain-like shadow warrants immediate assessment by an eye doctor or emergency service."
+      ],
+      "source": {
+        "id": "detachment",
+        "title": "Retinal detachment and urgent symptoms",
+        "url": "https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/retinal-detachment"
+      },
+      "boundary": "Do not wait for this research grader to evaluate sudden visual symptoms.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "systemic-diabetes",
+      "title": "Systemic diabetes, blood pressure and eye health",
+      "keywords": [
+        "systemic diabetes",
+        "blood pressure",
+        "hypertension",
+        "cholesterol",
+        "hba1c",
+        "glycemic",
+        "system health"
+      ],
+      "facts": [
+        "Diabetic eye health is connected to systemic diabetes management. Blood glucose, blood pressure and cholesterol are relevant clinical factors.",
+        "Retinal measurements do not substitute for the corresponding laboratory tests, blood-pressure readings or clinical history."
+      ],
+      "source": {
+        "id": "systemic-diabetes",
+        "title": "Systemic diabetes, blood pressure and eye health",
+        "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/diabetic-eye-disease"
+      },
+      "boundary": "This system has no measured HbA1c, blood pressure or cholesterol and cannot infer their values from its DR output.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "oculomics",
+      "title": "Oculomics: connecting eye images with systemic health",
+      "keywords": [
+        "oculomics",
+        "oculomic",
+        "ocuopmics",
+        "systemic health",
+        "whole body",
+        "eye body",
+        "connect everything"
+      ],
+      "facts": [
+        "Oculomics studies whether ocular measurements can inform understanding of systemic health. Retinal images have been investigated for cardiovascular risk-factor prediction.",
+        "These tasks require separately trained models and external validation. A research association does not turn a DR grader into a general systemic-disease test."
+      ],
+      "source": {
+        "id": "oculomics",
+        "title": "Oculomics: connecting eye images with systemic health",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31015713/"
+      },
+      "boundary": "This deployment has no validated heart, kidney or neurological disease prediction head. No individual systemic diagnosis or risk is produced.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "cardiovascular",
+      "title": "Retinal images and cardiovascular research",
+      "keywords": [
+        "cardiovascular",
+        "heart",
+        "stroke",
+        "cvd",
+        "cardiac",
+        "heart attack"
+      ],
+      "facts": [
+        "Poplin and colleagues trained separate deep-learning models to study cardiovascular risk factors using fundus photographs.",
+        "The study shows research potential; it does not validate cardiovascular predictions from this different DR model."
+      ],
+      "source": {
+        "id": "cardiovascular",
+        "title": "Retinal images and cardiovascular research",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/31015713/"
+      },
+      "boundary": "No individual heart-attack probability, cardiovascular diagnosis or blood-pressure estimate can be calculated from this report.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "kidney-limits",
+      "title": "What eye measurements cannot establish about kidney health",
+      "keywords": [
+        "kidney",
+        "renal",
+        "nephropathy",
+        "egfr",
+        "creatinine",
+        "albumin"
+      ],
+      "facts": [
+        "Diabetes can affect more than one organ system, so eye findings should be interpreted alongside systemic clinical assessment.",
+        "A retinal DR grade is not a kidney-function measurement. This report has no creatinine, estimated filtration rate or urine albumin data."
+      ],
+      "source": {
+        "id": "kidney-limits",
+        "title": "What eye measurements cannot establish about kidney health",
+        "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems"
+      },
+      "boundary": "No kidney-disease model or kidney laboratory results are configured. A kidney diagnosis cannot be supplied from these image features.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "vascular-context",
+      "title": "Why vessel geometry can provide contextual information",
+      "keywords": [
+        "vessel geometry",
+        "vascular geometry",
+        "progression",
+        "vascular risk",
+        "microcirculation",
+        "branching risk"
+      ],
+      "facts": [
+        "A longitudinal cohort investigated retinal tortuosity, branching, fractal dimension and caliber in relation to later DR outcomes.",
+        "The associations were measured in a particular cohort and do not provide an individual diagnostic cutoff for this AutoMorph report."
+      ],
+      "source": {
+        "id": "vascular-context",
+        "title": "Why vessel geometry can provide contextual information",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28623387/"
+      },
+      "boundary": "Associations are not causal explanations for this image or calibrated individual progression risks.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "fractal",
+      "title": "Fractal dimension: pattern complexity",
+      "keywords": [
+        "fractal",
+        "complexity",
+        "complex",
+        "network complexity"
+      ],
+      "facts": [
+        "Fractal dimension describes how vessel-pattern detail changes with scale. It is a structural complexity descriptor.",
+        "Its value depends on segmentation, region and measurement method."
+      ],
+      "source": {
+        "id": "fractal",
+        "title": "Fractal dimension: pattern complexity",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9290317/"
+      },
+      "boundary": "A larger value is not automatically healthier or more diseased; no validated normal range is supplied here.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "tortuosity",
+      "title": "Tortuosity and curvature describe different aspects of bending",
+      "keywords": [
+        "tortuosity",
+        "tortuous",
+        "curvature",
+        "curvatur",
+        "curature",
+        "path chord",
+        "bending"
+      ],
+      "facts": [
+        "Path-to-chord tortuosity and squared-curvature descriptors summarize different aspects of vessel bending.",
+        "Values depend on segmentation and the measurement definition; the two quantities are not interchangeable."
+      ],
+      "source": {
+        "id": "tortuosity",
+        "title": "Tortuosity and curvature describe different aspects of bending",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9290317/"
+      },
+      "boundary": "A curvature value alone cannot establish DR severity, hypertension or vascular damage.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "density",
+      "title": "Vessel density differs from skeleton occupancy",
+      "keywords": [
+        "density",
+        "occupancy",
+        "vessel area",
+        "skeleton occupancy"
+      ],
+      "facts": [
+        "X1 skeleton occupancy measures the fraction occupied by one-pixel vessel centerlines; X4 vessel density measures segmented vessel occupancy.",
+        "They use different representations, so their percentages need not agree."
+      ],
+      "source": {
+        "id": "density",
+        "title": "Vessel density differs from skeleton occupancy",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9290317/"
+      },
+      "boundary": "Neither density measure alone establishes ischemia or verified capillary loss.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "length",
+      "title": "Length and topology need coordinate-aware interpretation",
+      "keywords": [
+        "length",
+        "endpoint",
+        "junction",
+        "branchpoint",
+        "components",
+        "topology",
+        "skeleton"
+      ],
+      "facts": [
+        "Skeleton edge length is reported in processed-image pixels. Endpoint and junction counts describe the computed skeleton.",
+        "Pixel junction counts are not verified anatomical bifurcation counts."
+      ],
+      "source": {
+        "id": "length",
+        "title": "Length and topology need coordinate-aware interpretation",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9290317/"
+      },
+      "boundary": "Processed-pixel length is not a calibrated physical vessel length.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "xai",
+      "title": "Grad-CAM is model attribution",
+      "keywords": [
+        "grad cam",
+        "grad-cam",
+        "xai",
+        "saliency",
+        "attribution",
+        "heatmap",
+        "explainability"
+      ],
+      "facts": [
+        "Grad-CAM uses class-score gradients and convolutional activations to localize model-relevant image regions.",
+        "Here it attributes the frozen fusion model image branch while tabular inputs remain fixed. It is separate from the trained X2 proxy features."
+      ],
+      "source": {
+        "id": "xai",
+        "title": "Grad-CAM is model attribution",
+        "url": "https://arxiv.org/abs/1610.02391"
+      },
+      "boundary": "A highlighted region is not a confirmed lesion or proof that a feature causes disease.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "lesion-representation",
+      "title": "A lesion-trained representation is not a lesion detector",
+      "keywords": [
+        "x3",
+        "lesion",
+        "embedding",
+        "contrastive",
+        "encoder",
+        "lesion count"
+      ],
+      "facts": [
+        "The configured Huang checkpoint is a lesion-contrastive image encoder. It produces a representation for grading.",
+        "A separate detector is required to return lesion boxes or counts. Embedding components do not have named-lesion semantics."
+      ],
+      "source": {
+        "id": "lesion-representation",
+        "title": "A lesion-trained representation is not a lesion detector",
+        "url": "https://arxiv.org/abs/2107.08274"
+      },
+      "boundary": "No lesion boxes, lesion counts or verified lesion-negative result are available from X3.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "proxy",
+      "title": "What the X2 proxy maps mean",
+      "keywords": [
+        "x2",
+        "proxy",
+        "microaneurysm",
+        "hemorrhage",
+        "haemorrhage",
+        "exudate",
+        "cotton wool",
+        "neovascularization"
+      ],
+      "facts": [
+        "The frozen X2 stream contains weak image-derived proxy statistics, not validated lesion detections.",
+        "Channel names describe the intended evidence cue; a proxy value is not a lesion probability."
+      ],
+      "source": {
+        "id": "proxy",
+        "title": "What the X2 proxy maps mean",
+        "url": "https://github.com/Inamullah-Colab/Inamullah-Colab.github.io/tree/master/local/retinal-colab-evidence"
+      },
+      "boundary": "This is an implementation capability statement. Proxy values cannot prove that the named lesion is present or absent.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "streams",
+      "title": "How the four streams complement the image",
+      "keywords": [
+        "x1",
+        "x4",
+        "streams",
+        "features",
+        "framework",
+        "multimodal",
+        "fusion"
+      ],
+      "facts": [
+        "X1 describes vessel skeleton structure; X2 supplies weak evidence proxies; X3 supplies lesion-trained image representations; X4 supplies vascular biomarkers.",
+        "The frozen fusion grader combines these with a retinal photograph. Missing required streams lead to a no-grade result."
+      ],
+      "source": {
+        "id": "streams",
+        "title": "How the four streams complement the image",
+        "url": "https://github.com/Inamullah-Colab/Inamullah-Colab.github.io/tree/master/local/retinal-colab-evidence"
+      },
+      "boundary": "Different input roles do not establish causal contributions or clinical findings.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "kidney-research",
+      "title": "Retinal photography and kidney-disease research",
+      "keywords": [
+        "kidney research",
+        "chronic kidney disease",
+        "renal research",
+        "kidney",
+        "ckd"
+      ],
+      "facts": [
+        "Sabanayagam and colleagues developed a separate retinal-photo deep-learning algorithm to study chronic kidney disease detection in community populations.",
+        "That study supports investigating retinal photography as an adjunctive screening signal; it does not validate kidney predictions from this DR grader."
+      ],
+      "source": {
+        "id": "kidney-research",
+        "title": "Sabanayagam et al. (2020), retinal photographs and chronic kidney disease",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/33328123/"
+      },
+      "boundary": "This report has no validated kidney prediction, laboratory confirmation or individual kidney-risk estimate.",
+      "reviewed": "2026-11-03"
+    },
+    {
+      "id": "foundation-research",
+      "title": "Retinal foundation models and task-specific adaptation",
+      "keywords": [
+        "retfound",
+        "foundation model",
+        "pretrained",
+        "brain",
+        "neurological",
+        "alzheimer",
+        "dementia"
+      ],
+      "facts": [
+        "RETFound learns retinal-image representations through self-supervised pretraining and is adapted to specific downstream tasks.",
+        "A reusable representation still needs task-specific labels, evaluation and validation; it does not automatically provide every ocular or systemic diagnosis."
+      ],
+      "source": {
+        "id": "foundation-research",
+        "title": "Zhou et al. (2023), a foundation model for retinal-image disease detection",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/37704728/"
+      },
+      "boundary": "The deployed grader has no validated neurological or all-disease diagnosis head. Educational context is not a patient-specific systemic diagnosis.",
+      "reviewed": "2026-11-03"
+    }
+  ]
+}
