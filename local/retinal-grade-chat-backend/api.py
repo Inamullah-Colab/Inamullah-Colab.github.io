@@ -59,7 +59,6 @@ async def cases():return list(CASES.values())
 @app.post('/api/chat')
 async def chat(request:ChatRequest):
     if app.state.model is None:raise HTTPException(503,'The model is starting. Please retry shortly.')
-    if app.state.busy.locked():raise HTTPException(429,'The assistant is answering another question. Please retry shortly.',headers={'Retry-After':'5'})
     async with app.state.busy:
         try:
             if request.prediction_id:

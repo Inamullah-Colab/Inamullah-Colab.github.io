@@ -98,7 +98,7 @@
   async function ask(question) {
     question=question.trim();if(!question||state.imported||state.busy||state.uploading||!state.connected||(!state.caseId&&!state.predictionId))return;
     state.busy=true;state.controller=new AbortController();controls();message('user',question);$('question').value='';
-    const timer=setTimeout(()=>state.controller.abort(),120000);
+    const timer=setTimeout(()=>state.controller.abort(),600000);
     try {
       let result;
       if(config.transport==='gradio')result=await gradio(question,state.caseId,state.controller.signal);
@@ -225,12 +225,14 @@
       clearTimeout(timer);
       const data=await response.json();if(!response.ok)throw new Error(data.detail||'Upload failed.');
       if(typeof data.prediction_id!=='string'||!/^[A-Za-z0-9_-]{40,64}$/.test(data.prediction_id))throw new Error('Invalid upload response.');
+      $('upload-status').textContent='Image accepted. Waiting for an available image worker…';
       let ready=null;
-      while(Date.now()-start<19*60*1000) {
-        $('upload-status').textContent=`Extracting X1–X4 and grading… ${Math.floor((Date.now()-start)/1000)} seconds. Keep this page open.`;
+      while(Date.now()-start<3*60*60*1000) {
         await new Promise(resolve=>setTimeout(resolve,3000));
         const poll=await fetch(base+'/api/predictions/'+data.prediction_id,{cache:'no-store',signal:AbortSignal.timeout(20000)});
         const job=await poll.json();if(!poll.ok)throw new Error(job.detail||'Unable to retrieve prediction.');
+        if(job.status==='queued')$('upload-status').textContent=`Waiting for an image worker · queue position ${Number.isInteger(job.queue_position)?job.queue_position:'pending'}. Keep this page open; your image will start automatically.`;
+        if(job.status==='processing')$('upload-status').textContent='Your image is being analysed. Extracting X1–X4 and model evidence…';
         if(job.status==='failed')throw new Error(job.detail||'Processing failed. No grade was produced.');
         if(job.status==='ready'){ready=job;break;}
       }
