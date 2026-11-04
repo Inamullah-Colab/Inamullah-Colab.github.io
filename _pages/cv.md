@@ -97,6 +97,7 @@ Project Manager (tendering, planning, estimation, billing, client correspondence
 
 ## Conferences and Seminars
 
+- **AI-Driven Oculomics for Unveiling Non-Invasive Cardiovascular Biomarkers.** - Delivered an internal PhD seminar at the University of Southampton as part of the mandatory PhD seminar requirement. Supervisor: Dr. Shoaib Jameel.
 - **RetiSEM: Generalising Causal Models for Fragmented Biomedical Data** - *Accepted for oral presentation at IJCAI 2026*. arXiv PDF: <https://arxiv.org/pdf/2606.24488>
 - **Causal-RetiGraph: Cross-Cohort Retinal Support and Same-Subject Pathway Analysis for Diabetic Retinopathy** - *Under review as a conference submission in a premier biomedical and bioinformatics venue*. arXiv PDF: <https://arxiv.org/pdf/2607.05204>
 - **Dual-Edge Spatial-Jacobian Image Graph Framework for Interpretable DR Grading** - *Accepted at the UKAIRS 2026 Symposium, Emerging Research track*. UKAIRS: <https://www.ukairs.ac.uk/Home/Welcome>. Submission details: <https://www.ukairs.ac.uk/MyPapers/Details/13301>. arXiv: <https://doi.org/10.48550/arXiv.2606.24168>
