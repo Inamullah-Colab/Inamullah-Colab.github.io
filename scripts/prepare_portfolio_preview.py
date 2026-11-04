@@ -36,10 +36,11 @@ for key in ("title", "description"):
     html = html.replace("{{ page." + key + " | escape }}", escape(metadata[key], quote=True))
 html = html.replace("{{ page.url | absolute_url }}", "https://inamullah-colab.github.io/")
 html = html.replace("{{ '/images/Profile_pic.jpg' | absolute_url }}", "https://inamullah-colab.github.io/images/Profile_pic.jpg")
+html = html.replace("{{ page.body_class | default: '' | escape }}", escape(metadata.get("body_class", ""), quote=True))
 assert not re.search(r"{{|{%", html), "Unresolved template in preview"
 (output / "index.html").write_text(html, encoding="utf-8")
 (output / "assets/css").mkdir(parents=True, exist_ok=True)
-for name in ("portfolio.css",):
+for name in ("portfolio.css", "homepage.css"):
     shutil.copy2(ROOT / "assets/css" / name, output / "assets/css" / name)
 (output / "images").mkdir(exist_ok=True)
 image_names = sorted(set(re.findall(r'src="/images/([^"]+)"', html) + ["favicon.svg"]))
@@ -48,7 +49,7 @@ for name in image_names:
 
 # A portable copy can be opened directly without a running preview server.
 portable = html
-for name in ("portfolio.css",):
+for name in ("portfolio.css", "homepage.css"):
     portable = portable.replace('<link rel="stylesheet" href="/assets/css/' + name + '">',
                                 '<style>' + (ROOT / "assets/css" / name).read_text(encoding="utf-8") + '</style>')
 for name in image_names:

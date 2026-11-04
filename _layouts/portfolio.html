@@ -13,8 +13,9 @@
   <meta property="og:image" content="{{ '/images/Profile_pic.jpg' | absolute_url }}">
   <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/css/portfolio.css">
+  <link rel="stylesheet" href="/assets/css/homepage.css">
 </head>
-<body>
+<body class="{{ page.body_class | default: '' | escape }}">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header wrap">
     <a class="wordmark" href="/" aria-label="Inam Ullah Khan home">Inam Ullah Khan<span>Researcher &amp; AI Engineer</span></a>
