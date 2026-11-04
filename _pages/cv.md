@@ -23,7 +23,9 @@ Artificial Intelligence, Machine Learning, Deep Learning, Computer Vision, Medic
 
 **University of Southampton, United Kingdom**  
 *Sep 2024 - Present*  
-PhD in Computer Science (Artificial Intelligence)
+PhD in Computer Science (Artificial Intelligence)  
+Research topic: *AI-Driven Oculomics for Unveiling Non-Invasive Cardiovascular Biomarkers.*  
+Supervisor: Dr. Shoaib Jameel.
 
 **Kohat University of Science and Technology, Pakistan**  
 *Oct 2018 - Jan 2022*  
