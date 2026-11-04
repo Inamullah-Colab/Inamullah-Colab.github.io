@@ -20,7 +20,7 @@
   isolation: isolate;
   position: relative;
   overflow: hidden;
-  background: #202640;
+  background: linear-gradient(115deg, #354363 0%, #465a7c 100%);
   color: #fff;
   border-radius: 28px;
   padding: 64px 60px;
@@ -41,7 +41,7 @@
   box-shadow: 0 0 0 60px #ffffff04, 0 0 0 120px #ffffff03, 0 0 0 180px #ffffff02;
   pointer-events: none;
 }
-.homepage .hero .eyebrow { color: #d2c9fc; font-size: 10px; letter-spacing: 2.2px; }
+.homepage .hero .eyebrow { color: #e0d9ff; font-size: 10px; letter-spacing: 2.2px; }
 .homepage .hero h1 { font-size: clamp(44px, 4.6vw, 68px); line-height: 1.06; letter-spacing: -2px; margin-bottom: 25px; }
 .homepage .hero h1 em { color: #ffc0ac; }
 .homepage .intro { color: #d3d7e7; font-size: 16px; line-height: 1.8; max-width: 510px; }
