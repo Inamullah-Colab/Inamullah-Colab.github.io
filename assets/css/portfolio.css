@@ -87,3 +87,13 @@
 .research-dispatch .dispatch-note{border-left:3px solid var(--accent);padding:14px 20px;background:var(--wash);font-size:15px}
 .research-dispatch .full-dashboard{max-height:none}
 @media(max-width:620px){.retinal-news-heading,.retinal-news-story{grid-template-columns:1fr;gap:20px}.retinal-news-heading p{font-size:16px}.research-dispatch{margin-block:35px}.research-dispatch .dispatch-deck{font-size:18px}}
+
+/* Help visitors move from the software announcement to evidence they can inspect. */
+.retinal-news-heading h3 a{color:inherit;text-decoration:none}
+.retinal-news-heading h3 a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
+.dispatch-reader-guide{background:var(--wash);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:4px;padding:24px 28px;margin:30px 0}
+.research-dispatch .dispatch-reader-guide h2{margin:0 0 16px;font-size:26px}
+.dispatch-reader-guide li{margin:12px 0;padding-left:4px}
+.dispatch-reader-guide p:last-child{margin-bottom:0}
+#complete-dashboard{scroll-margin-top:24px}
+@media(max-width:620px){.dispatch-reader-guide{padding:20px}.dispatch-reader-guide ol{padding-left:20px}}
