@@ -1,5 +1,7 @@
 """Optional CPU FastAPI deployment of the same assistant contract."""
 import asyncio,os,time
+from typing import Literal
+from openai_provider import OpenAIAssistant
 from collections import deque
 from starlette.responses import JSONResponse
 from contextlib import asynccontextmanager
@@ -37,27 +39,40 @@ async def lifespan(app):
 
 recent_requests=deque()
 app=FastAPI(title='Retinal Grade Explorer',lifespan=lifespan)
+openai_assistant=OpenAIAssistant()
 origins=os.getenv('ALLOWED_ORIGINS','https://inamullah-colab.github.io,http://127.0.0.1:8080,http://localhost:8080').split(',')
 
 class ChatRequest(BaseModel):
     model_config=ConfigDict(extra='forbid')
+    provider:Literal['local','openai']='local'
+    previous_questions:list[str]=Field(default_factory=list,max_length=2)
     question:str=Field(min_length=1,max_length=1200)
     case_id:str|None=Field(default=None,pattern=r'^grade-[0-4]$')
     prediction_id:str|None=Field(default=None,min_length=40,max_length=64,pattern=r'^[A-Za-z0-9_-]+$')
 
     @model_validator(mode='after')
     def one_context(self):
+        self.question=self.question.strip()
+        if not self.question:raise ValueError('Enter a question')
         if (self.case_id is None)==(self.prediction_id is None):raise ValueError('Supply exactly one context: case_id or prediction_id')
+        if any(len(q)>1200 for q in self.previous_questions):raise ValueError('Previous questions are too long')
         return self
 
 @app.get('/health')
-async def health():return {'ready':app.state.model is not None,'load_error':app.state.load_error,'live_llm':app.state.model is not None}
+async def health():return {'ready':app.state.model is not None,'load_error':app.state.load_error,'live_llm':app.state.model is not None,'providers':{'local':{'available':app.state.model is not None},'openai':openai_assistant.capability()}}
 
 @app.get('/api/cases')
 async def cases():return list(CASES.values())
 
 @app.post('/api/chat')
 async def chat(request:ChatRequest):
+    if request.provider=='openai':
+        if request.prediction_id:
+            job=get_job(request.prediction_id)
+            if job['status']!='ready':raise HTTPException(409,'The image prediction is not ready.')
+            return await openai_assistant.answer(request.question,job['prediction'],{'prediction_id':request.prediction_id,'example_context':False},request.previous_questions)
+        case=CASES[request.case_id]
+        return await openai_assistant.answer(request.question,{'predicted_grade':case['grade'],'class_probabilities':case['probabilities'],'streams_used':case['streams']},{'case_id':request.case_id,'example_context':True},request.previous_questions)
     if app.state.model is None:raise HTTPException(503,'The model is starting. Please retry shortly.')
     async with app.state.busy:
         try:

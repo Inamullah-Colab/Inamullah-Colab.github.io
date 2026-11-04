@@ -2,7 +2,7 @@
 (() => {
   const config=window.GRADE_DEMO_CONFIG;
   const $=id=>document.getElementById(id);
-  const state={cases:[],caseId:'grade-2',connected:false,busy:false,controller:null,predictionId:null,uploading:false,previewURL:null,report:null,imported:false};
+  const state={cases:[],caseId:'grade-2',connected:false,busy:false,controller:null,predictionId:null,uploading:false,previewURL:null,report:null,imported:false,provider:'local',previousQuestions:[]};
   const shortLabels=['No DR','Mild','Moderate','Severe','Proliferative'];
   const subLabels=['Grade 0','Grade 1','Grade 2','Grade 3','Grade 4'];
   const base=config.backendURL.replace(/\/$/,'');
@@ -20,16 +20,18 @@
     document.querySelectorAll('[data-question]').forEach(b=>b.disabled=unavailable);
     document.querySelectorAll('.grade-choice').forEach(b=>b.disabled=state.busy||state.uploading);
     $('thinking').hidden=!state.busy;
+    $('assistant-provider').disabled=state.busy||state.uploading||state.imported;
     $('report-file').disabled=state.busy||state.uploading;
     if(state.imported){connection('Saved report · local viewer');$('retry').hidden=true;}
     $('screening-file').disabled=state.busy||state.uploading;
     $('upload-button').hidden=state.imported||!$('retinal-file').files.length;
     syncDashboard();
   }
-  function message(role,text,reference=null,references=[]) {
+  function message(role,text,reference=null,references=[],parts=null,documents=[]) {
     const article=document.createElement('article');article.className=`message ${role}`;
     const label=document.createElement('div');label.className='message-label';label.textContent=role==='user'?'You':role==='error'?'Connection update':state.imported?'Saved report / assistant':'Grade assistant';
     const body=document.createElement('div');body.className='message-text';body.textContent=text;
+    if(Array.isArray(parts)&&parts.length<=12){body.replaceChildren();parts.forEach((part,index)=>{if(index)body.append(document.createTextNode('\n\n'));const text=String(part.text||'');let cursor=0;const cites=Array.isArray(part.citations)?part.citations.slice().sort((a,b)=>a.start-b.start):[];cites.forEach(c=>{try{const url=new URL(c.url);if(url.protocol!=='https:'||!Number.isInteger(c.start)||!Number.isInteger(c.end)||c.start<cursor||c.end<=c.start||c.end>text.length)return;body.append(document.createTextNode(text.slice(cursor,c.start)));const a=document.createElement('a');a.className='inline-citation';a.href=url.href;a.target='_blank';a.rel='noopener noreferrer';a.textContent=text.slice(c.start,c.end)||c.title;a.title=c.title||'';body.append(a);cursor=c.end;}catch(_){}});body.append(document.createTextNode(text.slice(cursor)));});}
     article.append(label,body);
     if(reference?.url) {
       try {
@@ -40,12 +42,13 @@
       } catch (_) { /* Ignore malformed reference URLs. */ }
     }
     references.forEach(ref=>{try{const url=new URL(ref.url);if(url.protocol==='https:'){const a=document.createElement('a');a.href=url.href;a.target='_blank';a.rel='noopener noreferrer';a.textContent=ref.title;article.append(document.createElement('br'),a);}}catch(_){}});
+    if(Array.isArray(documents)&&documents.length){const sources=document.createElement('p');sources.className='document-sources';sources.textContent='Document sources: '+documents.slice(0,10).map(String).join('; ');article.append(sources);}
     $('chat-log').append(article);$('chat-log').scrollTop=$('chat-log').scrollHeight;
     return article;
   }
   function choose(caseId) {
     if(state.busy||state.uploading)return;
-    state.imported=false;state.predictionId=null;state.caseId=caseId;
+    state.imported=false;state.predictionId=null;state.caseId=caseId;state.previousQuestions=[];
     $('question').placeholder='Ask about this grading result…';connection(state.connected?'Live model connected':'Backend unavailable',state.connected?'online':'offline');
     $('image-result').hidden=true;$('evidence-panel').hidden=true;state.report=null;
     document.querySelectorAll('.grade-choice').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.case===caseId)));
@@ -66,6 +69,7 @@
       const data=await response.json();
       if(config.transport==='gradio'&&!data.named_endpoints?.['/explain'])throw new Error('The live explanation endpoint is not ready.');
       if(config.transport!=='gradio'&&!data.ready)throw new Error('The model is still loading.');
+      const enabled=Boolean(data.providers?.openai?.available);$('openai-option').disabled=!enabled;$('openai-option').textContent=enabled?'OpenAI + cited search':'OpenAI + cited search (unavailable)';if(!enabled){state.provider='local';$('assistant-provider').value='local';}providerNote();
       state.connected=true;connection('Live model connected','online');
     } catch (_) {
       connection('Backend unavailable','offline');$('retry').hidden=false;
@@ -103,16 +107,18 @@
       let result;
       if(config.transport==='gradio')result=await gradio(question,state.caseId,state.controller.signal);
       else {
-        const response=await fetch(base+'/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(state.predictionId?{question,prediction_id:state.predictionId}:{question,case_id:state.caseId}),signal:state.controller.signal});
+        const response=await fetch(base+'/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...(state.predictionId?{question,prediction_id:state.predictionId}:{question,case_id:state.caseId}),provider:state.provider,...(state.provider==='openai'?{previous_questions:state.previousQuestions.slice(-2)}:{})}),signal:state.controller.signal});
         if(!response.ok){const detail=await response.json().catch(()=>({}));throw new Error(detail.detail||'The live backend could not answer. Please retry shortly.');}
         result=await response.json();
       }
       if(result.live_llm!==true||typeof result.answer!=='string'||(state.predictionId?result.prediction_id!==state.predictionId||result.example_context!==false:result.case_id!==state.caseId))throw new Error('The backend response did not match the selected live example.');
-      message('assistant',result.answer,result.reference,result.references||[]);
+      message('assistant',result.answer,result.reference,result.references||[],result.answer_parts,result.document_sources);state.previousQuestions.push(question);state.previousQuestions=state.previousQuestions.slice(-2);
     } catch(error) {
       message('error',error.name==='AbortError'?'This request timed out while waiting for the hosted model. You can retry; no saved answer has been substituted.':error.message);
     } finally {clearTimeout(timer);state.busy=false;state.controller=null;controls();$('question').focus();}
   }
+  function providerNote(){ $('provider-note').textContent=state.provider==='openai'?'OpenAI mode sends your question and numeric grading context to OpenAI. Retinal photographs and patient records are not sent. Searches and answers use the server’s paid allowance.':'Local mode uses the curated research library. OpenAI web search is not used.'; }
+  $('assistant-provider').addEventListener('change',()=>{state.provider=$('assistant-provider').value;providerNote();});
   function mapLegend(asset) {
     const legend=document.createElement('div');legend.className='map-legend';
     const id=String(asset.id||'');
@@ -211,7 +217,7 @@
   async function uploadImage(event) {
     event.preventDefault();const file=$('retinal-file').files[0];
     if(!file||state.busy||state.uploading||!state.connected)return;
-    state.imported=false;$('question').placeholder='Ask about this grading result…';
+    state.imported=false;state.previousQuestions=[];$('question').placeholder='Ask about this grading result…';
     if(file.size>10*1024*1024){$('upload-status').textContent='Choose a file no larger than 10 MB.';return;}
     state.uploading=true;state.caseId=null;state.predictionId=null;$('image-result').hidden=true;$('evidence-panel').hidden=true;state.report=null;
     document.querySelectorAll('.grade-choice').forEach(b=>b.setAttribute('aria-pressed','false'));
@@ -265,7 +271,7 @@
     if(state.previewURL)URL.revokeObjectURL(state.previewURL);
     const file=$('retinal-file').files[0];$('image-preview').hidden=!file;
     if(file){
-      state.imported=false;$('question').placeholder='Ask about this grading result…';connection(state.connected?'Live model connected':'Backend unavailable',state.connected?'online':'offline');state.previewURL=URL.createObjectURL(file);$('image-preview').src=state.previewURL;
+      state.imported=false;state.previousQuestions=[];$('question').placeholder='Ask about this grading result…';connection(state.connected?'Live model connected':'Backend unavailable',state.connected?'online':'offline');state.previewURL=URL.createObjectURL(file);$('image-preview').src=state.previewURL;
       state.caseId=null;state.predictionId=null;$('image-result').hidden=true;$('evidence-panel').hidden=true;state.report=null;
       document.querySelectorAll('.grade-choice').forEach(b=>b.setAttribute('aria-pressed','false'));
       $('chat-log').replaceChildren();message('assistant','New photograph selected. Choose Analyze retinal image to extract X1–X4 and obtain its grading result.');

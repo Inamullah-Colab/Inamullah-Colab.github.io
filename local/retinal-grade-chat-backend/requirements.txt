@@ -14,3 +14,6 @@ opencv-python-headless==4.10.0.84
 scikit-learn==1.4.2
 joblib>=1.3,<2
 pandas==2.2.3
+
+# Optional OpenAI Responses API transport
+httpx>=0.27,<1
