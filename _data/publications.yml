@@ -44,8 +44,8 @@
     for diabetic retinopathy.
   citation_key: causal_retigraph_2026
   links:
-  - label: arXiv
-    url: https://doi.org/10.48550/arXiv.2607.05204
+  - label: arXiv PDF
+    url: https://arxiv.org/pdf/2607.05204
 - title: Dual-Edge Spatial-Jacobian Image Graph Framework for Interpretable DR Grading
   slug: dual-edge-spatial-jacobian-image-graph-framework-interpretable-dr-grading
   date: '2026-06-01'
@@ -76,10 +76,8 @@
     and distributed evidence settings.
   citation_key: retisem_ssrn_2026
   links:
-  - label: OpenReview
-    url: https://openreview.net/forum?id=Jaj6hWKcGz
-  - label: arXiv
-    url: https://doi.org/10.48550/arXiv.2606.24488
+  - label: arXiv PDF
+    url: https://arxiv.org/pdf/2606.24488
 - title: 'The Eye as a Window to Systemic Health: A Survey of Retinal Imaging from
     Classical Techniques to Oculomics'
   slug: eye-window-systemic-health-oculomics-survey
