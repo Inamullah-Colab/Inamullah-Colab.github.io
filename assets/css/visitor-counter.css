@@ -1,0 +1,30 @@
+/* Compact, centred country counter, using real consented page-view aggregates. */
+.public-views-wrap{margin:30px auto 20px;padding:0 20px}
+.public-views,.knowledge-page .readership-footer{box-sizing:border-box;display:flex;flex-direction:column;width:340px;max-width:calc(100% - 32px);margin:24px auto 28px;padding:12px 6px;background:transparent;border:0;border-radius:0;box-shadow:none;color:#46566a;font:12px/1.45 "Segoe UI",Arial,sans-serif}
+.public-views .public-views-title,.knowledge-page .readership-top h2{margin:0 0 16px;color:#23363b;text-align:center;font:600 16px/1.4 "Segoe UI",Arial,sans-serif;letter-spacing:0}
+.public-views .counter-label{margin:0 0 6px;font-size:13px;font-weight:600}
+.knowledge-page .readership-top{display:block;order:0}
+.knowledge-page .readership-top .eyebrow,.knowledge-page .readership-top .tag{display:none}
+.public-views .public-country-list,.knowledge-page .readership-countries{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px 12px;margin:0 0 10px;order:1}
+.public-country-list>span,.readership-countries>span{display:flex;align-items:center;gap:4px;min-width:0;padding:0;background:transparent;border:0;border-radius:0;font:11px/1.4 "Segoe UI",Arial,sans-serif;white-space:nowrap}
+.public-country-list>span b,.readership-countries>span b{margin:0 0 0 auto;font:400 11px/1.4 ui-monospace,SFMono-Regular,Consolas,monospace;font-variant-numeric:tabular-nums}
+.public-country-list .country-flag,.readership-countries .country-flag{display:block;width:22px;height:15px;object-fit:cover;flex:0 0 22px;border-radius:0;box-shadow:0 0 0 1px #23363b18}
+.public-country-list .counter-empty,.readership-countries>span:not([data-country]){grid-column:1/-1;white-space:normal}
+.readership-countries>span:not([data-country]) b{margin-left:4px}
+.public-views .public-views-totals,.knowledge-page .readership-totals{display:flex;flex-direction:column;gap:1px;margin:0;order:2}
+.public-views-totals>div,.readership-totals>div{display:flex;align-items:baseline;gap:6px}
+.public-views-totals span,.knowledge-page .readership-totals span{display:inline;margin:0;font-size:11px;line-height:1.5;order:0}
+.public-views-totals strong,.knowledge-page .readership-totals strong{display:inline;font:400 11px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;order:1;font-variant-numeric:tabular-nums}
+.public-views .counter-period,.knowledge-page .readership-footer>p{order:3;margin:8px 0 0;font-size:10px;line-height:1.5}
+.public-views .counter-details{order:4;margin-top:6px;font-size:11px}
+.counter-details summary{cursor:pointer;text-decoration:underline;text-underline-offset:3px;width:max-content}
+.counter-details p{font-size:11px;line-height:1.5;margin:8px 0}
+.counter-details a{font-size:11px;text-decoration:underline}
+.public-views [data-public-error]{order:5;font-size:11px}
+.knowledge-page .readership-choice{order:4;display:flex;flex-wrap:wrap;gap:7px;margin-top:12px;padding-top:10px;border-top:1px solid #e0e3e7;font-size:10px;line-height:1.5}
+.knowledge-page .readership-choice>span{flex-basis:100%}
+.knowledge-page .readership-choice button{font:11px/1.4 "Segoe UI",Arial,sans-serif;padding:5px 7px;border-radius:3px}
+.knowledge-page .readership-choice a{font-size:10px}
+.public-views [hidden],.country-flag[hidden]{display:none!important}
+.counter-details summary:focus-visible{outline:2px solid #52655e;outline-offset:3px}
+@media(max-width:360px){.public-views .public-country-list,.knowledge-page .readership-countries{column-gap:8px}.public-country-list>span,.readership-countries>span{gap:3px}.public-country-list .country-flag,.readership-countries .country-flag{width:18px;height:13px;flex-basis:18px}}

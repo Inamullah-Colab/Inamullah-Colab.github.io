@@ -13,7 +13,17 @@
       const label = [...item.childNodes].filter(node => node.nodeType === Node.TEXT_NODE)
         .map(node => node.textContent).join('').split(' · ')[0].trim();
       const code = item.dataset.country || names.get(label);
-      if (!supported.has(code) || item.querySelector('.country-flag')) continue;
+      if (!supported.has(code)) continue;
+      item.dataset.country = code;
+      let name = code;
+      try { name = new Intl.DisplayNames(['en'], {type: 'region'}).of(code) || code; } catch { /* Use the code. */ }
+      item.title = name;
+      const count = item.querySelector('b');
+      if (count) item.setAttribute('aria-label', name + ': ' + count.textContent + ' page views');
+      for (const node of [...item.childNodes]) {
+        if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() === label && label !== code) node.textContent = code + ' ';
+      }
+      if (item.querySelector('.country-flag')) continue;
       const flag = document.createElement('img');
       flag.className = 'country-flag';
       flag.src = '/assets/flags/' + code.toLowerCase() + '.svg';

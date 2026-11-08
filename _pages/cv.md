@@ -129,7 +129,7 @@ Project Manager (tendering, planning, estimation, billing, client correspondence
 ## Awards and Funding
 
 - President's Initiative on Provision of Education Scholarship (Pakistan, 2007-2010)
-- PhD Research Studentship, Faculty of Engineering and Physical Sciences, University of Southampton
+- EPSRC CDT-funded PhD, Faculty of Engineering and Physical Sciences, University of Southampton
 
 ## Academic Service
 
