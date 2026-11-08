@@ -18,9 +18,23 @@
     }
     const heroTitle = root.querySelector('.hero-copy h1');
     if (heroTitle && heroTitle.textContent !== 'Knowledge & Opportunity') heroTitle.textContent = 'Knowledge & Opportunity';
-    const intro = root.querySelector('.hero-copy > p');
-    const introduction = 'Research insights, learning resources, jobs and scholarships—all in one place.';
-    if (intro && intro.textContent !== introduction) intro.textContent = introduction;
+    const heroCopy = root.querySelector('.hero-copy');
+    if (heroCopy && !heroCopy.querySelector('.science-quote')) {
+      const source = 'https://blog.oup.com/2018/07/newtons-laws-discovery/';
+      const quote = document.createElement('figure');
+      quote.className = 'science-quote';
+      const words = document.createElement('blockquote');
+      words.cite = source;
+      words.textContent = '“If I have seen further it is by standing on the shoulders of Giants.”';
+      const caption = document.createElement('figcaption');
+      const attribution = document.createElement('a');
+      attribution.href = source;
+      attribution.textContent = 'Isaac Newton';
+      attribution.setAttribute('aria-label', 'Isaac Newton — quotation source at Oxford University Press');
+      caption.append(attribution);
+      quote.append(words, caption);
+      heroCopy.append(quote);
+    }
     const eyebrow = root.querySelector('#explore .section-heading .eyebrow');
     if (eyebrow && eyebrow.textContent !== 'Blog & resources') {
       eyebrow.textContent = 'Blog & resources';
