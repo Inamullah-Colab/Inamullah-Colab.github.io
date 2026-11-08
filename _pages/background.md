@@ -1,7 +1,7 @@
 ---
 layout: portfolio-page
 description: "My path from engineering to computational health research."
-title: "About"
+title: "About me"
 permalink: /background/
 author_profile: false
 ---

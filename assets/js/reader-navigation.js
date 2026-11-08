@@ -10,6 +10,8 @@
     const filtered = Boolean(labels[section]) && index;
     document.body.classList.toggle('hub-index', index);
     document.body.classList.toggle('hub-filtered', filtered);
+    const readershipHeading = root.querySelector('#readership-heading');
+    if (readershipHeading && readershipHeading.textContent !== 'Visitor statistics') readershipHeading.textContent = 'Visitor statistics';
     const nav = root.querySelector('.header nav');
     if (nav) {
       nav.setAttribute('aria-label', 'Knowledge & Opportunity sections');

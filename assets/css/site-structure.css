@@ -63,3 +63,8 @@
 @media(max-width:900px){.knowledge-page.hub-index:not(.hub-filtered) main>.hero{padding:20px 28px;gap:26px;grid-template-columns:140px minmax(0,1fr)}.knowledge-page.hub-index #explore{padding-inline:28px}}
 @media(max-width:620px){.knowledge-page.hub-index:not(.hub-filtered) main>.hero{grid-template-columns:88px minmax(0,1fr);gap:16px;padding:20px}.knowledge-page.hub-index .science-art{border-radius:12px}.knowledge-page.hub-index .science-art figcaption{display:none}.knowledge-page.hub-index .science-quote blockquote{font-size:20px;line-height:1.4;letter-spacing:-.2px}.knowledge-page.hub-index .science-quote figcaption{margin-top:10px;font-size:12px}.knowledge-page.hub-index #explore{padding:20px 20px 32px}.knowledge-page.hub-index #explore .section-heading{margin-bottom:12px}.knowledge-page.hub-index #explore .section-heading h2{font-size:24px}.knowledge-page.hub-filtered #explore .section-heading h2{font-size:30px}}
 @media(max-width:360px){.knowledge-page .site-header.wrap{gap:8px}.knowledge-page .site-header .wordmark{gap:8px}.knowledge-page .site-header .wordmark-name{font-size:14px}.knowledge-page .site-header .wordmark-name small{font-size:11px}.knowledge-page .site-header .monogram{width:30px;height:34px;font-size:22px;line-height:31px}.knowledge-page .site-header .menu-toggle{font-size:14px;padding:6px 8px}}
+
+/* Flag images also render reliably where emoji country flags are unavailable. */
+.public-country-list>span,.readership-countries>span{display:inline-flex;align-items:center;gap:8px}
+.public-country-list .country-flag,.readership-countries .country-flag{display:block;width:24px;height:18px;object-fit:contain;flex:0 0 24px;border-radius:2px;box-shadow:0 0 0 1px #23363b18}
+.country-flag[hidden]{display:none!important}
