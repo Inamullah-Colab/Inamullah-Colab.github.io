@@ -1,3 +1,4 @@
-# Add your own Google publisher ID through the private publishing workspace.
-publisher_id: ""
-mode: "off"
+# Google AdSense publisher ID supplied by the site owner.
+# code: load the AdSense script; verification: meta tag only; off: disabled.
+publisher_id: "ca-pub-4993619915688606"
+mode: "code"

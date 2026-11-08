@@ -2,4 +2,4 @@
 layout: null
 permalink: /ads.txt
 ---
-{% assign ads_id = site.data.adsense.publisher_id | default: '' %}{% if site.data.adsense.mode == 'verification' and ads_id != '' %}google.com, {{ ads_id | remove_first: 'ca-' }}, DIRECT, f08c47fec0942fa0{% else %}# No advertising seller is configured. Ads are not active.{% endif %}
+{% assign ads_id = site.data.adsense.publisher_id | default: '' %}{% if ads_id != '' %}{% if site.data.adsense.mode == 'verification' or site.data.adsense.mode == 'code' %}google.com, {{ ads_id | remove_first: 'ca-' }}, DIRECT, f08c47fec0942fa0{% else %}# No advertising seller is configured. Ads are not active.{% endif %}{% else %}# No advertising seller is configured. Ads are not active.{% endif %}

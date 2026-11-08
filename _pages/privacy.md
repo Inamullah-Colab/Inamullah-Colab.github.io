@@ -31,7 +31,11 @@ Some existing research pages use external mathematical rendering or other embedd
 
 ## Advertising
 
-The GitHub website does not currently load Google AdSense advertising code. Visitor statistics are independent of advertising. If advertising is introduced, this notice and any required consent controls will be updated.
+Google AdSense code is installed on this public website using the publisher account `ca-pub-4993619915688606`. Installing the code supports Google’s site verification and advertising integration; it does not establish that Google has approved the site or that advertisements are being served.
+
+When this code loads, your browser connects to Google. Google may receive technical information such as your IP address and browser information, and may use cookies or similar technologies according to the service, settings and applicable consent choices. See [how Google uses information from sites that use its services](https://policies.google.com/technologies/partner-sites) and [Google’s Privacy Policy](https://policies.google.com/privacy).
+
+The **Visitor statistics preferences** control applies only to this website’s optional page-view counter. It does not set Google advertising preferences. Where Google displays a consent message, use its consent and manage-options controls for Google advertising choices. You can also review your preferences in [Google’s My Ad Center](https://myadcenter.google.com/).
 
 ## Contact
 

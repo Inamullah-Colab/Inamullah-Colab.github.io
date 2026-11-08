@@ -1,2 +1,9 @@
 {% assign ads_id = site.data.adsense.publisher_id | default: '' %}
-{% if site.data.adsense.mode == 'verification' and ads_id != '' %}<meta name="google-adsense-account" content="{{ ads_id | escape }}">{% endif %}
+{% if ads_id != '' %}
+  {% if site.data.adsense.mode == 'verification' or site.data.adsense.mode == 'code' %}
+  <meta name="google-adsense-account" content="{{ ads_id | escape }}">
+  {% endif %}
+  {% if site.data.adsense.mode == 'code' %}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ ads_id | escape }}" crossorigin="anonymous"></script>
+  {% endif %}
+{% endif %}
