@@ -8,9 +8,9 @@
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <meta property="og:title" content="{{ page.title | escape }} | Inam Ullah Khan">
   <meta property="og:description" content="{{ page.description | escape }}">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="{{ page.og_type | default: 'website' | escape }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:image" content="{{ '/images/Profile_pic.jpg' | absolute_url }}">
+  <meta property="og:image" content="{{ page.image | default: '/images/Profile_pic.jpg' | absolute_url }}">
   <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/css/portfolio.css">
   <link rel="stylesheet" href="/assets/css/homepage.css?v=20261108c">
