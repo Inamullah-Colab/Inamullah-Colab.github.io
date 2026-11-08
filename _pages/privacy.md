@@ -38,3 +38,9 @@ The GitHub website does not currently load Google AdSense advertising code. Visi
 For a privacy question, contact [i1n23@soton.ac.uk](mailto:i1n23@soton.ac.uk). Email correspondence is used to respond to your request.
 
 </div>
+
+## Public readership total
+
+An aggregate page-view total for the last 90 days and today is displayed publicly. It does not identify readers. Detailed source, country and page reports remain restricted to the publisher. Reading the total does not itself record an analytics event; recording a page view still requires your permission.
+
+Knowledge & Opportunity is the publisher’s private writing workspace. Public articles are hosted on this GitHub website.

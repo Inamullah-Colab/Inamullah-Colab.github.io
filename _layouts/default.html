@@ -9,7 +9,8 @@ layout: compress
   <head>
     {% include head.html %}
     {% include head/custom.html %}
-  </head>
+    {% include adsense-verification.html %}
+</head>
 
   {% assign page_view_class = "view-page" %}
   {% if page.url == "/" or page.url == "/index.html" or page.url == "/about/" or page.url == "/about.html" %}

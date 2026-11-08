@@ -1,0 +1,2 @@
+{% assign ads_id = site.data.adsense.publisher_id | default: '' %}
+{% if site.data.adsense.mode == 'verification' and ads_id != '' %}<meta name="google-adsense-account" content="{{ ads_id | escape }}">{% endif %}

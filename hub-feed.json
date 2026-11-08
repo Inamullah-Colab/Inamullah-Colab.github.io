@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /hub-feed.json
+---
+{"updated":{{ site.time | date_to_xmlschema | jsonify }},"posts":[{% assign first = true %}{% for post in site.posts %}{% unless post.path contains 'euler-test' %}{% unless first %},{% endunless %}{% assign first = false %}{"title":{{ post.title | jsonify }},"excerpt":{{ post.description | default: post.excerpt | strip_html | truncatewords: 40 | jsonify }},"category":{{ post.hub_category | default: 'Research methods' | jsonify }},"date":{{ post.date | date: '%Y-%m-%d' | jsonify }},"url":{{ post.url | absolute_url | jsonify }},"file":{{ post.path | jsonify }}}{% endunless %}{% endfor %}]}

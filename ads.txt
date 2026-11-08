@@ -1,0 +1,5 @@
+---
+layout: null
+permalink: /ads.txt
+---
+{% assign ads_id = site.data.adsense.publisher_id | default: '' %}{% if site.data.adsense.mode == 'verification' and ads_id != '' %}google.com, {{ ads_id | remove_first: 'ca-' }}, DIRECT, f08c47fec0942fa0{% else %}# No advertising seller is configured. Ads are not active.{% endif %}
