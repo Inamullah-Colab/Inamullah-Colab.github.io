@@ -32,7 +32,7 @@
       input.dispatchEvent(new Event('input',{bubbles:true}));
     }
   }
-  new MutationObserver(connect).observe(root,{childList:true,subtree:true});
+  new MutationObserver(connect).observe(root,{childList:true,subtree:true,attributes:true,attributeFilter:['aria-pressed']});
   window.addEventListener('popstate',connect);
   connect();
 })();
