@@ -1,4 +1,5 @@
 ---
+description: "A practical research notebook on checking distributions and variation before modelling."
 title: "Normality and Variance Diagnostics for Causal Discovery"
 date: 2026-01-22 20:51:00 +0000
 last_modified_at: 2026-07-14 20:51:00 +0000
@@ -365,3 +366,4 @@ Running lightweight diagnostics before method comparison is therefore not cosmet
 - [7] Shimizu, S., Hoyer, P. O., Hyvarinen, A., & Kerminen, A. (2006). A Linear Non-Gaussian Acyclic Model for Causal Discovery. *JMLR*.
 - [8] Lachapelle, S., Brouillard, P., Deleu, T., & Lacoste-Julien, S. (2019). Gradient-Based Neural DAG Learning. *ICLR*.
 - [9] Benjamini, Y., & Hochberg, Y. (1995). Controlling the false discovery rate: a practical and powerful approach to multiple testing. *JRSS-B*.
+

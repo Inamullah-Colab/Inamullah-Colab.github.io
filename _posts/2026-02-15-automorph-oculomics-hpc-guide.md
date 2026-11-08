@@ -1,4 +1,4 @@
-﻿---
+---
 layout: post
 title: "AutoMorph from Local Repo to HPC/SSH: one definitive guide"
 date: 2026-02-15
@@ -257,3 +257,4 @@ find "$AUTOMORPH_DATA/Results/M3" -maxdepth 2 -type f -name '*.csv' | sort</code
     </ul>
   </section>
 </div>
+

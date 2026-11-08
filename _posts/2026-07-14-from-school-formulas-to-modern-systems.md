@@ -1,4 +1,5 @@
 ---
+description: "Connect familiar school formulas with the systems and technologies they help explain."
 title: "From School Formulas to Modern Systems"
 layout: post
 date: 2026-07-14 12:00:00 +0000
@@ -309,3 +310,4 @@ And some of it returns, eventually, to human questions in medicine and society.
 That is why I no longer see those old school formulas as time wasted.
 
 I see them as the early pieces of a much larger map.
+

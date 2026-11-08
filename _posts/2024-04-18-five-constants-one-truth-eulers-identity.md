@@ -1,4 +1,5 @@
 ---
+description: "An introduction to the five constants brought together by Euler’s identity."
 title: "Five Constants, One Truth: Euler's Identity"
 layout: post
 date: 2024-04-18 12:00:00 +0000
@@ -196,3 +197,4 @@ All of that appears through one elegantly compact equation.
 This suggests that Euler's identity is not just a mathematical curiosity. It is a compact description of how reality encodes and transmits information across scales, from quantum mechanics to classical physics to artificial intelligence systems.
 
 In many ways, understanding Euler's identity is understanding part of the language that nature uses to communicate with itself. Its beauty lies not just in mathematical correctness, but in revealing that seemingly separate mathematical concepts are fundamentally connected.
+

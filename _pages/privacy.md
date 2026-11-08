@@ -1,84 +1,40 @@
 ---
-title: "Privacy Policy"
+layout: portfolio
+title: "Privacy and visitor statistics"
+description: "How this educational website handles optional visitor statistics and external links."
 permalink: /privacy/
-author_profile: true
 ---
+<link rel="stylesheet" href="/assets/css/knowledge-hub.css">
+<div class="hub-article hub-prose" markdown="1">
 
-This Privacy Policy explains, in general terms, how information may be handled when you visit this website.
+# Privacy and visitor statistics
 
-The site is a personal academic and technical website hosted through GitHub Pages. It is intended to share articles, research-related content, and professional information.
+Updated 8 November 2026.
 
-## What This Site May Collect
+This is Inam Ullah Khan’s academic and educational website. Its public pages are hosted by GitHub Pages.
 
-Like most websites, this site may generate basic technical information automatically when you visit it. This can include:
+## Optional visitor statistics
 
-- IP address
-- browser type
-- device and operating system information
-- referring page
-- pages visited
-- date and time of access
+Statistics are off until you choose **Allow statistics**. You can refuse without losing access to the articles. The **Visitor statistics preferences** button at the bottom of each supported page lets you change your choice. Your browser stores this preference locally; it is not a visitor identifier. If browser storage is unavailable, the choice applies only to the current page.
 
-This information is typically used in aggregated form for site delivery, maintenance, and general understanding of traffic patterns.
+After you opt in, the website sends a page-view event to the author’s visitor-insights service hosted through ChatGPT Sites. It records the date, page path, referring website’s hostname (when available), an allowlisted sharing label such as “facebook”, and approximate country from the hosting network. It counts page views, not unique people.
 
-## Cookies and Similar Technologies
+The analytics database stores daily aggregate counts for up to 90 days. Older counts are removed when collection next runs. It does not store names, email addresses, persistent visitor IDs, full referring URLs, query strings, precise locations or raw IP addresses. The collection service briefly uses network addresses in memory to limit repeated requests. Hosting providers may process network information separately to deliver and secure the services.
 
-This site may use cookies or similar technologies directly or through third-party services.
+Only the website owner can open the statistics dashboard or export its data. A browser’s Global Privacy Control or Do Not Track signal disables this optional collection. Blocking scripts also prevents collection. Country estimates may reflect a VPN; a missing referring website is reported as “Direct / unknown”.
 
-Cookies may be used for:
+## Hosting and external content
 
-- basic site functionality
-- analytics or traffic measurement
-- embedded services or external content
-- future advertising or monetization tools, if enabled later
+GitHub may collect technical information, including IP addresses, when serving this website. See the [GitHub Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement). The visitor-insights service is delivered using OpenAI’s Sites infrastructure; see [OpenAI’s Privacy Policy](https://openai.com/policies/privacy-policy/).
 
-You can control or disable cookies through your browser settings.
-
-## Analytics and External Services
-
-This site may use or later enable external tools and scripts that help provide functionality or understand site usage.
-
-These may include services such as:
-
-- GitHub Pages hosting infrastructure
-- MathJax for mathematical rendering
-- analytics providers, if enabled
-- social or professional external links
-- future monetization tools such as Google AdSense, if added later
-
-These third-party services may process technical information according to their own privacy policies.
+Some existing research pages use external mathematical rendering or other embedded resources. Visiting an external link takes you to that service, which has its own privacy practices. Scholarship and job applications are handled by the linked organisations, not collected on this website.
 
 ## Advertising
 
-At present, this site may not actively display advertising. However, advertising services may be added in the future.
-
-If advertising such as Google AdSense is enabled later, third-party vendors may use cookies to serve ads based on a user's prior visits to this or other websites.
-
-If that happens, this Privacy Policy may be updated to reflect the active advertising setup.
-
-## Emails and Direct Contact
-
-If you contact me directly by email or through other external platforms, any information you share will only be used to respond to your message or discuss the relevant request.
-
-I do not sell personal information.
-
-## External Links
-
-This site may contain links to third-party websites, including academic resources, social media platforms, professional profiles, or external tools.
-
-I am not responsible for the privacy practices or content of third-party sites. You should review their policies separately.
-
-## Data Security
-
-Reasonable effort is made to keep this site professional and secure, but no website can guarantee absolute security.
-
-## Changes to This Policy
-
-This Privacy Policy may be updated over time if the site changes, for example if analytics, contact forms, newsletters, or advertising services are added later.
+The GitHub website does not currently load Google AdSense advertising code. Visitor statistics are independent of advertising. If advertising is introduced, this notice and any required consent controls will be updated.
 
 ## Contact
 
-If you have a privacy-related question about this website, you can contact me at:
+For a privacy question, contact [i1n23@soton.ac.uk](mailto:i1n23@soton.ac.uk). Email correspondence is used to respond to your request.
 
-- Email: `i1n23@soton.ac.uk`
-- Website: [inamullah-colab.github.io](https://inamullah-colab.github.io/)
+</div>

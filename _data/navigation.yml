@@ -20,8 +20,8 @@ main:
   - title: "Publications"
     url: /publications/
 
-  - title: "Blog Posts"
-    url: /year-archive/
+  - title: "Blog & Scholarships"
+    url: /blog/
 
   - title: "CV"
     url: /cv/
@@ -40,3 +40,4 @@ main:
   
   #- title: "Guide"
   #  url: /markdown/
+

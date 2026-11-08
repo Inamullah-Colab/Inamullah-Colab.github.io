@@ -1,4 +1,5 @@
 ---
+description: "Explore Euler’s identity through a closer look at complex numbers and mathematical structure."
 title: "Five Constants, One Truth: Euler's Identity, A Deeper Look"
 layout: post
 date: 2026-04-19 12:00:00 +0000
@@ -337,3 +338,4 @@ continues to fascinate students, scientists, and mathematicians alike. It is not
 [^5]: Kanti V. Mardia and Peter E. Jupp, *Directional Statistics*.
 [^6]: Ronald N. Bracewell, *The Fourier Transform and Its Applications*.
 [^7]: Matthew Tancik et al., "Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains."
+

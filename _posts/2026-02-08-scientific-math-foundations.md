@@ -1,4 +1,5 @@
 ---
+description: "Revisit mathematical formulas with the reasoning and scientific ideas behind them."
 title: "Scientific and Mathematical Foundations: Formulas I Once Memorised, Then Finally Understood"
 layout: post
 categories: [foundations, mathematics, scientific-computing]
@@ -296,3 +297,4 @@ If I ever find myself asking, "Why do I need this?", the better question is:
 What behaviour is this formula trying to describe?
 
 That is usually where the meaning begins.
+
