@@ -45,6 +45,6 @@ For a privacy question, contact [i1n23@soton.ac.uk](mailto:i1n23@soton.ac.uk). E
 
 ## Public readership total
 
-An aggregate page-view total for the last 90 days and today is displayed publicly. It does not identify readers. Detailed source, country and page reports remain restricted to the publisher. Reading the total does not itself record an analytics event; recording a page view still requires your permission.
+Aggregate page-view totals for the last 90 days and today, the number of reported countries, and country-level view counts are displayed publicly at the bottom of pages. They do not identify individual readers. Detailed traffic-source and page reports remain restricted to the publisher. Reading the total does not itself record an analytics event; recording a page view still requires your permission.
 
-Knowledge & Opportunity is the publisher’s private writing workspace. Public articles are hosted on this GitHub website.
+Knowledge & Opportunity is a public reading and learning hub, linked from Blog & Scholarships. Its publishing studio and drafts are restricted to the publisher. Visitor counts for that hub and this portfolio are kept separately.
