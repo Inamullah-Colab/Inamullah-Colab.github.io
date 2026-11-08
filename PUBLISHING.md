@@ -1,7 +1,7 @@
 # Blog and Scholarships
 
 Public index: https://inamullah-colab.github.io/knowledge/
-Journal filter: https://inamullah-colab.github.io/knowledge/?section=Blog
+Blog filter: https://inamullah-colab.github.io/knowledge/?section=Blog
 
 `/blog/`, `/year-archive/`, `/categories/` and `/tags/` are compatibility redirects, not separate catalogues. Individual article URLs are unchanged. The shared navigation lives in `_data/navigation.yml` and `_includes/site-header.html`.
 Publisher tools: https://inamullah-colab.github.io/publisher/

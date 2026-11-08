@@ -11,7 +11,7 @@ permalink: /sitemap/
 | Journal articles, conference papers and manuscripts | [Publications](/publications/) |
 | Personal background and research motivation | [About](/background/) |
 | Education, employment, teaching and technical skills | [CV](/cv/) |
-| Research perspectives and explanations | [Journal](/knowledge/?section=Blog) |
+| Research perspectives and explanations | [Blog](/knowledge/?section=Blog) |
 | School and university learning material | [Learning](/knowledge/?section=Learning) |
 | Research roles and vacancies | [Jobs](/knowledge/?section=Jobs) |
 | Funding and study opportunities | [Scholarships](/knowledge/?section=Scholarships) |
@@ -19,6 +19,6 @@ permalink: /sitemap/
 | Reference books, software and research tools | [Research resources](/resources/) |
 | Working together | [Collaboration](/services/) |
 
-Journal, Learning, Jobs, Scholarships and Community are sections of **[Knowledge & Opportunity](/knowledge/)**. Individual articles keep their own shareable addresses.
+Blog, Learning, Jobs, Scholarships and Community are sections of **[Knowledge & Opportunity](/knowledge/)**. Individual articles keep their own shareable addresses.
 
 [Privacy and visitor statistics](/privacy/) · [XML sitemap](/sitemap.xml)

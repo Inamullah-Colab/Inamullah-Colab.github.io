@@ -2,7 +2,7 @@
 (() => {
   const root = document.getElementById('reader-root');
   if (!root) return;
-  const labels = {Blog:'Journal',Scholarships:'Scholarships',Jobs:'Jobs',Learning:'Learning','Medical research':'Medical research'};
+  const labels = {Blog:'Blog',Scholarships:'Scholarships',Jobs:'Jobs',Learning:'Learning','Medical research':'Medical research'};
   let searchApplied = false;
   function connect() {
     const section = new URLSearchParams(location.search).get('section');
@@ -11,13 +11,23 @@
     document.body.classList.toggle('hub-index', index);
     document.body.classList.toggle('hub-filtered', filtered);
     const nav = root.querySelector('.header nav');
-    if (nav) nav.setAttribute('aria-label', 'Knowledge & Opportunity sections');
-    for (const button of root.querySelectorAll('.tabs button')) {
-      if (button.textContent === 'Blog') button.textContent = 'Journal';
+    if (nav) {
+      nav.setAttribute('aria-label', 'Knowledge & Opportunity sections');
+      const blog = nav.querySelector('a[href$="?section=Blog"]');
+      if (blog && blog.textContent !== 'Blog') blog.textContent = 'Blog';
+    }
+    const heroTitle = root.querySelector('.hero-copy h1');
+    if (heroTitle && heroTitle.textContent !== 'Knowledge & Opportunity') heroTitle.textContent = 'Knowledge & Opportunity';
+    const intro = root.querySelector('.hero-copy > p');
+    const introduction = 'Research insights, learning resources, jobs and scholarships—all in one place.';
+    if (intro && intro.textContent !== introduction) intro.textContent = introduction;
+    const eyebrow = root.querySelector('#explore .section-heading .eyebrow');
+    if (eyebrow && eyebrow.textContent !== 'Blog & resources') {
+      eyebrow.textContent = 'Blog & resources';
     }
     const title = root.querySelector('#explore .section-heading h2');
     if (title) {
-      const text = filtered ? labels[section] : 'Good things to know.';
+      const text = filtered ? labels[section] : 'Latest posts & opportunities';
       if (title.textContent !== text) title.textContent = text;
       title.setAttribute('aria-level', filtered ? '1' : '2');
     }

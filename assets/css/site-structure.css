@@ -35,3 +35,28 @@
 @media(max-width:620px){.site-header.wrap{width:calc(100% - 36px);gap:12px;flex-direction:row}.site-header .wordmark-name{font-size:16px}.site-header .wordmark-name small{font-size:12px}.site-header .monogram{width:36px;height:38px;font-size:25px;line-height:35px}.site-header nav{width:100%;align-items:flex-start}.profile-page{margin-top:26px}.profile-page-heading p{font-size:18px}.profile-prose{font-size:17px}.profile-prose .pub-card{grid-template-columns:1fr}.profile-prose .pub-img-wrap{max-width:200px}.section-route{align-items:start;flex-direction:column}.knowledge-page .header{gap:12px;flex-wrap:wrap}.knowledge-page .header nav{gap:15px;flex-wrap:wrap}.knowledge-page .header nav a{font-size:14px}}
 
 .hub-prose pre{max-width:100%;overflow-x:auto;padding:18px;background:var(--wash);border:1px solid var(--line);font-size:14px;line-height:1.65}.hub-prose img{height:auto}.hub-prose code{overflow-wrap:anywhere}.hub-prose .highlight{max-width:100%;overflow-x:auto}
+
+/* Keep the introduction short enough for readers to see the catalogue immediately. */
+.knowledge-page.hub-index:not(.hub-filtered) main>.hero{grid-template-columns:minmax(0,1fr) 180px;align-items:center;gap:32px;padding:20px 48px}
+.knowledge-page.hub-index .hero-copy>.eyebrow,.knowledge-page.hub-index .hero-foot,.knowledge-page.hub-index main>.route-strip{display:none}
+.knowledge-page.hub-index .hero h1{font-size:clamp(29px,3vw,38px);line-height:1.15;letter-spacing:-.8px;margin:0 0 12px}
+.knowledge-page.hub-index .hero-copy>p{font-size:16px;line-height:1.6;margin:0;max-width:720px}
+.knowledge-page.hub-index .hero-actions{gap:20px;margin:16px 0 0;flex-direction:row;flex-wrap:wrap;align-items:center}
+.knowledge-page.hub-index .hero-actions .primary{padding:9px 15px;font-size:14px}
+.knowledge-page.hub-index .hero-actions .text-link{font-size:14px}
+.knowledge-page.hub-index .science-art{max-width:180px;border-radius:16px;box-shadow:none;align-self:center}
+.knowledge-page.hub-index .science-art figcaption{padding:10px 12px 0}
+.knowledge-page.hub-index .science-art-title{font-size:15px;line-height:1.25;margin:0;letter-spacing:0}
+.knowledge-page.hub-index .science-kicker,.knowledge-page.hub-index .science-spark,.knowledge-page.hub-index .science-art-footer{display:none}
+.knowledge-page.hub-index .science-map{margin:0;width:100%;height:auto}
+.knowledge-page.hub-index #explore{padding:22px 48px 45px;border-top:1px solid var(--line)}
+.knowledge-page.hub-index #explore .section-heading{margin-bottom:16px}
+.knowledge-page.hub-index #explore .section-heading h2{font-size:28px;line-height:1.2;margin:0}
+.knowledge-page.hub-index #explore .section-heading .eyebrow,.knowledge-page.hub-index #explore .section-heading>p{display:none}
+.knowledge-page.hub-index #explore .tabs{padding-bottom:12px}
+.knowledge-page.hub-index #explore .search-row{margin:14px 0}
+.knowledge-page.hub-index #explore .result-line{margin:12px 0}
+.knowledge-page.hub-filtered #explore .section-heading h2{font-size:36px}
+@media(max-width:900px){.knowledge-page.hub-index:not(.hub-filtered) main>.hero{padding:20px 28px;gap:22px;grid-template-columns:minmax(0,1fr) 150px}.knowledge-page.hub-index #explore{padding-inline:28px}}
+@media(max-width:620px){.knowledge-page.hub-index:not(.hub-filtered) main>.hero{grid-template-columns:minmax(0,1fr) 76px;gap:12px;padding:16px 20px}.knowledge-page.hub-index .hero-copy{display:contents}.knowledge-page.hub-index .hero h1{grid-column:1;grid-row:1;font-size:27px;margin:0}.knowledge-page.hub-index .science-art{grid-column:2;grid-row:1;width:76px;border-radius:12px}.knowledge-page.hub-index .science-art figcaption{display:none}.knowledge-page.hub-index .hero-copy>p{grid-column:1/-1;grid-row:2;font-size:14px;line-height:1.5}.knowledge-page.hub-index .hero-actions{grid-column:1/-1;grid-row:3;margin:0;gap:12px}.knowledge-page.hub-index .hero-actions .primary{font-size:13px;padding:8px 12px}.knowledge-page.hub-index .hero-actions .text-link{font-size:13px}.knowledge-page.hub-index #explore{padding:20px 20px 32px}.knowledge-page.hub-index #explore .section-heading{margin-bottom:12px}.knowledge-page.hub-index #explore .section-heading h2{font-size:24px}.knowledge-page.hub-filtered #explore .section-heading h2{font-size:30px}}
+@media(max-width:360px){.knowledge-page .site-header.wrap{gap:8px}.knowledge-page .site-header .wordmark{gap:8px}.knowledge-page .site-header .wordmark-name{font-size:14px}.knowledge-page .site-header .wordmark-name small{font-size:11px}.knowledge-page .site-header .monogram{width:30px;height:34px;font-size:22px;line-height:31px}.knowledge-page .site-header .menu-toggle{font-size:14px;padding:6px 8px}}

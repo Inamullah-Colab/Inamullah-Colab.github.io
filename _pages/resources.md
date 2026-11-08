@@ -27,4 +27,4 @@ This reference shelf complements the practical articles in [Knowledge & Opportun
 | Version control and collaboration | Git, GitHub |
 | Writing and reference management | LaTeX, Zotero |
 
-For research methods in context, read the [journal](/knowledge/?section=Blog). For opportunities, go directly to [Jobs](/knowledge/?section=Jobs) or [Scholarships](/knowledge/?section=Scholarships).
+For research methods in context, read the [blog](/knowledge/?section=Blog). For opportunities, go directly to [Jobs](/knowledge/?section=Jobs) or [Scholarships](/knowledge/?section=Scholarships).
