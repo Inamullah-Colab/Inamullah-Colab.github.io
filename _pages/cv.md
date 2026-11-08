@@ -1,11 +1,13 @@
 ---
+layout: portfolio-page
+description: "Education, experience, technical skills and academic service."
 title: "Curriculum Vitae"
 permalink: /cv/
-author_profile: true
+author_profile: false
 ---
 
 <div class="cv-academic-header">
-  <h1>Inam Ullah</h1>
+  <h2>Inam Ullah Khan</h2>
   <p>PhD Student, Computer Science (AI for Healthcare) | University of Southampton</p>
   <div class="cv-contact-grid">
     <span>Southampton, UK</span>

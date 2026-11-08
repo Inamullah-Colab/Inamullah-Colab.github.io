@@ -1,7 +1,9 @@
 ---
-title: "About Me"
+layout: portfolio-page
+description: "My path from engineering to computational health research."
+title: "About"
 permalink: /background/
-author_profile: true
+author_profile: false
 ---
 
 I began my professional journey in **civil engineering as an associate engineer**, where complex problems had to become practical solutions. Working with physical systems taught me to think about how components interact, respect real-world constraints, and ask whether a solution works beyond the drawing board.
@@ -9,14 +11,6 @@ I began my professional journey in **civil engineering as an associate engineer*
 My subsequent training in **physics, mathematics, and computer science** gave that practical instinct a new direction. Physics encouraged me to look for mechanisms, mathematics provided a language for structure and uncertainty, and computer science offered the tools to turn ideas into models.
 
 Today, I bring these perspectives together as a **Computer Science PhD researcher at the University of Southampton**. I develop machine learning and statistical methods that integrate **retinal imaging with molecular and clinical data** to seek interpretable insights into human health. My aim is to build understanding through models whose assumptions, limitations, and biological meaning can be examined.
-
-## How this perspective connects to my publications
-
-- **Practical modelling:** my [work on diversity in CNN ensembles](https://www.mdpi.com/2313-7673/8/2/187) examines a central challenge in medical imaging: learning from scarce and imbalanced data.
-- **Connecting biological systems:** the [oculomics and lipidomics study](https://www.nature.com/articles/s41598-026-74898-2) characterises cross-sectional associations between retinal vascular traits and molecular profiles. It connects quantitative image measurements with questions about systemic biology.
-- **Mathematical structure under real data constraints:** [RetiSEM](https://arxiv.org/pdf/2606.24488) studies interpretable causal modelling with fragmented biomedical evidence, bringing statistical reasoning to the problem of incomplete measurements.
-
-Together, these studies connect my interests in systems, quantitative reasoning, and computation. They also frame the problems I want to work on with academic and industry teams: interpretable models, biomedical data integration, and methods that remain useful under practical data constraints.
 
 ## Education and motivation
 
@@ -28,4 +22,4 @@ My motivation to work on health-related problems is also rooted in personal expe
 
 Although circumstances prevented me from pursuing a conventional medical career, the motivation remained. Over time, I came to see **computational science, engineering, and data-centric methods** as powerful ways to contribute to medical research and healthcare delivery. That realization gradually brought together my interests in physics, mathematics, computer science, engineering, and medical imaging into a single research trajectory.
 
-[Explore my research](/#research) | [View my CV](/cv/)
+[Explore my research](/#research) · [Read the publications](/publications/) · [View education and experience in my CV](/cv/)

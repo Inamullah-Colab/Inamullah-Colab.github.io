@@ -1,4 +1,5 @@
 ---
+layout: hub-article
 description: "A practical research notebook on checking distributions and variation before modelling."
 title: "Normality and Variance Diagnostics for Causal Discovery"
 date: 2026-01-22 20:51:00 +0000

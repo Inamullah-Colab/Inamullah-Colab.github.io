@@ -3,9 +3,14 @@ layout: portfolio
 ---
 <link rel="stylesheet" href="/assets/css/knowledge-hub.css">
 <article class="hub-article">
-  <a class="hub-back" href="/blog/">← Blog &amp; Scholarships</a>
-  <header class="hub-article-header"><p class="eyebrow">{{ page.hub_category | escape }}</p><h1>{{ page.title | escape }}</h1><p class="hub-standfirst">{{ page.description | escape }}</p><p class="hub-byline">By <a href="/background/">Inam Ullah Khan</a> <span>·</span> <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%d %B %Y' }}</time></p><div class="hub-share"><button type="button" id="copy-article-link">Copy article link</button><span id="copy-status" role="status" aria-live="polite"></span></div></header>
+  <a class="hub-back" href="/knowledge/">← Knowledge &amp; Opportunity</a>
+  <header class="hub-article-header"><p class="eyebrow">{{ page.hub_category | default: 'Journal' | escape }}</p><h1>{{ page.title | escape }}</h1><p class="hub-standfirst">{{ page.description | escape }}</p><p class="hub-byline">By <a href="/background/">Inam Ullah Khan</a> <span>·</span> <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%d %B %Y' }}</time></p><div class="hub-share"><button type="button" id="copy-article-link">Copy article link</button><span id="copy-status" role="status" aria-live="polite"></span></div></header>
   <div class="hub-prose">{{ content }}</div>
-  <footer class="hub-article-end"><p>Written and curated by Inam Ullah Khan.</p><a href="/blog/">Explore more articles →</a></footer>
+  <footer class="hub-article-end"><p>Written and curated by Inam Ullah Khan.</p><a href="/knowledge/">Explore more articles →</a></footer>
 </article>
 <script src="/assets/js/knowledge-hub.js" defer></script>
+{% if content contains '$' or content contains '\(' or content contains '\[' %}
+<script>window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:true},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script"></script>
+{% endif %}
+{% if content contains 'language-mermaid' %}<script type="module">import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';mermaid.initialize({startOnLoad:false,theme:'default'});await mermaid.run({querySelector:'code.language-mermaid'});</script>{% endif %}

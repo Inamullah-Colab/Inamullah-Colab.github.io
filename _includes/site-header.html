@@ -1,0 +1,13 @@
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header wrap">
+  <a class="wordmark" href="/" aria-label="Inam Ullah Khan home"><b class="monogram" aria-hidden="true">ik<span>.</span></b><span class="wordmark-name">Inam Ullah Khan<small>Researcher &amp; AI Engineer</small></span></a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" hidden>Menu <span aria-hidden="true">＋</span></button>
+  <nav id="main-navigation" aria-label="Main navigation">
+    {% for item in site.data.navigation.main %}
+      {% assign current = false %}
+      {% if page.url == item.url %}{% assign current = true %}{% endif %}
+      {% if item.url == '/knowledge/' %}{% if page.collection == 'posts' or page.url contains '/knowledge/' %}{% assign current = true %}{% endif %}{% endif %}
+      <a href="{{ item.url }}"{% if item.url == '/cv/' %} class="nav-cv"{% endif %}{% if current %} aria-current="page"{% endif %}>{{ item.title }}</a>
+    {% endfor %}
+  </nav>
+</header>

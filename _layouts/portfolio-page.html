@@ -1,0 +1,8 @@
+---
+layout: portfolio
+---
+<article class="profile-page{% if page.wide %} profile-page-wide{% endif %}">
+  <nav class="page-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span aria-current="page">{{ page.title | escape }}</span></nav>
+  <header class="profile-page-heading"><h1>{{ page.title | escape }}</h1>{% if page.description %}<p>{{ page.description | escape }}</p>{% endif %}</header>
+  <div class="profile-prose">{{ content }}</div>
+</article>

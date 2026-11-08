@@ -1,20 +1,17 @@
 ---
-layout: archive
+layout: portfolio-page
+description: "Published studies, conference papers and manuscripts, with links to the original work."
+wide: true
 title: "Publications"
 permalink: /publications/
-author_profile: true
+author_profile: false
 ---
 
 {% include base_path %}
 
 {% assign publications = site.data.publications | sort: "date" | reverse %}
 
-<section class="pub-hero">
-  <p class="pub-hero-copy">
-    My publications connect an engineering approach to practical problems with mathematical reasoning and computational methods for human health. The work spans ensemble learning for retinal images, retinal–molecular associations, and interpretable causal models for fragmented biomedical data.
-  </p>
-  <p><a href="/background/">How my interdisciplinary background shapes this research</a></p>
-</section>
+<p>For an overview of the questions behind these studies, <a href="/#research">explore the research programme</a>.</p>
 
 {% assign publication_types = "manuscripts|conferences" | split: "|" %}
 
