@@ -30,6 +30,10 @@ EMPLOYERS = {
     'LASE (University of Kent)': ('kent', 'LASE / University of Kent'),
     'University of Surrey': ('surrey', 'Surrey'),
 }
+DIRECTORIES = {
+    'University of Bath': 'https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1',
+    'University of Leeds': 'https://jobs.leeds.ac.uk/vacancies.aspx?cat=-1',
+}
 
 def build(data):
     runpy.run_path(str(ROOT / 'scripts/check-university-jobs.py'))['check'](data)
@@ -45,7 +49,8 @@ def build(data):
         slug, label = EMPLOYERS[employer]
         items = []
         for job in sorted(jobs, key=lambda j: (j['closing_date'], j['reference'])):
-            note = ' '.join(filter(None, [job['summary'], job['eligibility'], job['role_type'], job.get('editor_note', '')]))
+            sentences = filter(None, [job['summary'], job['eligibility'], job['role_type'], job.get('editor_note', '')])
+            note = ' '.join(s.rstrip().rstrip('.') + '.' for s in sentences)
             item = dict(title=job['title'], department=' · '.join(dict.fromkeys(filter(None, [job.get('department'), job['location']]))),
                         salary=job.get('salary', ''), deadline=job['closing_date'], availability=job['status'],
                         reference=job['reference'], url=job['url'], restrictions='', note=note)
@@ -58,7 +63,9 @@ def build(data):
         count = len(items)
         checked = min(j['checked_at'] for j in jobs)
         title = f'{label}: {GROUPS[group]}'
-        source = jobs[0]['url']
+        # A collection-wide provider button must not lead to one unrelated vacancy.
+        # Each role already carries its individually verified employer advert.
+        source = DIRECTORIES.get(employer, '')
         articles.append(dict(
             id=f'university-{slug}-{group}', title=title, category='Jobs',
             excerpt=f'{count} '+('role' if count == 1 else 'roles')+f' at {employer}, with salaries, eligibility notes, closing dates and official application links.',
