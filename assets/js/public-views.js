@@ -14,6 +14,11 @@
       box.querySelector('[data-public-total]').textContent = data.total.toLocaleString();
       box.querySelector('[data-public-today]').textContent = data.today.toLocaleString();
       box.querySelector('[data-public-countries]').textContent = data.countryCount.toLocaleString();
+      const period = box.querySelector('.counter-period');
+      if (period && /^\d{4}-\d{2}-\d{2}$/.test(data.firstRecordedDay || '')) {
+        const since = new Date(data.firstRecordedDay + 'T00:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+        period.textContent = 'All recorded history · Since ' + since;
+      }
       const list = box.querySelector('[data-public-country-list]');
       list.replaceChildren();
       for (const country of data.countries) {

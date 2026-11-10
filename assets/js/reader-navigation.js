@@ -17,7 +17,7 @@
       if (counterLabels[i] && label.textContent !== counterLabels[i]) label.textContent = counterLabels[i];
     });
     const counterNote = root.querySelector('.readership-footer > p:not([role])');
-    const note = 'Last 90 days · Statistics-enabled page views, not unique people.';
+    const note = 'All recorded history · Statistics-enabled page views, not unique people.';
     if (counterNote && counterNote.textContent !== note) counterNote.textContent = note;
     const nav = root.querySelector('.header nav');
     if (nav) {

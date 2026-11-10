@@ -19,7 +19,7 @@ Statistics are off until you choose **Allow statistics**. You can refuse without
 
 After you opt in, the website sends a page-view event to the author’s visitor-insights service hosted through ChatGPT Sites. It records the date, page path, referring website’s hostname (when available), an allowlisted sharing label such as “facebook”, and approximate country from the hosting network. It counts page views, not unique people.
 
-The analytics database stores daily aggregate counts for up to 90 days. Older counts are removed when collection next runs. It does not store names, email addresses, persistent visitor IDs, full referring URLs, query strings, precise locations or raw IP addresses. The collection service briefly uses network addresses in memory to limit repeated requests. Hosting providers may process network information separately to deliver and secure the services.
+The analytics database stores daily aggregate counts with no automatic age limit, so totals include all recorded history. It does not store names, email addresses, persistent visitor IDs, full referring URLs, query strings, precise locations or raw IP addresses. The collection service briefly uses network addresses in memory to limit repeated requests. Hosting providers may process network information separately to deliver and secure the services.
 
 Only the website owner can open the statistics dashboard or export its data. A browser’s Global Privacy Control or Do Not Track signal disables this optional collection. Blocking scripts also prevents collection. Country estimates may reflect a VPN; a missing referring website is reported as “Direct / unknown”.
 
@@ -45,6 +45,6 @@ For a privacy question, contact [i1n23@soton.ac.uk](mailto:i1n23@soton.ac.uk). E
 
 ## Public readership total
 
-Aggregate page-view totals for the last 90 days and today, the number of reported countries, and country-level view counts are displayed publicly at the bottom of pages. They do not identify individual readers. Detailed traffic-source and page reports remain restricted to the publisher. Reading the total does not itself record an analytics event; recording a page view still requires your permission.
+Aggregate page-view totals for all recorded history and today, the number of reported countries, and country-level view counts are displayed publicly at the bottom of pages. They do not identify individual readers. Detailed traffic-source and page reports remain restricted to the publisher. Reading the total does not itself record an analytics event; recording a page view still requires your permission.
 
 Knowledge & Opportunity is a public reading and learning hub, linked from Blog & Scholarships. Its publishing studio and drafts are restricted to the publisher. Visitor counts for that hub and this portfolio are kept separately.
