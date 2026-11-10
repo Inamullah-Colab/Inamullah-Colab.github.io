@@ -1,0 +1,28 @@
+{% assign collection = site.data.university_jobs %}
+{% assign jobs = collection.jobs | where: 'group', include.group %}
+<link rel="stylesheet" href="/assets/css/university-jobs.css?v=20261110">
+<div class="university-jobs" data-job-collection>
+  <p class="job-checked"><strong>Last checked: {{ collection.checked_at | date: '%-d %B %Y' }}</strong> · {{ jobs.size }} listings in this group</p>
+  <p>These vacancies were discovered through jobs.ac.uk and checked against the employers’ own adverts. Each summary is written for this website. Select a role below, then use its official advert to apply.</p>
+  <p class="job-key">A red line marks deadlines today or within seven days. Dates use UK time. A passed deadline is labelled automatically; employers may also close vacancies early.</p>
+  {% for job in jobs %}
+  <section class="university-job" id="{{ job.id | escape }}" data-job-deadline="{{ job.closing_date | escape }}" data-job-status="{{ job.status | escape }}">
+    <div class="job-heading"><h2>{{ job.title | escape }}</h2><span class="job-status" data-job-status-label>{% if job.status == 'closed' %}Closed{% elsif job.status == 'unverified' %}Needs recheck{% else %}Checked open{% endif %}</span></div>
+    <p class="job-employer"><strong>{{ job.employer | escape }}</strong> · {{ job.location | escape }}</p>
+    <p>{{ job.summary | escape }}</p>
+    <dl class="job-facts">
+      <div><dt>Role type</dt><dd>{{ job.role_type | escape }}</dd></div>
+      <div><dt>Application deadline</dt><dd><time datetime="{{ job.closing_date | escape }}">{{ job.closing_date | date: '%-d %B %Y' }}</time>{% if job.closing_time %} · {{ job.closing_time | escape }}{% endif %}</dd></div>
+      {% if job.salary %}<div><dt>Advertised salary</dt><dd>{{ job.salary | escape }}</dd></div>{% endif %}
+      <div><dt>Employer reference</dt><dd>{{ job.reference | escape }}</dd></div>
+    </dl>
+    <p><strong>Background sought:</strong> {{ job.eligibility | escape }}</p>
+    <p class="job-links"><a class="job-apply" href="{{ job.url | escape }}" target="_blank" rel="noopener noreferrer">Official employer advert and application ↗</a>{% if job.discovery_url %}<a href="{{ job.discovery_url | escape }}" target="_blank" rel="noopener noreferrer">jobs.ac.uk listing ↗</a>{% endif %}</p>
+    {% if job.editor_note %}<p class="job-source-note">{{ job.editor_note | escape }}</p>{% endif %}
+    <p class="job-source-note">Employer information checked {{ job.checked_at | date: '%-d %B %Y' }}. Confirm the full requirements and availability before applying.</p>
+  </section>
+  {% endfor %}
+  <p>These are selected vacancies from this review, not a complete copy of jobs.ac.uk. Sponsorship and eligibility depend on each employer’s advert. The weekly review updates these same pages so repeated adverts do not create duplicate posts.</p>
+  <nav class="job-related" aria-label="Other university role groups"><a href="/jobs/university-research-roles/">Research roles</a><a href="/jobs/university-teaching-roles/">Teaching roles</a><a href="/jobs/university-professional-technical-roles/">Professional & technical roles</a><a href="/knowledge/?section=Jobs">All Jobs</a></nav>
+</div>
+<script src="/assets/js/university-jobs.js?v=20261110" defer></script>
