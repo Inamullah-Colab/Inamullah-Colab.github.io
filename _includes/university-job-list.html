@@ -12,7 +12,7 @@
     <p>{{ job.summary | escape }}</p>
     <dl class="job-facts">
       <div><dt>Role type</dt><dd>{{ job.role_type | escape }}</dd></div>
-      <div><dt>Application deadline</dt><dd><time datetime="{{ job.closing_date | escape }}">{{ job.closing_date | date: '%-d %B %Y' }}</time>{% if job.closing_time %} · {{ job.closing_time | escape }}{% endif %}</dd></div>
+      <div><dt>Application deadline</dt><dd><time datetime="{{ job.closing_date | escape }}">{{ job.closing_date | date: '%-d %B %Y' }}</time>{% if job.closing_time and job.closing_time != empty %} · {{ job.closing_time | escape }}{% endif %}</dd></div>
       {% if job.salary %}<div><dt>Advertised salary</dt><dd>{{ job.salary | escape }}</dd></div>{% endif %}
       <div><dt>Employer reference</dt><dd>{{ job.reference | escape }}</dd></div>
     </dl>
