@@ -18,4 +18,4 @@ Projects may involve research collaboration, focused technical consultation, ana
 
 ## Start a conversation
 
-Email [i1n23@soton.ac.uk](mailto:i1n23@soton.ac.uk) or connect on [LinkedIn](https://www.linkedin.com/in/inam-ullah-khan-a30532150/). A short description of the problem, available data and intended outcome helps establish whether the project is a good fit.
+Email [inamullahk756@gmail.com](mailto:inamullahk756@gmail.com) or connect on [LinkedIn](https://www.linkedin.com/in/inam-ullah-khan-a30532150/). A short description of the problem, available data and intended outcome helps establish whether the project is a good fit.

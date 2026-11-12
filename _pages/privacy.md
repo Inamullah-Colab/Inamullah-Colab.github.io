@@ -41,7 +41,7 @@ The **Pause counting** control applies only to this website’s aggregate page-v
 
 ## Contact
 
-For a privacy question, contact [i1n23@soton.ac.uk](mailto:i1n23@soton.ac.uk). Email correspondence is used to respond to your request.
+For a privacy question, contact [inamullahk756@gmail.com](mailto:inamullahk756@gmail.com). Email correspondence is used to respond to your request.
 
 </div>
 
