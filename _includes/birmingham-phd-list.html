@@ -1,0 +1,33 @@
+{% assign collection = site.data.birmingham_phds %}
+{% assign projects = collection.projects | where: 'group', include.group %}
+<link rel="stylesheet" href="/assets/css/university-jobs.css?v=20261110">
+<link rel="stylesheet" href="/assets/css/birmingham-phds.css?v=20261115">
+<div class="university-jobs birmingham-phds">
+  <p class="job-checked"><strong>Checked {{ collection.checked_at | date: '%-d %B %Y' }}</strong> · {{ projects.size }} listings · University of Birmingham, UK</p>
+  <p>Explore the research focus, funding conditions and application route for each project. These are selected listings from the Birmingham PhD search, with original summaries and links to the university’s or programme’s adverts. A project listing does not guarantee a funded place.</p>
+  <p><a href="/scholarships/birmingham-phd-funding/">Read the funding and application guide</a> · <a href="/knowledge/?section=Scholarships">All scholarships</a></p>
+  <nav class="phd-group-nav" aria-label="Birmingham PhD subjects">
+    {% for group in collection.groups %}<a href="{{ group.url }}"{% if group.id == include.group %} aria-current="page"{% endif %}>{{ group.name | escape }} <span>({{ group.count }})</span></a>{% endfor %}
+  </nav>
+  <p class="job-key">A red line marks deadlines within seven days. Times are UK local time; a closing hour is shown only where published. Rolling projects can fill early. “Confirm details” means the sources disagree about dates or availability.</p>
+  {% for project in projects %}
+  <section class="university-job" id="{{ project.id | escape }}" data-phd-deadline="{{ project.deadline | escape }}" data-phd-instant="{{ project.deadline_iso | escape }}" data-phd-kind="{{ project.deadline_kind | escape }}" data-phd-status="{{ project.status | escape }}" data-phd-checked="{{ project.checked_at | escape }}">
+    <div class="job-heading"><h2>{{ project.title | escape }}</h2><span class="job-status" data-phd-status-label>{% if project.status == 'unverified' %}Confirm details{% elsif project.deadline_kind == 'rolling' %}Rolling applications{% else %}Listed at last check{% endif %}</span></div>
+    <p class="job-employer">{{ project.programme | escape }} · <span class="phd-reference">{{ project.reference | escape }}</span></p>
+    <p>{{ project.summary | escape }}</p>
+    <dl class="job-facts">
+      <div><dt>Application deadline</dt><dd>{% if project.deadline_label != project.deadline %}{{ project.deadline_label | escape }}{% elsif project.deadline != empty %}<time datetime="{{ project.deadline | escape }}">{{ project.deadline | date: '%-d %B %Y' }}</time>{% endif %}{% if project.deadline_time %} · {{ project.deadline_time | escape }}{% elsif project.deadline_kind == 'fixed' %}<small>Closing time not stated</small>{% endif %}</dd></div>
+      <div><dt>Funding</dt><dd>{{ project.funding | escape }}{% if project.programme == 'MIBTP' or project.programme == 'CENTA' or project.programme == 'HPRU genomics' %} · <a href="/scholarships/birmingham-phd-funding/#{{ project.programme | slugify }}">Programme terms</a>{% endif %}</dd></div>
+    </dl>
+    <p><strong>Eligibility:</strong> {{ project.eligibility | escape }}</p>
+    {% if project.requirements %}<p><strong>Background:</strong> {{ project.requirements | escape }}</p>{% endif %}
+    {% if project.supervisors %}<p><strong>Supervision:</strong> {{ project.supervisors | escape }}</p>{% endif %}
+    <p><strong>How to apply:</strong> {{ project.application | escape }}</p>
+    {% if project.note %}<p class="phd-note"><strong>Check before applying:</strong> {{ project.note | escape }}</p>{% endif %}
+    <p class="job-links"><a href="{{ project.url | escape }}" target="_blank" rel="noopener noreferrer">Read the university project advert ↗</a>{% if project.application_url and project.application_url != project.url %}<a href="{{ project.application_url | escape }}" target="_blank" rel="noopener noreferrer">Application instructions ↗</a>{% endif %}{% if project.advert_url and project.advert_url != project.url %}<a href="{{ project.advert_url | escape }}" target="_blank" rel="noopener noreferrer">jobs.ac.uk advert ↗</a>{% endif %}{% if project.extra_source %}<a href="{{ project.extra_source | escape }}" target="_blank" rel="noopener noreferrer">Additional source ↗</a>{% endif %}</p>
+  </section>
+  {% endfor %}
+  <p class="job-source-note">This collection contains 51 selected listings across six subjects, rather than every search result. Funding depends on selection and fee status. Stipends quoted for 2026/27 are not promises of the 2027/28 rate. Confirm current availability and the full award terms with the university.</p>
+  <p><a href="{{ collection.source_url | escape }}" target="_blank" rel="noopener noreferrer">Original Birmingham PhD search on jobs.ac.uk ↗</a></p>
+</div>
+<script src="/assets/js/birmingham-phds.js?v=20261115" defer></script>
