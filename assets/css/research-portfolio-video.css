@@ -1,4 +1,7 @@
-/* Homepage portfolio film: preserve the existing portrait and research layout. */
+/* Homepage portfolio film, with the separate portrait available in its archived include. */
+.homepage .hero.hero--film-full { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+.homepage .hero--film-full .hero-copy,
+.homepage .hero--film-full .hero-footnote { grid-column: 1; grid-row: auto; }
 .homepage .hero--film .hero-copy { display: block; min-width: 0; }
 .homepage .hero--film .hero-film-title {
   position: absolute;
