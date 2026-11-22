@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="/assets/css/portfolio.css">
   <link rel="stylesheet" href="/assets/css/homepage.css?v=20261108c">
   <link rel="stylesheet" href="/assets/css/site-structure.css?v=20261108-counter">
+  {% if page.body_class == "homepage" %}<link rel="stylesheet" href="/assets/css/research-portfolio-video.css">{% endif %}
   {% include adsense-verification.html %}
 </head>
 <body class="{{ page.body_class | default: '' | escape }}">
@@ -26,8 +27,10 @@
   </footer>
   <div class="public-views-wrap">{% include public-views.html %}</div>
   <script src="/assets/js/portfolio-navigation.js" defer></script>
+  {% if page.body_class == "homepage" %}<script src="/assets/js/research-portfolio-video.js" defer></script>{% endif %}
   {% include visitor-insights.html %}
 </body>
 </html>
+
 
 
