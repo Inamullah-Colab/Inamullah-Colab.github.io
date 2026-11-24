@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-17",
+  "checked_at": "2026-11-24",
   "discovery_source": "https://www.jobs.ac.uk/",
   "scope": "Employer-specific subject and role collections, using the same searchable roundup format as Cambridge, Oxford and Southampton. Selected verified adverts; not exhaustive.",
   "jobs": [
@@ -20,11 +20,11 @@
       "closing_time": "23:55",
       "checked_at": "2026-11-10",
       "status": "unverified",
-      "editor_note": "The current employer advert and application portal show 11 November; some search listings still show 16 November. Follow the employer’s deadline. Official advert could not be retrieved on 17 November 2026 (HTTP Error 404: Not Found). Previous details and verification date retained.",
+      "editor_note": "The current employer advert and application portal show 11 November; some search listings still show 16 November. Follow the employer’s deadline. Official advert could not be retrieved on 24 November 2026 (HTTP Error 404: Not Found). Previous details and verification date retained.",
       "department": "Digital and Technology",
       "collection_group": "computing",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official advert could not be retrieved on 17 November 2026 (HTTP Error 404: Not Found). Previous details and verification date retained.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official advert could not be retrieved on 24 November 2026 (HTTP Error 404: Not Found). Previous details and verification date retained.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -49,12 +49,20 @@
       "discovery_url": "https://www.jobs.ac.uk/job/DTN658/technician-in-creative-media-practice",
       "closing_date": "2026-11-18",
       "closing_time": "",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "department": "School of Media and Communication",
       "collection_group": "technical",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "qmul-11844",
@@ -71,12 +79,20 @@
       "discovery_url": "https://www.jobs.ac.uk/categories/university-administration-jobs/4",
       "closing_date": "2026-11-19",
       "closing_time": "23:55",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "department": "Faculty of Medicine & Dentistry",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "newcastle-29908",
@@ -93,19 +109,25 @@
       "discovery_url": "https://www.jobs.ac.uk/job/DTO313/botanical-research-technician",
       "closing_date": "2026-11-20",
       "closing_time": "",
-      "checked_at": "2026-11-10",
-      "status": "unverified",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "department": "School of Natural and Environmental Sciences",
       "collection_group": "technical",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official advert could not be retrieved on 17 November 2026 (HTTP Error 503: Service Unavailable). Previous details and verification date retained.",
-      "editor_note": "Official advert could not be retrieved on 17 November 2026 (HTTP Error 503: Service Unavailable). Previous details and verification date retained.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "editor_note": "",
       "status_history": [
         {
           "date": "2026-11-17",
           "previous_status": "open",
           "status": "unverified",
           "previous_checked_at": "2026-11-10"
+        },
+        {
+          "date": "2026-11-24",
+          "from": "unverified",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
         }
       ]
     },
@@ -124,12 +146,12 @@
       "discovery_url": "https://www.jobs.ac.uk/job/DTN870/it-support-manager-specialist",
       "closing_date": "2026-11-25",
       "closing_time": "",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "department": "Digital, Data & Technology Group",
       "collection_group": "computing",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "leeds-EPSTS1015",
@@ -146,12 +168,12 @@
       "discovery_url": "https://www.jobs.ac.uk/job/DTM087/electronics-workshop-technician",
       "closing_date": "2026-11-27",
       "closing_time": "",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "department": "Faculty of Engineering & Physical Sciences, EPS Faculty Technical Staff",
       "collection_group": "technical",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "leeds-epscv1173-energy-geostructures",
@@ -168,12 +190,20 @@
       "discovery_url": "https://www.jobs.ac.uk/job/DTO514/research-fellow-in-energy-geostructures",
       "closing_date": "2026-11-19",
       "closing_time": "23:59 UK time",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "department": "School of Civil Engineering",
       "collection_group": "engineering",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "leeds-fbsmb1323-cryoem",
@@ -190,12 +220,12 @@
       "discovery_url": "https://www.jobs.ac.uk/job/DTL358/research-fellow-in-structural-biology-cryoem",
       "closing_date": "2026-11-25",
       "closing_time": "",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "department": "School of Molecular and Cellular Biology",
       "collection_group": "health",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "aberdeen-ims339r-clinical-fellow",
@@ -212,12 +242,12 @@
       "discovery_url": "https://www.jobs.ac.uk/job/DTN873/clinical-research-fellow-in-acute-takotsubo-cardiomyopathy",
       "closing_date": "2026-11-26",
       "closing_time": "",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "department": "Institute of Medical Sciences, School of Medicine, Medical Sciences and Nutrition",
       "collection_group": "health",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "manchester-sae-032736-organic-synthesis",
@@ -234,12 +264,12 @@
       "discovery_url": "https://www.jobs.ac.uk/job/DTL998/research-associate-in-organic-synthesis",
       "closing_date": "2026-11-30",
       "closing_time": "Midnight on the closing date",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "department": "Department of Chemistry",
       "collection_group": "engineering",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "sheffield-3385-biomedical-engineering",
@@ -256,12 +286,12 @@
       "discovery_url": "https://www.jobs.ac.uk/job/DTO260/research-associate-in-biomedical-engineering",
       "closing_date": "2026-12-03",
       "closing_time": "",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "department": "School of Mechanical, Aerospace and Civil Engineering",
       "collection_group": "health",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "bath-sb14077-robotics",
@@ -278,12 +308,12 @@
       "discovery_url": "https://www.jobs.ac.uk/job/DTO870/research-associate-in-modelling-and-robotics",
       "closing_date": "2026-12-04",
       "closing_time": "",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "department": "Mechanical Engineering",
       "collection_group": "engineering",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "university-of-bath-ed14020",
@@ -300,12 +330,20 @@
       "discovery_url": "https://www.jobs.ac.uk/job/DTN887/lecturer",
       "closing_date": "2026-11-18",
       "closing_time": "",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "department": "Psychology",
       "collection_group": "academic",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "university-of-leeds-fbsbm1240",
@@ -322,12 +360,20 @@
       "discovery_url": "https://www.jobs.ac.uk/job/DTJ797/associate-professor-in-exercise-physiology",
       "closing_date": "2026-11-19",
       "closing_time": "23:59 UK time",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "department": "School of Biomedical Sciences",
       "collection_group": "academic",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "university-of-leeds-epsee1162",
@@ -344,12 +390,20 @@
       "discovery_url": "https://www.jobs.ac.uk/job/DTK439/lecturer-in-electronic-and-electrical-engineering-tandr-1-post",
       "closing_date": "2026-11-20",
       "closing_time": "23:59 UK time",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "department": "School of Electronic & Electrical Engineering",
       "collection_group": "academic",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "university-of-the-arts-london-12811",
@@ -370,9 +424,9 @@
       "status": "unverified",
       "department": "London College of Fashion, Academic Strategy",
       "collection_group": "academic",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official advert could not be retrieved on 17 November 2026 (HTTP Error 404: Not Found). Previous details and verification date retained.",
-      "editor_note": "Official advert could not be retrieved on 17 November 2026 (HTTP Error 404: Not Found). Previous details and verification date retained.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official advert could not be retrieved on 24 November 2026 (HTTP Error 404: Not Found). Previous details and verification date retained.",
+      "editor_note": "Official advert could not be retrieved on 24 November 2026 (HTTP Error 404: Not Found). Previous details and verification date retained.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -397,12 +451,20 @@
       "discovery_url": "https://www.jobs.ac.uk/job/DTP386/lecturer-in-urban-planning-fixed-term-maternity-cover",
       "closing_date": "2026-11-23",
       "closing_time": "Midnight, as stated by the employer",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "department": "Planning, Property and Environmental Management",
       "collection_group": "academic",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "lase-university-of-kent-emp-014-26",
@@ -419,12 +481,12 @@
       "discovery_url": "https://www.jobs.ac.uk/job/DTP422/lecturer-in-space-and-planetary-science",
       "closing_date": "2026-11-24",
       "closing_time": "23:59 GMT",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "department": "School of Engineering, Mathematics and Physics; Physics & Astronomy",
       "collection_group": "academic",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "university-of-surrey-053526",
@@ -441,12 +503,12 @@
       "discovery_url": "https://www.jobs.ac.uk/job/DTN950/lecturer-senior-lecturer-in-law-teaching-track",
       "closing_date": "2026-11-26",
       "closing_time": "23:59 GMT",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "department": "Surrey Law School",
       "collection_group": "academic",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "university-of-bath-kd14072",
@@ -463,12 +525,12 @@
       "discovery_url": "https://www.jobs.ac.uk/job/DTO300/lecturer-in-entrepreneurship",
       "closing_date": "2026-11-30",
       "closing_time": "",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "department": "School of Management",
       "collection_group": "academic",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "manchester-sae-031995-ai-software-engineering",
@@ -485,13 +547,13 @@
       "discovery_url": "https://www.jobs.ac.uk/job/DTP387/lecturer-or-senior-lecturer-in-ai-augmented-software-engineering",
       "closing_date": "2027-01-08",
       "closing_time": "",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "editor_note": "The employer advert gives 8 January 2027. A different date appears in the jobs.ac.uk header; the employer’s date is used here.",
       "department": "Department of Computer Science",
       "collection_group": "academic",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "bath-CC14064",
@@ -507,14 +569,14 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=CC14064",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-12-14",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "department": "Chemical Engineering",
       "editor_note": "",
       "subject": "Engineering and industrial innovation",
       "collection_group": "computing",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "bath-SS14070",
@@ -530,14 +592,14 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=SS14070",
       "discovery_url": "https://www.jobs.ac.uk/job/DTO314/post-doctoral-research-associate-in-sustainable-polymer-chemistry-schema",
       "closing_date": "2026-11-26",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "department": "Chemistry",
       "editor_note": "",
       "subject": "Chemistry and life sciences",
       "collection_group": "engineering",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "bath-ED14065",
@@ -553,20 +615,26 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=ED14065",
       "discovery_url": "https://www.jobs.ac.uk/job/DTO537/research-associate",
       "closing_date": "2026-11-29",
-      "checked_at": "2026-11-10",
-      "status": "unverified",
+      "checked_at": "2026-11-24",
+      "status": "open",
       "department": "Department for Health",
-      "editor_note": "Official advert closes 29 November; jobs.ac.uk search result shows 20 November. Use the official advert date. Official advert could not be retrieved on 17 November 2026 (HTTP Error 503: Service Unavailable). Previous details and verification date retained.",
+      "editor_note": "Official advert closes 29 November; jobs.ac.uk search result shows 20 November. Use the official advert date.",
       "subject": "Health and clinical research",
       "collection_group": "health",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official advert could not be retrieved on 17 November 2026 (HTTP Error 503: Service Unavailable). Previous details and verification date retained.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026.",
       "status_history": [
         {
           "date": "2026-11-17",
           "previous_status": "open",
           "status": "unverified",
           "previous_checked_at": "2026-11-10"
+        },
+        {
+          "date": "2026-11-24",
+          "from": "unverified",
+          "to": "open",
+          "reason": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
         }
       ]
     },
@@ -584,14 +652,14 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=SB13983",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-11-16",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "department": "Electronic & Electrical Engineering",
       "editor_note": "",
       "subject": "Engineering and industrial innovation",
       "collection_group": "academic",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -615,14 +683,14 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=SS14039",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-11-29",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "department": "Life Sciences",
       "editor_note": "",
       "subject": "Chemistry and life sciences",
       "collection_group": "engineering",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "bath-SS14044",
@@ -638,14 +706,14 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=SS14044",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-12-16",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "department": "Mathematical Sciences",
       "editor_note": "",
       "subject": "Mathematics and data science",
       "collection_group": "academic",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "bath-SS13987",
@@ -661,14 +729,14 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=SS13987",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-11-26",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "department": "Mathematical Sciences",
       "editor_note": "",
       "subject": "Mathematics and data science",
       "collection_group": "engineering",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "bath-ED14021",
@@ -684,14 +752,14 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=ED14021",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-11-16",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "department": "Politics, Languages & International Studies",
       "editor_note": "",
       "subject": "Politics and public policy",
       "collection_group": "social",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -715,14 +783,22 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=ED13989",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-11-17",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "department": "Psychology",
       "editor_note": "",
       "subject": "Health and clinical research",
       "collection_group": "health",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "bath-CC14066",
@@ -738,14 +814,14 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=CC14066",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-11-25",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "department": "School of Management",
       "editor_note": "",
       "subject": "Business research and data science",
       "collection_group": "computing",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "bath-CC14085",
@@ -761,14 +837,14 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=CC14085",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-11-24",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "department": "Campus Infrastructure",
       "editor_note": "",
       "subject": "IT, estates and technical services",
       "collection_group": "technical",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "bath-KD14059",
@@ -784,14 +860,14 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=KD14059",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-11-11",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "department": "Digital, Data & Technology Group",
       "editor_note": "Advert states a £3,500 market supplement in addition to the base salary.",
       "subject": "IT, estates and technical services",
       "collection_group": "computing",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -815,14 +891,14 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=SS14045",
       "discovery_url": "https://www.jobs.ac.uk/job/DTK291/department-coordinator",
       "closing_date": "2026-11-12",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "department": "Faculty of Science",
       "editor_note": "Official advert closes 12 November and locates this role in Plymouth; jobs.ac.uk metadata shows 15 November and Bath. Use the official advert. Part time at 0.6 FTE; main salary field does not explicitly say pro rata.",
       "subject": "Administration, HR and marketing",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -846,14 +922,22 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=CH14087",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-11-23",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "department": "Human Resources",
       "editor_note": "",
       "subject": "Administration, HR and marketing",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "bath-CH14050",
@@ -869,14 +953,14 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=CH14050",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-11-16",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "department": "Human Resources",
       "editor_note": "",
       "subject": "Administration, HR and marketing",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -900,14 +984,22 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=ED14056",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-11-22",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "department": "Institute for Policy Research",
       "editor_note": "",
       "subject": "Politics and public policy",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "bath-SS14049",
@@ -923,14 +1015,22 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=SS14049",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-11-18",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "department": "Life Sciences",
       "editor_note": "",
       "subject": "Administration, HR and marketing",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "bath-KW13833R",
@@ -946,14 +1046,22 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=KW13833R",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-11-23",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "department": "Planning, Performance & Strategic Change",
       "editor_note": "",
       "subject": "Administration, HR and marketing",
       "collection_group": "computing",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "bath-KD14076",
@@ -969,14 +1077,22 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=KD14076",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-11-19",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "department": "School of Management",
       "editor_note": "Part time at 0.6 FTE; salary range shown as in the advert, which does not explicitly label it pro rata.",
       "subject": "Student and campus services",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "bath-KW14048",
@@ -992,20 +1108,26 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=KW14048",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-11-23",
-      "checked_at": "2026-11-10",
-      "status": "unverified",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "department": "Campus Infrastructure",
-      "editor_note": "Official advert could not be retrieved on 17 November 2026 (HTTP Error 503: Service Unavailable). Previous details and verification date retained.",
+      "editor_note": "",
       "subject": "IT, estates and technical services",
       "collection_group": "technical",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official advert could not be retrieved on 17 November 2026 (HTTP Error 503: Service Unavailable). Previous details and verification date retained.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
           "previous_status": "open",
           "status": "unverified",
           "previous_checked_at": "2026-11-10"
+        },
+        {
+          "date": "2026-11-24",
+          "from": "unverified",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
         }
       ]
     },
@@ -1023,20 +1145,26 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=CC14069",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-11-17",
-      "checked_at": "2026-11-10",
-      "status": "unverified",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "department": "Westwood Nursery",
-      "editor_note": "Official advert could not be retrieved on 17 November 2026 (HTTP Error 503: Service Unavailable). Previous details and verification date retained.",
+      "editor_note": "",
       "subject": "Student and campus services",
       "collection_group": "technical",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official advert could not be retrieved on 17 November 2026 (HTTP Error 503: Service Unavailable). Previous details and verification date retained.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
           "previous_status": "open",
           "status": "unverified",
           "previous_checked_at": "2026-11-10"
+        },
+        {
+          "date": "2026-11-24",
+          "from": "unverified",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
         }
       ]
     },
@@ -1054,20 +1182,26 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=KD14074",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-11-19",
-      "checked_at": "2026-11-10",
-      "status": "unverified",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "department": "Campus Services",
-      "editor_note": "Official advert could not be retrieved on 17 November 2026 (HTTP Error 503: Service Unavailable). Previous details and verification date retained.",
+      "editor_note": "",
       "subject": "Student and campus services",
       "collection_group": "technical",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official advert could not be retrieved on 17 November 2026 (HTTP Error 503: Service Unavailable). Previous details and verification date retained.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
           "previous_status": "open",
           "status": "unverified",
           "previous_checked_at": "2026-11-10"
+        },
+        {
+          "date": "2026-11-24",
+          "from": "unverified",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
         }
       ]
     },
@@ -1085,20 +1219,26 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=CC14062",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-11-12",
-      "checked_at": "2026-11-10",
-      "status": "unverified",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "department": "Students' Union",
-      "editor_note": "Official advert could not be retrieved on 17 November 2026 (HTTP Error 503: Service Unavailable). Previous details and verification date retained.",
+      "editor_note": "",
       "subject": "Student and campus services",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official advert could not be retrieved on 17 November 2026 (HTTP Error 503: Service Unavailable). Previous details and verification date retained.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
           "previous_status": "open",
           "status": "unverified",
           "previous_checked_at": "2026-11-10"
+        },
+        {
+          "date": "2026-11-24",
+          "from": "unverified",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
         }
       ]
     },
@@ -1116,14 +1256,22 @@
       "url": "https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=SS14073",
       "discovery_url": "https://www.bath.ac.uk/jobs/vacancies.aspx?cat=-1",
       "closing_date": "2026-11-22",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "department": "School of Management",
       "editor_note": "",
       "subject": "Administration, HR and marketing",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "leeds-FBSBY1218",
@@ -1139,13 +1287,13 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=FBSBY1218",
       "discovery_url": "https://www.jobs.ac.uk/job/DTM152/lecturer-in-plant-science",
       "closing_date": "2027-01-03",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "closing_time": "",
       "subject": "Biology and plant science",
       "collection_group": "academic",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "leeds-FBSBY1219",
@@ -1161,13 +1309,13 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=FBSBY1219",
       "discovery_url": "https://www.jobs.ac.uk/job/DTM143/lecturer-in-zoology-or-animal-science",
       "closing_date": "2027-01-03",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "closing_time": "",
       "subject": "Biology and animal science",
       "collection_group": "academic",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "leeds-AHCPR1088",
@@ -1183,13 +1331,21 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=AHCPR1088",
       "discovery_url": "https://www.jobs.ac.uk/job/DTH164/lecturer-in-philosophy",
       "closing_date": "2026-11-22",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "",
       "subject": "Philosophy",
       "collection_group": "academic",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "leeds-AHCLC1247",
@@ -1205,14 +1361,22 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=AHCLC1247",
       "discovery_url": "https://www.jobs.ac.uk/categories/jobs-in-leeds/1",
       "closing_date": "2026-11-18",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "",
       "editor_note": "Distinct current advert from AHCLC1246; both share the title and transnational teaching remit.",
       "subject": "Languages and academic literacy",
       "collection_group": "academic",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "leeds-FBSBM1238",
@@ -1228,13 +1392,13 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=FBSBM1238",
       "discovery_url": "https://www.jobs.ac.uk/job/DTM622/teaching-fellow-in-tissue-engineering-and-medical-technologies",
       "closing_date": "2026-11-13",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "closing_time": "",
       "subject": "Biomedical sciences",
       "collection_group": "academic",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -1258,14 +1422,14 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=AHCLC1246",
       "discovery_url": "https://www.jobs.ac.uk/categories/jobs-in-leeds/1",
       "closing_date": "2026-11-12",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "closing_time": "",
       "editor_note": "Distinct reference from AHCLC1247; this advert closes on 12 November.",
       "subject": "Languages and academic literacy",
       "collection_group": "academic",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -1289,13 +1453,13 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=EPSPA1140",
       "discovery_url": null,
       "closing_date": "2027-01-04",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "closing_time": "",
       "subject": "Physics and quantum theory",
       "collection_group": "engineering",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "leeds-MHHEA1283",
@@ -1311,13 +1475,13 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=MHHEA1283",
       "discovery_url": "https://www.jobs.ac.uk/categories/jobs-in-leeds/1",
       "closing_date": "2026-11-30",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "closing_time": "",
       "subject": "Health and social care",
       "collection_group": "health",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "leeds-CSRIS1405",
@@ -1333,13 +1497,21 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=CSRIS1405",
       "discovery_url": "https://www.jobs.ac.uk/search/?organisationNameFacet%5B0%5D=university-of-leeds&pageSize=25&sortOrder=2&startIndex=1",
       "closing_date": "2026-11-23",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "",
       "subject": "Climate and risk modelling",
       "collection_group": "engineering",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "leeds-ENVGE1287",
@@ -1355,13 +1527,21 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=ENVGE1287",
       "discovery_url": "https://www.jobs.ac.uk/categories/jobs-in-leeds/1",
       "closing_date": "2026-11-22",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "",
       "subject": "Environment and agriculture",
       "collection_group": "engineering",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "leeds-FBSMB1324",
@@ -1377,13 +1557,21 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=FBSMB1324",
       "discovery_url": "https://www.jobs.ac.uk/categories/jobs-in-leeds/1",
       "closing_date": "2026-11-22",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "",
       "subject": "Virology and molecular biology",
       "collection_group": "health",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "leeds-CSRIS1404",
@@ -1399,13 +1587,21 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=CSRIS1404",
       "discovery_url": "https://www.jobs.ac.uk/search/?organisationNameFacet%5B0%5D=university-of-leeds&pageSize=25&sortOrder=2&startIndex=1",
       "closing_date": "2026-11-19",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "",
       "subject": "Digital health and software engineering",
       "collection_group": "computing",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "leeds-BUSWE1019",
@@ -1421,13 +1617,21 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=BUSWE1019",
       "discovery_url": null,
       "closing_date": "2026-11-17",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "",
       "subject": "Business, employment and digital work",
       "collection_group": "social",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "leeds-EPSME1221",
@@ -1443,13 +1647,21 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=EPSME1221",
       "discovery_url": null,
       "closing_date": "2026-11-17",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "",
       "subject": "Mechanical engineering and surfaces",
       "collection_group": "engineering",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "leeds-CSFIN1406",
@@ -1465,13 +1677,21 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=CSFIN1406",
       "discovery_url": null,
       "closing_date": "2026-11-22",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "",
       "subject": "Research administration and finance",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "leeds-AHCPR1089",
@@ -1487,13 +1707,13 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=AHCPR1089",
       "discovery_url": "https://www.jobs.ac.uk/categories/jobs-in-leeds/1",
       "closing_date": "2026-11-15",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "closing_time": "",
       "subject": "School management and administration",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -1517,14 +1737,22 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=CSMAR1177",
       "discovery_url": "https://www.jobs.ac.uk/job/DTO436/marketing-workflow-manager",
       "closing_date": "2026-11-20",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "",
       "editor_note": "Employer may close the advert early.",
       "subject": "Marketing and project coordination",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "leeds-CSHSW1088",
@@ -1540,13 +1768,13 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=CSHSW1088",
       "discovery_url": "https://www.jobs.ac.uk/categories/jobs-in-leeds/1",
       "closing_date": "2026-11-16",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "closing_time": "",
       "subject": "Occupational health",
       "collection_group": "health",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -1570,14 +1798,22 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=FDCAT1064",
       "discovery_url": null,
       "closing_date": "2026-11-22",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "",
       "editor_note": "Advert body describes five days over seven; metadata describes weekdays with occasional Saturday work. Confirm the rota with the employer.",
       "subject": "Catering and campus services",
       "collection_group": "technical",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "leeds-ENVEE1889",
@@ -1593,14 +1829,22 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=ENVEE1889",
       "discovery_url": "https://www.jobs.ac.uk/search/?organisationNameFacet%5B0%5D=university-of-leeds&pageSize=25&sortOrder=2&startIndex=1",
       "closing_date": "2026-11-22",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "",
       "editor_note": "Employer specifies Glen Coe; jobs.ac.uk's listing labels the location Leeds.",
       "subject": "Conservation and project management",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "leeds-EPSCH1141",
@@ -1616,13 +1860,13 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=EPSCH1141",
       "discovery_url": null,
       "closing_date": "2026-11-29",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "closing_time": "",
       "subject": "Chemistry technical support",
       "collection_group": "technical",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "leeds-MHLMR1238",
@@ -1638,13 +1882,13 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=MHLMR1238",
       "discovery_url": "https://www.jobs.ac.uk/categories/jobs-in-leeds/1",
       "closing_date": "2026-11-16",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "closing_time": "",
       "subject": "Microbiology and infection research",
       "collection_group": "technical",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -1668,13 +1912,13 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=MHLMR1239",
       "discovery_url": "https://www.jobs.ac.uk/categories/jobs-in-leeds/1",
       "closing_date": "2026-11-16",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "closing_time": "",
       "subject": "Microbiology and antimicrobial resistance",
       "collection_group": "technical",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -1698,13 +1942,13 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=ENVFS1174",
       "discovery_url": "https://www.jobs.ac.uk/categories/jobs-in-leeds/1",
       "closing_date": "2026-11-12",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "closing_time": "",
       "subject": "Food science and gut microbiome",
       "collection_group": "technical",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -1728,14 +1972,14 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46242",
       "discovery_url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46242",
       "closing_date": "2026-11-11",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "closing_time": "Midnight on the closing date",
       "department": "Campus Technology Services",
       "subject": "IT, cloud & digital services",
       "collection_group": "computing",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -1759,14 +2003,22 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46102",
       "discovery_url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46102",
       "closing_date": "2026-11-19",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "Midnight on the closing date",
       "department": "Social Sciences Administration",
       "subject": "Student administration & support",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "manchester-hum-032493",
@@ -1782,14 +2034,22 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46129",
       "discovery_url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46129",
       "closing_date": "2026-11-18",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "Midnight on the closing date",
       "department": "SEED Administration",
       "subject": "Student administration & support",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "manchester-hum-032717",
@@ -1805,14 +2065,14 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46383",
       "discovery_url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46383",
       "closing_date": "2026-11-16",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "closing_time": "Midnight on the closing date",
       "department": "History",
       "subject": "Humanities, business & social sciences",
       "collection_group": "social",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -1836,14 +2096,22 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46189",
       "discovery_url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46189",
       "closing_date": "2026-11-18",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "Midnight on the closing date",
       "department": "Global Development Institute",
       "subject": "Communications, engagement & enterprise",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "manchester-hum-032680",
@@ -1859,15 +2127,15 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46349",
       "discovery_url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46349",
       "closing_date": "2026-11-12",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "closing_time": "Midnight on the closing date",
       "department": "Education",
       "editor_note": "Official advert states a 36-month contract but gives inconsistent project dates (1 January 2027–31 December 2030). Use the stated contract duration; confirm exact dates with the employer.",
       "subject": "Humanities, business & social sciences",
       "collection_group": "social",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -1891,14 +2159,14 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46370",
       "discovery_url": "https://www.jobs.ac.uk/job/DTL488/research-assistant-in-mammalian-cell-culture",
       "closing_date": "2026-11-11",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "closing_time": "Midnight on the closing date",
       "department": "Department of Chemical Engineering",
       "subject": "Biomedical & health research",
       "collection_group": "health",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -1922,14 +2190,22 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46263",
       "discovery_url": "https://www.jobs.ac.uk/job/DTI597/research-associate-in-epr-and-magnetism-of-molecular-spin-qubits",
       "closing_date": "2026-11-18",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "Midnight on the closing date",
       "department": "Department of Chemistry",
       "subject": "Engineering & physical sciences",
       "collection_group": "engineering",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "manchester-sae-032705",
@@ -1945,15 +2221,15 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46369",
       "discovery_url": "https://www.jobs.ac.uk/job/DTK966/research-fellow-in-artificial-intelligence-and-machine-learning-for-scientific-discovery",
       "closing_date": "2026-12-01",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "closing_time": "Midnight on the closing date",
       "department": "Department of Chemistry",
       "editor_note": "jobs.ac.uk search result shows 10 November, but the directly opened official advert says 1 December 2026. Employer deadline takes precedence.",
       "subject": "AI, computing & data science",
       "collection_group": "computing",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "manchester-hum-032488",
@@ -1969,14 +2245,14 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46149",
       "discovery_url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46149",
       "closing_date": "2026-11-13",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "closing_time": "Midnight on the closing date",
       "department": "Innovation Management and Policy",
       "subject": "Academic teaching & leadership",
       "collection_group": "academic",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -2000,15 +2276,15 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=45701",
       "discovery_url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=45701",
       "closing_date": "2026-12-21",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "closing_time": "Midnight on the closing date",
       "department": "Dalton Nuclear Institute",
       "editor_note": "Employer describes three fellowships under this reference and four posts across SAE-032060 and SAE-032063; applicants are asked to submit only one application under their preferred reference.",
       "subject": "Engineering & physical sciences",
       "collection_group": "engineering",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "manchester-psx-032657",
@@ -2024,14 +2300,14 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46322",
       "discovery_url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46322",
       "closing_date": "2026-12-06",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "closing_time": "Midnight on the closing date",
       "department": "Unit M",
       "subject": "Communications, engagement & enterprise",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "manchester-psx-032609",
@@ -2047,14 +2323,14 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46273",
       "discovery_url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46273",
       "closing_date": "2026-11-16",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "closing_time": "Midnight on the closing date",
       "department": "Special Collections",
       "subject": "Libraries, collections & heritage",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -2078,14 +2354,14 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=45866",
       "discovery_url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=45866",
       "closing_date": "2026-11-13",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "closing_time": "Midnight on the closing date",
       "department": "School of Engineering Administration",
       "subject": "Student administration & support",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -2109,15 +2385,15 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=45928",
       "discovery_url": "https://www.jobs.ac.uk/job/DTF126/lecturer-in-pure-mathematics",
       "closing_date": "2026-11-26",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "open",
       "closing_time": "Midnight on the closing date",
       "department": "Department of Mathematics",
       "editor_note": "The official numeric closing date is 26 November 2026. The weekday stated in the advert is inconsistent, so it is omitted.",
       "subject": "Academic teaching & leadership",
       "collection_group": "academic",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
     },
     {
       "id": "manchester-sae-032629",
@@ -2133,14 +2409,22 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?jobid=46288",
       "discovery_url": "https://www.jobs.ac.uk/job/DTM128/research-associate-in-particle-physics-on-atlas",
       "closing_date": "2026-11-19",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "Midnight on the closing date",
       "department": "Department of Physics & Astronomy",
       "subject": "Engineering & physical sciences",
       "collection_group": "engineering",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "manchester-bmh-032762",
@@ -2156,14 +2440,22 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46423&Source=JobtrainGoogle",
       "discovery_url": "https://www.jobs.ac.uk/search/employer/the-university-of-manchester",
       "closing_date": "2026-11-17",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "Midnight on the closing date",
       "department": "Division of Molecular and Cellular Function",
       "subject": "Biomedical & health research",
       "collection_group": "health",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "manchester-sae-032703",
@@ -2179,14 +2471,22 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46343",
       "discovery_url": "https://www.jobs.ac.uk/job/DTN107/research-impact-associate",
       "closing_date": "2026-11-17",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "Midnight on the closing date",
       "department": "FSE Research & Business Services",
       "subject": "Humanities, business & social sciences",
       "collection_group": "social",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "manchester-psx-032598",
@@ -2202,14 +2502,14 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46258",
       "discovery_url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46258",
       "closing_date": "2026-11-15",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "closing_time": "Midnight on the closing date",
       "department": "Not specified",
       "subject": "Senior professional leadership",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -2233,14 +2533,22 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46352",
       "discovery_url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46352",
       "closing_date": "2026-11-19",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "Midnight on the closing date",
       "department": "Division of Informatics, Imaging & Data Science",
       "subject": "AI, computing & data science",
       "collection_group": "computing",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "manchester-bmh-032745",
@@ -2256,14 +2564,22 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46413",
       "discovery_url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46413",
       "closing_date": "2026-11-20",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "Midnight on the closing date",
       "department": "Division of Population Health, Health Services Research And Primary Care",
       "subject": "Biomedical & health research",
       "collection_group": "health",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "manchester-bmh-032738",
@@ -2279,14 +2595,14 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46406",
       "discovery_url": "https://www.jobs.ac.uk/job/DTM161/research-associate",
       "closing_date": "2026-11-13",
-      "checked_at": "2026-11-17",
+      "checked_at": "2026-11-24",
       "status": "closed",
       "closing_time": "Midnight on the closing date",
       "department": "Division of Molecular and Cellular Function",
       "subject": "Biomedical & health research",
       "collection_group": "health",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; explicitly closed.",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
       "status_history": [
         {
           "date": "2026-11-17",
@@ -2310,14 +2626,22 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46347",
       "discovery_url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46347",
       "closing_date": "2026-11-22",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "Midnight on the closing date",
       "department": "Reward, Benefits and Pensions",
       "subject": "Senior professional leadership",
       "collection_group": "professional",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "manchester-psx-032589",
@@ -2333,14 +2657,22 @@
       "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46250&Source=JobtrainGoogle",
       "discovery_url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46250&Source=JobtrainGoogle",
       "closing_date": "2026-11-17",
-      "checked_at": "2026-11-17",
-      "status": "open",
+      "checked_at": "2026-11-24",
+      "status": "closed",
       "closing_time": "",
       "department": "Estates Partnering Team",
       "subject": "Estates & facilities leadership",
       "collection_group": "technical",
-      "last_review_attempt": "2026-11-17",
-      "verification_note": "Official employer advert read on 17 November 2026; deadline and advertised salary rechecked."
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer page confirms this vacancy is closed or filled.",
+      "status_history": [
+        {
+          "date": "2026-11-24",
+          "from": "open",
+          "to": "closed",
+          "reason": "Official employer page confirms this vacancy is closed or filled."
+        }
+      ]
     },
     {
       "id": "leeds-MHIHS1455",
@@ -2358,9 +2690,52 @@
       "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=MHIHS1455",
       "discovery_url": "https://www.jobs.ac.uk/job/DTR086/research-assistant",
       "closing_date": "2026-12-07",
-      "checked_at": "2026-11-17",
-      "status": "open"
+      "checked_at": "2026-11-24",
+      "status": "open",
+      "last_review_attempt": "2026-11-24",
+      "verification_note": "Official employer advert, deadline and advertised salary rechecked on 24 November 2026."
+    },
+    {
+      "id": "leeds-AHCPR1090",
+      "employer": "University of Leeds",
+      "title": "Research Assistant in Philosophy, Religion and History of Science",
+      "reference": "AHCPR1090",
+      "location": "Leeds – Main Campus, UK; monthly in-person meetings",
+      "department": "School of Philosophy, Religion & History of Science",
+      "group": "research",
+      "collection_group": "social",
+      "role_type": "Part time (0.5 FTE); fixed term for 12 months",
+      "salary": "£33,951–£39,906 per annum, pro rata (Grade 6)",
+      "summary": "Develop an archival dataset and case studies about representations of women’s scientific and technical work after 1945, using digital methods and supporting workshops and research outputs.",
+      "eligibility": "Background in digital humanities or the history of science and technology, with experience using digital research methods. Monthly travel to Leeds is required; residence nearby is not essential.",
+      "url": "https://jobs.leeds.ac.uk/vacancy.aspx?ref=AHCPR1090",
+      "discovery_url": "https://www.jobs.ac.uk/job/DTS635/research-assistant-in-philosophy-religion-and-history-of-science",
+      "closing_date": "2026-12-13",
+      "status": "open",
+      "checked_at": "2026-11-24",
+      "last_review_attempt": "2026-11-24"
+    },
+    {
+      "id": "sheffield-3427",
+      "employer": "University of Sheffield",
+      "title": "Prospect Researcher",
+      "reference": "3427",
+      "location": "Sheffield, UK; hybrid",
+      "department": "Campaigns & Alumni Relations",
+      "group": "professional",
+      "collection_group": "professional",
+      "role_type": "Full time; fixed term for 12 months",
+      "salary": "£27,865–£31,861 per annum; potential progression to £34,630 through sustained exceptional contribution",
+      "summary": "Research potential donors, prepare clear briefings and due-diligence reports, and maintain prospect data to support university fundraising.",
+      "eligibility": "Degree or equivalent experience; understanding of higher-education fundraising, strong analytical and communication skills, and experience combining information sources while handling sensitive data responsibly.",
+      "editor_note": "The advert gives an interview date of 7 January 2026 despite a December 2026 application deadline; confirm the interview date with the employer.",
+      "url": "https://jobsite.sheffield.ac.uk/job/Prospect-Researcher/3427-en_GB",
+      "discovery_url": "https://www.jobs.ac.uk/job/DTS080/prospect-researcher",
+      "closing_date": "2026-12-14",
+      "status": "open",
+      "checked_at": "2026-11-24",
+      "last_review_attempt": "2026-11-24"
     }
   ],
-  "review_note": "Official adverts rechecked; retrieval failures retain earlier verification dates. See individual availability and notes."
+  "review_note": "24 November 2026: all 94 existing managed adverts requested; two new verified roles added. Closed records retained; failed retrievals retain their previous verification dates. Separate legacy university posts preserved."
 }
